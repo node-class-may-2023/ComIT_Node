@@ -4,7 +4,6 @@
 
 * [Slack](http://nodewpg.slack.com)
 * [What's Internet and how does it work?](internet.md)
-* [Let's create our first site](first-site.md)
 * [Git & Github](git.md)
 * [HTML](html.md)
 * [CSS](css.md)
