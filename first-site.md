@@ -138,6 +138,7 @@ To be able to publish it we need a free hosting and a domain.
 23. FileZilla will upload the selected files and place them on our hosting
 24. Once it's done uploading refresh the subdomain that we created
 25. **Congratulations, you have your first site online!!**
+
 ![Congratulations](resources/images/congratulations.gif)
 
 ## Extra
