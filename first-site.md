@@ -126,11 +126,11 @@ To be able to publish it we need a free hosting and a domain.
 16. On the `Site Manager` section click on the `New Site Button`
 17. Type the New Site name
 18. To configure the new FTP site we need the following data:
-  * Host: f19-preview.awardspace.net
-  * Port number: 21
-  * Login type: normal
-  * User: the username that you created
-  * Password: the password that you created
+  * **Host:** f19-preview.awardspace.net
+  * **Port number:** 21
+  * **Login type:** normal
+  * **User:** the username that you created
+  * **Password:** the password that you created
 19. On the left side of the `Site Manager` you have your local files and on the right the hosting one
 20. Find you my-first-site folder on the left side
 21. Select all the files (press shift to select multiple files)
