@@ -14,8 +14,3 @@
 * [Sails.js](sailsjs.md)
 * [Deploy](deploy.md)
 
-
-
-https://cp1.awardspace.net/beta/
-
-http://nicolasisnardi.atwebpages.com/
