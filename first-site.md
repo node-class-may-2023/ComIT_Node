@@ -152,5 +152,6 @@ To be able to publish it we need a free hosting and a domain.
 * [Favicon Generator](https://www.favicon-generator.org)
 * [Awardspace FAQ](https://www.awardspace.com/frequently-asked-questions)
 * [Filezilla](https://sourceforge.net/projects/filezilla/files/latest/download)
+* [Visual Studio Code](https://code.visualstudio.com)
 
 [<- Go Back](README.md)
