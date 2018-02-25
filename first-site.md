@@ -123,7 +123,7 @@ or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
 ![FTP account](resources/images/awardspace_ftp_account.png)
 16. Click on your ftp user name options button
 ![FTP options button](resources/images/awardspace_fpt_configuration.png)
-17. Download FileZilla configuration file by clicking 
+17. Download FileZilla configuration file by clicking FTP configurations files button
 ![FTP account](resources/images/awardspace_filezilla_configuration_file.png)
 18. Open & configure Filezilla using the configuration file
 ![FTP account](resources/images/awardspace_filezilla_how_to_configure.png)
