@@ -122,11 +122,11 @@ or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
 15. Create an FTP account using username and password
 ![FTP account](resources/images/awardspace_ftp_account.png)
 16. Click on your ftp user name options button
-![FTP options button](resources/images/awardspace_fpt_configuration)
+![FTP options button](resources/images/awardspace_fpt_configuration.png)
 17. Download FileZilla configuration file by clicking 
-![FTP account](resources/images/awardspace_filezilla_configuration_file)
+![FTP account](resources/images/awardspace_filezilla_configuration_file.png)
 18. Open & configure Filezilla using the configuration file
-![FTP account](resources/images/awardspace_filezilla_how_to_configure)
+![FTP account](resources/images/awardspace_filezilla_how_to_configure.png)
 19. Click on the upper left icon to open the site manager
 ![FTP - Sites](resources/images/ftp-sites.png)
 20. Change the **Login type:** to normal
