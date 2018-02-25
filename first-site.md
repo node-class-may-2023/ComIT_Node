@@ -4,13 +4,19 @@ Follow the next steps to create your first site!!
 
 ## Create a local site
 
-1. Create a folder with the name: my-first-site
-2. Create the following files inside the my-first-site folder :
+1. Download & install [Visual Studio Code](https://code.visualstudio.com)
+2. Create a folder with the name: my-first-site
+![create site folder](resources/images/folder.png)
+3. Open Visual Studio Code
+![open Visual Studio Code](resources/images/open_folder.png)
+4. Open my-first-site using Visual Studio Code
+![open Visual Studio Code](resources/images/open_folder_2.png)
+5. Create the following files inside the my-first-site folder :
   * index.html
   * style.css
   * script.js
-
-3. Read and write the following code on each document
+![open Visual Studio Code](resources/images/create_files.png)
+6. Read and write the following code on each document
 
 ### index.html
 ```html
@@ -82,12 +88,9 @@ window.onload = function() {
 }
 ```
 
-4. Download the following [favicon.ico](resources/icons/favicon.ico) to my-first-site folder
-
-5. Go to the my-first-site folder and double click the file `index.html`
-
-6. You should see a web page like this one:
-
+7. Download the following [favicon.ico](resources/icons/favicon.ico) to my-first-site folder
+8. Go to the my-first-site folder and double click the file `index.html`
+9. You should see a web page like this one:
 ![My First Site](resources/images/my_first_site.png)
 
 ## Publish our Site
@@ -98,47 +101,44 @@ To be able to publish it we need a free hosting and a domain.
 1. Open a browser and navigate to [https://www.awardspace.com](https://www.awardspace.com)
 2. Click on `Free hosting`
 3. Click on `Give it a try`
-3. Create your account using Facebook, Google or by input new credentials
-4. You'll get a confirmation email with the system login information (it will be something like: [https://cp1.awardspace.net/beta](https://cp1.awardspace.net/beta))
-5. Confirmate you email account
-6. Login to the system using your credentials
-
+![Awardspace](resources/images/awardspace.png)
+4. Create your account using Facebook, Google or by input new credentials
+![Awardspace](resources/images/awardspace_signup.png)
+5. You'll get a confirmation email with the system login information (it will be something like: [https://cp1.awardspace.net/beta](https://cp1.awardspace.net/beta))
+6. Confirmate you email account
+7. Login to the system using your credentials
 ![AwardSpace Dashboard](resources/images/awardspace-panel.png)
-
-7. Configure a subdomain by clicking `Domain Manager` under the **First Steps Made Easy**
-
+8. Configure a subdomain by clicking `Domain Manager` under the **First Steps Made Easy**
 ![First Steps Made Easy](resources/images/domain.png)
-
-8. Select `Create a Free Subdomain`
-9. Input a subdomain name and click the create button (this is the URL that we'll access online)
-10. Open a new tab and navigate to the URL that you just created. You should see a landing page
-11. Now that we have a hosting and domain configured we need to upload our site to publish it.
-12. Head to the AwardSpace Dashboard and click `FTP manager` section
-
+9. Select `Create a Free Subdomain`
+![First Steps Made Easy](resources/images/awardspace_subdomain.png)
+10. Input a subdomain name and click the create button (this is the URL that we'll access online)
+11. Open a new tab and navigate to the URL that you just created. You should see a landing page
+12. Now that we have a hosting and domain configured we need to upload our site to publish it.
+13. Download & install [Filezilla](https://sourceforge.net/projects/filezilla/files/latest/download)
+or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
+14. Head to the AwardSpace Dashboard and click `FTP manager` section
 ![FTP manager](resources/images/ftp-configure.png)
-
-13. Create an FTP account using username and password
-14. Download [Filezilla](https://sourceforge.net/projects/filezilla/files/latest/download) or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
-15. Open FileZilla and you can configure your FTP site by clicking on the upper left icon
-
+15. Create an FTP account using username and password
+![FTP account](resources/images/awardspace_ftp_account.png)
+16. Click on your ftp user name options button
+![FTP options button](resources/images/awardspace_fpt_configuration)
+17. Download FileZilla configuration file by clicking 
+![FTP account](resources/images/awardspace_filezilla_configuration_file)
+18. Open & configure Filezilla using the configuration file
+![FTP account](resources/images/awardspace_filezilla_how_to_configure)
+19. Click on the upper left icon to open the site manager
 ![FTP - Sites](resources/images/ftp-sites.png)
-
-16. On the `Site Manager` section click on the `New Site Button`
-17. Type the New Site name
-18. To configure the new FTP site we need the following data:
-  * **Host:** f19-preview.awardspace.net
-  * **Port number:** 21
-  * **Login type:** normal
-  * **User:** the username that you created
-  * **Password:** the password that you created
+20. Change the **Login type:** to normal
+21. Configure your **Password:** that you used while creating the ftp user
 19. On the left side of the `Site Manager` you have your local files and on the right the hosting one
+![Filezilla Files](resources/images/filezilla_files.png)
 20. Find you my-first-site folder on the left side
 21. Select all the files (press shift to select multiple files)
 22. Drag the selected files to the right side
 23. FileZilla will upload the selected files and place them on our hosting
 24. Once it's done uploading refresh the subdomain that we created
 25. **Congratulations, you have your first site online!!**
-
 ![Congratulations](resources/images/congratulations.gif)
 
 ## Extra
@@ -151,7 +151,6 @@ To be able to publish it we need a free hosting and a domain.
 ## Resources
 * [Favicon Generator](https://www.favicon-generator.org)
 * [Awardspace FAQ](https://www.awardspace.com/frequently-asked-questions)
-* [Filezilla](https://sourceforge.net/projects/filezilla/files/latest/download)
-* [Visual Studio Code](https://code.visualstudio.com)
+* [Getting started with Visual Studio Code - by John Papa](https://johnpapa.net/getting-started-with-visual-studio-code)
 
 [<- Go Back](README.md)
