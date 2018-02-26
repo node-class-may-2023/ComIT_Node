@@ -4,8 +4,8 @@
 
 * [Slack](http://nodewpg.slack.com)
 * [What's Internet and how does it work?](internet.md)
-* [Git & Github](git.md)
 * [HTML](html.md)
+* [Git & Github](git.md)
 * [CSS](css.md)
 * [JavaScript](javascript.md)
 * [Node.js](nodejs.md)
