@@ -225,29 +225,20 @@ attribute="value"
 * We can use &nbsp; [HTML entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity) to display the space character
 * [MDN paragraph doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
 
-**Ejemplo**
+**Example**
 ```html
 <p>Paragraph content.</p>
 <p>Paragraph          content.</p>
 <p>Text with some &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spaces</p>
 ```
 
+#### Practice
+[Exercise 2](exercises/html/ex_02.md)
 
-
-## Lists
-
-## Hyperlinks
-
-## Images
-
-## Tables
-
-## Forms
-
-## Iframe
-
-## Audio & Video
-
-## Metadata
-
-## Special Characters
+## Containers
+### Div
+* The HTML Content Division element **div** is the generic container
+* This tag has no effect on the content or layout until styled using CSS
+* It's used to group content so it can be easily styled
+* By default this is a **block element**
+* [MDN div doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
