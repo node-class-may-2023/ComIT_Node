@@ -110,12 +110,24 @@ attribute="value"
 
 * HTML defines elements attributes
 * Some attributes are global
+* The **id** attribute allow us to unique identify an element in a document
 * We can add an id attribute to any HTML element
+* There must only one element by id
 
 ```html
 <tagname id="first-element">
-
 <tagname id="second-element">Content of our tag</tagname>
+```
+
+* The **class** attribute accepts a CSS class name
+* We can use the class attribute to identify many elements by the same criteria
+
+```html
+<tagname class="red">Text in red</tagname>
+<tagname class="red">Text in red</tagname>
+<tagname class="red">Text in red</tagname>
+<tagname class="red">Text in red</tagname>
+<tagname class="red">Text in red</tagname>
 ```
 
 ### Tag with tags!
