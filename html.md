@@ -237,8 +237,334 @@ attribute="value"
 
 ## Containers
 ### Div
-* The HTML Content Division element **div** is the generic container
+* The  content division element **div** is the generic container
 * This tag has no effect on the content or layout until styled using CSS
 * It's used to group content so it can be easily styled
-* By default this is a **block element**
+* By default this is a `block element` and begin on new lines
 * [MDN div doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
+
+#### Span
+* The **span** element is a generic `inline` container for phrasing content, which does not inherently represent anything. 
+* It can be used to group elements for styling purposes
+* Inline elements can start anywhere in a line
+
+**Example:**
+```html
+<span>This is a inline element</span>
+<span>Next element inline and it's right next the previous one</span> 
+<p>This parragraph has a <span>section</span></p>
+```
+
+### Inline vs Block elements
+* `block-level` elements may contain `inline elements` and other `block-level elements`. 
+* Inherent in this structural distinction is the idea that block elements create "larger" structures than inline elements.
+* `Inline elements` are those which only occupy the space bounded by the tags defining the element, instead of breaking the flow of the content.
+* Generally, inline elements may contain only data and other inline elements. You can't put block elements inside inline elements.
+* By default, inline elements do not force a new line to begin in the document flow. Block elements, on the other hand, typically cause a line break to occur (although, as usual, this can be changed using CSS).
+* [MDN Block-level_elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+* [MDN Inline_elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements)
+
+### Comments
+* In most programming languages, there is a mechanism available to write comments in the code
+* Comments are ignored by the browser and are invisible to the user
+* Their purpose is to allow you to include comments in the code to say how your code works, what the different parts of the code do, etc. 
+* We can write inline or multiline comments
+
+**Example:**
+```html
+<!-- Inline comment -->
+
+<!-- 
+  Multiline Comment
+  Multiline Comment
+  Multiline Comment
+  Multiline Comment
+  Multiline Comment
+  Multiline Comment
+-->
+
+<!-- <p>The browser won't render this paragraph</p> -->
+```
+
+### Line Break
+* The **br** element produces a line break in our text (carriage-return)
+* It is useful where the division of lines is significan
+* [MDN br doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
+
+**Example:**
+```html
+<p>This text will have a line breack<br /> and then we keep on writing</p>
+<br />
+<br />
+<p>We can use a line break in any <br /> part of our documents body</p>
+```
+
+### Horizontal Rule
+* The **hr** element represents a thematic break between paragraph-level elements
+* It has been presented as a horizontal rule or line
+* [MDN hr doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr)
+
+**Example:**
+```html
+<h1>Main title</h1>
+<h2>Subtitle</h2>
+<hr />
+<p>Rest of the content</p>
+```
+
+#### Practice
+[Exercise 3](exercises/html/ex_03.md)
+
+### Text Format
+* HTML has some tags to describe how the text should be
+* The **strong** element indicates that its contents have strong importance, seriousness, or urgency. 
+* Browsers typically render the contents in bold type.
+* Remember that we'll use CSS for **bold font weight**
+
+**Example:**
+```html
+<strong>This is a very important text!!</strong>
+```
+
+## Lists
+* As web developers we'll use lists for many differnt things 
+* HTML has 3 different list types:
+  * Unordered
+  * Ordered
+  * Description or definition
+
+### Unordered list
+* The **ul** element represents an unordered list of items
+* By default it will be rendered as a bulleted list
+* We'll use this type of list when we don't care about items order
+* Each item is a list item or **li** element
+* [MDN ul doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
+* [MDN li doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li)
+
+**Example:**
+```html
+<ul>
+  <li>First List Item</li>
+  <li>Second List Item</li>
+  <li>Third List Item</li>
+</ul>
+```
+
+### Ordered list
+* The **ol** element represents an ordered list of items
+* By default it will be rendered as a numbered list
+* We'll use this type of list when we care about the items order
+* This type of list also accepts **li** elements as children
+* [MDN ol doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
+
+**Example:**
+```html
+<ol>
+  <li>Order Item</li>
+  <li>Order Item</li>
+  <li>Order Item</li>
+</ol>
+```
+
+### Description or definition list
+* The **dl** element represents a description list
+* The element encloses a list of groups of terms (**dt** element) and descriptions (**dd** elements) 
+* Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs)
+* [MDN dl doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)
+* [MDN dt doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt)
+* [MDN dd doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd)
+
+**Example:**
+```html
+<dl>
+  <dt>Term</dt>
+  <dd>Definition</dd>
+</dl>
+```
+
+### Nested list
+* List can be nested inside list items
+* We can use any list type
+* Very helful and used to create sites menues adding CSS
+
+![mindblown](resources/images/html/mindblown.gif)
+
+**Example:**
+```html
+<ul>
+  <li>Unorder list item</li>
+  <li>
+    <ol>
+      <li>Order list item</li>
+      <li>Order list item</li>
+      <li>Order list item</li>
+    </ol>
+  </li>
+</ul>
+```
+#### Practice
+[Exercise 4](exercises/html/ex_04.md)
+
+## Hyperlink
+* The **a** element (or anchor element) creates a hyperlink to other web pages, files, locations within the same page, email addresses, or any other URL.
+* This element has a **href** attribute that contains a URL or a URL fragment that the hyperlink points to
+* Between the opening and the closing tag we can add the link content that the user will click on
+* As content we can put other HTML elements like an image tag
+[](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
+
+**Example:**
+```html
+<a href="other_file.html">Click me I'm a link!!</a>
+<a href="my_dog.jpg">Link to my dog picture</a>
+<a href="video.avi">Link to my video</a>
+```
+
+### External links
+* In some cases we need to link our HTML documents with external files or other resources
+* We can do this by using the external URL's as **href** values
+
+**Example:**
+```html
+<a href="http://google.com">Go to google.com</a>
+```
+
+### Target attribute
+* The **a** has a target attribute that specifies where to display the linked URL.
+* The following keywords have special meanings:
+  * **_self**: Load the URL into the same browsing context as the current one. This is the default behavior.
+  * **_blank**: Load the URL into a new browsing context. This is usually a tab, but users can configure browsers to use new windows instead.
+  * **_parent**: Load the URL into the parent browsing context of the current one. If there is no parent, this behaves the same way as _self.
+  * **_top**: Load the URL into the top-level browsing context (that is, the "highest" browsing context that is an ancestor of the current one, and has no parent). If there is no parent, this behaves the same way as _self.
+* For now we'll use only **_blank** as it's the one we use the most
+
+**Example:**
+```html
+<a href="http://www.comit.org" target="_blank">ComIT</a>
+<a href="http://www.comunidadit.org" target="_blank">Comunidad IT</a>
+```
+
+### Absolute & relative URLs
+* We can define `absolute or relative` Urls
+* Let's check this [MDN URL guide](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL) to understand better what's and absolute URL
+
+**Example:**
+```html
+<a href="http://yahoo.com">Abrir Yahoo</a>
+<a href="c:\Usuarios\mi_nombre\mi_cv.pdf">Mirá mi CV</a>
+```
+
+* Links can have a relative URL or path
+* In this type of URLs we need to know the relationship between files
+* To access to the root of our site we can use the following relative path
+* Absolute and relatives URLs and Paths will work with any element that need an URL or path to work (imgs, video, audio and more)
+
+**Example:**
+```html
+<a href="/">Go Home</a>
+```
+
+```
+/ (root of our folder)
+|
+|-- index.html
+|-- about.html
+
+```
+
+* If we have to files that are siblings or in the same path level we can use the filename as link
+
+**Example:**
+```html
+To link index.html with about.html
+<a href="about.html">About</a>
+
+To link about.html with index.html
+<a href="index.html">Go Home</a>
+
+As index is the main file in our site we could use the root
+<a href="/">Go Home</a>
+```
+
+```
+/ (root of our folder)
+|-- about/
+|   |--- about.html
+|
+|-- index.html
+```
+
+* To link a file that it's inside a folder we'll use the **foldername/filename**
+
+**Example:**
+```html
+To link index.html with the about.html
+<a href="about/about.html">About</a>
+```
+
+* Also we can link files from inside a folder to another that's outside
+* We will add as many **../** as folders we need to exit
+
+**Example:**
+```html
+To link about.html to index.html first we need to exit the about folder
+<a href="../index.html">Go home</a>
+```
+
+```
+/ (root of our folder)
+|-- about/
+|   |-- other_folder/
+|     |--- about.html
+|
+|-- index.html
+```
+
+**Example:**
+```html
+With this folder structure:
+To link from index.html to about.html we'll use both folder names
+<a href="about/other_folder/about.html">About</a>
+
+To link about.html to index.html we need to exit 2 folders (../../filename)
+<a href="../../index.html">Go home</a>
+```
+
+* [absolute vs relative pathslinks](https://www.coffeecup.com/help/articles/absolute-vs-relative-pathslinks)
+* [What are hyperlinks](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_hyperlinks)
+* [Creating hyperlinks](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks)
+* [Dealing with files](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files)
+
+## Mailto
+* We can use links to configure to send an email
+* The browser will try to open the default email app if we set the **href** value to **mailto:account@domain.com**
+
+```html
+<a href="mailto:pablo@comit.com">Contact me</a>
+```
+
+### Anchor
+* We can use links to navigate to anchor points and into a selected document part
+* If the URL has an anchor the browser will lookup for that document section
+* To accomplish this task we need to combine the **a** element and **href**, **name** attributes
+* The **#** works as anchor symbol (remember the URLs MDN guide)
+
+**Example**
+```html
+First we'll create a link with the anchor href
+<a href="#news">News Section</a>
+
+Then we need to create the anchor by using the name attribute
+<a name="news"></a>
+
+We created an empty link with the news attribute. As they are on the same document the browser will try to
+navigate to the news anchor.
+
+To be able to see this magic working we need to create long documents
+
+Also we can navigate to a different document section:
+<a href="news.html#nhl">NHL news section</a>
+```
+
+#### Practice
+[Exercise 5](exercises/html/ex_05.md)
+[Exercise 6](exercises/html/ex_06.md)
