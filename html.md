@@ -567,4 +567,5 @@ Also we can navigate to a different document section:
 
 #### Practice
 [Exercise 5](exercises/html/ex_05.md)
+
 [Exercise 6](exercises/html/ex_06.md)
