@@ -640,21 +640,22 @@ Absolute URL:
 ```
 * [Image alt vs title - Using alt title attributes in image tags](https://www.wpromote.com/blog/image-alt-vs-title-using-alt-title-attributes-in-image-tags)
 
-### Foto con detalle
-* Muchas veces necesitamos mostrar una imagen con un detalle, para esto HTML5 incorpora los elementos **figure** y **figcaption**
-* Como contenido de **figure** podemos poner una imagen o más imagenes
-* Utilizamos **figcaption** para establecer el detalle de la/s imagen/es
-* Con varios de estos elementos podemos crear una especie de galería de imagenes
-* Los browsers más viejos no saben renderizar estos elementos y simplemente muestran el contenido
-* Para saber el nivel de soporte de HTML5 de nuestro browser podemos utilizar el siguiente [sitio](https://html5test.com)
+### Figure & Figure caption
+* the **figure** element represents self-contained content, frequently with a caption (**figcaption**), and is typically referenced as a single unit.
+* As **figure** content we'll add an image (**img**) and a caption (**figcaption**) elements
+* Older browser won't know how to show this element but they will render the image
+* [MDN figure doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+* [MDN figure doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+* [Test your browser](https://html5test.com)
 
 **Example**
 ```html
 <figure>
-  <img src="programando.png">
-  <figcaption>Programando como un campeón</figcaption>
+  <img src="coding.jpg" alt="Developers working on a new project" title="Nerds" >
+  <figcaption>Developers working on a new project</figcaption>
 </figure>
 ```
 
 #### Practice
 [Exercise 7](exercises/html/ex_07.md)
+
