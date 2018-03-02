@@ -305,10 +305,10 @@ attribute="value"
 
 **Example:**
 ```html
-<p>This text will have a line breack<br /> and then we keep on writing</p>
-<br />
-<br />
-<p>We can use a line break in any <br /> part of our documents body</p>
+<p>This text will have a line breack<br> and then we keep on writing</p>
+<br>
+<br>
+<p>We can use a line break in any <br> part of our documents body</p>
 ```
 
 ### Horizontal Rule
@@ -320,7 +320,7 @@ attribute="value"
 ```html
 <h1>Main title</h1>
 <h2>Subtitle</h2>
-<hr />
+<hr>
 <p>Rest of the content</p>
 ```
 
@@ -581,3 +581,80 @@ Also we can navigate to a different document section:
 [Exercise 5](exercises/html/ex_05.md)
 
 [Exercise 6](exercises/html/ex_06.md)
+
+## Imagenes
+* The **img** element embeds an image into the document
+* It's only a one tag element as it doesn't allow content (other elements or text)
+* The **src** attribute accepts an image filename / path
+* The **img** is an inline element
+* By default the placeholder will have the image size
+* We must use optimized images to avoid big files
+* The browser knows how to render different image types: [jpg](https://es.wikipedia.org/wiki/Joint_Photographic_Experts_Group), [png](https://es.wikipedia.org/wiki/Portable_Network_Graphics) & [gif](https://es.wikipedia.org/wiki/Graphics_Interchange_Format)
+* [Image optimization - Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization)
+* [MDN img doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+
+**Example**
+```html
+<img src="mypicture.jpg">
+```
+
+* We can use absolute or relative paths/urls as **src** value
+
+**Example**
+```html
+Relative example:
+<img src="img/mypicture.jpg">
+
+Go one folder level back, then enter the img folder and get mypicture file
+<img src="../img/mypicture.jpg">
+
+Absolute URL:
+<img src="http://images6.fanpop.com/image/photos/39500000/il-570xN-917420114-2kdu-rick-and-morty-39567961-300-370.jpg" />
+```
+
+* The **img** has a **height** and **width** attribute
+* This attributes accepts the intrinsic width & height of the image in pixels
+* HTML5 doesn't accept other types of values
+* Keep in mind the image ratio when using this attributes
+
+```html
+<img src="mypicture.jpg" height="300" width="300">
+```
+* The **alt** attribute defines the alternative text describing the image. 
+* Users will see this text displayed if the image URL is wrong, the image is not in one of the supported formats, or if the image is not yet downloaded.
+* Also, screen readers will use this attribute to describe the image
+* Adding this attribute to our images is a good practice
+
+**Example**
+```html
+<img src="coding.jpg" alt="Developers working on a new project">
+```
+
+* We can also add a global attribute to our images to describe it better
+* The title contains a text representing advisory information related to the element it belongs to. 
+* Such information can typically, but not necessarily, be presented to the user as a tooltip.
+
+**Example**
+```html
+<img src="coding.jpg" alt="Developers working on a new project" title="Nerds" >
+```
+* [Image alt vs title - Using alt title attributes in image tags](https://www.wpromote.com/blog/image-alt-vs-title-using-alt-title-attributes-in-image-tags)
+
+### Foto con detalle
+* Muchas veces necesitamos mostrar una imagen con un detalle, para esto HTML5 incorpora los elementos **figure** y **figcaption**
+* Como contenido de **figure** podemos poner una imagen o más imagenes
+* Utilizamos **figcaption** para establecer el detalle de la/s imagen/es
+* Con varios de estos elementos podemos crear una especie de galería de imagenes
+* Los browsers más viejos no saben renderizar estos elementos y simplemente muestran el contenido
+* Para saber el nivel de soporte de HTML5 de nuestro browser podemos utilizar el siguiente [sitio](https://html5test.com)
+
+**Example**
+```html
+<figure>
+  <img src="programando.png">
+  <figcaption>Programando como un campeón</figcaption>
+</figure>
+```
+
+#### Practice
+[Exercise 7](exercises/html/ex_07.md)
