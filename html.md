@@ -659,3 +659,201 @@ Absolute URL:
 #### Practice
 [Exercise 7](exercises/html/ex_07.md)
 
+## Table
+* The **table** element represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data
+* Our table will have rows (table rows or **tr**) and columns (table data or **td**) 
+* [MDN table doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+* [MDN tr doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr)
+* [MDN td doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)
+
+**Example**
+```html
+<table>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3 </td>
+    <td>4</td>
+  </tr>
+</table>
+```
+
+* In this example will see a table with 1 and 2 on the first row and 3 and 4 in the second one
+* If we need to have an empty cell we still need to add it as part of the table
+
+**Example**
+```html
+<table>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3 </td>
+    <td></td>
+  </tr>
+</table>
+```
+
+#### Practice
+[Exercise 8](exercises/html/ex_08.md)
+
+* Also we can use a **th** to define a cell as header
+* [MDN th doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)
+
+**Example**
+```html
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr>
+    <td>Dale</td>
+    <td>Hawerchuk</td>
+  </tr>
+</table>
+```
+
+* We can use the following elements to define table sections: **thead, tbody & tfoot**
+* The **thead** element defines a set of rows defining the head of the columns of the table
+* The **tbody** encapsulates a set of table row (**tr** elements, indicating that they comprise the body of the table)
+* The **tfoot** element defines a set of rows summarizing the columns of the table
+* A well structured table has all 3 sections
+* This is  also usefull for the screen readers
+* We can combien the **thead** and **th** element
+
+**Example**
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Desc. Columna 1</th>
+      <th>Desc. Columna 1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Primer Celda de la primer fila</td>
+      <td>Segunda Celda de la primer fila</td>
+    </tr>
+    <tr>
+      <td>Primer Celda de la segunda fila</td>
+      <td>Segunda Celda de la segunda fila</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Primer Celda del pie</td>
+      <td>Segunda Celda del pie</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+#### Practice
+[Exercise 9](exercises/html/ex_09.md)
+
+### Make the tables happier!
+* The table element has some attributes that will allow us to add color and other visual efects
+* This attributes belong to previous HTML versions but we can still use them
+* Remember that we only should use HTML to structure our documents and add CSS to change the way things look
+* The **border** attribute defines, in pixels, the size of the frame surrounding the table. If set to 0, the frame attribute is set to void
+* The **bgcolor** attribute defines the background color of a table. It consists of a 6-digit hexadecimal code as defined in sRGB and is prefixed by '#'
+* We can use any [web color](https://en.wikipedia.org/wiki/Web_colors) as **bgcolor**
+* Each cell can have a different **bgcolor** value
+
+**Example**
+```html
+<table border="1" bgcolor="gray">
+  <thead>
+    <tr>
+      <th>Header content 1</th>
+      <th>Header content 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td bgcolor="white">Content with white background</td>
+      <td>Body content</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Footer section 1</td>
+      <td>Footer section 2</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+* We can use the **width** attribute to set the table width
+* The cells also have a with attribute and the table will try to keep the same size for the rest of the cells in the same column
+* The **cellpadding** attribute defines the space between the content of a cell and its border, displayed or not
+* The **cellspacing** attribute defines the size of the space between two cells in a percentage value or pixels
+
+**Example**
+```html
+<table width="800" cellpadding="10" cellspacing="10">
+  <thead>
+    <tr>
+      <th width="100">Header 1</th>
+      <th>Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content 1</td>
+      <td>Content 2</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Footer 1</td>
+      <td>Footer 2</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+* To provide additional control over how cells fit into (or span across) columns, both **th** and **td** support the **colspan** attribute, which lets you specify how many columns wide the cell should be, with the default being 1. 
+* Similarly, you can use the **rowspan** attribute on cells to indicate they should span more than one table row.
+
+**Example**
+```html
+  <table border="1">
+    <tr>
+      <td rowspan="2">1 Column</td>
+      <td>middle value</td>
+      <td>middle value</td>
+      <td rowspan="2">1 Column</td>
+    </tr>
+    <tr>
+      <td>middle value</td>
+      <td>middle value</td>
+    </tr>
+    <tr>
+      <td colspan="4">Just 1 column for 4 spaces</td>
+    </tr>
+  </table>
+```
+
+#### Practice
+[Exercise 10](exercises/html/ex_10.md)
+
+## Favicon
+* Favicon is an icon that we can show on our browser window (tabs)
+* Most browser will support .ico, .gif or .png but using the ICO format will ensure it works as far back as Internet Explorer 6
+* There are lots of other icon types to consider these days as well and you can read more about it on the [MDN site](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
+
+```html
+  <head>
+    <title>My site with a great Favicon!</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+```
+
+#### Practice
+[Personal Site](../ejercicios/consignas/html/sitio02.md)
