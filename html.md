@@ -856,4 +856,4 @@ Absolute URL:
 ```
 
 #### Practice
-[Personal Site](../ejercicios/consignas/html/sitio02.md)
+[Personal Site]
