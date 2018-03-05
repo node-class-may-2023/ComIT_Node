@@ -2,36 +2,36 @@
 
 * Create my-site folder
 
-* Crear un sitio sobre algún tema que te guste con las siguientes requisitos:
-  * Al menos 6 documentos vinculados entre si
-  * Los documentos HTML tienen que estar bien formados
-  * Crear un contenedor generico en bloque que contenta todo el contenido del cuerpo del documento
-  * Utilizar el atributo id con el nombre del contenedor (uno por documento), ejemplo: home, about, productos, etc
-  * Los titles de los documentos tienen que ser descriptivos
-  * En cada documento tiene que tener un título principal
-  * Utilizar títulos h2 y h3 que tengan sentidos en el contenido
-  * Utilizar lineas para separar contenido en las distintas secciones
-  * Utilizar saltos de linea para formar bien los textos
-  * Resaltar algunos textos utilizando el concepto de negrita
-  * Utilizar contenedores genéricos en bloque para las distintas secciones
-  * Utilizar contenedores genéricos en linea para destacar algún texto (pueden usar el concepto de style)
-  * Agregar comentarios en cada documento de una o muchas lineas explicando como se puede mejorar cada documento
-  * Generar contenido que tenga sentido para utilizar al menos una lista ordenada, desordenada, de definición y anidada(puede ser un menu)
-  * Utilizar párrafos donde corresponda
-  * Crear vinculos:
-    * Con rutas absolutas que apunten a otro sitio
-    * Con rutas relativas
-    * Con puntos de anclaje a una sección del sitio
-    * Con la opción de mandarles un mail
-  * Buscar, descargar y utilizar imagenes (puede utilizar googlo o algún sitio de imagenes)
-    * Utilizar textos y títulos descriptivos en cada imagen
-  * Armar una galería de imagenes utilizando figure y figcaption
-  * Crear al menos 2 tablas en el sitio (listado de productos, tabla de posiciones, lista de capítulos de una serie)
-    * Las tablas tienen que estar bien declaradas
-    * Se tienen que ver lo más lindas posibles por lo cual utilizar atributos visuales (ancho, espacios entre celdas, bordes, unificar contenido, etc)
-    * Para los colores pueden utilizar el siguiente [sitio](http://htmlcolorcodes.com/es/)
-    * Definir los encabezados utilizando las etiquetas correctas y utilizar color de fondo y tipografía
-  * Agregar un favicon, utilizar el siguiente [sitio para buscar uno](http://www.favicon-generator.org)
+* Create a personal site about you, something that you're passionate About or can be your site as web developer
+* The site must include everything that we saw sow far
+* It will have at least 6 linked html documents
+* Think about this exercise as you own real web application
+* All images must be in a assets/img folders
+* All html documents must have a good HTML structure and identation
+* Create different documents sections using divs with proper id or class depending the case
+* All document title (head) must describe the document content
+* Every html document must have a main title
+* Use other titles (h2, h3, h4, h5 & h6) if needed
+* Add an Horizontal Rule to divide different sections
+* If the parragraph content get too long add some break lines to it
+* Some texts or words must be strong depending the content
+* Use generic inline container (spans) to highlight some words
+```html
+<span style="color: red;">
+```
+* Use this code to highlight the selected spans. You can chooose the color
+* Each document must have a multiline comment with the updates you'll have to do
+* Create at least one of each type of lists. They should make sense depending the content of the document
+* Please use paragraphs for the text content instead of just leaving it on the document without a structure
+* Add a external link (with absoulute URL)
+* Use relative paths to link your site documents
+* One of the html document must have anchors and you need to call them from a differnt html document
+* Add a contact email link
+* Search and add images from google. You can use absolute URLs or download some and use relative paths
+* Add a image galery using figure and figure caption elements
+* Create at least 2 content tables (please use all table section body, head and foot)
+* Create a favicon using an [online site](http://www.favicon-generator.org)
+* Add your favicon to your html documents 
 
-* Si llegaste hasta acá... FELICITACIONES!!! estas haciendo un gran trabajo
-![Congrats!!](../../../assets/html/congrats.gif)
+> If you got everything on this list you're rocking it!!! congratulations!!!
+![Congrats!!](../../resources/images/html/congrats.gif)

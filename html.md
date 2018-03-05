@@ -856,7 +856,8 @@ Absolute URL:
 ```
 
 #### Practice
-[Personal Site]
+[Personal Site](exercises/html/personal_site.md)
+
 
 ##  Forms
 * The **form** element represents a document section that contains interactive controls for submitting information to a web server
