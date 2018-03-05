@@ -857,3 +857,152 @@ Absolute URL:
 
 #### Practice
 [Personal Site]
+
+##  Forms
+* The **form** element represents a document section that contains interactive controls for submitting information to a web server
+* We can find them everywere and in different styles too!
+
+**Search engines:**
+
+Google:
+![Google](resources/images/html/google.png)
+
+Twitter:
+![Twitter search](resources/images/html/buscar1.png)
+
+Youtube:
+![Youtube search](resources/images/html/youtube_search.png)
+
+**Comments / Posts:**
+
+Twitter post:
+![Twitter post](resources/images/html/twit.png)
+
+Medium: 
+![Medium post](resources/images/html/medium_comment.png)
+
+Facebook: 
+![Medium post](resources/images/html/facebook_post.png)
+
+**Log in / sign up**
+
+Facebook:
+![Facebook post](resources/images/html/facebook_signup.png)
+
+* The form element have 3 important attributes:
+  * action: the URI of a program that processes the form information
+  * method: the HTTP method that the browser uses to submit the form: get o post 
+    * get: corresponds to the HTTP GET method; form data are appended to the action attribute URI with a '?' as separator, and the resulting URI is sent to the server
+    * post: corresponds to the HTTP POST method ; form data are included in the body of the form and sent to the server
+  * enctype: when the value of the method attribute is post, enctype is the MIME type of content that is used to submit the form to the server. Possible values:
+    * Default: 'application/x-www-form-urlencoded'
+    * To send file content: 'multipart/form-data'
+    * Just text: 'text/plain'
+* [MDN form doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+
+```html
+<form action="create_user.php" method="get" enctype="application/x-www-form-urlencoded" >
+  My Form
+</form>
+```
+
+* A form can have many different input types elements
+* We can submit the form using a button to execute the form action and send the form data
+* Many programing lenguages can process form data server side like C#, Java, JavaScript, PHP, Ruby and others
+* Each input will have a `name` attribute so we can identify it
+* The user will get a response after submiting and procesing the data server side
+
+### Inputs
+* The **input** element is used to create interactive controls for web-based forms in order to accept data from the user
+* How an it works varies considerably depending on the value of its `type attribute`
+* If this attributes is not specified, the `default` type adopted is `text`
+* The available types are as follows: button, checkbox, color, date, datetime-local, email, file, hidden, image, month, number, password, range, reset, search, submit, tel, text, time, url, week
+* [MDN input doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+
+**Example:**
+```html
+<form>
+  <input type="input-type" name="variable-name" />
+</form>
+```
+
+#### Text
+* Create basic single-line text fields (name, lastname, username, address)
+* Use the type value of text to define this type of input
+* You must remember to include name attribute on the **input** element, otherwise the text field's value won't be included with the submitted data
+* [MDN input type text doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text)
+
+**Example:**
+```html
+<form>
+  <input type="text" name="username" />
+</form>
+```
+
+* The `value` attribute contains the value of the text input
+* The user will see any predefined value
+* To clear the input the user will have to manualy delete the input content
+
+**Example:**
+```html
+<input type="text" name="username" value="harryp" />
+```
+
+* The `placeholder` attribute is typically rendered in a lighter color than the element's foreground color, and automatically vanishes when the user begins to enter text into the field
+
+**Example:**
+```html
+<input type="text" name="username" placeholder="Please input a username" />
+```
+
+* The **size** attribute specify the number of characters the text input can display at a time
+* This affects the width of the element, letting you specify the width in terms of characters rather than pixels
+* As it's only a visual effect we can update it with CSS
+
+**Example:**
+```html
+<input type="text" name="username" value="harryp" size="20" />
+```
+
+* You can specify a minimum length (in characters) for the entered value using the `minlength` attribute
+* Similarly, use `maxlength` to set the maximum length of the entered value, in characters
+
+**Example:**
+```html
+<input type="text" name="username" value="harryp" minlength="3" maxlength="20" />
+```
+
+* If you try to submit the form with less than 4 characters, you'll be given an appropriate error message (which differs between browsers). 
+* If you try to enter more than 8 characters, the browser won't let you.
+* If you specify a `minlength` but do not specify `required`, the input is considered valid, since the user is not required to specify a value
+
+#### Password
+* The input type passowrd provide a way for the user to securely enter a password 
+* The element is presented as a one-line plain text editor control in which the text is obscured so that it cannot be read, usually by replacing each character with a symbol such as the asterisk ("*") or a dot ("•")
+* Set the type attribute to password
+* We can use the **name**, **value**, **size**, **minlength** & **maxlength** attributes
+* Remember that this hidden text is just a visual effect
+* Use HTTPS to send client data to the server
+* [MDN input type password doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password)
+
+**Example:**
+```html
+<form>
+  <input type="password" name="pass" />
+</form>
+```
+
+#### Submit button
+* The input type `submit` is just a button that submits the form
+* This type of element's value attribute contains the button's label
+* If you don't specify a value, the button will have a default label, chosen by the user agent
+
+**Ejemplo:**
+```html
+<form>
+  <input type="submit" value="Submit this form" />
+</form>
+```
+
+#### Practice
+[Exercise 11](exercises/html/ex_11.md)
