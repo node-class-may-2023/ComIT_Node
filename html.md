@@ -996,8 +996,9 @@ Facebook:
 * The input type `submit` is just a button that submits the form
 * This type of element's value attribute contains the button's label
 * If you don't specify a value, the button will have a default label, chosen by the user agent
+* [MDN input submit doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit)
 
-**Ejemplo:**
+**Example:**
 ```html
 <form>
   <input type="submit" value="Submit this form" />
