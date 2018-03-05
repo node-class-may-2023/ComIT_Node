@@ -609,7 +609,7 @@ Go one folder level back, then enter the img folder and get mypicture file
 <img src="../img/mypicture.jpg">
 
 Absolute URL:
-<img src="http://images6.fanpop.com/image/photos/39500000/il-570xN-917420114-2kdu-rick-and-morty-39567961-300-370.jpg" />
+<img src="http://images6.fanpop.com/image/photos/39500000/il-570xN-917420114-2kdu-rick-and-morty-39567961-300-370.jpg" >
 ```
 
 * The **img** has a **height** and **width** attribute
@@ -922,7 +922,7 @@ Facebook:
 **Example:**
 ```html
 <form>
-  <input type="input-type" name="variable-name" />
+  <input type="input-type" name="variable-name" >
 </form>
 ```
 
@@ -935,7 +935,7 @@ Facebook:
 **Example:**
 ```html
 <form>
-  <input type="text" name="username" />
+  <input type="text" name="username" >
 </form>
 ```
 
@@ -945,14 +945,14 @@ Facebook:
 
 **Example:**
 ```html
-<input type="text" name="username" value="harryp" />
+<input type="text" name="username" value="harryp" >
 ```
 
 * The `placeholder` attribute is typically rendered in a lighter color than the element's foreground color, and automatically vanishes when the user begins to enter text into the field
 
 **Example:**
 ```html
-<input type="text" name="username" placeholder="Please input a username" />
+<input type="text" name="username" placeholder="Please input a username" >
 ```
 
 * The **size** attribute specify the number of characters the text input can display at a time
@@ -961,7 +961,7 @@ Facebook:
 
 **Example:**
 ```html
-<input type="text" name="username" value="harryp" size="20" />
+<input type="text" name="username" value="harryp" size="20" >
 ```
 
 * You can specify a minimum length (in characters) for the entered value using the `minlength` attribute
@@ -969,7 +969,7 @@ Facebook:
 
 **Example:**
 ```html
-<input type="text" name="username" value="harryp" minlength="3" maxlength="20" />
+<input type="text" name="username" value="harryp" minlength="3" maxlength="20">
 ```
 
 * If you try to submit the form with less than 4 characters, you'll be given an appropriate error message (which differs between browsers). 
@@ -988,7 +988,7 @@ Facebook:
 **Example:**
 ```html
 <form>
-  <input type="password" name="pass" />
+  <input type="password" name="pass" >
 </form>
 ```
 
@@ -1001,9 +1001,92 @@ Facebook:
 **Example:**
 ```html
 <form>
-  <input type="submit" value="Submit this form" />
+  <input type="submit" value="Submit this form">
 </form>
 ```
 
 #### Practice
 [Exercise 11](exercises/html/ex_11.md)
+
+#### Radio buttons
+* The `input type radio` elements are generally used in radio groups—collections of radio buttons describing a set of related options
+* Only one radio button in a given group can be selected at the same time
+* Radio buttons are typically rendered as small circles, which are filled or highlighted when selected
+* To define a radio group each of the radio buttons in the group must have same name attribute
+* The user will see a legend next to each radio button by using a label element or just plain text
+* [MDN input type radio doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
+
+**Example**
+```html
+<form>
+  Are you a Jets Fan?
+  <input type="radio" name="jetsfan" value="true"> Oh Yeahhhhhh, Go Jets!!!
+  <input type="radio" name="jetsfan" value="false"> No
+</form>
+```
+
+* Use the `checked` attribute with a `checked` value to select the default selected value
+* In HTML5 we as the attribute name and value is the same we can just add the attribute `checked`
+
+**Example**
+```html
+<form>
+  Are you a Jets Fan?
+  <input type="radio" name="jetsfan" value="true" checked="checked"> Oh Yeahhhhhh, Go Jets!!!
+  <input type="radio" name="jetsfan" value="false"> No
+  <!-- <input type="radio" name="jetsfan" value="true" checked> Oh Yeahhhhhh, Go Jets!!! -->
+</form>
+```
+
+#### Checkboxes
+* The input elements of `type checkbox` are rendered by default as square boxes that are checked (ticked) when activated
+* They allow you to select single values for submission in a form (or not).
+* Radio buttons are similar to checkboxes, but with an important distinction:
+> radio buttons are grouped into a set in which only one radio button can be selected at a time, whereas checkboxes allow you to turn single values on and off. Where multiple controls exist, radio buttons allow one to be selected out of them all, whereas checkboxes allow multiple values to be selected.
+* To select multiple values we need to use the same name input
+* Use the value attribute to set each input selected value
+* The checked attribute and value works the same way as radio buttons
+* [MDN input type checkbox doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox)
+
+**Example**
+```html
+<form>
+  Select your favourite Harry Potter wizzards
+  <input type="checkbox" name="wizzards" value="harry potter" checked="checked" > Harry Potter
+  <input type="checkbox" name="wizzards" value="hermione granger" checked> Hermione Granger
+  <input type="checkbox" name="wizzards" value="ron weasley"> Ron Weasley
+  <input type="checkbox" name="wizzards" value="aberforth dumbledore"> Aberforth Dumbledore
+</form>
+```
+
+### Hidden
+* The input elements of `type hidden` let web developers include data that cannot be seen or modified by users when a form is submitted
+* A good example: the ID of the content that is currently being ordered or edited, or a unique security token 
+* Hidden inputs are completely invisible in the rendered page, and there is no way to make it visible in the page's content
+* A user will be able to see them on the source code
+
+**Example:**
+```html
+<form>
+  <input type="hidden" name="product-id" value="1" >
+</form>
+```
+
+#### Image buttons
+* The input elements of `type image` are used to create graphical submit buttons
+* We can use a button image instead of the default submit one
+* To define the image we use the **src** attribute (as the image element)
+* [MDN input type image doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image)
+
+**Example:**
+```html
+<form>
+  <input type="image" src="create_user_button.png" >
+</form>
+```
+
+* To change the image size we can use the **height** & **width** attributes
+* We'll use CSS to change the way elements have to look (friendly reminder)
+
+#### Practice
+[Exercise 12](exercises/html/ex_12.md)
