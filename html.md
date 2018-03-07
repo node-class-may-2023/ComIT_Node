@@ -730,24 +730,24 @@ Absolute URL:
 <table>
   <thead>
     <tr>
-      <th>Desc. Columna 1</th>
-      <th>Desc. Columna 1</th>
+      <th>Header 1 - 1</th>
+      <th>Header 1 - 2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Primer Celda de la primer fila</td>
-      <td>Segunda Celda de la primer fila</td>
+      <td>Body 1 - 1</td>
+      <td>Body 1 - 2</td>
     </tr>
     <tr>
-      <td>Primer Celda de la segunda fila</td>
-      <td>Segunda Celda de la segunda fila</td>
+      <td>Body 2 - 1</td>
+      <td>Body 2 - 2</td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
-      <td>Primer Celda del pie</td>
-      <td>Segunda Celda del pie</td>
+      <td>Foot 1 - 1</td>
+      <td>Foot 1 - 2</td>
     </tr>
   </tfoot>
 </table>
@@ -1009,6 +1009,85 @@ Facebook:
 #### Practice
 [Exercise 11](exercises/html/ex_11.md)
 
+### Labels
+* The **label** element represents a caption for an item in a user interface
+* A **label** can be associated with a control either by placing the control element inside the **label** element, or by using the for attribute
+* Such a control is called the labeled control of the label element
+* One input can be associated with multiple labels
+* [MDN label doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
+
+**Example:**
+```html
+<form>
+  <label>Name:</label>
+  <input type="text" name="name" />
+  <label>Surname:</label>
+  <input type="text" name="surname" />
+</form>
+```
+
+* Also we could use it this way:
+
+**Example:**
+```html
+<form>
+  <label>
+    Name:
+    <input type="text" name="name" />
+  </label>
+  <label>
+    Surname:
+    <input type="text" name="surname" />
+  </label>
+</form>
+```
+
+* The label element has a **for** attribute
+* Once we set the **for** attribute, the user will be able to click on the **label** element to get focus in the setted for value
+* The id of a labelable form-related element in the same document as the label element.
+* The first such element in the document with an ID matching the value of the for attribute is the labeled control for this label element
+
+**Example:**
+```html
+<form>
+  <label for="nameid">Name:</label>
+  <input type="text" name="name" id="nameid" />
+  <label for="surnameid">Surname:</label>
+  <input type="text" name="surname" id="surnameid" />
+</form>
+```
+
+### Fieldset
+* The **fieldset** element is used to group several controls as well as labels within a web form
+* [MDN fieldset doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+
+**Example**
+```html
+<form>
+  <fieldset>
+    <label>Name:</label>
+    <input type="text" name="name" />
+    <label>Surname:</label>
+    <input type="text" name="surname" />
+  </fieldset>
+</form>
+```
+
+* The **legend** element represents a caption for the content of its parent **fieldset**
+
+**Example**
+```html
+<form>
+  <fieldset>
+    <legend>User Form</legend>
+    <label>Name:</label>
+    <input type="text" name="name" />
+    <label>Surname:</label>
+    <input type="text" name="surname" />
+  </fieldset>
+</form>
+```
+
 #### Radio buttons
 * The `input type radio` elements are generally used in radio groups—collections of radio buttons describing a set of related options
 * Only one radio button in a given group can be selected at the same time
@@ -1091,3 +1170,207 @@ Facebook:
 
 #### Practice
 [Exercise 12](exercises/html/ex_12.md)
+
+### Text area
+* The **textarea** element represents a multi-line plain-text editing control
+* This element has an opening and close tag
+* [MDN input textarea doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
+
+**Example**
+```html
+<textarea name="about">Rick Sanchez it's a great scientific..</textarea>
+```
+
+* Use the **placeholder** attribute to let the user know what to input
+
+**Example**
+```html
+<textarea name="about" placeholder="Please let us know about your self "></textarea>
+```
+
+* The **cols** attribute sets the textarea amount of columns
+* The **rows** attribute sets the textarea amount of lines
+
+**Example**
+```html
+<textarea name="about" cols="10" rows="2" >Initial textarea text!</textarea>
+```
+
+### Select
+* The **select** element represents a control that provides a menu of options
+* The **option** element is used to define an item contained in a <select> element
+* As such, **option** can represent menu items in popups and other lists of items in an HTML document
+* [MDN input select doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
+* [MDN input option doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option)
+
+**Example**
+```html
+<form>
+  <select name="options">
+    <option>First Item</option>
+    <option>Second Item</option>
+  </select>
+</form>
+```
+
+* The **option** element uses a **value** attribute to define the value the user selects
+* Also we can show the user a different text as an **option** content
+
+**Example**
+```html
+<form>
+  <select name="countries">
+    <option value="">Please select a Country</option>
+    <option value="arg">Argentina</option>
+    <option value="bra">Brasil</option>
+    <option value="chl">Chile</option>
+    <option value="can">Canada</option>
+  </select>
+</form>
+```
+
+* We can use the **selected** attribute to select the default selected value
+* This attribute uses the **selected** value and is the same attribute name we can just use the attribute name without a value (example: selected="selected")
+* By default the first option is going to be selected
+
+**Example**
+```html
+<form>
+  <select name="countries">
+    <option value="">Please select a Country</option>
+    <option value="arg">Argentina</option>
+    <option value="bra">Brasil</option>
+    <option value="chl">Chile</option>
+    <option value="can" selected="selected">Canada</option>
+  </select>
+</form>
+
+OR
+
+<form>
+  <select name="countries">
+    <option value="">Please select a Country</option>
+    <option value="arg">Argentina</option>
+    <option value="bra">Brasil</option>
+    <option value="chl">Chile</option>
+    <option value="can" selected>Canada</option>
+  </select>
+</form>
+```
+
+* The **multiple** attribute will allow the user to select multiple options
+* The **size** attribute configures the number o items we'll show at the same time
+* To select many items we'll use the control key
+
+**Example**
+```html
+<form>
+  <select name="countries" multiple="multiple" size="4">
+    <option value="">Please select a Country</option>
+    <option value="arg">Argentina</option>
+    <option value="bra">Brasil</option>
+    <option value="chl">Chile</option>
+    <option value="can" selected>Canada</option>
+  </select>
+</form>
+```
+
+### Buttons
+* The **button** element represents a clickable button, which can be used in forms, or anywhere in a document that needs simple, standard button functionality
+* To set the button content we need to use an opening and close tags
+* Add the **value** attribute if you need to submit this element value
+* [MDN button doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+
+**Example**
+```html
+<form>
+  <button value="create" name="create-user">+ User</button>
+</form>
+```
+
+* We can add any html content like an image
+
+**Example**
+```html
+<form>
+  <button>
+    <img src="plus-icon.png" alt="plus icon" />
+    User
+  </button>
+</form>
+```
+
+#### File 
+* The **file** input type is a control that lets the user select a file
+* Use the accept attribute to define the types of files that the control can select
+* As we're going to be submiting more than just text we need to change the form enctype to enctype="multipart/form-data" and use the post method
+* By default we can only select one file
+* Use the **multiple** attribute indicates whether the user can enter more than one value (only HTML5 and all browsers might not support it)
+* [MDN input type file doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
+
+**Example**
+```html
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  <input type="file" name="filename" />
+  <input type="file" name="filename" multiple="multiple" />
+  <input type="file" name="filename" multiple />
+</form>
+```
+
+#### Practice
+[Exercise 13](exercises/html/ex_13.md)
+
+#### New HTML5 input types
+* HTML5 adds some new specific inputs
+* If the browser doesn't support them it will show an input type text element
+* [HTML5 forms input types](http://html5doctor.com/html5-forms-input-types/)
+* [See them in action](https://robertnyman.com/html5/forms/input-types.html)
+
+##### Date
+* The input `type date` is a control for entering a date (year, month, and day, with no time)
+* We can set a initial value using the **value** attribute
+* [MDN input type date doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date)
+
+**Example**
+```html
+<form>
+  <input type="date" name="birthday" />
+  <input id="date" type="date" value="1980-04-02">
+</form>
+```
+
+##### Email
+* The input `type email` is a field for editing an e-mail address
+* [MDN input type email doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email)
+
+**Example**
+```html
+<form>
+  <input type="email" name="email" />
+</form>
+```
+
+##### URL
+* The input `type url` is a field for entering a URL
+* [MDN input type url doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url)
+
+**Example**
+```html
+<form>
+  <input type="url" name="sitiopersonal" />
+</form>
+```
+
+##### Search
+* The input `type search` is a single-line text field for entering search strings
+* Line-breaks are automatically removed from the input value
+
+**Example**
+```html
+<form>
+  <input type="search" name="query" />
+</form>
+```
+
+#### Practice
+[Exercise 14](exercises/html/ex_14.md)
