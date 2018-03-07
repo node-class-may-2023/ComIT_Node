@@ -1198,7 +1198,7 @@ Facebook:
 
 ### Select
 * The **select** element represents a control that provides a menu of options
-* The **option** element is used to define an item contained in a <select> element
+* The **option** element is used to define an item contained in a **select** element
 * As such, **option** can represent menu items in popups and other lists of items in an HTML document
 * [MDN input select doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
 * [MDN input option doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option)
