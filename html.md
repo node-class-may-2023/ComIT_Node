@@ -1497,6 +1497,7 @@ OR
 * Use the **height** & **width** attributes to set the iframe size
 * The **seamless** is a boolean attribute indicates that the browser should render the inline frame in a way that makes it appear to be part of the containing document
 * The **frameborder** attribute tells the browser to draw a border between this frame. If we set the value to 0 tells the browser not to draw a border between this frame
+* [MDN iframe doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe)
 
 **Example**
 ```html
@@ -1507,3 +1508,166 @@ OR
 
 #### Practice
 [Exercise 15](exercises/html/ex_15.md)
+
+## Video
+* The **video** element embeds a media player which supports video playback into the document
+* This element contains one or more video sources
+* To specify a video source, use either the **src** attribute or the **source** element (the browser will choose the most suitable one)
+* Different browsers might support different media types
+  * H264: Internet Explorer & Safari
+  * WebM: Android, Chrome, Firefox y Opera
+* For a list of supported formats you can see the [MDN supported media formats guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats)
+* Each browser will show the player in a different way
+* Also we can still use flash plugin to reach more users
+* This are some of the attributes that we can use to configure the video element
+  * **src:** set this value with the video filename or path
+  * **width:** & **height:** to set the video player size
+  * **poster:** we can set a picture file or path that will show while the video is downloaded
+* [MDN video doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+
+**Example**
+```html
+<body>
+  <video src="myvideo.mp4" poster="myvideo.jpg" width="600" height="400">
+    <p>Video description</p>
+  </video>
+</body>
+```
+
+* The video element has many attributes that works as a boolean value to turn on/off the different features
+  * **controls:** if this attribute is present, the browser will offer controls to allow the user to control video playback, including volume, seeking, and pause/resume playback
+  * **autoplay:** if specified, the video automatically begins to play back as soon as it can do so without stopping to finish loading the data
+  * **loop:** upon reaching the end of the video the player automatically seek back to the start
+  * **preload:** This enumerated attribute is intended to provide a hint to the browser about what the author thinks will lead to the best user experience.
+    * It may have one of the following values:
+      * **none:** indicates that the video should not be preloaded
+      * **auto:** indicates that the whole video file could be downloaded, even if the user is not expected to use it
+      * **metadata:** indicates that only video metadata (e.g. length) is fetched
+      * **An empty string**: synonym of the auto values
+
+**Example**
+```html
+<body>
+  <video 
+    src="myvideo.mp4" 
+    poster="myvideo.jpg"
+    width="600" 
+    height="400"
+    controls
+  >
+    <p>Video Descritpion</p>
+  </video>
+</body>
+```
+
+## Audio
+* The **audio** element is used to embed sound content in documents
+* It may contain one or more audio sources, represented using the src attribute or the **source** element: the browser will choose the most suitable one 
+* It can also be the destination for streamed media, using a MediaStream
+* Para incorporar audio utilizamos la etiqueta **audio**
+* This element works in a similar way as the **video** one
+* The **audio** element supports the same attribute video does: **src**, **controls**, **autoplay**, **preload** & **loop**
+* Some browsers have better support for some media types:
+  * **MP3:** Safari 5+, Chrome 6+ e IE9
+  * **Ogg Vorbis:** Firefox 3.6, Chome 6, Opera 1.5 e IE9
+* Also if the browser doesn't support this tag it will render the element content (like the paragraph in the example)
+* [MDN audio doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
+* [MDN media stream doc](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
+
+**Example**
+```html
+<body>
+  <audio src="ejemplo-audio.ogg" autoplay controls>
+    <p>Audio description.</p>
+  </audio>
+</body>
+```
+
+### Source
+* The **source** element specifies multiple media resources for the **picture**, **audio** and **video** elements
+* It is an empty element
+* It is commonly used to serve the same media content in multiple formats supported by different browsers 
+* If we use this element we don't have to use the **src** attribute
+* This element supports the following attributes:
+  * **src:** required for **audio** and **video**, address of the media resource
+    * The value of this attribute is ignored when the **source** element is placed inside a **picture** element
+  * **type:** the MIME-type of the resource, optionally with a codecs parameter
+    * See [RFC 4281 guide](https://tools.ietf.org/html/rfc4281) for information about how to specify codecs
+* [MDN source doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
+* [MDN picture doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+
+**Example**
+```html
+<body>
+  <video poster="myvideo.jpg" controls>
+    <source src="myvideoo.mp4" type="video/mp4">
+    <source src="myvideo.webm" type="video/webm"> 
+    <source src="myvideo.ogv" type="video/ogg"> 
+    <source src="myvideo.3gp" type="video/3gp">
+    <p>Vide description</p>
+  </video>
+  <audio autoplay controls>
+    <source src="myaudio.mp3" />
+    <source src="myaudio.ogg" />
+    <p>Audio description.</p>
+  </audio>
+</body>
+```
+
+## Metadata
+* The **meta** element represents metadata that cannot be represented by other HTML meta-related elements
+* This element will work as **head** element content only
+* The user won't see this element content
+* This are some of the attributes that we can configure:
+  * **author:** author which defines the name of the document's author
+  * **charset:** this attribute declares the page's character encoding
+  * **description:** contains a short and accurate summary of the content of the page
+  * **keywords:** contains words relevant to the page's content separated by commas
+  * **viewport:** gives hints about the size of the initial size of the viewport
+    * Used by mobile devices only
+    * Read the viewport MDN guide section to find out more about the different values this attribute supports
+* Read the [MDN meta doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta) too know more about the different attributes that we can use
+
+**Example**
+```html
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="My Site description">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+```
+
+* Read the [Wikiped character encoding doc](https://en.wikipedia.org/wiki/Character_encoding) to know more about how encoding works
+* [Wikipedia UTF-8 doc](https://en.wikipedia.org/wiki/UTF-8)
+
+## HTML Entity
+* An HTML entity is a piece of text ("string") that begins with an ampersand (&) and ends with a semicolon (;)
+* Entities are frequently used to display reserved characters (which would otherwise be interpreted as HTML code), and invisible characters (like non-breaking spaces) 
+* You can also use them in place of other characters that are difficult to type with a standard keyboard
+[MDN entity doc](https://developer.mozilla.org/en-US/docs/Glossary/Entity)
+* [List of HTML entities](https://www.freeformatter.com/html-entities.html)
+
+**Example**
+```html
+<body>
+  <p>&lt; lower than</p>
+  <p>&gt; greater than</p>
+  <p>&amp; ampersand</p>
+  <p>&copy; Copyright</p>
+  <p>&reg; Registred Trademark</p>
+  <p>&trade; Trademark</p>
+</body>
+```
+
+#### Practice
+[Exercise 16](exercises/html/ex_16.md)
+
+[Exercise 17](exercises/html/ex_17.md)
+
+## Extra:
+[HTML5 Specs](https://dev.w3.org/html5/spec-preview/Overview.html)
+
+## Congratulations, you made it, know you know HTML!!
+![Super Heroe HTML5](../assets/html/html_superhero.jpg)
