@@ -1374,3 +1374,136 @@ OR
 
 #### Practice
 [Exercise 14](exercises/html/ex_14.md)
+
+
+### Form validation
+* To make sure that the data users fill out in forms is in the correct format we need to process the form inputs
+* We can validate on client and server side
+* We'll use some HTML elements attribute to validate our forms on the client side
+* If we validate on the client side we avoid sending wrong data to the server so we have many requests
+* HTML5 added element validations
+* Also we can use JavaScript to validate our inputs too
+
+#### Required
+* The **required** attribute specifies that the user must fill in a value before submitting a form
+* As it's a boolean attribute we can just write the attribute name without any value (required="required" or just required)
+* The form won't submit until all required inputs are completed
+
+**Example**
+```html
+<form>
+  <input type="text" name="name" required />
+  <input type="text" name="name" required="required" />
+</form>
+```
+
+#### Regex
+* A regular expressions is a pattern used to match character combinations in strings
+* We can use them in many different languages
+* The attribute **pattern** allows us to enter a valid regex as value
+* This regular expression will be executed with the input value to see if it match
+* The pattern must match the entire value
+* This attribute applies when the value of the type attribute is text, search, tel, url, email, or password, otherwise it is ignored
+* The regular expression language is the same as JavaScript RegExp algorithm
+* The pattern is not surrounded by forward slashes
+* It's a good practice to add the **title** attribute to explain the allowed values
+* Add the placeholder if you use this attribute or it might not show the title content
+* [Wikipeda - Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
+* [Nice regex tutorial](https://regexone.com)
+
+**Example**
+```html
+<form>
+  <input type="text" name="name" pattern="^[a-zA-Z]+$" placeholder="name" title="Input only letters" /> 
+  <input type="text" name="age" pattern="\d+" placeholder="age" title="Input only numbers" />
+  <input type="submit" value="Submit">
+</form>
+```
+
+* Use [caniuse.com](http://caniuse.com/#search=required) to find out if a feature is compatible with the browser you're targeting
+* To know more about this subject you can read the [MDN form validation guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation)
+
+## HTML5 new sections
+*  HTML5 specification brings several new elements to web developers allowing them to describe the structure of a web document with standard semantics
+* All content lying inside the **body** element is part of a section
+* Sections in HTML5 can be nested
+* Each section can have its own heading hierarchy. Therefore, even a nested section can have an **h1**
+* HTML5 adds the following features:
+  * Semantics: allowing you to describe more precisely what your content is
+  * Connectivity: allowing you to communicate with the server in new and innovative ways
+  * Offline and storage: allowing webpages to store data on the client-side locally and operate offline more efficiently
+  * Multimedia: making video and audio first-class citizens in the Open Web
+  * 2D/3D graphics  and effects: allowing a much more diverse range of presentation options
+  * Performance and integration: providing greater speed optimization and better usage of computer hardware
+  * Device access: allowing for the usage of various input and output devices
+  * Styling: letting authors write more sophisticated themes
+* [MDN HTML5 guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+
+* In the semantics section we find new outlining and sectioning elements like **section**, **article**, **nav**, **header**, **footer** and **aside**. 
+
+* The **header** element represents introductory content, typically a group of introductory or navigational aids
+* It may contain some heading elements but also other elements like a logo, a search form, an author name, and so on
+* The **nav** element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents
+* The **aside** element represents a portion of a document whose content is only indirectly related to the document's main content
+* The **section** element represents a standalone section — which doesn't have a more specific semantic element to represent it — contained within an HTML document
+* The **footer** element represents a footer for its nearest sectioning content or sectioning root element
+* A footer typically contains information about the author of the section, copyright data or links to related documents
+
+**Example**
+```html
+<body>
+  <header>
+    <h1>Title of our document</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="bio.html">Bio</a></li>
+    </ul>
+  </nav>
+  <aside>
+    <p>Aside Content</p>
+  </aside>
+  <section>
+    <h1>Section Main Title</h1>
+    <p>Section Content</p>
+  </section>
+  <footer>
+    <p>Site Footer</p>
+  </footer>
+</body>
+```
+
+* The *article element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable. Examples include: a forum post, a magazine or newspaper article, or a blog entry
+* The **address** element indicates that the enclosed HTML provides contact information for a person or people, or for an organization
+* The HTML **time** element represents one of the following: a time on a 24-hour clock or a precise date in the Gregorian calendar
+
+**Example**
+```html
+<body>
+  <article>
+    <p>Author Name</p>
+    <time>02/02/2017</time>
+    <address>
+      136 Market Av.
+    </address>
+  </article>
+</body>
+```
+
+## Iframe
+* The **iframe** element represents a nested browsing context, effectively embedding another HTML page into the current page
+* The **src** attribute accepts the URL of the page to embed as value
+* Use the **height** & **width** attributes to set the iframe size
+* The **seamless** is a boolean attribute indicates that the browser should render the inline frame in a way that makes it appear to be part of the containing document
+* The **frameborder** attribute tells the browser to draw a border between this frame. If we set the value to 0 tells the browser not to draw a border between this frame
+
+**Example**
+```html
+<body>
+  <iframe src="other_document.html" height="200" width="200" seamless frameborder="0"></iframe>
+</body>
+```
+
+#### Practice
+[Exercise 15](exercises/html/ex_15.md)
