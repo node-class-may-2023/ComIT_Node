@@ -1669,5 +1669,5 @@ OR
 ## Extra:
 [HTML5 Specs](https://dev.w3.org/html5/spec-preview/Overview.html)
 
-## Congratulations, you made it, know you know HTML!!
+## Congratulations, you made it, now you know HTML!!
 ![Super Heroe HTML5](resources/images/html/html_superhero.jpg)
