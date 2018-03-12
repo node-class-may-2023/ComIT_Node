@@ -831,6 +831,13 @@ Date:   Sun Mar 11 21:39:21 2018 -0500
 ```
 
 * Now our local folder is in sync with the server
+* Create a **css** folder at the same level than the html one
+* Add this folder to git
+* Commit your changes
+* Push your changes to the origin server
+* Now you'll be able to add your css exercises into this **css** folder and git will version them
+* Happy coding and hope you like using Git and Github!
+* Checkout the great [Octocats](https://octodex.github.com)
 
 ## Final notes
 * We'll work on our local project by creating and updating files
