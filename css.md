@@ -402,7 +402,7 @@ div, p { color: red; }
 <a href="#">White link text</a>
 ```
 
-### Attribute selectors
+## Attribute selectors
 * Selects elements based on the value of the given attribute
 * First we select the element
 * Then we add brakets
@@ -422,6 +422,10 @@ div[name="main"] { color: yellow; }
 <a href="#">Pink link text</a>
 <a href="http://www.google.com"></a>
 ```
+
+#### Practice
+[Exercise 4](exercises/css/ex_4.md)
+
 ## Pseudo-classes selector
 * The pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s)
 * For example, :hover can be used to change a button's color when the user hovers over it
@@ -464,6 +468,93 @@ div a {
   </p>
 </div>
 ```
-## Child selectors
 
-* [Child_selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_selectors)
+## Child selectors
+* Using the **>** selector we can select only those elements matched by the second selector that are the children of elements matched by the first
+* The child combinator **>** is placed between two CSS selectors. 
+* Elements matched by the second selector must be the immediate children of the elements matched by the first selector
+* This is stricter than the descendant selector
+* [Child selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_selectors)
+
+**Example:**
+```css
+/* Select the paragraph elements that are direct children from a div element*/
+div > p {
+  color: red;
+}
+```
+```html
+<p>Black text</p>
+<div>
+  <p>Red Text</p>
+  <table>
+    <tr>
+      <td><p>Black Text</p></td>
+    </tr>  
+  </table>
+  <h1>Black text</h1>
+</div>
+```
+
+* In this example we can see that this selector only affects the div child paragraph
+
+## Pseudo-elements
+* A CSS **pseudo-element** is a keyword added to a selector that lets you style a specific part of the selected element(s)
+* We use the **::** operator to select **pseudo-element**
+* This are the most used **pseudo-element**:
+* ::first-line
+* ::first-letter
+* ::selection
+* ::after
+* ::before
+* The pseudo-elements ::after & ::before need to use a special property called **content**
+* [MDN Pseudo elements docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+
+```css
+div::first-line {
+  color: red;
+}
+
+p::first-letter {
+  color: blue;
+}
+
+span::before {
+  content: '1';
+}
+
+span::after {
+  content: '2';
+}
+```
+
+## Adjacent sibling combinator
+* The **+** separates two selectors and matches the second element only if it immediately follows the first element, and both are children of the same parent element
+
+```css
+p + div {
+  color: red;
+}
+```
+```html
+<p>Parragraph content</p>
+<div>Red text sibling Div</div>
+<div>Black sibling Div</div>
+```
+
+## General sibling combinator
+* The **~** separates two selectors and matches the second element only if it follows the first element (though not necessarily immediately), and both are children of the same parent element
+
+```css
+p ~ div {
+  color: red;
+}
+```
+```html
+<p>Parragraph content</p>
+<div>Red text sibling Div</div>
+<div>Red text sibling Div</div>
+```
+
+#### Practice
+[Exercise 5](exercises/css/ex_5.md)

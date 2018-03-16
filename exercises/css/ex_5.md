@@ -1,3 +1,9 @@
+# Excercise 5
+
+* Inside your git repository create a index5.html file
+* Copy and paste the following HTML code:
+
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,3 +48,13 @@
     </foot>
   </body>
 </html>
+```
+* Add a style element
+* Use the link pseudo-classes selector to make the links text red
+* Use the hover pseudo-classes selector to make the links text orange
+* Use the visited pseudo-classes selector to make the links text purple
+* Use the descendant selector to select the h1 element inside the header and make the text lime
+* Use the child selector to select the h1 that is direct child of the section element and make the text coral
+* Use the pseudo element selector to make the first letter of each h1 element black
+* Use the adjacent sibling combinator selector to select the paragraph that are siblings and make the second paragraph darkgoldenrod
+* Use the general sibling combinator to select all the li elements and make them deeppink. The first li element must remain black
