@@ -58,6 +58,9 @@ span {
   * RGB (Red, Green & Blue): rgb(0,0,0)
   * Hexadecimal color: #000000, #ffffff
 * [MDN color property](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
+* [Wikipedia RGB doc](https://en.wikipedia.org/wiki/RGB_color_model)
+* [To learn more about color models](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+* [Hexadecimal system](https://en.wikipedia.org/wiki/Hexadecimal)
 
 **Example:**
 ```css
@@ -558,3 +561,133 @@ p ~ div {
 
 #### Practice
 [Exercise 5](exercises/css/ex_5.md)
+
+## Font
+* To make our site look better we can select the font that we want to use
+* HTML elements can have text content and we can change the way it looks
+* We already saw how to change the color and now it's the time to change other font properties
+
+* [MDN Styling text Fundamentals](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+* [MDN Web Fonts Guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts)
+
+### Family
+* The **font-family** CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element
+* Values are separated by commas to indicate that they are alternatives
+* We need to add double quotes if the font-family name has spaces in it. Example: "times new roman"
+* The browser will select the first font in the list that is installed
+* If the browser can't use the first font value it will try to use the next one in the list
+* It's a good practice to add a generic font family just in case none of the other values works for a particular browser
+* By adding a default value we make sure that at least our site has a font-family style
+* Generic family name list: **serif, sans-serif, monospace, cursive, fantasy, system-ui**
+* [MDN font-family doc](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)
+![Fonts](./resources/images/css/fonts.png)
+
+```css
+body { font-family: serif; }
+```
+
+or
+
+```css
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+```
+
+or
+
+```css
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+```
+
+* In this case the browser will try to use the first value (Times new roman or arial depending the case)
+* We can add a different font family that might be similar to the previous one just in case the first one doesn't work
+* Finaly we add a third option with a generic font-family to make the text look the way we want in some way
+
+### Web Fonts
+* Web fonts are a CSS feature that allows you to specify font files to be downloaded along with your website as it is accessed
+* Any browser that supports web fonts can have exactly the fonts you specify available to it
+[MDN font-face doc](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+
+### Size
+### Weight
+
+
+### Itálica
+### Transformación de texto (upper - lower case)
+### Alineado de textos
+### Decorado
+### Identación
+### Sombra
+### Espaciado o aire
+### Alto de línea
+### Alineado Vertical
+
+## Modelo de Caja
+### Color de fondo
+### Ancho y Alto
+### Contenido Extra (overflow)
+### Bordes
+### Aire interno de la caja
+### Márgenes
+### Sombra
+### Cambiar la forma en la que se comporta un elemento
+### Borders redondeados
+### Imágen de fondo
+### Repetir el fondo
+### Posicionar el fondo
+### Fijar el fondo
+### Establecer todos los valores juntos:
+### Color de fondo con gradiente
+
+## Cursor
+## Listas
+### Posicionamiento
+### Imagenes
+### Todo junto
+
+## Tablas
+### Espaciado de borde
+### Agrupar Bordes
+
+## Forms
+
+## Layouts
+### Posicionamiento Normal
+### Posicionamiento Relativo
+### Posicionamiento absoluto
+### Posicionamiento Fixed
+### z-index
+### Elementos Flotantes
+### Ejemplos de grillas:
+
+## Media Queries
+## Flexbox
+## CSS Grids
+
+
+
+
+
+## Pseudo elementos y clases (más selectores) (ya los vimos)
+## Pseudo clases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
