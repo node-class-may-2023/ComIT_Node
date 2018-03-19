@@ -585,6 +585,7 @@ p ~ div {
 * By adding a default value we make sure that at least our site has a font-family style
 * Generic family name list: **serif, sans-serif, monospace, cursive, fantasy, system-ui**
 * [MDN font-family doc](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)
+
 ![Fonts](./resources/images/css/fonts.png)
 
 **Example:**
@@ -670,7 +671,9 @@ body { font-family: 'IBM Plex Mono', monospace; }
 ```
 
 * Google fonts does a great work to help us adding our fonts
+
 ![Google fonts image](./resources/images/css/google_fonts.png)
+
 * To know more about Google Fonts read the following [guide](https://developers.google.com/fonts/docs/getting_started)
 
 ### Size
