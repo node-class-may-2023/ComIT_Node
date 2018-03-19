@@ -971,7 +971,8 @@ img {
 }
 ```
 
-
+#### Practice
+[Exercise 6](exercises/css/ex_6.md)
 
 ## Box Model
 
