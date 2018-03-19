@@ -956,6 +956,9 @@ div {
 }
 ```
 
+#### Practice
+[Exercise 6](exercises/css/ex_6.md)
+
 ### Vertical Align
 * The **vertical-align** property specifies the vertical alignment of an inline or table-cell box
 * This property only applies to inline and table-cell elements (you can't use it to vertically align block-level elements)
@@ -972,7 +975,7 @@ img {
 ```
 
 #### Practice
-[Exercise 6](exercises/css/ex_6.md)
+[Exercise 7](exercises/css/ex_7.md)
 
 ## Box Model
 
