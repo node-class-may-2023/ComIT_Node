@@ -753,9 +753,9 @@ div {
 
 **Example:**
 ```css
-.quote { text-style: oblique; }
+.quote { font-style: oblique; }
 
-div { text-style: italic; }
+div { font-style: italic; }
 ```
 
 ### Transform
@@ -970,6 +970,8 @@ img {
   vertical-align: text-top;
 }
 ```
+
+
 
 ## Box Model
 

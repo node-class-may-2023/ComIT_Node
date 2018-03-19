@@ -1,3 +1,9 @@
+# Excercise 6
+
+* Inside your git repository create a index6.html file
+* Copy and paste the following HTML code:
+
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,3 +30,28 @@
     <p class="last">Maecenas convallis, arcu ut dictum dignissim, nulla nulla dignissim ipsum, et aliquet enim nisi quis orci. Vivamus iaculis turpis ut consectetur viverra. Suspendisse potenti. Duis nec elit ac arcu congue efficitur. Phasellus in tortor sed augue luctus cursus suscipit in turpis. Sed convallis turpis a ultrices vestibulum. Donec in ante velit. Vivamus suscipit tincidunt sapien, a feugiat nunc bibendum ut. Mauris efficitur eu justo a commodo. Pellentesque maximus viverra lectus, vel fermentum augue feugiat eu. In accumsan, leo eget egestas porta, augue tellus pharetra mi, vel aliquet nunc ligula fringilla orci. Nunc vel sollicitudin nibh. Etiam aliquam, nibh sed euismod mollis, nibh ipsum auctor massa, in placerat metus dui vitae tellus. Curabitur augue magna, imperdiet a posuere sed, accumsan ac dolor. Nunc sapien ipsum, fermentum id orci sit amet, molestie egestas lacus. Sed quam dolor, vulputate non leo vel, sodales rhoncus lectus..</p>
   </body>
 </html>
+```
+
+* Add a style element
+* Add the following CSS properties using the right selector for each case:
+  * Select the body element and apply the following styles:
+      * Font must be Arial, 16px big and black
+  * Select the h1 elements and apply the following styles:
+    * Font must be: 2em big, color #ddd, shadow: 1px 2px 3px #666 and text in uppercase
+  * Select the h1 elements and apply the following styles:
+    * Font must be: 1.5em big, color #ddd, shadow: 1px 2px 3px #666 and text in uppercase
+  * Use the same definition to apply h1 & h2 the shared properties
+  * Select all paragraphs and apply the following styles:
+    * line height must be 1.4em and ident the text using 0.8em
+  * Select the main class and apply the following style:
+    * Text must use justify align
+  * Select the bold class and apply the following styles:
+    * Font must be bold and coral color
+  * Select the element with the id quote and apply the following styles:
+    * Letters must have a 2px spacing, the font style must be italic and darkcyan color
+  * Select the elements with the last class and applyt the following styles:
+    * Text must be right aligned and red color
+  * Select the elements with the wrong class and apply the following styles:
+    * The text must be decorated a black line-through, the font must be 1.2em tall and weight 700
+  * Select the elements with the google class and apply the following styles:
+    * Use google fonts to apply the Merriweather family, also font size must be 1.6em and purple color
