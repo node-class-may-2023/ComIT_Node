@@ -2,7 +2,6 @@
 
 * Create a folder with the name ex_7
 * Create a index.html file inside the ex_7 folder
-* Copy and paste the following HTML code:
 * Download the following [icon](../../resources/images/css/easter-egg.jpg) and copy it to the ex_7 folder
 
 ```
@@ -12,6 +11,8 @@
 |- image.png
 
 ```
+
+* Copy and paste the following HTML code:
 
 ## index.html
 ```html
