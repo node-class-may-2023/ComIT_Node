@@ -23,6 +23,7 @@
       <a href="#">Link</a>
       <a href="#">Link</a>
     </div>
+    <div class="radius">Look I have rounded borders!!, so Cool!!!</div>
   </body>
 </html>
 ```
@@ -49,3 +50,8 @@
   * Border width must be 2px
   * Border color must be coral
   * Border style must be dashed
+* Select all elements with the class radius and add the following CSS properties:
+  * Border width must be 2px
+  * Border color must be orange
+  * Border raduis must be 20px for all corners
+  

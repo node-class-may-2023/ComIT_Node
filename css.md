@@ -1047,9 +1047,6 @@ div {
 
 ![Box model border](./resources/images/css/border-name.png)
 
-#### Practice
-[Exercise 8](exercises/css/ex_8.md)
-
 ### Width
 * The **border-width** property is a shorthand property for setting the widths on all four sides of an element's border
 * When `one value` is specified, it applies the same width to `all four sides`
@@ -1195,6 +1192,9 @@ div {
   border-radius: 40px 50px;
 }
 ```
+
+#### Practice
+[Exercise 8](exercises/css/ex_8.md)
 
 ### Padding
 * The padding property defines the innermost portion of the box model, creating space around an element's content, inside of any defined margins and/or borders
@@ -1361,6 +1361,9 @@ div {
   margin: 0 auto;
 }
 ```
+
+#### Practice
+[Exercise 9](exercises/css/ex_9.md)
 
 ### Background color
 * The **background-color** property sets the background color of an element
