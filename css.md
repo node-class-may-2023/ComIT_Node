@@ -1047,6 +1047,9 @@ div {
 
 ![Box model border](./resources/images/css/border-name.png)
 
+#### Practice
+[Exercise 8](exercises/css/ex_8.md)
+
 ### Width
 * The **border-width** property is a shorthand property for setting the widths on all four sides of an element's border
 * When `one value` is specified, it applies the same width to `all four sides`
