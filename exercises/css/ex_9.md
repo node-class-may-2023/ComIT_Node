@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CSS Padding, Margin, Width & Height</title>
+    <title>CSS Padding, Margin, Width &amp; Height</title>
   </head>
   <body>
     <div>Sed dapibus magna semper sollicitudin mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut semper mi magna, vitae blandit nibh suscipit sed. Cras ullamcorper erat ac massa fermentum semper. Pellentesque euismod sit amet ante sed maximus. Vestibulum ut faucibus diam, quis pellentesque erat. Fusce sit amet ligula a arcu rutrum efficitur.</div>
