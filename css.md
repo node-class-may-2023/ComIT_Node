@@ -909,7 +909,7 @@ div{
 }
 ```
 
-### Espaciado o aire
+### Letter Spacing
 * The **letter-spacing**  property specifies the spacing behavior between text characters
 * [MDN letter-spacing doc](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
 
