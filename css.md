@@ -1136,7 +1136,7 @@ div {
 }
 ```
 
-### Borders redondeados
+### Border Radius
 * The **border-radius** property lets you round the corners of an element's outer border edge
 * You can specify a single radius to make circular corners, or two radii to make elliptical corners
 * Property values: one, two, three, or four length or percentage values
@@ -1342,6 +1342,23 @@ div {
 }
 ```
 
+### Center element using auto margin
+* We can set the margin value to **auto**
+* By setting left and right margins to auto we can center align a element
+* Also we need to use the width property
+* We can only center elements horizontaly using this technic 
+* Use margin auto with `block` elements only
+* To center an inline element we can always use **text-align:center**
+
+**Example:**
+```css
+div {
+  width: 500px;
+  /* We set the top, bottom margin to 0 and left, right to be auto */
+  margin: 0 auto;
+}
+```
+
 ### Background color
 * The **background-color** property sets the background color of an element
 * This property is specified as a single **color** value
@@ -1361,5 +1378,367 @@ div {
 ```css
 div {
   background-color: transparent;
+}
+```
+
+### Content overflow
+* The **overflow** property specifies what to do when an element's content is too large to fit in its block formatting context
+* It is a shorthand for the **overflow-x** and **overflow-y** properties
+* Property values: **auto**, **hidden** & **scroll**
+* [MDN overflow doc](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+
+**Example:**
+```css
+div {
+  /* x and y axis */
+  overflow: scroll;
+
+  /* Only y axis */
+  overflow-y: scroll;
+
+  /* Only y axis */
+  overflow-x: scroll;
+}
+```
+
+### Box Shadow
+* The **box-shadow** property is used to add shadow effects around an element's frame
+* You can specify multiple effects separated by commas if you wish to do so
+* A box shadow is described by `X and Y offsets` relative to the element, blur and spread radii, and color
+* [MDN box-shadow doc](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+* [Box shadow CSS Generator](https://cssgenerator.org/box-shadow-css-generator.html)
+
+**Example:**
+```css
+div {
+  box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8);
+}
+```
+
+* The first value is the `horizontal shadow length` (2px)
+* Second value is the `vertical shadow length` (3px)
+* Third value is the `blur radius` (170px)
+* Fourth value is the `spread radius` (-8px)
+* And the last value is the `shadow color`
+* In this example we use the rgba function that allows us to use a rgb color + alpha channel (value from 0 to 1) to set the `shadow color ppacity` (0.8)
+
+**Example:**
+```css
+div {
+  box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8);
+}
+```
+
+* With this property we can also use the value **inset** to have an inner shadow
+
+**Example:**
+```css
+div {
+  box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8) inset;
+}
+```
+
+### Display
+* Every element on a web page is a rectangular box
+* The **display** property in CSS determines just how that rectangular box behaves
+* In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet
+* Property Values:
+  * **inline** 
+  * **block** 
+  * **inline-block** 
+  * **none** 
+  * **hidden**
+  * **visible**
+  * **table**
+* New values:
+  * **flex**
+  * **grid**
+* [MDN display doc](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
+* [CSS tricks - display property](https://css-tricks.com/almanac/properties/d/display/)
+* [Inline vs Block elements & inline-block](https://medium.com/@DaphneWatson/css-display-properties-block-inline-and-inline-block-how-to-tell-the-difference-7d3a1e6e3051)
+* [Difference block inline CSS](https://www.impressivewebs.com/difference-block-inline-css/)
+
+```css
+div {
+  display: inline;
+}
+
+span {
+  display: block;
+}
+
+.remove {
+  display: none;
+}
+
+.hidden {
+  display: hidden;
+}
+```
+
+* The value **none** lets you turn off the display of an element
+* when you use none, all descendant elements also have their display turned off
+* The document is rendered as though the element doesn't exist in the document tree
+
+### Background Image
+* The **background-image** property sets one or more background images on an element
+* To set the image url we use the **url(image URL or path)**
+* [MDN background-image doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+
+**Example:**
+```css
+div {
+  background-image: url(/path/to/the/image.png);
+}
+```
+
+* Also we can use multiple images comma separeted 
+
+**Example:**
+```css
+div {
+  background-image: url(/path/to/the/image.png), url(/path/to/the/image2.png);
+}
+```
+
+### Background Repeat
+* The **background-repeat** property defines how background images are repeated
+* A background image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all
+* Property values: **repeat-x, repeat-y, repeat, no-repeat**
+* Remember to use optimized size and compression images
+* [MDN background-repeat doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
+
+**Example:**
+```css
+div {
+  background-image: url(/path/to/the/image.png);
+
+  /* Only use the image once */
+  background-repeat: no-repeat;
+
+  /* Only repeat the image using the x axis */
+  background-repeat: repeat-x;
+
+  /* Only repeat the image using the y axis */
+  background-repeat: repeat-x;
+
+  /* Repeat both x & y axix */
+  background-repeat: repeat;
+}
+```
+
+### Background Position
+* The **background-position** property sets the initial position, relative to the background position layer defined by background-origin, for each defined background image
+* By default the image position is the top left corner
+* Property values:
+  * The first value is for the x axis:
+    * Length value: %, px, em
+    * left
+    * center
+    * right
+  * Second value is for the y axis:
+    * Length value: %, px, em
+    * top
+    * center
+    * bottom 
+* [MDN background-position doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
+
+**Example:**  
+```css
+  /* This background it's going to be 10px from left to right and 20px from top to bottom */
+  div {
+    background-position: 10px 20px;
+  }
+
+  /* The background image is going to be centered over the x axis and at the bottom of the element */
+  section {
+    background-position: center bottom;
+  }
+```
+
+* We can use different values combination:
+  * left top
+  * left center
+  * left bottom
+  * center top
+  * center center
+  * center bottom
+  * right top
+  * right center
+  * right bottom
+
+### Background Attachment
+* The **background-attachment** property determines whether that image's position is fixed within the viewport, or scrolls along with its containing block
+* Property values: **fixed, scroll & local**
+* [MDN background-attachment](https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment)
+* [Code it down - Background attachment Demo](https://codeitdown.com/css/background-attachment)
+* [CSS Tricks - background-attachment](https://css-tricks.com/almanac/properties/b/background-attachment)
+
+**Example:**
+```css
+div {
+  background-image: url(background.png);
+  background-attachment: fixed;
+}
+
+div.scroll {
+  background-image: url(background.png);
+  background-attachment: scroll;
+}
+```
+
+### Background
+* The **background** property lets you adjust all background style options at once, including color, image, origin and size, repeat method, and other features:
+  * background-color
+  * background-image
+  * background-repeat
+  * background-attachment
+  * background-position
+* [MDN background doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+
+
+**Example:**
+```css
+div {
+  background: red url(background.png) no-repeat fixed center center;
+}
+```
+
+### Linear Gradient
+* The **linear-gradient()** is a CSS function
+* This function creates an image consisting of a progressive transition between two or more colors along a straight line
+* Its result is an object of the gradient data type, which is a special kind of image.
+* Property values: **Angle first-color second-color**
+* [MDN linear-gradient doc](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+* [MDN Using CSS gradients guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
+* [Do you really understand CSS linear-gradients](https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf)
+
+**Example:**
+```css
+div {
+  background: linear-gradient(60deg, blue, green);
+}
+```
+
+## Cursor
+* The **cursor** property specifies which mouse cursor to display when the mouse pointer is over an element
+* Property values: **auto, crosshair, default, pointer, move, text, wait, help**
+* We can change the **cursos** value to give more information about what the user can do
+* [MDN cursor doc](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
+
+**Example:**
+```css
+body { cursor: pointer; }
+button { cursor: help; }
+```
+
+## Lists
+
+### Style type
+* The **list-style-type** property specifies the appearance of a list item element
+* Property values for unordered lists:
+  * none
+  * disc
+  * circle
+  * square
+* Property values for ordered lists:
+  * decimal
+  * decimal-leading-zero
+  * lower-alpha
+  * upper-alpha
+  * lower-roman
+  * upper-roman
+* [MDN list-style-type doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
+
+**Example:**
+```css
+ul {
+  list-style-type: none;
+}
+
+ol {
+  list-style-type: decimal-leading-zero;
+}
+```
+
+### Position
+* The **list-style-position** property specifies the position of the ::marker relative to a list item
+* Property values: **outside & inside**
+* [MDN list-style-position doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position)
+
+**Example:**
+```css
+ul {
+  list-style-position: inside;
+}
+
+ol {
+  list-style-position: inside;
+}
+```
+
+### Images
+* The **list-style-image** property specifies an image to be used as the list item marker
+* Use the **url()** function to set the image path/url
+* [MDN list-style-image doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image)
+
+**Example:**
+```css
+ul {
+  list-style-image: url("cat-icon.png");
+}
+```
+
+### List Style
+* The list-style CSS property is a shorthand for setting the individual values that define how a list is displayed: 
+  * list-style-type, list-style-image, and list-style-position
+  * We don't have to use all values together
+* [MDN list-style doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style)
+
+**Example:**
+```css
+ul {
+  list-style: square inside;
+}
+ol {
+  list-style: upper-roman outside;
+}
+```
+
+## Tables
+* For tables we can use many CSS properties like border, width, padding, height, background-color, margin, etc
+* Tables have some special properties like **border-spacing** & **border-collapse**
+
+### Border Spacing
+* The **border-spacing** property specifies the distance between the borders of adjacent table cells
+* This property applies only when border-collapse is separate
+* We can use the same value for all sides
+* [MDN border-spacing doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing)
+
+**Example:**
+```css
+table {
+  border-spacing: 10px;
+}
+```
+
+* If we use 2 values we set the horizontal and vertical spacing
+
+**Example:**
+```css
+table {
+  border-spacing: 10px 20px;
+}
+```
+
+### Border Collapse
+* The border-collapse CSS property specifies whether cells inside a <table> have shared or separate borders.
+* Property values: **collapse & separate**
+* [MDN border-collapse doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse)
+
+**Example:**
+```css
+table {
+  border-collapse: collapse;
 }
 ```
