@@ -1840,8 +1840,6 @@ input[type="submit"]:hover {
 
 [Exercise 19](exercises/css/ex_19.md)
 
-[Exercise 20](exercises/css/ex_20.md)
-
 ## Layout
 
 * We can think about our web layout the same way designers design editorial layouts
@@ -1929,7 +1927,7 @@ div.relative {
 * [Position Relative example](./examples/css/layout/relative.html)
 
 #### Practice
-[Exercise 21](exercises/css/ex_21.md)
+[Exercise 20](exercises/css/ex_20.md)
 
 #### Absolute
 * The element is removed from the normal document flow
@@ -2061,7 +2059,7 @@ div.second {
 * [Position Absolute z-index example](./examples/css/layout/absolute3.html)
 
 #### Practice
-[Exercise 22](exercises/css/ex_22.md)
+[Exercise 21](exercises/css/ex_21.md)
 
 #### Fixed
 * The element is removed from the normal document flow
@@ -2113,7 +2111,7 @@ div {
 * [Position fixed example](./examples/css/layout/fixed.html)
 
 #### Practice
-[Exercise 23](exercises/css/ex_23.md)
+[Exercise 22](exercises/css/ex_22.md)
 
 #### Sticky
 * The element is positioned according to the normal flow of the document
@@ -2170,7 +2168,7 @@ div {
 * [Position sticky example](./examples/css/layout/sticky.html)
 
 #### Practice
-[Exercise 24](exercises/css/ex_24.md)
+[Exercise 23](exercises/css/ex_23.md)
 
 ### Float
 * Floats is a technique that allows the elements to **float** to the `left or right` of one another, rather than the default of sitting on top of one another
@@ -2283,9 +2281,9 @@ div {
 * [Don't overthink it grids tutorial](https://css-tricks.com/dont-overthink-it-grids/)
 
 #### Practice
-[Exercise 25](exercises/css/ex_25.md)
+[Exercise 24](exercises/css/ex_24.md)
 
-[Exercise 26](exercises/css/ex_26.md)
+[Exercise 25](exercises/css/ex_25.md)
 
 ## Media Query
 * Media query are a great way to apply CSS only to selected devices depending there type or characteristics
@@ -2395,7 +2393,7 @@ body {
 ```
 
 #### Practice
-[Exercise 27](exercises/css/ex_27.md)
+[Exercise 26](exercises/css/ex_26.md)
 
 ## Extra
 
@@ -2419,4 +2417,4 @@ body {
 
 #### Practice
 * Now you're ready to style your personal site and show it to the rest of the world!
-[Exercise 28](exercises/css/ex_28.md)
+[Exercise 27](exercises/css/ex_27.md)
