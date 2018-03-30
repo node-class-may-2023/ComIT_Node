@@ -28,6 +28,10 @@
 </html>
 ```
 
+* After applying all styles the document must look like this:
+
+![Ex 8](./results/ex_8.png)
+
 * Add a style element
 * Select all elements using the universal selector and add the following CSS properties:
   * Border width must be 1px

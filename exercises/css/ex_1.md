@@ -24,6 +24,11 @@
 </html>
 ```
 
+* After applying all styles the document must look like this:
+
+![Ex 1](./results/ex_1.png)
+
+
 * Add a style element
 * All h1 element must be pink
 * All paragraphs must be green

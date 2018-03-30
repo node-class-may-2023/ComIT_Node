@@ -10,6 +10,17 @@
 |-- styles.css
 ```
 
+* After applying all styles the document must look like this:
+
+![Ex 3](./results/ex_3.png)
+
+![Ex 3](./results/ex_3b.png)
+
+![Ex 3](./results/ex_3c.png)
+
+![Ex 3](./results/ex_3d.png)
+
+
 ## index.html
 * Add the html structure
 * Add a document title with the text: Same CSS

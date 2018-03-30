@@ -29,6 +29,15 @@
 </html>
 ```
 
+* After applying all styles the document must look like this:
+
+![Ex 7](./results/ex_7.png)
+
+![Ex 7](./results/ex_7b.png)
+
+![Ex 7](./results/ex_7c.png)
+
+
 * Add a style element
 * Select the image element inside the paragraph and set the following style:
   * The image must be vertical align with the value super

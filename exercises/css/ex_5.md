@@ -49,6 +49,13 @@
   </body>
 </html>
 ```
+
+* After applying all styles the document must look like this:
+
+![Ex 5](./results/ex_5.png)
+
+![Ex 5](./results/ex_5b.png)
+
 * Add a style element
 * Use the link pseudo-classes selector to make the links text red
 * Use the hover pseudo-classes selector to make the links text orange

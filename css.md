@@ -2405,12 +2405,18 @@ body {
   * [CSS Tricks - Designing a product page layout with flexbox](https://css-tricks.com/designing-a-product-page-layout-with-flexbox)
   * [Flex Cheatsheet](https://yoksel.github.io/flex-cheatsheet)
   * [CSS Tricks - Don't overthink flexbox](https://css-tricks.com/dont-overthink-flexbox-grids/)
+  * [Flexbox Zombies](https://flexboxzombies.com/p/flexbox-zombies)
+  * [Wes Bos - flexbox io](https://flexbox.io/)
 
 ### Grid
 * CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system
 * Read the following guides to learn more about this new system
   * [CSS Tricks - Complete guide to grid](https://css-tricks.com/snippets/css/complete-guide-grid)
   * [Learn layout guide](http://learnlayout.com)
+  * [Wes Bos - grid io](https://cssgrid.io/)
+
+### CSS animation
+[CodeSchool - Adventures in Web animations](https://www.codeschool.com/courses/adventures-in-web-animations)
 
 ## Congratulations, you made it, now you know CSS and can enjoin this great joke!!
 ![Family Guy CSS](./resources/images/css/css.gif)

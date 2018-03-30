@@ -23,6 +23,16 @@
 </html>
 ```
 
+* After applying all styles the document must look like this:
+
+![Ex 9](./results/ex_9.png)
+
+![Ex 9](./results/ex_9b.png)
+
+![Ex 9](./results/ex_9c.png)
+
+![Ex 9](./results/ex_9d.png)
+
 * Add a style element
 * Refresh the browser on each style change to see how it works
 
@@ -46,8 +56,8 @@
   * Set the min width property to 100px
   * Set the min height property to 10px
 * Select all elements with the max class and apply the following styles:
-  * Set the min width property to 200px
-  * Set the min height property to 40px
+  * Set the max width property to 200px
+  * Set the max height property to 40px
 * Select all elements with the center class and apply the following styles:
   * Set the width property to 300px
   * Set margin value to auto for all sides

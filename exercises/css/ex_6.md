@@ -32,13 +32,19 @@
 </html>
 ```
 
+* After applying all styles the document must look like this:
+
+![Ex 6](./results/ex_6.png)
+
+![Ex 6](./results/ex_6b.png)
+
 * Add a style element
 * Add the following CSS properties using the right selector for each case:
   * Select the body element and apply the following styles:
       * Font must be Arial, 16px big and black
   * Select the h1 elements and apply the following styles:
     * Font must be: 2em big, color #ddd, shadow: 1px 2px 3px #666 and text in uppercase
-  * Select the h1 elements and apply the following styles:
+  * Select the h2 elements and apply the following styles:
     * Font must be: 1.5em big, color #ddd, shadow: 1px 2px 3px #666 and text in uppercase
   * Use the same definition to apply h1 & h2 the shared properties
   * Select all paragraphs and apply the following styles:

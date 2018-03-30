@@ -33,6 +33,10 @@
 </html>
 ```
 
+* After applying all styles the document must look like this:
+
+![Ex 4](./results/ex_4.png)
+
 * Add a style element
 * Use the universal selector to make all the elements text look green
 * Select the element with the id login and make the text gray
