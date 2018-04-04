@@ -621,3 +621,527 @@ console.log(typeof nullVar); // object
 [Exercise 25](./exercises/js/ex_25.md)
 
 [Exercise 26](./exercises/js/ex_26.md)
+
+## Arithmetic operators
+* Arithmetic operators take numerical values (either literals or variables) as their operands and return a single numerical value
+* The standard arithmetic operators are `addition (+), subtraction (-), multiplication (*), & division (/)`
+
+### Addition
+* The addition operator **(+)** produces the sum of numeric operands or string concatenation
+
+**Example:**
+```js
+2 + 2
+```
+
+* In this example we add to literal numbers
+
+**Example:**
+```js
+const myAge = 20;
+const myBrotherAge = 15;
+
+console.log(myAge + myBrotherAge);
+```
+
+* We can add two or more values using variables
+
+**Example:**
+```js
+const myAge = 20;
+const myBrotherAge = 15;
+const result = myAge + myBrotherAge;
+
+console.log(result);
+```
+
+* In this example we store the result of adding two values into the result variable
+
+**Example:**
+```js
+const myAge = 20;
+const myBrotherAge = 15;
+const result = myAge + myBrotherAge;
+
+console.log(result + 2);
+```
+
+* Also we can add variables values and literal numbers too
+
+### Subtraction
+* The subtraction operator **(-)** subtracts the two number operands, producing their difference
+
+**Example:**
+```js
+2 - 2; // We get 0 as result
+
+const myAge = 20;
+const myBrotherAge = 15;
+
+// We show the difference between myAge and myBrotherAge
+console.log(myAge - myBrotherAge);
+
+// Also we can use a variable to store the subtraction result
+const result = myAge - myBrotherAge;
+
+console.log(result);
+```
+
+* Also we can combine operations
+
+**Example:**
+```js
+10 + 2 - 2; 
+
+const myAge = 20;
+const myBrotherAge = 15;
+
+// Use variables, literal number and different arithmetic operators
+console.log(myAge - myBrotherAge + 10);
+
+const result = myAge - myBrotherAge + 10;
+
+console.log('Result: ' + result);
+```
+
+### Multiplication
+* The multiplication operator **(*)** produces the product of the operands
+
+**Example:**
+```js
+2 * 2; // Returns 4 as result
+
+const firstNumber = 10;
+const secondNumber = 5;
+
+console.log(firstNumber * secondNumber);
+
+const result = firstNumber * secondNumber;
+
+console.log(result);
+```
+
+* In some cases we can use grouping **(operation)** to let the engine know that it need to resolve this operation first
+* Read the [MND operator precedence doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) to know more about this subject
+
+**Example:**
+```js
+2 + 2 * 4; // 10
+(2 + 2) * 4; // 16
+```
+
+* In the first example it will multiply 2 times 4 and then add 2 to the result
+* In the second example as we are grouping 2 plus 2 it will resolve this operation first and then multiply by 4
+* This concept works with variables too
+
+**Example:**
+```js
+const two = 2;
+const four = 4;
+
+console.log(two + two * four); // 10
+console.log( (two + two) * four ); // 16
+```
+
+### Division 
+* The division operator **(/)** produces the quotient of its operands where the left operand is the dividend and the right operand is the divisor
+
+**Example:**
+```js
+20 / 2; // 10
+
+const firstNumber = 20;
+const secondNumber = 2;
+
+console.log(firstNumber / secondNumber); // 10
+
+const result = firstNumber / secondNumber;
+
+console.log(result); // 10
+```
+
+* With code we can have the same problem that we can have in math when we divide by 0
+* JavaScript has a especial number type called **Infinity**
+* We get **Infinity** if we try to divide by 0
+* [MDN Infinity doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity)
+
+### Remainder
+* The remainder operator **(%)** returns the remainder left over when one operand is divided by a second operand
+
+**Example:**
+```js
+20 % 2; // 0
+
+const firstNumber = 20;
+const secondNumber = 2;
+
+console.log(firstNumber % secondNumber); // 0
+
+const result = firstNumber % secondNumber;
+
+console.log(result); // 0
+```
+
+* We can use this operator to find out if a number is even or odd
+[Freecodecamp - Finding a remainder in JavaScript](https://www.freecodecamp.org/challenges/finding-a-remainder-in-javascript)
+
+#### Practice
+[Exercise 27](./exercises/js/ex_27.md)
+
+[Exercise 28](./exercises/js/ex_28.md)
+
+[Exercise 29](./exercises/js/ex_29.md)
+
+[Exercise 30](./exercises/js/ex_30.md)
+
+[Exercise 31](./exercises/js/ex_31.md)
+
+[Exercise 32](./exercises/js/ex_32.md)
+
+### Increment & Decrement
+* Using the increment and decrement operators we can do addition and substraction by one really easy
+
+#### Increment
+* The increment operator **++** increments (adds one to) its operand and returns a value
+* If used postfix, with operator after operand (for example, x++), then it returns the value before incrementing
+ 
+**Example:**
+```js
+let number = 0;
+
+number++;
+
+console.log(number); // 1
+```
+
+* If used prefix with operator before operand (for example, ++x), then it returns the value after incrementing
+
+**Example:**
+```js
+let number = 0;
+
+++number;
+
+console.log(number); // 1
+```
+
+* In this case we can use the operator before or after but there might be cases when we need to use one or the other depending if we're using the incremented result or not
+
+#### Decrement
+* The decrement operator **--** decrements (subtracts one from) its operand and returns a value
+* If used postfix (for example, x--), then it returns the value before decrementing
+* If used prefix (for example, --x), then it returns the value after decrementing
+
+**Example:**
+```js
+let number = 10;
+
+--number;
+
+console.log(number); // 9
+
+number--;
+
+console.log(number); // 8
+```
+
+#### Assignment operators
+* We can assigna a number to a variable
+* Then use this variable to do any arithmetic operation
+* Also we can re use the variable to assign the result of the arithmetic operation
+* Take a look at the following example:
+
+**Example:**
+```js
+let number = 1;
+number = number + 1
+```
+
+* In this example we increment the value of the number variable by one
+* We already saw that we can use the increment operator **++** to do this
+
+**Example:**
+```js
+let number = 1;
+
+number++;
+```
+
+* We see in this examples that we increment and assign the result to the variable
+* The increment and decrement operators are great but we can only add or substract by one
+* We can use different assignment operators to do this task for different operations
+* Assignment operators:
+  * `+=` Addition assignment
+  * `-=` Subtraction assignment
+  * `*=` Multiplication assignment
+  * `/=` Division assignment
+  * `%=` Remainder assignment
+* This concept is easier to undestand using code:
+
+**Example:**
+```js
+let number = 1;
+
+number += 1;
+
+console.log(number); // 2
+```
+
+**Example:**
+```js
+let number = 1;
+
+number = number + 10;
+
+console.log(number); // 11
+```
+
+* Using the addition assignment we can do the same operation much easier:
+
+**Example:**
+```js
+let number = 1;
+
+number += 10;
+
+console.log(number); // 11
+```
+
+* We can add 10 to the current number variable value using the addition assignmet operator `+=`
+* Then we can use any of the other assignmet operators
+
+**Example:**
+```js
+let number = 10;
+
+number -= 2;
+
+console.log(number); // 8
+```
+
+**Example:**
+```js
+let number = 10;
+
+number *= 2;
+
+console.log(number); // 20
+```
+
+**Example:**
+```js
+let number = 20;
+
+number /= 2;
+
+console.log(number); // 10
+```
+
+**Example:**
+```js
+let number = 20;
+
+number %= 2;
+
+console.log(number); // 0
+```
+
+* The concept is always the same but it only changes the operation that we do over the given variable
+* You can learn more about assignment operators on [MDN site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators)
+
+#### Practice
+[Exercise 33](./exercises/js/ex_33.md)
+
+## Comparison operators
+
+### Equality operators
+* We can compare two values using the equality operators **==**
+* Using the equality operators we get a **boolean** value as result (true or false)
+* This type of equality only compares values by value
+* For example using this operator we can compare a number value and string value with a number
+* If both values are equals we get **true** as result
+* In case they are not the same value we'll get **false** as result
+
+**Example:**
+```js
+let firstNumber = 20;
+let secondNumber = 20;
+let thirdNumber = 10;
+
+console.log(firstNumber == secondNumber); // true
+console.log(firstNumber == thirdNumber); // false
+```
+
+* As we only compare by value:
+
+**Ejemplo:**
+```js
+console.log(10 == '10'); // This is true even having different values type
+```
+
+* Also we can know if the values are differen using the inequality operator **!=**
+
+**Example:**
+```js
+let firstNumber = 20;
+let secondNumber = 20;
+let thirdNumber = 10;
+
+console.log(firstNumber != secondNumber); // false
+console.log(firstNumber != thirdNumber); // true
+```
+
+* Other way to compare values is to know if a value is greater than the other
+* The greater than operator **>** returns true if the left operand is greater than the right operand
+
+**Example:**
+```js
+let firstNumber = 20;
+let secondNumber = 10;
+
+console.log(firstNumber > secondNumber); // true
+
+console.log(secondNumber > firstNumber); // false
+```
+
+* Also we can compare values by using the less than operator
+* The less than operator **<** returns true if the left operand is less than the right operand
+
+**Example:**
+```js
+let firstNumber = 20;
+let secondNumber = 10;
+
+console.log(secondNumber < firstNumber); // true
+
+console.log(firstNumber < secondNumber); // false
+```
+
+* We can use the greater than or equal operator 
+* The greater than or equal operator >= returns true if the left operand is greater than or equal to the right operand
+
+**Example:**
+```js
+let firstNumber = 20;
+let secondNumber = 10;
+let thirdNumber = 20;
+
+console.log(firstNumber >= secondNumber); // true
+
+console.log(firstNumber >= thirdNumber); // true
+```
+
+* We can do the same using less than or equal
+* The less than or equal operator **<=** returns true if the left operand is less than or equal to the right operand
+
+**Example:**
+```js
+let firstNumber = 20;
+let secondNumber = 10;
+let thirdNumber = 10;
+
+console.log(secondNumber <= firstNumber); // true
+console.log(secondNumber <= thirdNumber); // true
+```
+
+### Strict Equality Comparison 
+* The strict equality operators **===** and **!==** use the Strict Equality Comparison Algorithm and are intended for performing equality comparisons on operands of the **same type**
+
+**Example:**
+```js
+console.log(10 === '10'); // false
+
+console.log(10 !== '10'); // true
+```
+
+* Read more about the [comparison operators on MDN site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
+
+#### Practice
+[Exercise 34](./exercises/js/ex_34.md)
+
+[Exercise 35](./exercises/js/ex_35.md)
+
+## Logical Operators
+* Logical operators are typically used with Boolean (logical) values
+* When they are, they return a **Boolean** value
+* We can use the **&&** **and operator** to know if both expressions are true
+* We can know if the user age is grater than 18 and the password is equal to other value
+* In this case we'll get a true value if both expressions are true
+* If one of the expressions is **false**, we get false as value too
+
+**Example:**
+```js
+let age = 20;
+let password = 'js1234';
+let result = (edad >= 18 && password ==='js1234');
+console.log('Result: ', result); // We get true as both expressions are true
+```
+
+* In this example we get **true** as both expressions are **true**
+* We also have the **&&** **or operator** to check if at least one of the expressions is true
+* Using this operator we only need one of the expressions to be true
+* If the first expression is true the following one is not evaluated
+* If the first expression is false then the following one is evaluated 
+* At least one of the expressions needs to be true to get a true value 
+* If not we'll get false as result
+
+**Example:**
+```js
+let age = 20;
+let password = 'js12345';
+let result = age >= 18 || password ==='js1234';
+console.log('Result: ', result); // true
+```
+
+* In this case the condition is **true** as the user age is greater than 18 (first expression)
+* It doesn't matter if the password is the same or not as the previous expression is true
+
+**Example:**
+```js
+let age = 10;
+let password = 'js1234';
+let result = age >= 18 || password ==='js1234';
+console.log('Result: ', result); // true
+```
+
+* In this case the condition is **true** as the password is correct
+* It doesn't matter if the age it's not greated than 18
+
+**Example:**
+```js
+let age = 10;
+let password = 'js12345';
+let result = age >= 18 || password ==='js1234';
+console.log('Result: ', result); // false
+```
+
+* In this case we get **false** as both expressions are false
+* [MDN logical operators doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+
+## Negation
+* Using the not operator **!** we can negate a condition
+* If we have a **true** value and we use the not operator we get **false**
+* If we have a **false** value and we use the not operator we get **true**
+
+**Example:**
+```js
+console.log(!true); // false
+console.log(!false); // true
+```
+
+* We can use the not operator like this: 
+
+**Example:**
+```js
+let age = 21;
+let result = age < 18; 
+
+console.log('User age greater than 18?: ', !result);
+```
+
+* The age condition is **false** but as we use the not operator it will be **true**
+
+#### Practice
+[Exercise 36](./exercises/js/ex_36.md)
+
+[Exercise 37](./exercises/js/ex_37.md)
