@@ -1145,3 +1145,79 @@ console.log('User age greater than 18?: ', !result);
 [Exercise 36](./exercises/js/ex_36.md)
 
 [Exercise 37](./exercises/js/ex_37.md)
+
+## String special characters
+* Existen caracteres especiales en los **strings** que agregan un valor extra
+* \n  New Line
+* \t  Tab
+* \r  Carriage back
+
+**Example:**
+```js
+let message = 'Multiline \n text';
+
+console.log(message); // two lines text
+
+message = '\t \t tab text';
+
+console.log(message); // tab text
+```
+
+* Special characters scape:
+* \'  Single quote
+* \"  Double quote
+* \\  Backslash
+
+**Example:**
+```js
+let message = 'scaping backslash \\ as string content';
+console.log(message); // we show \ as string content
+
+message = 'I love to have coffee at Gianu\'s';
+
+console.log(message);
+
+message = "Jets are \"the\" best NHL team";
+
+console.log(message);
+```
+
+#### Practice
+* Open a browser console and try all the examples to see the output
+
+## String object property and method
+
+### Length
+* The **length** property of a **String object** indicates the length of a string
+* This property returns the **number** of code units in the string
+
+**Example:**
+```js
+const text = 'Wellcome to JavaScript!!';
+const characterCount = text.length;
+
+console.log(characterCount); // 24
+```
+
+**Example:**
+```js
+const text = 'Wellcome to JavaScript!!';
+
+console.log(text.length);
+```
+
+**Example:**
+```js
+console.log('Wellcome to JavaScript!!'.length);
+```
+
+* Strings has a length property that allows us to know the string value length (characters)
+* We can use it with string literals
+* Also using a string stored in a variable
+* Finally we can store the length in a variable too in case we need it
+* [MDN length doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+
+#### Practice
+[Exercise 38](./exercises/js/ex_38.md)
+
+[Exercise 39](./exercises/js/ex_39.md)
