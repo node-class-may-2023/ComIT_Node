@@ -335,6 +335,12 @@ constantVariable = otherValue;
 #### Practice
 [Exercise 9](./exercises/js/ex_9.md)
 
+
+### var vs let & const
+* [Medium - Eric Elliot - JavaScript ES6 var, let or const](https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75)
+* [StackOverflow - Difference between using let and var](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var-to-declare-a-variable-in-jav)
+* [JS Tips - Keyword var vs let](http://www.jstips.co/en/javascript/keyword-var-vs-let)
+
 ## Data types
 * In JavaScript we can use different types of value to represent different things
 
