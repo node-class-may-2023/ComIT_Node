@@ -1458,3 +1458,78 @@ console.log(friendsArray);
 * Try using this methods on your own code!! `it will be 'fun'.toUpperCase()`
 * We don't need to remember all methods, just know that they exist and what they can do for us :)
 
+## Number methods
+* The Number JavaScript object is a wrapper object allowing you to work with numerical values
+
+### parseInt
+* The **parseInt** method parses a string argument and returns an integer of the specified radix or base
+* This method returns an integer number parsed from the given string
+* If the first character cannot be converted to a number, **NaN** (not a number) is returned
+* [MDN parseInt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt)
+
+**Example:**
+```js
+const numberAsAString = '3';
+
+console.log(typeof numberAsAString) // string
+
+const number = parseInt(numberAsAString);
+
+console.log(number); // 3
+
+console.log(typeof number) // number
+```
+
+**Example:**
+```js
+const numberAsAString = '3.20';
+const number = parseInt(numberAsAString);
+
+console.log(number); // 3
+```
+
+* We can get a **number** from a **string**
+* parseInt will return a integer number
+
+### parseFloat
+* The **parseFloat** function parses an argument and returns a floating point number
+* This method returns a floating point number parsed from the given value
+* If the value cannot be converted to a number, NaN is returned
+* [MDN parseFloat doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+
+**Example:**
+```js
+const piAsText = '3.14';
+
+console.log(typeof piAsText); // string
+
+const pi = parseFloat(piAsText);
+
+console.log(pi);
+
+console.log(typeof pi); // number
+```
+
+### Number toString
+* The **toString** method returns a string representing the specified Number object
+* [MDN number toString doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)
+
+**Example:**
+```js
+let number = 4;
+
+console.log(typeof number); // number
+
+let message = number.toString() + '2';
+
+console.log(message); // 42
+
+console.log(typeof message); // string
+```
+
+* In this example we transfor the number value into a string one
+* We use the + operator and instead of adding both values together it will concatenate them as they are both strings
+* This is why we need to be careful of which type of value we operate with
+
+#### Practice
+[Exercise 48](./exercises/js/ex_48.md)
