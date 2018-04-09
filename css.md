@@ -1636,6 +1636,8 @@ div {
 }
 ```
 
+* [CSS Tricks - Perfect full page background image tutorial](https://css-tricks.com/perfect-full-page-background-image)
+
 ### Linear Gradient
 * The **linear-gradient()** is a CSS function
 * This function creates an image consisting of a progressive transition between two or more colors along a straight line
