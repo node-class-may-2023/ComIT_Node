@@ -1533,3 +1533,696 @@ console.log(typeof message); // string
 
 #### Practice
 [Exercise 48](./exercises/js/ex_48.md)
+
+## Conditionals / Making decisions in your code
+* In any programming language, code needs to make decisions and carry out actions accordingly depending on different inputs
+* For example, in a game, if the player's number of lives is 0, then it's game over
+* In a weather app, if it is being looked at in the morning, show a sunrise graphic; show stars and a moon if it is nighttime
+* Conditional statements allow us to represent this kind of decision making in JavaScript from the choice that must be made, to the resulting outcome of those choices
+* [MDN conditionals doc](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
+
+## If statement
+* The **if** statement executes a statement if a specified condition is **truthy**
+* If the condition is **falsy**, another statement can be executed
+* [](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+
+![if](./resources/images/js/if.gif)
+
+**Example:**
+```js
+// Basic if statement structure
+if (condition) {
+  // If statement body
+  // We'll add the code that we want to execute if the condition is truthy
+}
+```
+
+* When coding we need to make decisions based on the conditions that we need
+* The if statements will execute this conditions and check wether they are true or false (boolean / truthy & falsy values, more about this soon)
+* If the statement it's truthy then it will execute the if statement body
+* If not, in case the condition is falsy it will ignore the if statement body and won't execute the code
+* Whether the condition it's true or false the code after the if statement it's going to be executed anyway following the natural code flow
+
+**Example:**
+```js
+if (true) {
+  console.log('Using a if statement with a true condition');
+}
+```
+
+* In this example we use a **true** boolean value as condition so it's true all the time (its a literal value, no condition here!)
+* So we can read this like: `If condition is true then execute the following console.log()`
+
+**Example:**
+```js
+const playerLifer = 0;
+
+if (playerLife == 0) {
+  console.log('Game Over!!!!');
+}
+```
+
+* We can read this statement like: `if the players like it's 0 then show a Game Over message`
+* It's easy to use **if condition then** phrase to detect that we need a if statement
+* Once the if statement has been executed the code flow continues
+
+**Example:**
+```js
+const number = 1;
+
+if (number >= 2) {
+  console.log('We won\'t see this message as the condition it\'s always false');
+}
+
+console.log('We will see this massege all the time as it doesn\'t depend on the if statement and the code flows keeps on going');
+```
+
+#### Practice
+[Exercise 49](./exercises/js/ex_49.md)
+
+[Exercise 50](./exercises/js/ex_50.md)
+
+[Exercise 51](./exercises/js/ex_51.md)
+
+## If / else statement
+* Now we know how to use a if statement to check for a given condition but we only care about when it's a truthy value
+* In some cases we need to control also what happens in case the condition is falsy
+
+![if/else](./resources/images/js/if-else.gif)
+
+**Example:**
+```js
+if (condition) {
+  // if truthy then it will execute this code
+} else {
+  // if not, then it will execute this code
+}
+```
+
+```js
+const number = 5;
+
+if (number === 2) {
+  console.log('The number is 2');
+} else {
+  console.log('The number is not 2');
+}
+```
+
+* We can read this code like: `IF number equals 2 THEN show the number is 2 message ELSE show the number is not 2 message` 
+
+#### Practice
+[Exercise 52](./exercises/js/ex_52.md)
+
+[Exercise 53](./exercises/js/ex_53.md)
+
+[Exercise 54](./exercises/js/ex_54.md)
+
+### Conditional ternary operator
+* The conditional **ternary operator** is the only JavaScript operator that takes three operands
+* This operator is frequently used as a shortcut for the if statement
+* To use this operator we do it the following way: `(condition) ? true : false`
+* If the condition is truthy then it will execute the code that follows the question character
+* In case it's falsy then it will execute the code that follows the double colon character
+
+**Example:**
+```js
+let number = 2;
+let message = (number === 2) ? 'The number is 2' : 'The number is not 2';
+
+console.log(message);
+```
+
+#### Practice
+[Exercise 55](./exercises/js/ex_55.md)
+
+[Exercise 56](./exercises/js/ex_56.md)
+
+[Exercise 57](./exercises/js/ex_57.md)
+
+### If else if
+* We can also use if else if to check for more conditions
+
+**Example:**
+```js
+if (condition) {
+  // This code gets executed if the condition it's true
+} else if (otherCondition) {
+  // This code gets executed if the otherCondition it's true
+} else {
+  // This code gets executed if none of the other conditions where true
+}
+```
+
+```js
+const name = 'Marta';
+
+if (name === 'Miriam') {
+  console.log('The name is Miriam');
+} else if (nombre === 'Felipa') {
+  console.log('The name is Felipa');
+} else {
+  console.log('The name is not Miriam or Felipa');
+}
+```
+
+* Podemos ver en este ejemplo que podemos preguntar por distintas condiciones
+* We can keep on adding if else if statements to check for more conditions
+* Our code might not as easy to read and follow if we use too many if else if statements
+* Try to avoid nesting too many if else if statements
+
+#### Practice
+[Exercise 58](./exercises/js/ex_58.md)
+
+[Exercise 59](./exercises/js/ex_59.md)
+
+[Exercise 60](./exercises/js/ex_60.md)
+
+### Switch
+* The switch statement evaluates an expression
+* Matching the expression's value to a case clause
+* Then executes statements associated with that case
+* If we don't break it will execute the follow the matching case
+
+```js
+const name = 'Marta';
+
+if (name === 'Miriam') {
+  console.log('The name is Miriam');
+} else if (nombre === 'Felipa') {
+  console.log('The name is Felipa');
+} else {
+  console.log('The name is not Miriam or Felipa');
+}
+```
+
+* If we keep nesting statements it's going to be difficut to follow this code
+
+```js
+const name = 'Marta';
+
+if (name === 'Miriam') {
+  console.log('The name is Miriam');
+} else if (name === 'Felipa') {
+  console.log('The name is Felipa');
+} else if (name === 'Xime') {
+  console.log('The name is Xime');
+} else if (name === 'Belu') {
+  console.log('The name is Belu');
+} else {
+  console.log('The name is not Marta, Felipa, Xime or Belu');
+}
+```
+
+* We can acomplish the same result using a **switch** statement
+
+**Example:**
+```js
+const name = 'marta';
+let message = null;
+,
+switch (name) {
+  case 'Miriam':
+    message = 'The name is Miriam';
+    break;
+  case 'Felipa':
+    message = 'The name is Felipa';
+    break;
+  case 'Xime':
+    message = 'The name is Xime';
+    break;
+  case 'Belu':
+    message = 'The name is Belu';
+    break;
+  default:
+     message = 'The name is not Marta, Felipa, Xime or Belu';
+}
+
+console.log(message);
+```
+* The optional **break** statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch
+* If break is omitted, the program continues execution at the next statement in the switch statement
+* [MDN switch doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+
+#### Practice
+[Exercise 61](./exercises/js/ex_61.md)
+
+[Exercise 62](./exercises/js/ex_62.md)
+
+[Exercise 63](./exercises/js/ex_63.md)
+
+
+## Truthy and Falsy (valores verdaderos y falsos)
+* In JavaScript we have values that are truthy and falsy
+* This means that some values might be true and some values might be false
+* For true and false values we use boolean
+* When using some values as condition they wi'll evaluated as true (truthy) or false (falsy) values depending the value data type
+* So, a **truthy** value is a value that is considered true when evaluated in a Boolean context
+* All values are truthy unless they are defined as falsy
+* A falsy value is a value that translates to false when evaluated in a Boolean context
+* The following values are considered falsy values:
+  * false
+  * null
+  * undefined
+  * 0
+  * NaN
+  * ''
+
+**Example:**
+```js
+if ('') {
+  // This code won't get executed as an empty string is a falsy value
+} else {
+  // This code gets executed
+}
+```
+
+**Example:**
+```js
+const name = '';
+
+if (name === '') {
+  console.log('Please input your name');
+} else {
+  console.log('Wellcome: ' + name);
+}
+```
+
+* We can also try the following condition
+
+**Example:**
+```js
+const name = '';
+
+if (name) {
+  console.log('Wellcome: ' + name);
+} else {
+  console.log('Please input your name');  
+}
+```
+
+* If name is empty then it will be evaluated as a falsy value so in this case we don't need to compare it to an empty string
+* Truthy and falsy values are an easy way to use some conditions
+* One special case is using null:
+
+**Example:**
+```js
+const name = null;
+
+if (name) {
+  console.log('Wellcome: ' + name);
+} else {
+  console.log('Please input your name');  
+}
+
+console.log(typeof name) // object
+```
+
+* Using a null value it's going to be evaluated as an object and it will become truthy
+* When using null we'll have to add an extra validation
+
+**Example:**
+```js
+const name = null;
+
+if (name && null !== null) {
+  console.log('Wellcome: ' + name);
+} else {
+  console.log('Please input your name');  
+}
+```
+
+* [MDN Falsy doc](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
+* [MDN Truthy doc](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+* [MDN Type Conversion doc](https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion)
+
+#### Practice
+[Exercise 64](./exercises/js/ex_64.md)
+
+[Exercise 65](./exercises/js/ex_65.md)
+
+#### Estructuras de repetición
+* It's common that when coding we need to keep repeting the same code execution until a given condition it's true
+* For example I might want to show numbers from 0 to 10 to create a list
+
+**Example:**
+```js
+console.log(0);
+console.log(1);
+console.log(2);
+console.log(3);
+console.log(4);
+console.log(5);
+console.log(6);
+console.log(7);
+console.log(8);
+console.log(9);
+console.log(10);
+```
+
+* This code works
+* But what about if you need to add more functionality or you need to show more numbers like to a 100 or to a 1000
+* We'll go crazy, right?
+
+**Example:**
+```js
+console.log('number: ', 0);
+console.log('number: ', 1);
+console.log('number: ', 2);
+console.log('number: ', 3);
+console.log('number: ', 4);
+console.log('number: ', 5);
+console.log('number: ', 6);
+console.log('number: ', 7);
+console.log('number: ', 8);
+console.log('number: ', 9);
+console.log('number: ', 10);
+```
+
+* Thanks we can use iteration to solve this problem
+
+### While
+* The **while statement** creates a loop that executes a specified statement as long as the test condition evaluates to true
+* The condition is evaluated before executing the statement
+
+**Example:**
+```js
+while (condition) {
+  console.log('This code it\'s goin to be executed until the condition is false');
+}
+```
+
+* Let refactor the numbers code so it works for 10, 100 or 1000 numbers!
+
+**Example:**
+```js
+let number = 0;
+
+while (number < 11) {
+  console.log(number);
+  number++;
+}
+```
+
+* With only a couple of lines of code we can solve the previous feature
+* Now we only need one change to show up to 1000 numbers
+
+**Example:**
+```js
+let number = 0;
+
+while (number < 1001) {
+  console.log(number);
+  number++;
+}
+```
+
+* Also, if we need to change the code to add more functionality we can do it in a really simple and easy way:
+
+**Example:**
+```js
+let number = 0;
+
+while (number < 1001) {
+  console.log('number: ', number);
+  number++;
+}
+```
+
+* Using while we can repeat the block code until the condition is false
+* In each iteration we use number++ to increase the number value
+* Once we reach 1001 number will no longer be lower than 1001 so the condition will be false
+* The code will continue the normal code flow
+* We need to be careful as the condition might be always true and this script will continue to execute for ever
+* At some point the engine will throw a recursivity exeption and we'll get an error
+* Always to asure to change the condition so it becomes false at some point
+
+**Example:**
+```js
+while (true) {
+  console.log('Server will run out after executing this code many times!');
+}
+
+let number = 0;
+
+while (number < 10000) {
+  console.log('number: ', number);
+  // We never changed number value so it's always going to be 0 and then less than 10000 so the condition will always be true :(
+}
+
+```
+* The while statement will not be executed if the condition it's false from the begining
+
+**Example:**
+```js
+while (false) {
+  console.log('This code doesn\'t get executed');
+}
+
+let number = 1000;
+
+while (number < 10) {
+  console.log('number: ', number);
+  number++;
+  // All this code won't get executed as the initial condition is false
+}
+```
+
+* If the condition is false the engine will ingnore it
+* [MDN while doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+
+#### Practice
+[Exercise 66](./exercises/js/ex_66.md)
+
+[Exercise 67](./exercises/js/ex_67.md)
+
+[Exercise 68](./exercises/js/ex_68.md)
+
+[Exercise 69](./exercises/js/ex_69.md)
+
+[Exercise 70](./exercises/js/ex_70.md)
+
+[Exercise 71](./exercises/js/ex_71.md)
+
+[Exercise 72](./exercises/js/ex_72.md)
+
+[Exercise 73](./exercises/js/ex_73.md)
+
+[Exercise 74](./exercises/js/ex_74.md)
+
+[Exercise 75](./exercises/js/ex_75.md)  (advance)
+
+### do/while
+* The **do/while** statement creates a loop that executes a specified statement until the test condition evaluates to false
+* The condition is evaluated after executing the statement, resulting in the specified statement executing **at least once**
+* In this case the code will be executed once and then ask for a condition
+* It's similar to while but the difference it's where we use the condition to evaluate wether it will iterate or not
+
+**Example:**
+```js
+do {
+  // This code will execute at least once
+} while (condition)
+```
+
+* It will keep iterating until the condition is false
+* If the condition is always true we have the same while true problem
+
+**Example:**
+```js
+do {
+  // we'll get a exeption or error
+} while (true)
+```
+
+* We can refactor one of the previous examples using do while:
+
+**Example:**
+```js
+let number = 0;
+
+do {
+  console.log('number: ', number);
+  number++;
+} while (number < 10000) {
+```
+
+* In this case we show the message
+* Increment the number value
+* Then evaluate the condition
+* We'll iterate until the condition is false
+
+**Example:**
+```js
+let number = 1000;
+
+do {
+  console.log('number: ', number);
+  number++;
+} while (number < 10) {
+```
+
+* In this example we'll only show number 1000 once and then it won't iterate
+* Here we can see that even having a false condition do/while gets executed at least once
+* [MDN do...while doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+
+#### Practice
+[Exercise 76](./exercises/js/ex_76.md)
+
+[Exercise 77](./exercises/js/ex_77.md)
+
+[Exercise 78](./exercises/js/ex_78.md)
+
+[Exercise 79](./exercises/js/ex_79.md)
+
+[Exercise 80](./exercises/js/ex_80.md)
+
+[Exercise 81](./exercises/js/ex_81.md)
+
+[Exercise 82](./exercises/js/ex_82.md)
+
+[Exercise 83](./exercises/js/ex_83.md)
+
+[Exercise 84](./exercises/js/ex_84.md)
+
+[Exercise 85](./exercises/js/ex_85.md)
+
+## For
+* The **for** statement creates a loop that consists of three optional expressions
+* Enclosed in parentheses and separated by semicolons
+* Followed by a statement (usually a block statement) to be executed in the loop
+
+**Example:**
+```js
+for (initialization; condition; finalExpression) {
+  // statement
+}
+```
+
+* Initialization: An expression (including assignment expressions) or variable declaration
+* Condition: An expression to be evaluated before each loop iteration
+* finalExpression: An expression to be evaluated at the end of each loop iteration
+* For example to iterate over numbers between 0 and 10 we write the following code:
+
+**Example:**
+```js
+for (let number = 0; number <= 10; number++) {
+  console.log(number);
+}
+```
+
+* Initialization: `let number = 0;`
+* Condition: `number <= 10;`
+* finalExpression: `number++`
+
+* We initialize a number variable with the value 0
+* Then the condition it's going to be evaluated
+* If the condition is true it will execute the block statements
+* After iterating it will execute the final expression, in this case it's to increment one more number value
+* It's still preatty easy to refactor code:
+
+**Example:**
+```js
+for (let number = 0; number <= 1000; number++) {
+  console.log('number: ', number);
+}
+```
+
+* [MDN for doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+
+#### Practice
+[Exercise 86](./exercises/js/ex_86.md)
+
+[Exercise 87](./exercises/js/ex_87.md)
+
+[Exercise 88](./exercises/js/ex_88.md)
+
+[Exercise 89](./exercises/js/ex_89.md)
+
+[Exercise 90](./exercises/js/ex_90.md)
+
+[Exercise 91](./exercises/js/ex_91.md)
+
+[Exercise 92](./exercises/js/ex_92.md)
+
+[Exercise 93](./exercises/js/ex_93.md)
+
+[Exercise 94](./exercises/js/ex_94.md)
+
+[Exercise 95](./exercises/js/ex_95.md)
+
+[Exercise 96](./exercises/js/ex_96.md)
+
+[Exercise 97](./exercises/js/ex_97.md)
+
+### Break
+* The **break** statement terminates the current loop or switch statement and transfers program control to the statement following the terminated statement
+
+**Ejemplo:**
+```js
+for (let i = 0; i < 1000; i++){
+  break;
+}
+```
+
+* En este ejemplo se va a intentar correr el for, va a declarar la variable i, se le va a asignar el valor y luego se va a cortar la ejecución por el break.
+
+**Example:**
+```js
+for (let index = 0; index < 1000; index++){
+  if (index < 10) {
+    console.log(index);
+  } else {
+    break;
+  }
+}
+```
+
+* In this example we will iterate until index is 10 and then cut the iteration execution
+* So we only show numbers from 0 to 9
+* [MDN break doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
+
+#### Practice
+[Exercise 98](./exercises/js/ex_98.md)
+
+[Exercise 99](./exercises/js/ex_99.md)
+
+## Functions
+* In JavaScript **function** is a value
+* We use functions to group functionality
+* Using functions allows us to avoid repeting code
+* Use the **function** reserved word to define a function
+* We need to define the function before executing it
+* Use the function name and () to call the given function
+
+**Ejemplo:**
+```js
+function greeting() {
+  console.log('Hello');
+}
+
+greeting(); // Shows Hello as output
+greeting(); // Shows Hello as output
+```
+
+* In this example we define a greeting function
+* Then we call the greeting function using ()
+* Each time we call the greeting function it will execute the function block code
+* That's why we output 2 times hello as the greating function only has a console.log('Hello'); 
+* Now we can use this function many times without having to repeat the code
+* We can also use functions to test our code too
+
+#### Practice
+[Exercise 100](./exercises/js/ex_100.md)
+
+[Exercise 101](./exercises/js/ex_101.md)
+
+## Assets / Resources
+
+### You don't know JavaScript series:
+* [Up & Going](https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going)
+* [Types & Grammar](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar)
+* [Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures)
+* [this & Object Prototypes](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes)
+* [ES6 & Beyond](https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond)
+* [Async & Performance](https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance)
