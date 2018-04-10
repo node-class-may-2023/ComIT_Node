@@ -3,7 +3,7 @@
 * Create a new index2.js file
 * Declare the following values: 
   * First name
-  * Last apellido
+  * Last name
   * Age
   * Date of birth
   * Address
