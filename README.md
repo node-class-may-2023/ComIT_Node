@@ -8,9 +8,9 @@
 * [Git & Github](git.md)
 * [CSS](css.md)
 * [JavaScript](javascript.md)
+* [Browser API](browserapi.md)
 * [Node.js](nodejs.md)
 * [MongoDB](mongodb.md)
 * [Mongoose ODM](mongoose.md)
 * [Sails.js](sailsjs.md)
 * [Deploy](deploy.md)
-
