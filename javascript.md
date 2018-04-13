@@ -2632,6 +2632,471 @@ console.log(students);
 
 [Exercise 122](./exercises/js/ex_122.md)
 
+
+## Array methods 
+
+### Length
+* The **length** property of an object which `is an instance of type Array` sets or returns the number of elements in that array
+* This property works in the same way as the string length property
+
+**Example:**
+```js
+const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+
+console.log(students.length); // 5
+```
+
+* We can use this property to get the last item from an array
+* Array index in JavaScript starts in 0
+* The lenght property will return the number of elements
+* To get the last element index we can substract one from the array lenght
+
+**Example:**
+```js
+const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+const studentCount = students.length;
+const studentsLastIndex = studentCount - 1;
+
+console.log(students[studentsLastIndex]); // emilia
+```
+
+* We can do in a different way:
+
+**Example:**
+```js
+const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+
+console.log(students[ students.length - 1 ]); // emilia
+```
+
+* In this example we use the students array to get the length
+* Then we substract one from the students array length
+* Then we get a number as result and use it as students index
+* [MDN array length doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
+
+#### Practice
+[Exercise 123](./exercises/js/ex_123.md)
+
+[Exercise 124](./exercises/js/ex_124.md)
+
+### Push, unshift, shift & pop methods
+* We can change an array element using the following methods  **push, unshift, shift & pop**
+
+#### Push
+* The **push** method adds one or more elements to the `end of an array`
+* This method returns the new length of the array
+* [MDN array push doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+**Example:**
+```js
+const animals = ['dog', 'duck', 'cow'];
+let animalCount = animals.push('cat');
+
+console.log(animals);
+// [ 'dog', 'duck', 'cow', 'cat' ]
+
+console.log(animalCount); // 4
+
+animalCount = animals.push('elephant', 'dolphin');
+
+console.log(animals);
+// [ 'dog', 'duck', 'cow', 'cat', 'elephant', 'dolphin' ];
+
+console.log(animalCount); // 6
+```
+
+* In this example we see how the **push** insert element at the array
+* Also, we get the length number as return value
+* We can pass one ('cat') or many items ('elephant', 'dolphin') to be added to the array
+* The animals array gets updated on each **push** call
+* Using const with array allows us to change the array items but we can't assign a new value to the variable
+* More about [const and updating values in JavaScript](https://mathiasbynens.be/notes/es6-const)
+
+#### Unshift
+* The **unshift** method adds one or more elements to the `beginning of an array`
+* This method returns the new length of the array
+* [MDN array unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+
+**Example:**
+```js
+const animals = ['dog', 'duck', 'cow'];
+let animalCount = animals.unshift('cat');
+
+console.log(animals); 
+// [ 'cat', 'dog', 'duck', 'cow' ]
+
+console.log(animalCount); // 4
+
+animalCount = animals.unshift('elephant', 'dolphin');
+
+console.log(animals);
+// [ 'elephant', 'dolphin', 'dog', 'duck', 'cow', 'cat' ];
+
+console.log(animalCount); // 6
+```
+
+#### Shift
+* The **shift** method `removes the first element` from an array and `returns that removed element`
+* This method **changes the length** of the array
+* [MDN array shift doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+
+**Example:**
+```js
+const animals = ['dog', 'duck', 'cow'];
+const dog = animals.shift();
+
+console.log(animals);
+// ['duck', 'cow']
+
+console.log(animals.length); // 2
+
+const duck = animals.shift();
+
+console.log(animals);
+// ['cow']
+
+console.log(animals.length);
+// 1
+
+const cow = animals.shift();
+
+console.log(animals);
+// []
+
+console.log(animals.length);
+// 0
+
+console.log(dog); // dog
+console.log(duck); // duck
+console.log(cow); // cow
+```
+
+* Using the **shift** we can remove the first array element and get it as returned value
+* The length array property changes as it has less elements
+
+#### Pop
+* The **pop** method `removes the last element from an array`returns that element
+* This method changes the length of the array
+* [MDN array pop doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
+**Example:**
+```js
+const animals = ['dog', 'pato', 'vaca'];
+const cow = animals.pop();
+
+console.log(animals);
+// ['dog', 'duck']
+
+console.log(animals.length);
+// 2
+
+const duck = animals.shift();
+
+console.log(animals);
+// ['dog']
+
+console.log(animals.length);
+// 1
+
+const dog = animals.shift();
+
+console.log(animals);
+// []
+
+console.log(animals.length);
+// 0
+
+console.log(cow); // cow
+console.log(duck); // duck
+console.log(dog); // dog
+```
+
+* We can see that some of the array methods works in the same way
+* They might change the length property
+* Some return the element from the begining or the end and return the element
+* Some adds a new element to the begining or end and return the new array length
+
+### Sort y reverse
+
+#### Sort
+* The **sort** method sorts the elements of an array in place and `returns the array`
+* The sort is not necessarily stable
+* The default sort order is according to string Unicode code points
+* The time and space complexity of the sort cannot be guaranteed as it is implementation dependent
+* [MDN array sort doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+**Example:**
+```js
+const numbers = [1, 4, 2, 5, 3, 8, 9];
+const sortedNumbers = numbers.sort();
+
+console.log(sortedNumbers);
+// [ 1, 2, 3, 4, 5, 8, 9 ]
+```
+
+* This method accepts a function as parameter to be executed to change the way it will sort the elements
+
+#### Reverse
+* The **reverse** method reverses an array in place
+* The first array element becomes the last, and the last array element becomes the first
+* [MDN array reverse doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+
+**Example:**
+```js
+let numbers = [1, 4, 2, 5, 3, 8, 9];
+const reversedNumbers = numbers.reverse();
+
+console.log(reversedNumbers);
+// [ 9, 8, 3, 5, 2, 4, 1 ]
+```
+
+### Concat & join
+
+#### Join
+* The **join** method joins all elements of an array into a string and returns this string
+* This method accepts a string value to join by
+* [MDN array join doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
+**Example:**
+```js
+const numbers = [1, 4, 2, 5, 3, 8, 9];
+
+const joinedNumbersByDash = numbers.join(' - ');
+
+console.log(joinedNumbersByDash);
+// 1 - 4 - 2 - 5 - 3 - 8 - 9
+
+const joinedNumbersByComma = numbers.join(', ');
+
+console.log(joinedNumbersByComma);
+// 1, 4, 2, 5, 3, 8, 9
+```
+
+* We can choose any string to join array items
+
+#### Concat
+* The **concat** method is used to merge two or more arrays
+* This method does not change the existing arrays, but instead returns a new array
+* [MDN array concat doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+
+**Example:**
+```js
+const animals = ['dog', 'cow', 'cat'];
+const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
+const animalsAndMutants = animals.concat(mutantes);
+
+console.log(animalsAndMutants);
+/*
+[ 
+  'dog',
+  'cow',
+  'cat',
+  'Professor X',
+  'Cyclops',
+  'Beast',
+  'Jean Grey'
+]
+*/
+```
+
+### IndexOf
+* The **indexOf** method `returns the first index at which a given element can be found` in the array
+* This method returns -1 if the element is not present
+* [MDN array indexOf doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+
+**Example:**
+```js
+const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
+
+mutants.indexOf('Beast'); // 2
+
+if (mutants.indexOf('Beast') > -1) {
+  console.log('Beast is X-Men team member');
+}
+
+mutants.indexOf('Logan'); // -1
+
+if (mutants.indexOf('Logan') > -1) {
+  console.log('Logan is X-Men team member');
+} else {
+  console.log('Logan is on his own');
+}
+```
+
+* In the first example we get 2 as return value when asking to know if the value Beast is in the mutants array
+* Then the if condition is true and we show the message
+* In the second example we ask if the value Logan is in the mutants array
+* We get -1 as is not a mutants item (We <3 Logan anyway!)
+
+### toString
+* The **toString** method returns a string representing the specified array and its elements
+* [MDN array toString doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)
+
+**Example:**
+```js
+const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
+
+console.log(mutants.toString());
+// 'Professor X', 'Cyclops', 'Beast', 'Jean Grey'
+```
+* It's like calling `mutants.join(',');`
+
+#### Practice
+[Exercise 125](./exercises/js/ex_125.md)
+
+[Exercise 126](./exercises/js/ex_126.md)
+
+[Exercise 127](./exercises/js/ex_127.md)
+
+[Exercise 128](./exercises/js/ex_128.md)
+
+[Exercise 129](./exercises/js/ex_129.md)
+
+[Exercise 130](./exercises/js/ex_130.md)
+
+[Exercise 131](./exercises/js/ex_131.md)
+
+[Exercise 132](./exercises/js/ex_132.md)
+
+[Exercise 133](./exercises/js/ex_133.md)
+
+[Exercise 134](./exercises/js/ex_134.md)
+
+### ForEach
+* The **forEach** method executes a provided function once for each array element
+
+**Example:**
+```js
+const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+
+students.forEach(function(student) {
+  console.log(student);
+});
+```
+
+* In this example we use the forEach array method to iterate over each element of the students array
+* We pass a function as parameter
+* This anonymus function that we pass gets a parameter
+* We can use any parameter name
+* Only remember that this parameter is each array item
+
+**Example:**
+```js
+const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+
+pets.forEach(function(petName) {
+  console.log(petName);
+});
+```
+
+* In this example we iterate each pets item
+* The function parameter name is petName as we can name it the way we want
+* We can add a second parameter to the function to know the item index
+
+**Example:**
+```js
+const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+
+pets.forEach(function(pet, index) {
+  console.log('index', index); 
+  console.log(pet);
+});
+/*
+  index 0
+  Amelia
+  index 1
+  Ciro
+  index 2
+  Ulises
+  index 3
+  Carlos
+*/
+```
+
+* In this example we can see how the index parameter changes value on each iteration 
+* [MDN array forEach doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
+#### Practice
+[Exercise 135](./exercises/js/ex_135.md)
+
+[Exercise 136](./exercises/js/ex_136.md)
+
+### Map
+* The **map** method `creates a new array with the results of calling a provided function on every element` in the calling array
+
+**Example:**
+```js
+const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+
+const petsNameInUpperCase = pets.map(function(pet) {
+  return pet.toUpperCase();
+});
+
+console.log(petsNameInUpperCase) // [ 'AMELIA', 'CIRO', 'ULISES', 'CARLOS' ] Todos en mayúscula
+console.log(pets) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] Este array quedó igual que antes
+```
+
+* In this example we see how to iterate over each pets item
+* On each iteration the function is going to be executed and we can return a value
+* Each returned value is going to be an item on the array that map will return once is over iterating all items
+* As we are returning a value then we can change it
+* In this example we transform each pet name into upercase
+* The original array is not modifed
+* [MDN array map doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+#### Practice
+[Exercise 137](./exercises/js/ex_137.md)
+
+[Exercise 138](./exercises/js/ex_138.md)
+
+### Filter
+* The **filter** method creates a new array with all elements that pass the test implemented by the provided function
+* The iterated item will be part of the returned array only if the functions return a true value
+* If the function returns false then the item doesn't get added to the return array
+
+**Ejemplo:**
+```js
+const greades = [1, 2, 3, 4, 10, 5];
+
+const goodGreades = grades.filter(function(grade) {
+  return grade === 10;
+});
+
+console.log(goodGreades); // [10] array with only one item
+console.log(greades); // [1, 2, 3, 4, 10, 5] origina array 
+```
+
+#### Practice
+[Exercise 139](./exercises/js/ex_139.md)
+
+[Exercise 140](./exercises/js/ex_140.md)
+
+### Reduce
+* The **reduce** method applies a function against an accumulator and each element in the array (from left to right) to `reduce it to a single value`
+* The reduce function that we pass as parameter accepts the following parameters:
+  * The first param is the **accumulator**
+  * The second value is the **currentValue**
+
+**Ejemplo:**
+```js
+const numbers = [1, 2, 3, 4, 10, 5];
+const result = numbers.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+});
+
+console.log(result); // 25 We get only one value as final result
+```
+
+* [MDN array reduce doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+
+#### Practice
+[Exercise 141](./exercises/js/ex_141.md)
+
+[Exercise 142](./exercises/js/ex_142.md)
+
+* Podes ver más métodos de array en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
+
+
 ## Assets / Resources
 
 ### You don't know JavaScript series:
