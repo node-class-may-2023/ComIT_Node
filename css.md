@@ -2406,9 +2406,13 @@ body {
   * [Flexbox Froggy game](http://flexboxfroggy.com)
   * [CSS Tricks - Designing a product page layout with flexbox](https://css-tricks.com/designing-a-product-page-layout-with-flexbox)
   * [Flex Cheatsheet](https://yoksel.github.io/flex-cheatsheet)
-  * [CSS Tricks - Don't overthink flexbox](https://css-tricks.com/dont-overthink-flexbox-grids/)
+  * [CSS Tricks - Don't overthink flexbox](https://css-tricks.com/dont-overthink-flexbox-grids)
   * [Flexbox Zombies](https://flexboxzombies.com/p/flexbox-zombies)
-  * [Wes Bos - flexbox io](https://flexbox.io/)
+  * [Wes Bos - flexbox io](https://flexbox.io)
+  * [CSS3 Flexbox](https://www.pandaqi.com/Website/css3-flexbox)
+  * [CSS Grid replace flexbox](https://css-tricks.com/css-grid-replace-flexbox)
+  * [The ultimate CSS battle grid vs Flexbox](https://hackernoon.com/the-ultimate-css-battle-grid-vs-flexbox-d40da0449faf)
+  * [CSS Grid Garden](https://cssgridgarden.com)
 
 ### Grid
 * CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system
@@ -2416,6 +2420,9 @@ body {
   * [CSS Tricks - Complete guide to grid](https://css-tricks.com/snippets/css/complete-guide-grid)
   * [Learn layout guide](http://learnlayout.com)
   * [Wes Bos - grid io](https://cssgrid.io/)
+  * [Introduction to CSS Grid - by Suilarso](https://github.com/Suilarso/CSS_Grid)
+  * [FreeCodeCamp - How to make your html responsive by adding a single line of css](https://medium.freecodecamp.org/how-to-make-your-html-responsive-by-adding-a-single-line-of-css-2a62de81e431)
+  * [Learn CSS Grid for free - 14 interactive screencasts](https://scrimba.com/g/gR8PTE)
 
 ### CSS animation
 [CodeSchool - Adventures in Web animations](https://www.codeschool.com/courses/adventures-in-web-animations)

@@ -3054,7 +3054,7 @@ console.log(pets) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] Este array quedó ig
 * The iterated item will be part of the returned array only if the functions return a true value
 * If the function returns false then the item doesn't get added to the return array
 
-**Ejemplo:**
+**Example:**
 ```js
 const greades = [1, 2, 3, 4, 10, 5];
 
@@ -3077,7 +3077,7 @@ console.log(greades); // [1, 2, 3, 4, 10, 5] origina array
   * The first param is the **accumulator**
   * The second value is the **currentValue**
 
-**Ejemplo:**
+**Example:**
 ```js
 const numbers = [1, 2, 3, 4, 10, 5];
 const result = numbers.reduce(function(accumulator, currentValue) {
@@ -3094,8 +3094,116 @@ console.log(result); // 25 We get only one value as final result
 
 [Exercise 142](./exercises/js/ex_142.md)
 
-* Podes ver más métodos de array en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array)
+* Learn more about array methods on the [MDN array doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
+## Objects
+* An **object literal** is a list of zero or more pairs of property names and associated values of an object
+* To define an object we use curly braces **{}**
+* Objects allows us to define more complex values in a easier way
+
+**Example:**
+```js
+{} // literal object 
+const myObject = {}; // object assigned to a variable
+```
+
+#### Practice
+[Exercise 143](./exercises/js/ex_143.md)
+
+### Properties
+* An object can properties that will describe it
+* Properties have a name like variables
+* To assign a value to a property we use colon
+* Porperties are separated using coma
+* Properties can be of any type of value
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+};
+
+console.log(person);
+```
+
+* We can access an object property using the object name, dot and the property name
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+};
+
+console.log(persona.name);
+console.log(persona.age);
+```
+
+#### Practice
+[Exercise 144](./exercises/js/ex_144.md)
+
+[Exercise 145](./exercises/js/ex_145.md)
+
+[Exercise 146](./exercises/js/ex_146.md)
+
+[Exercise 147](./exercises/js/ex_147.md)
+
+
+* We can access a property that doesn't exist on the object and get undefined as value
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+};
+
+console.log(person.married); // undefined
+```
+
+* Assing a property value the same way that you would do it for a variable
+* To access the property that will recibe the value you need to still use the object name, dot and the property name
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+};
+
+person.name = 'Martin';
+person.age = 20;
+
+console.log(person);
+// { name: 'Martín', age: 20 }
+```
+
+* The object properties are variables too so we can assign or get there value
+* Object properties in JavaScript are dynamic
+* This means that if we assign a value to an object property that hasen't been defined it will create it
+* We need to make sure we get the variable name wright
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+};
+
+console.log(person.married); // undefined
+
+person.married = true;
+
+console.log(person);
+// { name: 'Nico', age: 38, married: true }
+
+console.log(persona.married); // true
+```
+
+#### Practice
+[Exercise 148](./exercises/js/ex_148.md)
+[Exercise 149](./exercises/js/ex_149.md)
 
 ## Assets / Resources
 
