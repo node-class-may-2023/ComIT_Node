@@ -3203,7 +3203,107 @@ console.log(persona.married); // true
 
 #### Practice
 [Exercise 148](./exercises/js/ex_148.md)
+
 [Exercise 149](./exercises/js/ex_149.md)
+
+### Methods
+* JavaScript objects have methods
+* In this lenguage an object method is a property with a function as value
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  greet: function() {
+    console.log('Hi, how are you?');
+  }
+}
+```
+
+* In this example we define the person object and we assign two properties
+  * name: it's just a string value
+  * greet: has a function assigned as value
+* To call a function without the object we do it the following way:
+
+**Example:**
+```js
+const greet = function() {
+  console.log('Hi, how are you?');
+}
+
+greet(); // Hi, how are you?
+```
+
+* To call a object method we do it in a pretty similar way:
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  greet: function() {
+    console.log('Hi, how are you?');
+  }
+}
+
+person.greet(); // Hi, how are you?
+```
+
+* `person.greet` without the parenthesis will return the function definition
+* `person.greet()` will execute the greet method (it will execute the function code)
+
+#### Practice
+[Exercise 150](./exercises/js/ex_150.md)
+
+[Exercise 151](./exercises/js/ex_151.md)
+
+* We learned about Strings, Numbers and Arrays methods
+* When we call a string, number or array literal methods JavaScript will transform the literal value into a object
+* So calling `'text'` will transform into a String object and the same will happen with the others values types
+* Now we can create our own
+* Un método también puede aceptar parámetros:
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  greet: function(name) {
+    console.log(`Hi ${name}, how are you?`);
+  }
+}
+
+person.greet('Marta'); // Hi Marta, how are you?
+```
+
+* In this example we see that calling a method is similar to calling just a function
+* And this is because we are actualy calling a function that's an object property
+* In the methods body we can access the current object properties using the **this** reserved word
+* For now we can think about **this** being the object
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  greet: function(name) {
+    console.log(`Hi my name is: ${this.name}`);
+  }
+}
+person.greet(); // Hi my name is: Nico
+```
+
+#### Practice
+[Exercise 152](./exercises/js/ex_152.md)
+
+[Exercise 153](./exercises/js/ex_153.md)
+
+[Exercise 154](./exercises/js/ex_154.md)
+
+[Exercise 155](./exercises/js/ex_155.md)
+
+[Exercise 156](./exercises/js/ex_156.md)
+
+[Exercise 157](./exercises/js/ex_157.md)
+
+[Exercise 158](./exercises/js/ex_158.md)
 
 ## Assets / Resources
 
