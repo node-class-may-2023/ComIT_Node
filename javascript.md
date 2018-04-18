@@ -1156,7 +1156,7 @@ console.log('User age greater than 18?: ', !result);
 [Exercise 37](./exercises/js/ex_37.md)
 
 ## String special characters
-* Existen caracteres especiales en los **strings** que agregan un valor extra
+* Strings support some special characters that will provide exta functionality
 * \n  New Line
 * \t  Tab
 * \r  Carriage back
@@ -3304,6 +3304,298 @@ person.greet(); // Hi my name is: Nico
 [Exercise 157](./exercises/js/ex_157.md)
 
 [Exercise 158](./exercises/js/ex_158.md)
+
+* Inside an object method we can update an object property value
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38,
+  greet: function(name) {
+    console.log(`Hi my name is: ${this.name}`);
+  },
+  birthday: function() {
+    this.age++;
+  }
+}
+
+console.log(person.age) // 38
+person.birthday(); 
+console.log(person.age) // 39
+```
+
+### Object dynamic properties
+* In some cases we need to access an object property using a string value
+* Using **[]** and a string value with the property name we can access the object property value
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38,
+  greet: function(name) {
+    console.log(`Hi my name is: ${this.name}`);
+  },
+  birthday: function() {
+    this.age++;
+  }
+}
+
+console.log(persona['name']);  // Nico
+console.log(persona['age']);  // 38
+```
+
+* We can also use variables to do the same
+
+**Example:**
+```js
+const name = 'name';
+const age = 'age';
+
+const person = {
+  name: 'Nico',
+  age: 38,
+  greet: function(name) {
+    console.log(`Hi my name is: ${this.name}`);
+  },
+  birthday: function() {
+    this.age++;
+  }
+}
+
+console.log(person[name]);  // nico
+console.log(person[age]);  // 38
+```
+
+#### Practice
+[Exercise 159](./exercises/js/ex_159.md)
+
+[Exercise 160](./exercises/js/ex_160.md)
+
+* Now that we know how to access dynamic properties from an object we'll learn about objects keys!
+* `Object.keys` returns an array value with all the objects properties names (not the value)
+* To call this method we need to use the `Object` value
+* This method accpets an object as parameter
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+}
+
+const properties = Object.keys(person);
+
+console.log(properties); // [ 'name', 'age' ]
+```
+
+* In this previous example we see that calling the Object keys method and passing the person object we get an array back with the properties names on it
+* We can combine this using dynamic properties
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+}
+
+const properties = Object.keys(person);
+
+console.log(properties); // [ 'name', 'age' ]
+
+const name = properties[0];
+
+console.log(person[name]);
+```
+
+* In this example we get the first item from the properties array (name)
+* Then we use the name variable with the name value on it to access the object person name property
+* This is getting gooooood, now we can use all the things that we learned together
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+}
+
+const properties = Object.keys(person);
+
+person.forEach(function(property) {
+  console.log(person[property]);
+});
+```
+
+* We get the properties from the person object using Object keys method
+* As we get an array back we can use forEach to iterate over the properties names
+* On each iteration we get a property name value (name then age)
+* We use the property variable (with the property value on it) to access dynamicly to the person object properties
+* If we add more properties to the object we can still access them using dynamic properties and iterating over the properties array
+
+**Example:**
+```js
+const person = {
+  name: 'Nico',
+  age: 38
+}
+
+person.phone = 202123231;
+person.street = '234 My Street';
+
+const properties = Object.keys(person);
+
+person.forEach(function(property) {
+  console.log(person[property]);
+});
+
+/*
+  Nico
+  38
+  202123231
+  234 My Street
+*/
+```
+
+* [MDN Object key doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+
+#### Practice
+[Exercise 161](./exercises/js/ex_161.md)
+
+[Exercise 162](./exercises/js/ex_162.md)
+
+## Callback
+* A **callback function** `is a function passed into another function as an argument`, which is then invoked inside the outer function to complete some kind of routine or action
+* JavaScript is a asynchronous language
+* This mean that we don't know how the code is going to execute
+* We can't be sure that the previous statement has executed
+* Using callbacks we can handle our async calls
+
+**Example:**
+```js
+function doSomething(functionAsAParameter) {
+  console.log('do something');
+  functionAsAParameter();
+}
+
+const done = function() {
+  console.log('done');
+}
+
+doSomething(done);
+```
+
+* In this example we defined a doSomething function that accepts a function as parameter
+* The doSomething function shows a message as output and then executes the function that got as parameter
+* As the functionAsAParameter is the done function it will get executed 
+* An easier way to see this functionality can be in the following way:
+
+**Example:**
+```js
+const done = function() {
+  console.log('done');
+}
+
+function doSomething() {
+  console.log('do something');
+  done();
+}
+
+doSomething();
+```
+
+* We get a similar functionality doing it this way but in the first example we use a function as parameter
+* In this example we just use a global function to do something similar to what we can do with a callback
+* Callback important concepts:
+  * A callback is just a function passed as parameter to other function
+  * The function that recived the function as parameter will call it
+
+**Example:**
+```js
+let number = 0;
+
+function add(n, callback) {
+  n++;
+  callback(n);
+}
+
+add(number, function(result) {
+  console.log(result); // 1
+});
+
+console.log(number); // 0
+```
+
+* A callback function can get one or many parameters
+* In this example we call the add function passing a number and a function as parameter
+* After incrementing the number in one will call the callback function
+* Other way to understand this code:
+
+**Example:**
+```js
+let number = 0;
+
+let finalResult = function(result) {
+  console.log(result);
+}
+
+function add(n, callback) {
+  n++;
+  callback(n);
+}
+
+add(number, finalResult);
+
+console.log(number); // 0
+```
+
+* We have been using this concept without knowing it to iterate over arrays:
+
+**Example:**
+```js
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Callback
+numbers.forEach(function(number) {
+  console.log(number);
+})
+
+// Callback
+let evenNumbers = numbers.filter(function(number) {
+  return number % 2 === 0;
+});
+
+// Callback
+let result = numbers.reduce(function(result, number) {
+  return result + number;
+});
+
+// Callback
+let mappedNumbers = numbers.map(function(number) {
+  return number + 10;
+});
+```
+
+* We can see that the filter, reduce and map functions recieve a function as parameter
+* This functions will get called internally
+* If you know jQuery you will find this code familiar
+
+**Example:**
+```js
+$( function() { 
+  console.log( "ready!" ); 
+} );
+```
+
+* In this case jQuery uses $() as a function and we can pass a function that will get executed once the DOM is loaded
+* We pass the $() a function, so we're passing a callback
+* jQuery uses this code to get all the code that needs to execute once the document is loaded
+* We'll use this concept a lot when coding JavaScript
+* Using callbacks we can handle JavaScript in an async way
+
+* [MDN callback doc](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+* [Callback Hell](http://callbackhell.com)
+* [MDN using promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
 
 ## Assets / Resources
 
