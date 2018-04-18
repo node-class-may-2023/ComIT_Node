@@ -1082,7 +1082,7 @@ console.log(10 !== '10'); // true
 ```js
 let age = 20;
 let password = 'js1234';
-let result = (edad >= 18 && password ==='js1234');
+let result = (age >= 18 && password ==='js1234');
 console.log('Result: ', result); // We get true as both expressions are true
 ```
 
