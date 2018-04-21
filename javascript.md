@@ -1544,7 +1544,7 @@ console.log(typeof message); // string
 ## If statement
 * The **if** statement executes a statement if a specified condition is **truthy**
 * If the condition is **falsy**, another statement can be executed
-* [](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+* [if else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 
 ![if](./resources/images/js/if.gif)
 
@@ -1686,7 +1686,7 @@ if (name === 'Miriam') {
 }
 ```
 
-* Podemos ver en este ejemplo que podemos preguntar por distintas condiciones
+* In this example we ask for different conditions
 * We can keep on adding if else if statements to check for more conditions
 * Our code might not as easy to read and follow if we use too many if else if statements
 * Try to avoid nesting too many if else if statements

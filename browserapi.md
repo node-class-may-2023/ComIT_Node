@@ -236,6 +236,8 @@ let isAdult = window.confirm('Are you older than 17 years?');
 confirm('Are you older than 17 years?');
 ```
 
+
+
 * [MDN confirm doc](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 
 #### Practice
