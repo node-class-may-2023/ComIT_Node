@@ -502,5 +502,451 @@ window.onload = function() {
 
 **FROM NOW ON USE THE LOAD HANDLER ON YOUR BROWSER EXERCISES TO MAKE SURE IT'S LOADED**
 
+### Selectors
+* The selectors API provides methods that make it quick and easy to retrieve Element nodes from the DOM by matching against a set of selectors
+* Selectors can return one or many elements depending the method that we use
+* The most known selector is the document method **getElementById**
+* This method accepts a string parameter with the id name value
+* [MDN getElementById doc](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+
+**Example:**
+* HTML
+```html
+<div id="main">Hi I'm an HTML element</div>
+```
+* JS
+```js
+const mainElement = document.getElementById('main');
+
+console.log(mainElement); // we can see the DOM representation of this element
+```
+
+* In this example we see how to use the method getElementById
+* The HTML has the attribute id with the value main
+* Using `document.getElementById('main')` we get the element passing main as the id value
+* As this object exists on the DOM we retrive the element back
+* In this case we `assign` the `element reference` to the `mainElement variable`
+* **querySelector** & **querySelectorAll** allow us to select elements using CSS selector
+* Both of this selector accepts a string as parameter
+* This parameter represent a CSS selector
+* The document method **querySelector** returns the first Element within the document that matches the specified selector, or group of selectors
+* In case it doesn't matches are found, null is returned
+* The method **querySelectorAll** returns a static (not live) `NodeList` representing a list of the document's elements that match the specified group of selectors
+* So we need to remember that **querySelector** returns one elment and **querySelectorAll** a collection
+
+* querySelector
+
+**Example:**
+* HTML
+```html
+<div>Hi I'm div number 1</div>
+<div>Hi I'm div number 2</div>
+<span>Hi I'm span number 1</span>
+<span>Hi I'm span number 2</span>
+```
+* JS
+```js
+const div = document.querySelector('div');
+const span = document.querySelector('span');
+
+console.log(div); // <div>Hi I'm div number 1</div>
+console.log(span); // <span>Hi I'm span number 1</span>
+```
+
+* In this example we use querySelector to get one element using the CSS element name selector (div & span)
+* The same way we can select elements using other CSS selectors
+
+**Example:**
+* HTML
+```html
+<div class="red">Hi I'm div number 1</div>
+<div>Hi I'm div number 2</div>
+<span>Hi I'm span number 1</span>
+<span class="red">Hi I'm span number 2</span>
+```
+* JS
+```js
+const div = document.querySelector('div.red');
+const span = document.querySelector('span.red');
+
+console.log(div); // <div class="red">Hi I'm div number 1</div>
+console.log(span); // <span class="red">Hi I'm span number 2</span>
+```
+
+* [MDN querySelector doc](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+
+* querySelectorAll
+**Example:**
+* HTML
+```html
+<div>Hi I'm div number 1</div>
+<div>Hi I'm div number 2</div>
+<span>Hi I'm span number 1</span>
+<span>Hi I'm span number 2</span>
+```
+* JS
+```js
+const divs = document.querySelectorAll('div');
+const spans = document.querySelectorAll('span');
+
+console.log(divs); // NodeList(2) [div, div]
+console.log(spans); // NodeList(2) [span, span]
+```
+* In this example use querySelectorAll to get all div elements and the all span ones
+* This method returns a NodeList with 2 elements in each case as we have 2 of each elements type
+* Also, we can use other CSS selectors
+
+* querySelectorAll
+**Example:**
+* HTML
+```html
+<div class="red">Hi I'm div number 1</div>
+<div>Hi I'm div number 2</div>
+<span>Hi I'm span number 1</span>
+<span class="red">Hi I'm span number 2</span>
+```
+* JS
+```js
+const redElements = document.querySelectorAll('.red');
+console.log(redElements); // NodeList(2) [div.red, span.red]
+```
+
+* In this case we use the class selector (.red) to get all elements that have the class="red" attribute
+* Using this method we get a node colecction back with 2 elements but in this case we have a div and span as both of them have the class="red" attribute and value
+* In this examples we can see that we have different selector methods to select elements with different criteria
+
+* [MDN querySelectorAll doc](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+
+#### Practice
+[Exercise 15](./exercises/browser/ex_15.md)
+
+### Element Attributes
+* Element.attributes property returns a live collection of all attribute nodes registered to the specified node
+* attributes is a key/value pair of strings that represents any information regarding that attribute
+* Use the name property to get the attribute name
+* Use the value property to get the attribute value
+* [MDN attributes doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes)
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red">Text in red</p>
+```
+
+* JS
+```js
+const element = document.querySelector('p')
+
+console.log(element.attributes); // NamedNodeMap {0: id, 1: class, id: id, class: class, length: 2}
+
+console.log(element.attributes[0].name);  // id
+console.log(element.attributes[0].value); // main
+
+console.log(element.attributes[1].name);  // class
+console.log(element.attributes[1].value); // red
+```
+
+* An easier way to get an element attribute value is using `getAttribute`
+* This method accepts a string parameter with the element attribute name
+* It will return the attribute value or null if it doesn't have the attribute
+* [MDN getAttribute doc](https://developer.mozilla.org/es/docs/Web/API/Element/getAttribute)
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red">Text in red</p>
+```
+
+* JS
+```js
+const element = document.querySelector('p');
+const id = element.getAttribute('id');
+const classValue = element.getAttribute('class');
+
+console.log(id);          // main
+console.log(classValue);  // red
+```
+
+* Also, we can use the attribute name as element property to access the attribute value
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red">Text in red</p>
+```
+
+* JS
+```js
+const element = document.querySelector('p');
+const id = element.id; // id is an element property as the html element has the attribute
+
+console.log(id); // main
+```
+
+* In the previous example we don't access the class attribute as is a especial property
+* As `class` is a JavaScript reserved word we can't use it
+* This is why we have the element property `className` instead of class
+* So the html attribute is going to be `class` and the JavaScript property is `className`
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red">Text in red</p>
+```
+
+* JS
+```js
+const element = document.querySelector('p');
+const className = element.className;
+
+console.log(className); // red
+console.log(element.getAttribute('class')); // red
+```
+
+#### Practice
+[Exercise 16](./exercises/browser/ex_16.md)
+
+### Class List
+* The **classList** is a read-only property which returns a live DOMTokenList collection of the class attributes of the element
+* Using `classList` is a convenient alternative to accessing an element's list of classes as a space-delimited string via `element.className`
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red bold">Bold text in red</p>
+```
+
+* JS
+```js
+const element = document.querySelector('p');
+
+console.log(element.classList);     // DOMTokenList(2) ["red", "bold", value: "red bold"]
+
+console.log(element.classList[0]);  // red
+console.log(element.classList[1]);  // bold
+```
+
+* classList has the following methods so we can interact with it
+    * **add:** add specified class values. If these classes already exist in attribute of the element, then they are ignored
+    * **remove:** remove specified class values
+    * **item:** return class value by index in collection
+    * **toggle:** if class exists then remove it and return false, if not, then add it and return true
+    * **contains:** checks if specified class value exists in class attribute of the element
+    * **replace:** replaces an existing class with a new class
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red bold">Bold text in red</p>
+```
+
+* JS
+```js
+const element = document.querySelector('p');
+element.classList.add('hide'); // we add the hide class to the p element
+
+element.classList.toggle('hide'); // as the element has the hide class it will remove it, otherwise it will add it
+
+element.classList.remove('bold'); // we remove the bold class
+
+element.item(0); // using 0 based index we can get any class using the class index position
+
+element.contains('red'); // in this case it will return true as the element has the red class
+
+element.replace('red', 'green'); // we change red for green class
+```
+
+* classList it's great to interact with elements classes
+* [MDN classList doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+
+#### Practice
+[Exercise 17](./exercises/browser/ex_17.md)
+
+### Has Attributes?
+* We can test if an element has an attribute with the `hasAttribute` method
+* This method accepts a string parameter with the attribute name
+* It returns a boolean value
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red">Text in red</p>
+```
+
+* JS
+```js
+const element = document.querySelector('p');
+console.log(element.hasAttribute('class')); // true
+```
+
+* In this example we test if the element has the class attribute
+* We get a true value as the element has the class attribute
+
+* [MDN hasAttribute doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttribute)
+
+#### Practice
+[Exercise 18](./exercises/browser/ex_18.md)
+
+### Has Attributes?
+* The **hasAttributes** method returns Boolean value, indicating if the current element has any attributes or not
+
+**Example:**
+* HTML
+```html
+<p id="main" class="red">Element with attributes</p>
+<h2>Element without attributes</h2>
+```
+
+* JS
+```js
+const element = document.querySelector('p');
+const title = document.querySelector('h2');
+
+console.log(element.hasAttributes():); // true
+
+console.log(title.hasAttributes():); // false
+```
+
+* [MDN hasAttributes doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributes)
+
+### Set Attribute
+* The **setAttribute** method sets the value of an attribute on the specified element
+* If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value
+* This method accepts 2 parameters, the first one is a string with the attribute name, the second one is the value that we want to set to the attribute, `setAttribute(attributeName, attributeValue)`
+
+**Example:**
+* HTML
+```html
+<h2>Element without attributes</h2>
+```
+
+* JS
+```js
+const title = document.querySelector('h2');
+
+console.log(title.hasAttributes()); // false
+
+title.setAttribute('id', 'main');
+
+console.log(title.hasAttributes()); // true
+
+console.log(title.getAttribute('id')); // main
+```
+
+* In this example we have an h2 element without attributes
+* Then we set a id attribute with the main value (id="main") using `setAttribute` method
+* Using `hasAttributes` we know that this element has at least one attribute
+* Then we get the id attribute value using `getAttribute`
+
+* [MDN setAttribute doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
+
+### Remove Attribute
+* The **removeAttribute** method removes an attribute from the specified element
+* This method accepts a string parameter that names the attribute to be removed from element
+
+**Example:**
+* HTML
+```html
+<h2 id="main">Element with id attribute</h2>
+```
+
+* JS
+```js
+const title = document.querySelector('h2');
+
+console.log(title.hasAttributes()); // true
+
+title.removeAttribute('id');
+
+console.log(title.hasAttributes()); // false
+```
+
+* In this example we get an element that has the id attribute and remove it using `removeAttribute('id')`
+
+* [MDN removeAttribute doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute)
+
+#### Practice
+[Exercise 19](./exercises/browser/ex_19.md)
+
+### Elements relationship
+* The **parentElement** read-only property returns the DOM node's parent Element, or null if the node either has no parent, or its parent isn't a DOM Element
+* An element that contains other elements is consider a parent element
+
+**Example:**
+* HTML
+```html
+<div>
+  <p>Children element</p>
+</div>
+```
+
+* JS
+```js
+const parragraph = document.querySelector('p');
+const parent = parragraph.parentElement;
+
+console.log(parent); // <div></div>
+```
+
+* Also, we can retrieve the element children elements using the `children` property
+* An element that inside other element is consider a children element
+* This method returns a HTMLCollection
+
+**Example:**
+* HTML
+```html
+<div>
+  <p>Child Element</p>
+  <p>Child Element</p>
+  <p>Child Element</p>
+  <p>Child Element</p>
+</div>
+```
+
+* JS
+```js
+const div = document.querySelector('div');
+const children = div.children;
+
+console.log(children); // HTMLCollection(4) [p, p, p, p]
+```
+
+* As we get a collection back we can use indexes to access the childs in different positions
+
+**Example:**
+* HTML
+```html
+<div>
+  <p>Child Element</p>
+  <p>Child Element</p>
+  <p>Child Element</p>
+  <p>Child Element</p>
+</div>
+```
+
+* JS
+```js
+const div = document.querySelector('div');
+const children = div.children;
+const firstChildElement = children[0];
+
+console.log(firstChildElement); // <p>Child Element</p>
+console.log(children.item(0));
+```
+
+* In this example we use index 0 to get the first element
+* Also, HTMLCollection has an `item` method that retieves an element in a specific possition
+* We can see 2 different ways of accomplish the same objective (retrive a child element)
+* Also we could do the same using CSS selectors and querySelector method
+
+* [MDN parentElement doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement)
+* [MDN parentElement doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement)
+* [MDN HTMLCollection doc ](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection)
+
+#### Practice
+[Exercise 20](./exercises/browser/ex_20.md)
+
 ## Assets / Resources
-https://frontendmasters.com/books/front-end-handbook/2018/
+* [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
+* [Wes Bos - 30 Day Vanilla JS Coding Challenge](https://javascript30.com)
+* [Superhero.js](http://superherojs.com)
