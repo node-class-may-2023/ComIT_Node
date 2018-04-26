@@ -1772,7 +1772,7 @@ console.log(message);
 [Exercise 63](./exercises/js/ex_63.md)
 
 
-## Truthy and Falsy (valores verdaderos y falsos)
+## Truthy and Falsy (true and false values)
 * In JavaScript we have values that are truthy and falsy
 * This means that some values might be true and some values might be false
 * For true and false values we use boolean
