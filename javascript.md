@@ -1325,7 +1325,7 @@ const firstCharacter = text.charAt(0);
 
 console.log(firstCharacter); // J
 
-console.log(text..charAt(0)); // J
+console.log(text.charAt(0)); // J
 ```
 
 * To know the last string character we can combine charAt and the length property
@@ -1861,7 +1861,7 @@ if (name && null !== null) {
 
 [Exercise 65](./exercises/js/ex_65.md)
 
-#### Estructuras de repetición
+#### Iterators
 * It's common that when coding we need to keep repeting the same code execution until a given condition it's true
 * For example I might want to show numbers from 0 to 10 to create a list
 
