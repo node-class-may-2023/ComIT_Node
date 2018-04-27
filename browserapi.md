@@ -1299,7 +1299,88 @@ button.onclick = handleClickEvent;
 #### Practice
 [Exercise 32](./exercises/browser/ex_32.md)
 
+### Add Event Listener
+* We can also add event handlers using **addEventListener**
+* This method can be used in any object like window, document and other html elements
+* **addEventListener** accepts 2 parameters
+  * **event type:** it's a string with the event name ('click')
+  * **event handler:** it's a funciton that will work as callback
 
+**Example:**
+* HTML
+```html
+<button>Click Me!!!</button>
+```
+
+* JS
+```js
+const button = document.querySelector('button');
+
+button.addEventListener('click', function() {
+  // code that will be executed once the button is clicked
+  console.log('Oh, I been clicked');
+});
+```
+
+* In the event listener function we can use the reserved word **this** to reference the element that emited the event
+* In the previous example `this` will reference the button 
+
+**Example:**
+```js
+function clickHandler() {
+	console.log(this)		// this is the button that we clicked
+  this.style.backgroundColor = 'green';
+}
+
+function dblclickHandler() {
+	this.style.backgroundColor = 'red';
+}
+
+const button = document.querySelector('button');
+
+button.addEventListener('click', clickHandler);
+
+button.addEventListener('dblclick', dblclickHandler);
+```
+
+* In this example we can see how to add a double click event listener using the `dblclick` name
+* You can check more events on the [MDN addEventListener doc](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+#### Practice
+[Exercise 33](./exercises/browser/ex_33.md)
+
+### Remove Event Listener
+* To remove an event listener we use the **removeEventListener** method
+* This method can also be used on window, document, and HTML elements
+* Also, this method accepts two parameters:
+  * **event type:** it's a string with the event name ('click')
+  * **event handler:** it's a funciton that will work as callback
+
+**Example:**
+```js
+function clickHandler() {
+	console.log(this);
+}
+
+let button = document.querySelector('button');
+
+button.addEventListener('click', clickHandler);     // We add the click event listener 
+
+button.removeEventListener('click', clickHandler);  // We remove the same event listener that we previously added
+```
+
+* Remeber always to remove the event listener before removing your DOM elements
+* Otherwise you might have unespected results and memory issues (if many elements)
+
+* [MDN removeEventListener doc](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
+
+#### Practice
+[Exercise 34](./exercises/browser/ex_34.md)
+
+* As we learn events have different properties that we can use and some of them are:
+  * **Event.target:** A reference to the target to which the event was originally dispatched
+  * **Event.type:** The name of the event (case-insensitive)
+  * **Event.preventDefault()** Prevents default element behaviour
 
 ## Assets / Resources
 * [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
