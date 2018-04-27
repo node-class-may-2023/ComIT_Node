@@ -946,6 +946,361 @@ console.log(children.item(0));
 #### Practice
 [Exercise 20](./exercises/browser/ex_20.md)
 
+* Elements can have **sibling** 
+* This elements are at the same element level
+
+**Example:**
+* HTML
+```html
+  <p>Paragraph element</p>
+  <p>Paragraph element</p>
+  <p>Paragraph element</p>
+```
+
+* In this example we can see that all 3 elements are at the same level so they are siblings
+* We can access the previous element using **previousElementSibling** property
+* Also we can get the next element using **nextElementSibling** property
+
+**Example:**
+* HTML
+```html
+<p>Paragraph element 1</p>
+<p>Paragraph element 2</p>
+<p>Paragraph element 3</p>
+```
+
+* JS
+```js
+const paragraphs = document.querySelectorAll('p');
+const middleElement = paragraphs[1];
+
+middleElement.previousElementSibling; 
+middleElement.nextElementSibling; 
+
+console.log(middleElement.previousElementSibling);  // <p>Paragraph element 1</p>
+console.log(middleElement.nextElementSibling);      // <p>Paragraph element 3</p>
+```
+
+* [MDN previousElementSibling doc](https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling)
+* [MDN nextElementSibling doc](https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling)
+
+#### Practice
+[Exercise 21](./exercises/browser/ex_21.md)
+
+### Change element content
+* **innerText** is a property that represents the "rendered" text content of a node and its descendants
+* As a getter, it approximates the text the user would get if they highlighted the contents of the element with the cursor and then copied to the clipboard
+* This feature was originally introduced by `Internet Explorer`, and was formally specified in the HTML standard in 2016 after being adopted by all major browser vendors
+
+**Example:**
+* HTML
+```html
+<p>This is a great text to get using JavaScript</p>
+```
+
+* JS
+```js
+const paragraph = document.querySelector('p');
+
+console.log(paragraph.innerText); // This is a great text to get using JavaScript
+
+paragraph.innerText = 'JavaScript browser ser it\'s amaizing'; 
+
+console.log(paragraph.innerText); // JavaScript browser ser it's amaizing
+```
+
+* In this example we get the content text from the paragraph using `paragraph.innerText`
+* Also, use the property to set a new value `paragraph.innerText = 'JavaScript browser ser it\'s amaizing';`
+* The **textContent** property represents the text content of a node and its descendants
+* [MDN innerText doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/innerText)
+
+**Example:**
+* HTML
+```html
+<p>This is a great text to get using JavaScript</p>
+```
+
+* JS
+```js
+const paragraph = document.querySelector('p');
+
+console.log(paragraph.textContent); // This is a great text to get using JavaScript
+
+paragraph.textContent = 'JavaScript browser ser it\'s amaizing'; 
+
+console.log(paragraph.textContent); // JavaScript browser ser it's amaizing
+```
+
+* Both `innerText` & `textContent` allows us to get and set an element content
+* They have some differences between them in some special cases and you can read about them on the [MDN textContent doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
+
+#### Practice
+[Exercise 22](./exercises/browser/ex_22.md)
+
+* The **innerHTML** property gets or sets the HTML or XML markup contained within the element
+* This property accepts a DOMString containing the HTML serialization of the element's descendants
+* Setting the value of innerHTML removes all of the element's descendants and replaces them with nodes constructed by parsing the HTML given in the string htmlString
+
+**Example:**
+* HTML
+```html
+<p>This is just a paragraph text</p>
+```
+
+* JS
+```js
+const paragraph = document.querySelector('p');
+
+console.log(paragraph.innerHTML); // This is just a paragraph text
+
+paragraph.innerHTML = '<span>Ohhhhhhhhhhhhhhhh what are we doing??</span>';
+
+console.log(paragraph.innerHTML); // <span>Ohhhhhhhhhhhhhhhh what are we doing??</span>
+```
+
+* Using innerHTML we can retrieve the element content wether it's text or other HTML content
+* We can set the innerHTML property using a string
+* If the string has valid HTML content, the browser will parse it and create the proper elements
+* It's an easy way of creating new elements
+
+**Example:**
+* JS
+```js
+const paragraph = document.querySelector('p');
+paragraph.innerHTML = '';
+```
+
+* This is an easy way to remove all the element content
+* As this property might have some security issues we can use it on some cases
+
+* [MDN innerHTML doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+
+#### Practice
+[Exercise 23](./exercises/browser/ex_23.md)
+
+### Using CSS properties
+* The **style** property is used to get as well as set the inline style of an element
+* While getting, it returns a CSSStyleDeclaration object that contains a list of all styles properties for that element with values assigned for the attributes that are defined in the element's inline style attribute
+* The style property has the same (and highest) priority in the CSS cascade as an inline style declaration set via the style attribute
+* As we get an object back we can set or get css properties
+* The CSS properties name will be in camelCase `cssPropertyName`
+* For example: `background-color` becomes: `backgroundColor`
+
+**Example:**
+* HTML
+```html
+  <p>This element doesn't have any styles</p>
+```
+
+* JS
+```js
+let element = document.querySelector('p');
+
+element.style; // we get an empty object ({}) back
+
+element.style.color = 'red'; // As style is an object we can set properties, in this case we set the color to red
+
+element.style.fontWeight = 'bold'; // using font-weight we can set the font to bold, as it's JavaScript the property name is fontWeight
+```
+
+* Using the style property and CSS property names writen in JavaScript form we can style our components using JS
+
+#### Practice
+[Exercise 24](./exercises/browser/ex_24.md)
+
+### Element CRUD
+* CRUD means:
+  * Create
+  * Read
+  * Update
+  * Delete
+* This means that we can create, update & delete elements
+* The read action we can say it's when we select an element and get properies from it
+
+#### Creating elements
+* The document object has a **createElement** method that allows us to create new elemets
+* `createElement` accepts a string as parameter with the HTML element name (a, div, span, li, ul, etc)
+
+**Example:**
+```js
+var paragraph = document.createElement('p');
+```
+
+* In this example we call the createElement method and pass 'p' as parameter (tagName)
+* Then we assign the element reference to the paragraph variable
+* This element it's in memory and it doesn't have any content
+* So now we can use the paragraph variable to manipulate the new paragraph element like adding content, adding properties or even insert it into other elements
+
+* [MDN createElement doc](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+
+#### Insert an element
+* The **appendChild** method adds a node to the end of the list of children of a specified parent node
+* This method will insert the new element as last child
+
+**Example:**
+* JS
+```js
+const paragraph = document.createElement('p');
+const div = document.createElement('div');
+
+paragraph.innerText = 'Adding some text as content';
+
+div.appendChild(paragraph);
+
+document.body.appendChild(div);
+```
+
+* In this example we define 2 variables (paragraph & div) and assign one new element to each one (p & div)
+* Then we change the paragraph content and assign the text: Adding some text as content
+* Now that the paragraph has some content we append it to the div element
+* At the end we append the div into the document body
+* At the end our DOM looks like this:
+
+```html
+<div>
+  <p>Adding some text as content</p>
+</div>
+```
+
+* [MDN appendChild doc](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
+* For example we can add some attributes and styles!
+
+**Example:**
+* JS
+```js
+const paragraph = document.createElement('p');
+const div = document.createElement('div');
+
+paragraph.innerText = 'Adding some text as content';
+paragraph.setAttribute('id', 'my-paragraph');
+
+paragraph.style.fontWeight = 'bold';
+paragraph.style.color = 'green';
+
+div.border = '1px solid gray';
+
+div.appendChild(paragraph);
+
+document.body.appendChild(div);
+```
+
+* [MDN appendChild doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+#### Practice
+[Exercise 25](./exercises/browser/ex_25.md)
+
+[Exercise 26](./exercises/browser/ex_26.md)
+
+[Exercise 27](./exercises/browser/ex_27.md)
+
+[Exercise 28](./exercises/browser/ex_28.md)
+
+#### Remove elements
+* The **removeChild** method removes a child node from the DOM
+* This method returns the removed node
+* Select the element before removing it
+
+**Example:**
+* HTML
+```html
+<div>
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+</div>
+```
+
+* JS
+```js
+var div = document.querySelector('div');
+var firstParagraph = div.children.item(0); 
+
+div.removeChild(parrafo);
+```
+
+* In this example we select the div element
+* Then we get the first children
+* Once we have the child reference we remove it from the div using `div.removeChild(parrafo)`
+* In case we would like to delete all children at once we can set the innerHTML value to ''
+
+**Example:**
+* HTML
+```html
+<div>
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+</div>
+```
+
+* JS
+```js
+var div = document.querySelector('div');
+
+div.innerHTML = '';
+```
+
+* [MDN removeChild doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+
+#### Practice
+[Exercise 29](./exercises/browser/ex_29.md)
+
+[Exercise 30](./exercises/browser/ex_30.md)
+
+[Exercise 31](./exercises/browser/ex_31.md)
+
+#### Events
+* DOM Events are sent to notify code of interesting things that have taken place
+* Each event is represented by an object which is based on the Event interface, and may have additional custom fields and/or functions used to get additional information about what happened
+* Events can represent everything from basic user interactions to automated notifications of things happening in the rendering model
+* The browser will trigger events whenever something happens with the document or browser itself
+* For example we can know when the document is loaded, a button is clicked or a key is pressed
+* Events has the following structure:
+  * type
+  * target
+  * event handler
+  * event object
+* This are the 2 most common ways to handle events
+  * Assign a function to the element event property `on and name of the event` for example: element.onclick
+  * Using **addEventListener**
+
+**Example:**
+* HTML
+```html
+<button>Click Me!!!</button>
+```
+
+* JS
+```js
+const button = document.querySelector('button');
+
+button.onclick = function() {
+  // Code that will be executed once button gets clicked
+  console.log('Oh, I been clicked');
+}
+```
+
+* Also we could do something like:
+
+**Example:**
+* JS
+```js
+const button = document.querySelector('button');
+const handleClickEvent = function() {
+  console.log('Oh, I been clicked');
+}
+
+button.onclick = handleClickEvent;
+```
+
+* [MDN Events doc](https://developer.mozilla.org/en-US/docs/Web/Events)
+* [MDN onclick doc](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick)
+
+#### Practice
+[Exercise 32](./exercises/browser/ex_32.md)
+
+
+
 ## Assets / Resources
 * [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
 * [Wes Bos - 30 Day Vanilla JS Coding Challenge](https://javascript30.com)

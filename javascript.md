@@ -2418,8 +2418,6 @@ greeting(18, 'Marta'); // The user: 18 has Marta years!!!
 * In the second call we get we pass the parameters order in the wrong way so we get an unespected result back
 
 #### Practice
-[Exercise 106](./exercises/js/ex_106.md)
-
 [Exercise 107](./exercises/js/ex_107.md)
 
 [Exercise 108](./exercises/js/ex_108.md)
