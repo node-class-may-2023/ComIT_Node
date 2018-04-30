@@ -2779,7 +2779,7 @@ console.log(cow); // cow
 
 **Example:**
 ```js
-const animals = ['dog', 'pato', 'vaca'];
+const animals = ['dog', 'duck', 'cow'];
 const cow = animals.pop();
 
 console.log(animals);
@@ -2788,7 +2788,7 @@ console.log(animals);
 console.log(animals.length);
 // 2
 
-const duck = animals.shift();
+const duck = animals.pop();
 
 console.log(animals);
 // ['dog']
@@ -2796,7 +2796,7 @@ console.log(animals);
 console.log(animals.length);
 // 1
 
-const dog = animals.shift();
+const dog = animals.pop();
 
 console.log(animals);
 // []
