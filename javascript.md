@@ -3030,8 +3030,8 @@ const petsNameInUpperCase = pets.map(function(pet) {
   return pet.toUpperCase();
 });
 
-console.log(petsNameInUpperCase) // [ 'AMELIA', 'CIRO', 'ULISES', 'CARLOS' ] Todos en mayúscula
-console.log(pets) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] Este array quedó igual que antes
+console.log(petsNameInUpperCase) // [ 'AMELIA', 'CIRO', 'ULISES', 'CARLOS' ] new array with all upper cases value
+console.log(pets) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] the pets array hastn't been modified 
 ```
 
 * In this example we see how to iterate over each pets item
