@@ -1382,6 +1382,44 @@ button.removeEventListener('click', clickHandler);  // We remove the same event 
   * **Event.type:** The name of the event (case-insensitive)
   * **Event.preventDefault()** Prevents default element behaviour
 
+* Using the event object we can know more about it and also prevent the event default action
+* For example links element have the default click event behaviour  set to navigate to the href url
+* We can prevent this from happening using the `preventDefault` method
+
+
+**Example:**
+* HTML
+```html
+<a href="contact.html">Go to contact page</a>
+```
+
+* JS
+```js
+let link = document.querySelector('a');
+link.addEventListener('click', function(event) {
+  event.preventDefault();  // by calling preventDefault the event is not going to trigger the default behaivour
+  console.log('look someone clicked me');
+});
+```
+
+* Using JavaScript we can handle mouse events like `click, dblclick, mouseover, mouseout & mousemove`
+* The event object has properties that help us know the mouse position like `clientX & clientY`
+
+**Example:**
+```js
+let body = document.querySelector('body');
+
+body.addEventListener('click', function(event) {
+  console.log(event.clientX);
+  console.log(event.clientY);
+});
+```
+
+#### Practice
+[Exercise 35](./exercises/browser/ex_35.md)
+
+[Exercise 36](./exercises/browser/ex_36.md)
+
 ## Assets / Resources
 * [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
 * [Wes Bos - 30 Day Vanilla JS Coding Challenge](https://javascript30.com)
