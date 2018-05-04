@@ -7,7 +7,17 @@
 
 > As a `multi-paradigm` language, JavaScript supports `event-driven`, `functional`, and `imperative (including object-oriented and prototype-based)` > programming styles.
 
-> `Initially only implemented client-side in web browsers`, JavaScript engines `are now embedded in many other types of host software, including server-side in web servers and databases`, and in non-web programs such as word processors and PDF software, and in runtime environments that make > JavaScript available for writing mobile and desktop applications, including desktop widgets.
+> `Initially only implemented client-side in web browsers`, JavaScript engines `are now embedded in many other types of host software, including server-side in web servers and databases`, and in non-web programs such as word processors and PDF software, and in runtime environments that make > JavaScript aconst person = {
+  name: 'Nico',
+  age: 38
+}
+
+const properties = Object.keys(person);
+
+person.forEach(function(property) {
+  console.log(person[property]);
+});
+vailable for writing mobile and desktop applications, including desktop widgets.
 
 * This definition comes from [Wikipedia - JavaScript](https://en.wikipedia.org/wiki/JavaScript) document
 * Over this course we'll try to figure out what this means and how it works
@@ -3420,7 +3430,7 @@ const person = {
 
 const properties = Object.keys(person);
 
-person.forEach(function(property) {
+properties.forEach(function(property) {
   console.log(person[property]);
 });
 ```
@@ -3443,7 +3453,7 @@ person.street = '234 My Street';
 
 const properties = Object.keys(person);
 
-person.forEach(function(property) {
+properties.forEach(function(property) {
   console.log(person[property]);
 });
 
