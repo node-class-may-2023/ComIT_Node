@@ -1624,54 +1624,54 @@ console.log(select.options[index].value); // returns the selected option value
 #### Practice
 [Exercise 46](./exercises/browser/ex_46.md)
 
+* `checkbox` elements also have a `value` property
+* Also, they have a `checked` property that returns a boolean value in case the checkbox is checked or not (true or false)
+* Set the `checked` to true if you want to check it and false to uncheck it
 
-
-
-* Los elementos `checkbox` tienen la propiedad `value` que nos retorna su valor como ya vimos
-* Podemos establecer si un `checkbox` está seleccionado o no utilizando la propiedad `checked`
-* Esta propiedad retorna un valor boolean
-* También podemos asignarle un valor boolean para establecer su estado
-
-**Ejemplo:**
+**Example:**
+* HTML
 ```html
-<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="checkbox" name="sexo" value="f" checked> Femenino
-  <input type="checkbox" name="sexo" value="m"> Masculino
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="checkbox" name="sexo" value="f" checked> Female
+  <input type="checkbox" name="sexo" value="m"> Male
 </form>
 ```
+
+* JS
 ```js
 const checkboxes = document.querySelector('checkbox');
-const femenino = checkboxes[0];
-const masculino = checkboxes[1];
+const female = checkboxes[0];
+const male = checkboxes[1];
 
-console.log(femenino.checked);  // retorna el valor true
-femenino.checked = false; // establece un nuevo valor al elemento.
-console.log(femenino.value); // f
+console.log(female.checked);  // returns true as the element has the checked attribute
+female.checked = false; // Set's the checkbox checked property to false
+console.log(female.value); // returns f as it's the element value
 
-masculino.checked;  // retorna el valor false
-masculino.checked = true; // establece un nuevo valor al elemento.
-console.log(masculino.value); // m
+male.checked;  // returns false as the element is not checked
+male.checked = true; // Set checked to true
+console.log(male.value); // returns m as it's the element value
 ```
 
-* Podemos utilizar el selector de css `:checked` para obtener el checkbox seleccionado de la siguiente forma:
+* To get the checked elements we can combine JavaScript and CSS selector using `:checked`
 
-**Ejemplo:**
+**Example:**
+* HTML
 ```html
-<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="checkbox" name="sexo" value="f" checked> Femenino
-  <input type="checkbox" name="sexo" value="m"> Masculino
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="checkbox" name="sexo" value="f" checked> Female
+  <input type="checkbox" name="sexo" value="m"> Male
 </form>
 ```
 ```js
-const sexo = document.querySelector('input:checked');
+const selectedGenderElement = document.querySelector('input:checked');
 
-console.log(sexo.checked);  // retorna el valor true
-sexo.checked = false; // establece un nuevo valor al elemento.
-console.log(sexo.value); // f
+console.log(selectedGenderElement.checked);  // Returns true as it's the checked element
+selectedGenderElement.checked = false; // We uncheck this element
+console.log(selectedGenderElement.value); // returns f as it's the element value
 ```
 
-#### Prácticas
-[Ejercicio 47](../ejercicios/consignas/js-browser/ej47.md)
+#### Practice
+[Exercise 47](./exercises/browser/ex_47.md)
 
 * Los elementos del formulario pueden manejar eventos por medio de los métodos: onfocus, onblur, onchange, oninput
 * También se pueden escribir utilizando el método addEventListener(callback)
