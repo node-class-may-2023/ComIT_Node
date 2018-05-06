@@ -3726,7 +3726,7 @@ console.log(name); // Marta
   console.log(otherName); // Pepe
 }
 
-console.log(otherName); // otroNombre is not defined
+console.log(otherName); // otherName is not defined
 ```
 
 * Using var won't give us block element scope, that's why we can access the **otherName** variable outside the { }
@@ -3805,7 +3805,7 @@ console.log(message) // message is not defined
 let name = 'Coco';
 
 function wellcome() {
-  let greeting = 'Hola ';
+  let greeting = 'Hi ';
 
   function greet() {
     let message = greeting + name;
@@ -3816,7 +3816,7 @@ function wellcome() {
   console.log(message); // message is not defined
 }
 
-wellcome(); // muestra Hola 2 veces
+wellcome(); // shows hi 2 times
 console.log(name) // Coco
 console.log(greeting) // greeting is not defined
 console.log(message); // message is not defined

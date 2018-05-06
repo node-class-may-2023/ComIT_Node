@@ -1420,6 +1420,483 @@ body.addEventListener('click', function(event) {
 
 [Exercise 36](./exercises/browser/ex_36.md)
 
+* With JavaScript we can handle keyboard events too like `keypress, keydown y keyup`
+* The event object that we get as parameter has a `charCode` property with a numberic value that represents the pressed key
+* Strings has a static method called fromCharCode (`String.fromCharCode`) that will accept a number value as parameter and returns the key value
+* Combining `charCode` and `String.fromCharCode` we can know the key that the user pressed
+
+**Example:**
+```js
+  const body = document.querySelector('body');
+
+  body.addEventListener('keypress', function(event) {
+    const keyCode = event.charCode;
+    const key = String.fromCharCode(keyCode);
+    
+    console.log(key);
+  });
+```
+
+#### Practice
+[Exercise 37](./exercises/browser/ex_37.md)
+
+[Exercise 38](./exercises/browser/ex_38.md)
+
+#### Lista de eventos que se pueden utilizar:
+* The browser API allow us to use many events handlers to create interactive UI's:
+  * onchange
+  * onclick / ondblclick / onmousedown / onmousedown
+  * onmouseover / onmouseout
+  * onkeydown / onkeypress / onkeyup
+  * onload
+  * onresize
+  * onscroll
+  * oninput
+  * onfocus / onblur
+
+#### Practice
+[Exercise 39](./exercises/browser/ex_39.md)
+
+[Exercise 40](./exercises/browser/ex_40.md)
+
+## Extra practice
+[Exercise 41](./exercises/browser/ex_41.md)
+
+[Exercise 42](./exercises/browser/ex_42.md)
+
+#### Forms
+* HTML Forms helps us retrieve user data
+* Using JavaScript we can handle inputs and forms events and values
+* Also, we can check the values that the user inputs
+* We need to select the form to be able to interact with
+
+**Example:**
+```js
+const form = document.querySelector('form');
+```
+
+* The `document` object has a `forms` property that returns all the document form elements
+
+**Example:**
+```js
+  const firstForm = document.forms[0];
+  const documentForms = document.forms;
+```
+
+* The `form ` element have a `elements` property that returns the selected form elements collection
+
+**Example:**
+```js
+const form = document.querySelector('form');
+const formElements = form.elements;
+
+console.log(formElements)
+
+// As it's a collection we can get the first element using 0 as index
+const firstElement = form.elements[0];
+```
+
+* The form object has the following properties: `action`, `target`, `encoding` & `method`
+* As we know this are all HTML form attributes
+* Using JavaScript we can get or set this properties values
+* This is a good time to go check the HTML form section!
+
+**Example:**
+* HTML
+```html
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login"></form>
+```
+
+* JS
+```js
+const form = document.querySelector('form');
+
+console.log(form.action); // save_user.html
+console.log(form.encoding); // get
+console.log(form.method); // application/x-www-form-urlencoded
+console.log(form.name); // login
+```
+
+#### Practice
+[Exercise 43](./exercises/browser/ex_43.md)
+
+* The form elements have a `value` property that returns the element value
+* We can use this property on many form elements like:
+  * inputs de texto, password, hidden
+  * checkbox
+  * radio
+  * textarea
+
+**Example:**
+* HTML
+```html
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="text" id="username" name="username" />
+  <input type="password" id="pass" name="pass" />
+  <input type="submit" name="submit" value="Send" />
+</form>
+```
+
+* JS
+```js
+const form = document.querySelector('form');
+const username = form.elements[0].value;
+
+username.value; // we get an empty string as it doesn't have a value
+username.value = 'Pepe'; // We can also set an input value
+```
+
+#### Practice
+[Exercise 44](./exercises/browser/ex_44.md)
+
+* Forms emit a submit event
+* We can handle the form submit event using event handlers
+* When the form gets submited it will send the input values to the action document
+* We can prevent the default form behaviour using the event preventDefault method
+* Other way to do this with forms is returning a false value
+
+**Example:**
+* HTML
+```html
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="text" id="username" name="username" />
+  <input type="password" id="pass" name="pass" />
+  <input type="submit" name="submit" value="Send" />
+</form>
+```
+```js
+const form = document.querySelector('form');
+
+form.onsubmit = function() {
+	// This code will get executed when the form is submited
+  // Returning false we don't execute the form submition
+  return false;
+}
+
+// also
+
+const form = document.querySelector('form');
+
+form.onsubmit = function(event) {
+  event.preventDefault();
+}
+
+// or
+
+form.addEventHandler('submit', function(event) {
+  event.preventDefault();
+});
+```
+
+#### Practice
+[Exercise 45](./exercises/browser/ex_45.md)
+
+* Select elements have a `selectedIndex` property that returns a number value for the selected option index
+* Also, this element has a `options` property that returns the options elements collection
+* We can get the selected option if we combine the select `selectedIndex` property and the `options` collection
+* Option elements also have a `value` property
+
+**Example:**
+* HTML
+```html
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <select name="countries" id="countries">
+    <option value="ar">Argentina</option>
+    <option value="br">Brazil</option>
+    <option value="ca">Canada</option>
+    <option value="cl">Chile</option>
+  </select>
+</form>
+```
+
+* JS
+```js
+const select = document.querySelector('select');
+const index = select.selectedIndex;
+
+console.log(index);  // returns the option index
+console.log(select.options);  // returns the option collection
+
+Select.options[index]; // 
+console.log(select.options[index].value); // returns the selected option value
+```
+
+#### Practice
+[Exercise 46](./exercises/browser/ex_46.md)
+
+
+
+
+
+
+
+* Los elementos `checkbox` tienen la propiedad `value` que nos retorna su valor como ya vimos
+* Podemos establecer si un `checkbox` está seleccionado o no utilizando la propiedad `checked`
+* Esta propiedad retorna un valor boolean
+* También podemos asignarle un valor boolean para establecer su estado
+
+**Ejemplo:**
+```html
+<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="checkbox" name="sexo" value="f" checked> Femenino
+  <input type="checkbox" name="sexo" value="m"> Masculino
+</form>
+```
+```js
+const checkboxes = document.querySelector('checkbox');
+const femenino = checkboxes[0];
+const masculino = checkboxes[1];
+
+console.log(femenino.checked);  // retorna el valor true
+femenino.checked = false; // establece un nuevo valor al elemento.
+console.log(femenino.value); // f
+
+masculino.checked;  // retorna el valor false
+masculino.checked = true; // establece un nuevo valor al elemento.
+console.log(masculino.value); // m
+```
+
+* Podemos utilizar el selector de css `:checked` para obtener el checkbox seleccionado de la siguiente forma:
+
+**Ejemplo:**
+```html
+<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="checkbox" name="sexo" value="f" checked> Femenino
+  <input type="checkbox" name="sexo" value="m"> Masculino
+</form>
+```
+```js
+const sexo = document.querySelector('input:checked');
+
+console.log(sexo.checked);  // retorna el valor true
+sexo.checked = false; // establece un nuevo valor al elemento.
+console.log(sexo.value); // f
+```
+
+#### Prácticas
+[Ejercicio 47](../ejercicios/consignas/js-browser/ej47.md)
+
+* Los elementos del formulario pueden manejar eventos por medio de los métodos: onfocus, onblur, onchange, oninput
+* También se pueden escribir utilizando el método addEventListener(callback)
+  * **focus:** se dispara al establecer el foco en un elemento
+  * **blur:** se dispara al remover el foco sobre un elemento
+  * **change:** se dispara cuando cambia el valor de un elementos
+  * **input:** se dispara al ingresar datos a un elemento
+
+**Ejemplo:**
+```html
+<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="text" id="username" name="username" />
+  <input type="password" id="pass" name="pass" />
+  <input type="submit" name="submit" value="Enviar" />
+</form>
+```
+```js
+const form = document.querySelector('form');
+const username = form.elements[0];
+
+username.onfocus = function() {
+  // código que maneja el focus del elemento
+  console.log('Hicieron foco en el campo username');
+}
+
+username.onblur = function() {
+  // código que maneja el blur del elemento
+  console.log('Se perdió el foco del campo username');
+}
+
+username.oninput = function() {
+  // código que maneja el ingreso de datos a un elemento
+  console.log('Están cambiaron el valor del campo username');
+}
+```
+
+* Por medio del evento `change` podemos manejar el cambio de selección de un elemento select
+
+**Ejemplo:**
+```html
+<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <select name="paises" id="paises">
+    <option value="ar">Argentina</option>
+    <option value="br">Brasil</option>
+    <option value="cl">Chile</option>
+  </select>
+</form>
+```
+```js
+const select = document.querySelector('select');
+
+select.onchange = function() { 
+  const index = select.selectedIndex;
+  const valor = select.options[index].value;
+  console.log(index);
+  console.log(valor);
+}
+```
+
+#### Prácticas
+[Ejercicio 48](../ejercicios/consignas/js-browser/ej48.md)
+
+* Para validar si un campo de texto está vacio podemos combinar la propiedad `value` y la propiedad `length` de los strings
+
+**Ejemplo:**
+```html
+<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="text" id="username" name="username" />
+  <input type="password" id="pass" name="pass" />
+  <input type="submit" name="submit" value="Enviar" />
+</form>
+```
+```js
+const form = document.querySelector('form');
+
+form.onsubmit = function(evento) {
+  evento.preventDefault();
+  const username = form.elements[0];
+
+  if (username.value.length === 0) {
+    console.log('Username incorrecto');
+    return false;
+  }
+
+  return true;
+}
+```
+
+#### Prácticas
+[Ejercicio 49](../ejercicios/consignas/js-browser/ej49.md)
+
+# Regex
+
+* ECMAScript tiene expresiones regulares como tipo de dato y nos permite encontrar patrones de texto en un string
+* Por lo general se pueden utilizar para validar los campos de textos
+* Las expresiones regulares o `regex` tienen un método `test()` que nos permiten validar si un string para saber si cumple con la expresión regular
+
+**Ejemplo:**
+```html
+<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <input type="text" id="username" name="username" />
+  <input type="text" id="mail" name="mail" />
+  <input type="password" id="pass" name="pass" />
+  <input type="submit" name="submit" value="Enviar" />
+</form>
+```
+```js
+const form = document.querySelector('form');
+
+const validarUsername = function(username) {
+  // valida que el string tenga números y letras
+  const regexCampoVacio = /^[a-z0-9]+$/i;
+  return regexCampoVacio.test(username);
+}
+
+const validarMail = function(mail) {
+  // valida una estructura de mail. Hay muchas opciones para hacer esto
+  const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  // retorna un valor boolean dependiendo si cumple o no con la expresión regular.
+  return regexMail.test(mail);
+}
+
+form.onsubmit = function(evento) {
+  evento.preventDefault();
+  const username = form.elements[0];
+  const mail = form.elements[1];
+
+  if (!validarUsername(username.value)) {
+    console.log('Username incorrecto');
+    return false;
+  }
+
+  if (!validarMail(mail.value)) {
+    console.log('Email incorrecto');
+    return false;
+  }
+
+  return true;
+}
+```
+
+* Para saber más sobre regex pueden leer [acá](http://www.robertoballester.com/pequeno-manual-sobre-expresiones-regulares-regex/)
+* También pueden buscar regex en la siguiente [biblioteca](http://www.regexlib.com/?AspxAutoDetectCookieSupport=1)
+
+#### Prácticas
+[Ejercicio 50](../ejercicios/consignas/js-browser/ej50.md)
+
+## AJAX
+
+### JSON
+* JSON significa **JavaScript Object Notation** y es un formato para intercambiar datos de forma simple
+* Es fácil de leer y escribir
+* En su estructura es muy parecido a un objeto literal de ECMAScript con algunas diferencias
+* Los nombres de las propiedades se escriben entre comillas dobles y los valores de string también
+
+**Ejemplo:**
+```js
+var objetoEnFormatoJSON = { 
+  "atributo": "valor", 
+  "atributo1": 1, 
+  "atributo2": [], 
+  "atributo3": null, 
+  "atributo4": false
+};
+```
+
+* ECMAScript tiene un objeto `JSON` que tiene los métodos `stringify()` y `parse()`
+  * **stringify:** permite pasar un objeto o valor de javascript al formato JSON
+  * **parse:** toma una cadena de caracteres en formato JSON y lo transforma en un objeto o valor de ECMASCript
+* Gracias a estos 2 métodos se puede utilizar el formato JSON para intercambiar datos en formato de texto
+* Teniendo una variable en formato JSON se accede a sus atributos de la siguiente manera:
+
+**Ejemplo:**
+```js
+// Ejemplo stringify
+const usuario = {
+  username: 'pepe',
+  password: '12345',
+  email: 'pepe@gmail.com',
+  casado: true,
+  hijos: ['maria', 'juan']
+}
+
+const usuarioJSON = JSON.stringify(usuario); // retorna un JSON del objeto usuario
+console.log(usuarioJSON);
+
+/*
+{
+  "username":"pepe",
+  "password":"12345",
+  "email":"pepe@gmail.com",
+  "casado":true,
+  "hijos":["maria","juan"]
+}
+*/
+
+// Ejemplo parse
+
+const usuarioDeJSONaJS = JSON.parse(usuarioJSON); // retorna un objeto de ECMAScript
+console.log(usuarioDeJSONaJS);
+
+/*
+{
+  username: "pepe", 
+  password: "12345", 
+  email: "pepe@gmail.com", 
+  casado: true, 
+  hijos: ["maria", "juan"]
+}
+*/
+```
+
+* En este ejemplo podemos ver que de forma muy fácil podemos transformar un objeto de ECMAScript a JSON y viceversa
+
+#### Prácticas
+[Ejercicio 51](../ejercicios/consignas/js-browser/ej51.md)
+
+Fetch
+#### Prácticas
+[Ejercicio 52](../ejercicios/consignas/js-browser/ej52.md)
+* Pueden leer más sobre este método en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
+
 ## Assets / Resources
 * [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
 * [Wes Bos - 30 Day Vanilla JS Coding Challenge](https://javascript30.com)
