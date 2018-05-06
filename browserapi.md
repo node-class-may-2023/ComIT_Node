@@ -1673,77 +1673,88 @@ console.log(selectedGenderElement.value); // returns f as it's the element value
 #### Practice
 [Exercise 47](./exercises/browser/ex_47.md)
 
-* Los elementos del formulario pueden manejar eventos por medio de los métodos: onfocus, onblur, onchange, oninput
-* También se pueden escribir utilizando el método addEventListener(callback)
-  * **focus:** se dispara al establecer el foco en un elemento
-  * **blur:** se dispara al remover el foco sobre un elemento
-  * **change:** se dispara cuando cambia el valor de un elementos
-  * **input:** se dispara al ingresar datos a un elemento
+* Form element can handle events using `onfocus, onblur, onchange & oninput` properties
+* Also, you can use this events as event handler using `addEventListener`
+  * **focus:** This event is triggered when we set focus on an item (example: clicking on it to write)
+  * **blur:** This event is triggered when the element loose focus
+  * **change:** This event is triggered when the selected value of an select element changes
+  * **input:** This event is triggered when we type in an input
 
-**Ejemplo:**
+**Example:**
+* HTML
 ```html
-<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
   <input type="text" id="username" name="username" />
   <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Enviar" />
+  <input type="submit" name="submit" value="Submit" />
 </form>
 ```
+
+* JS
 ```js
 const form = document.querySelector('form');
 const username = form.elements[0];
 
 username.onfocus = function() {
-  // código que maneja el focus del elemento
-  console.log('Hicieron foco en el campo username');
+  // this code will get executed when we set focus on the username input
+  console.log('Username element focus');
 }
 
 username.onblur = function() {
-  // código que maneja el blur del elemento
-  console.log('Se perdió el foco del campo username');
+  // this code will get executed when we remove username focus
+  console.log('Username element lost focus');
 }
 
 username.oninput = function() {
-  // código que maneja el ingreso de datos a un elemento
-  console.log('Están cambiaron el valor del campo username');
+  // this code will get executed when we input some value in the input
+  console.log('The user is typing!');
 }
 ```
 
-* Por medio del evento `change` podemos manejar el cambio de selección de un elemento select
+* Handling the `change` event we can handle a select element change
 
-**Ejemplo:**
+**Example:**
+* HTML
 ```html
-<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <select name="paises" id="paises">
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+  <select name="paises" id="countries">
     <option value="ar">Argentina</option>
-    <option value="br">Brasil</option>
+    <option value="br">Brazil</option>
     <option value="cl">Chile</option>
   </select>
 </form>
 ```
+
+* JS
 ```js
 const select = document.querySelector('select');
 
 select.onchange = function() { 
+  // This code gets executed when the user changes the select selected item
   const index = select.selectedIndex;
-  const valor = select.options[index].value;
+  const value = select.options[index].value;
+
   console.log(index);
-  console.log(valor);
+  console.log(value);
 }
 ```
 
-#### Prácticas
-[Ejercicio 48](../ejercicios/consignas/js-browser/ej48.md)
+#### Practice
+[Exercise 48](./exercises/browser/ex_48.md)
 
-* Para validar si un campo de texto está vacio podemos combinar la propiedad `value` y la propiedad `length` de los strings
+* To validate if an imput is empty we can combine the `length` and `value` properties
 
-**Ejemplo:**
+**Example:**
+* HTML
 ```html
-<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
   <input type="text" id="username" name="username" />
   <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Enviar" />
+  <input type="submit" name="submit" value="Send" />
 </form>
 ```
+
+* JS
 ```js
 const form = document.querySelector('form');
 
@@ -1751,8 +1762,11 @@ form.onsubmit = function(evento) {
   evento.preventDefault();
   const username = form.elements[0];
 
+  // with the value property we get the input value
+  // Then we use the length property to check if the input is empty or not
+  // We could add trim before to remove empty spaces too
   if (username.value.length === 0) {
-    console.log('Username incorrecto');
+    console.log('Wrong username');
     return false;
   }
 
@@ -1760,61 +1774,67 @@ form.onsubmit = function(evento) {
 }
 ```
 
-#### Prácticas
-[Ejercicio 49](../ejercicios/consignas/js-browser/ej49.md)
+#### Practice
+[Exercise 49](./exercises/browser/ex_49.md)
 
 # Regex
-
-* ECMAScript tiene expresiones regulares como tipo de dato y nos permite encontrar patrones de texto en un string
-* Por lo general se pueden utilizar para validar los campos de textos
-* Las expresiones regulares o `regex` tienen un método `test()` que nos permiten validar si un string para saber si cumple con la expresión regular
+* JavaScript can use Regex as values too
+* Regex allow us to search for a strings pattern
+* Also, we can use it to validate our inputs too
+* Regexs have a `test()` method that will test if the pattern match the content or not
+* For example the regex: `/^[a-z0-9]+$/i` will be true if the text only contains alphanumeric characters
 
 **Ejemplo:**
 ```html
-<form action="guardar_usuario.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
   <input type="text" id="username" name="username" />
   <input type="text" id="mail" name="mail" />
   <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Enviar" />
+  <input type="submit" name="submit" value="Send" />
 </form>
 ```
 ```js
 const form = document.querySelector('form');
 
-const validarUsername = function(username) {
-  // valida que el string tenga números y letras
-  const regexCampoVacio = /^[a-z0-9]+$/i;
-  return regexCampoVacio.test(username);
+const validateUser = function(username) {
+  // we check if the username value (string) has alphabumeric characters only
+  const regex = /^[a-z0-9]+$/i;
+  
+  return regex.test(username);
 }
 
-const validarMail = function(mail) {
-  // valida una estructura de mail. Hay muchas opciones para hacer esto
-  const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  // retorna un valor boolean dependiendo si cumple o no con la expresión regular.
-  return regexMail.test(mail);
+const validateEmail = function(email) {
+  // this is a simple email validation regex
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
+  // this text method will return a true/false value depending if the string matches the regex or not
+  return emailRegex.test(email);
 }
 
-form.onsubmit = function(evento) {
-  evento.preventDefault();
+form.onsubmit = function(event) {
+  event.preventDefault();
+  
   const username = form.elements[0];
-  const mail = form.elements[1];
+  const email = form.elements[1];
 
-  if (!validarUsername(username.value)) {
-    console.log('Username incorrecto');
+  if (!validateUser(username.value)) {
+    console.log('Incorrect username');
     return false;
   }
 
-  if (!validarMail(mail.value)) {
-    console.log('Email incorrecto');
+  if (!validateEmail(mail.value)) {
+    console.log('Incorrect Email');
     return false;
   }
+
+  // At this point we can say that the form is valid as the username and email both match the expected regex
 
   return true;
 }
 ```
 
-* Para saber más sobre regex pueden leer [acá](http://www.robertoballester.com/pequeno-manual-sobre-expresiones-regulares-regex/)
-* También pueden buscar regex en la siguiente [biblioteca](http://www.regexlib.com/?AspxAutoDetectCookieSupport=1)
+* You can learn more about regex and how they work in the following [link (regexone)](https://regexone.com)
+* Also, you can look for common regex on the following [site(regexlib)](http://www.regexlib.com)
 
 #### Prácticas
 [Ejercicio 50](../ejercicios/consignas/js-browser/ej50.md)
