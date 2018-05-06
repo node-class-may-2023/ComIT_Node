@@ -1627,9 +1627,6 @@ console.log(select.options[index].value); // returns the selected option value
 
 
 
-
-
-
 * Los elementos `checkbox` tienen la propiedad `value` que nos retorna su valor como ya vimos
 * Podemos establecer si un `checkbox` está seleccionado o no utilizando la propiedad `checked`
 * Esta propiedad retorna un valor boolean
