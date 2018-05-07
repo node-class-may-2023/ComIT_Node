@@ -1915,21 +1915,198 @@ console.log(JSONuser);
 [Exercise 51](./exercises/browser/ex_51.md)
 
 ## AJAX
+* **AJAX** stands for `Asynchronous JavaScript And XML`
+* It used to use the XMLHttpRequest object to communicate with servers
+* It can send and receive information in various formats, including JSON, XML, HTML, and text files
+* AJAX’s most appealing characteristic is its `asynchronous` nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page
+* The two major features of AJAX allow you to do the following:
+  * Make requests to the server without reloading the page
+  * Receive and work with data from the server
+* As XMLHttpRequest it's kind of complex to use and that we don't longer use XML that mutch we can use `fetch` to have the same features
 
 * [MDN AJAX doc](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
-* [MDN fetch doc](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 * [MDN XMLHttpRequest doc](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 * [JSON and AJAX Tutorial: With Real Examples](https://www.youtube.com/watch?v=rJesac0_Ftw)
+* [Youtube - AJAX Definition - Intro to AJAX](https://www.youtube.com/watch?v=rJesac0_Ftw)
+* [Youtube - REST API concepts and examples](https://www.youtube.com/watch?v=7YcW25PHnAA)
 
-Fetch
-https://api.tvmaze.com/search/shows?q=batman
+### Fetch
+* The Fetch API provides an interface for fetching resources (including across the network)
+* It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides a more powerful and flexible feature set
+* Fetch provides a generic definition of Request and Response objects
+* The **fetch** method takes one mandatory argument, the path to the resource you want to fetch
 
-https://www.tvmaze.com/api
+**Example:**
+```js
+const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
+fetch(apiURL);
+```
+
+* In this example we are using TV Maze public api to retrieve some batman tv data
+* The `fetch` method returns a `Promise` that resolves to the Response to that request, whether it is successful or not
+* As the response it's a promise we can use the `then` method
+* The `then` method accepts a callback function as parameter
+
+**Example:**
+```js
+const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+
+fetch(apiURL).then(function(response) {
+  console.log(response); // we get a Response object back with the TV data
+});
+```
+
+* The Response object looks like this
+![API Response](./resources/images/js-browser/api_response.png)
+
+* We can see that the Response object has a `ok` property with a boolean value
+* If the `ok` property it's true it means that everything went well
+* Now we can check for fetch errors
+
+**Example:**
+```js
+const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+
+fetch(apiURL).then(function(response) {
+  if (response.ok) {
+    console.log(response);
+  } else {
+    console.log('Ups... there was a network error');
+  }
+});
+```
+
+* Now that we're sure that the call is over we'll need to resolve the promsie
+* JavaScript has a `Promise` object that we can use
+* This object has a `resolve` method that will resolve the expected promise
+* For example we can use it this way:
+
+**Example:**
+```js
+Promise.resolve(promise); // This will resolve a promise
+```
+
+* Now let's put every thing together
+
+**Example:**
+```js
+const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+
+fetch(apiURL)
+  .then(function(response) {
+    if (response.ok) {
+      return Promise.resolve(response); // resolve the promise and return the value
+    } else {
+      console.log('Ups... there was a network error');
+    }
+  });
+```
+
+* The value that we get back it's a JSON string object so we need to convert it to a JavaScript one
+* Promises can be chained using the `then` method as we return values
+
+**Example:**
+```js
+promise.then().then().then(); 
+```
+
+**Example:**
+```js
+const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+
+fetch(apiURL)
+  .then(function(response) {
+    if (response.ok) {
+      return Promise.resolve(response); // resolve the promise and return the value
+    } else {
+      console.log('Ups... there was a network error');
+    }
+  })
+  .then(function(JSONresponse) {
+    return JSONresponse.json();
+  });
+
+```
+
+* As we have a JSON string object we can convert it to JavaScript one using the `json()` method
+* In this example we chain the then calls and return the JavaScript object that we get back from JSONresponse.json();
+* So we can use `then` again
+
+**Example:**
+```js
+const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+
+fetch(apiURL)
+  .then(function(response) {
+    if (response.ok) {
+      return Promise.resolve(response); // resolve the promise and return the value
+    } else {
+      console.log('Ups... there was a network error');
+    }
+  })
+  .then(function(JSONresponse) {
+    return JSONresponse.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  });
+```
+
+* In this case data will have all the TV show data
+* So we need to know what the API returns as we're going to be dealing with it
+* To see what the data looks like you can open the following [link](https://api.tvmaze.com/search/shows?q=batman)
+* In this case we get an array back with 10 objects on it
+* As it might be a little hard to read you can check this [JSON version](./resources/code/json/tv.json)
+* At the end we have a Array value with 10 objects inside and each of those object has properties that we'll use
+* So we can iterate this data array or just use its objects
+
+**Example:**
+```js
+const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+
+fetch(apiURL)
+  .then(function(response) {
+    if (response.ok) {
+      return Promise.resolve(response); // resolve the promise and return the value
+    } else {
+      console.log('Ups... there was a network error');
+    }
+  })
+  .then(function(JSONresponse) {
+    return JSONresponse.json();
+  })
+  .then(function(data) {
+    const show = data[0];
+
+    console.log(show.show.name);
+    console.log(show.show.premiered);
+    console.log(show.show.image.original);
+  });
+```
+
+* In this example we get the batman show data
+* Once we're done parsing the response we have a 10 items array with JavaScript objects that represent Batman shows
+* We get the first show from the collection
+* Then we can access some properties from the show like name, date it has been premiered and the image source
+* This is the way that we retrieve data from a server API using fetch, JSON objects and JavaScript
+* So if this is the way to retrieve data from the server....
+* How do we post data to an API?
 
 #### Practice
 [Exercise 52](./exercises/browser/ex_52.md)
-* Pueden leer más sobre este método en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
+
+### Using fetch and POST
+* The `fetch` method accepts a second parameter
+* This parameter is a JavaScript object with `request data`
+
+* [MDN fetch doc](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+* [Youtube - Fetch API](https://www.youtube.com/watch?v=g6-ZwZmRncs)
+* [Working with the Fetch API](https://www.youtube.com/watch?v=9Qtvjd0UbAs)
+* [MDN promises doc](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise)
+* [MDN Using promises guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+* [Youtube - How to Use Javascript Promises](https://www.youtube.com/watch?v=104J7_HyaG4)
+* [Google Developers - JavaScript Promises: an Introduction](https://goo.gl/ZH6spE)
 
 ## Assets / Resources
 * [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
