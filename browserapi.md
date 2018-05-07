@@ -1784,7 +1784,8 @@ form.onsubmit = function(evento) {
 * Regexs have a `test()` method that will test if the pattern match the content or not
 * For example the regex: `/^[a-z0-9]+$/i` will be true if the text only contains alphanumeric characters
 
-**Ejemplo:**
+**Example:**
+* HTML
 ```html
 <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
   <input type="text" id="username" name="username" />
@@ -1836,82 +1837,98 @@ form.onsubmit = function(event) {
 * You can learn more about regex and how they work in the following [link (regexone)](https://regexone.com)
 * Also, you can look for common regex on the following [site(regexlib)](http://www.regexlib.com)
 
-#### Prácticas
-[Ejercicio 50](../ejercicios/consignas/js-browser/ej50.md)
+#### Practice
+[Exercise 50](./exercises/browser/ex_50.md)
 
-## AJAX
+## JSON
+* JSON means **JavaScript Object Notation** and it's a lightweight data-interchange format
+* Is easy to read and write
+* JSON structure is very similar to JavaScript literal objects but with some minors differences
+* The JSON object properties name use double quotes
+* Check out the [json.org doc](https://www.json.org) to learn more about JSON
 
-### JSON
-* JSON significa **JavaScript Object Notation** y es un formato para intercambiar datos de forma simple
-* Es fácil de leer y escribir
-* En su estructura es muy parecido a un objeto literal de ECMAScript con algunas diferencias
-* Los nombres de las propiedades se escriben entre comillas dobles y los valores de string también
-
-**Ejemplo:**
+**Example:**
 ```js
-var objetoEnFormatoJSON = { 
-  "atributo": "valor", 
-  "atributo1": 1, 
-  "atributo2": [], 
-  "atributo3": null, 
-  "atributo4": false
+const JSONexample = { 
+  "attribute": "valor", 
+  "attribute1": 1, 
+  "attribute2": [], 
+  "attribute3": null, 
+  "attribute4": false
 };
 ```
 
-* ECMAScript tiene un objeto `JSON` que tiene los métodos `stringify()` y `parse()`
-  * **stringify:** permite pasar un objeto o valor de javascript al formato JSON
-  * **parse:** toma una cadena de caracteres en formato JSON y lo transforma en un objeto o valor de ECMASCript
-* Gracias a estos 2 métodos se puede utilizar el formato JSON para intercambiar datos en formato de texto
-* Teniendo una variable en formato JSON se accede a sus atributos de la siguiente manera:
+* JavaScript has a JSON object that has two important methods `stringify()` & `parse()` that will help us interact with JSON
+  * **stringify:** this method converts a JavaScript value to a JSON string
+  * **parse:** this method parses a JSON string
+* Using this two methods we can convert from JSON to JavaScript and the other way around
 
-**Ejemplo:**
+**Example:**
 ```js
-// Ejemplo stringify
-const usuario = {
+// Stringify example with a JavaScript object to a JSON one
+
+const user = {
   username: 'pepe',
   password: '12345',
   email: 'pepe@gmail.com',
-  casado: true,
-  hijos: ['maria', 'juan']
+  married: true,
+  childrens: ['maria', 'juan']
 }
 
-const usuarioJSON = JSON.stringify(usuario); // retorna un JSON del objeto usuario
-console.log(usuarioJSON);
+const JSONuser = JSON.stringify(user); // returns a JSON object with the user representation
 
+console.log(JSONuser);
 /*
-{
-  "username":"pepe",
-  "password":"12345",
-  "email":"pepe@gmail.com",
-  "casado":true,
-  "hijos":["maria","juan"]
-}
+  {
+    "username":"pepe",
+    "password":"12345",
+    "email":"pepe@gmail.com",
+    "married":true,
+    "childrens":["maria","juan"]
+  }
 */
 
-// Ejemplo parse
+// Parse example
 
-const usuarioDeJSONaJS = JSON.parse(usuarioJSON); // retorna un objeto de ECMAScript
-console.log(usuarioDeJSONaJS);
+const JSONuser = JSON.parse(JSONuser); // Returns a JavaScript objectretorna un objeto de ECMAScript
+
+console.log(JSONuser);
 
 /*
-{
-  username: "pepe", 
-  password: "12345", 
-  email: "pepe@gmail.com", 
-  casado: true, 
-  hijos: ["maria", "juan"]
-}
+  {
+    username: "pepe", 
+    password: "12345", 
+    email: "pepe@gmail.com", 
+    married: true, 
+    childrens: ["maria", "juan"]
+  }
 */
 ```
 
-* En este ejemplo podemos ver que de forma muy fácil podemos transformar un objeto de ECMAScript a JSON y viceversa
+* In this example we see how easy it's to transform from JSON and JavaScript objects
+* We'll use JSON objects to comunicate with the server and also when using other API's (twitter, etc)
+* [MDN JSON parse doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+* [MDN JSON stringify doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+* [Youtube - JSON Crash Course](https://www.youtube.com/watch?v=wI1CWzNtE-M)
 
-#### Prácticas
-[Ejercicio 51](../ejercicios/consignas/js-browser/ej51.md)
+#### Practice
+[Exercise 51](./exercises/browser/ex_51.md)
+
+## AJAX
+
+* [MDN AJAX doc](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
+* [MDN fetch doc](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+* [MDN XMLHttpRequest doc](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+* [JSON and AJAX Tutorial: With Real Examples](https://www.youtube.com/watch?v=rJesac0_Ftw)
 
 Fetch
-#### Prácticas
-[Ejercicio 52](../ejercicios/consignas/js-browser/ej52.md)
+https://api.tvmaze.com/search/shows?q=batman
+
+https://www.tvmaze.com/api
+
+
+#### Practice
+[Exercise 52](./exercises/browser/ex_52.md)
 * Pueden leer más sobre este método en el [sitio de MDN](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
 
 ## Assets / Resources
