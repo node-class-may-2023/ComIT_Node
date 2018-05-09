@@ -15,7 +15,7 @@ git --version
 ```
 
 * Current version is `2.16.2`
-* Configure git user mail
+* [Configure git user mail](https://help.github.com/articles/setting-your-commit-email-address-in-git/)
 
 ## Using Git
 * Before we start go over the following [Git tutorial](https://try.github.io/levels/1/challenges/1)
@@ -23,7 +23,7 @@ git --version
 ## Configure and use Git in our local environment
 * To configure our Git/Github project we'll need to use our [command line interface](https://en.wikipedia.org/wiki/Command-line_interface)
 * As the commands might change between operating systems:
-  * [Windows Command rompt Cheat sheet](http://simplyadvanced.net/blog/cheat-sheet-for-windows-command-prompt)
+  * [Windows Command Prompt Cheat sheet](http://simplyadvanced.net/blog/cheat-sheet-for-windows-command-prompt)
   * [Linux/Mac Bash Cheat sheet](https://learncodethehardway.org/unix/bash_cheat_sheet.pdf)
 * This tutorial uses the Linux/Mac commands (If you use Windows please check the previous guide)
 * Create a folder with the name `nodewpg`

@@ -16,7 +16,7 @@ Follow the next steps to create your first site!!
   * style.css
   * script.js
 ![open Visual Studio Code](resources/images/create_files.png)
-6. Read and write the following code on each document
+6. Copy and Paste the following code on each document
 
 ### index.html
 ```html

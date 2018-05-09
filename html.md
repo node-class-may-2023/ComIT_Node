@@ -209,7 +209,7 @@ attribute="value"
 ```
 
 #### Practice
-[Exercise 1](exercises/html/ex_01.md)
+[Exercise 1](exercises/html/ex_1.md)
 
 ### Heading Elements
 * HTML has 6 title levels
@@ -462,7 +462,7 @@ attribute="value"
 **Example:**
 ```html
 <a href="http://yahoo.com">Abrir Yahoo</a>
-<a href="c:\Usuarios\mi_nombre\mi_cv.pdf">Mirá mi CV</a>
+<a href="c:\Users\my_name\my_cv.pdf">Look at my CV</a>
 ```
 
 * Links can have a relative URL or path
@@ -551,7 +551,7 @@ To link about.html to index.html we need to exit 2 folders (../../filename)
 * The browser will try to open the default email app if we set the **href** value to **mailto:account@domain.com**
 
 ```html
-<a href="mailto:pablo@comit.com">Contact me</a>
+<a href="mailto:pablo@comit.org">Contact me</a>
 ```
 
 ### Anchor
@@ -582,7 +582,7 @@ Also we can navigate to a different document section:
 
 [Exercise 6](exercises/html/ex_06.md)
 
-## Imagenes
+## Images
 * The **img** element embeds an image into the document
 * It's only a one tag element as it doesn't allow content (other elements or text)
 * The **src** attribute accepts an image filename / path
@@ -845,7 +845,7 @@ Absolute URL:
 
 ## Favicon
 * Favicon is an icon that we can show on our browser window (tabs)
-* Most browser will support .ico, .gif or .png but using the ICO format will ensure it works as far back as Internet Explorer 6
+* Most browsers will support .ico, .gif or .png but using the ICO format will ensure it works as far back as Internet Explorer 6
 * There are lots of other icon types to consider these days as well and you can read more about it on the [MDN site](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML)
 
 ```html
@@ -890,7 +890,7 @@ Facebook:
 Facebook:
 ![Facebook post](resources/images/html/facebook_signup.png)
 
-* The form element have 3 important attributes:
+* The form element has 3 important attributes:
   * action: the URI of a program that processes the form information
   * method: the HTTP method that the browser uses to submit the form: get o post 
     * get: corresponds to the HTTP GET method; form data are appended to the action attribute URI with a '?' as separator, and the resulting URI is sent to the server
@@ -1106,7 +1106,7 @@ Facebook:
 ```
 
 * Use the `checked` attribute with a `checked` value to select the default selected value
-* In HTML5 we as the attribute name and value is the same we can just add the attribute `checked`
+* In HTML5 when the attribute name and value is the same we can just add the attribute `checked`
 
 **Example**
 ```html
@@ -1132,10 +1132,10 @@ Facebook:
 ```html
 <form>
   Select your favourite Harry Potter wizzards
-  <input type="checkbox" name="wizzards" value="harry potter" checked="checked" > Harry Potter
-  <input type="checkbox" name="wizzards" value="hermione granger" checked> Hermione Granger
-  <input type="checkbox" name="wizzards" value="ron weasley"> Ron Weasley
-  <input type="checkbox" name="wizzards" value="aberforth dumbledore"> Aberforth Dumbledore
+  <input type="checkbox" name="wizards" value="harry potter" checked="checked" > Harry Potter
+  <input type="checkbox" name="wizards" value="hermione granger" checked> Hermione Granger
+  <input type="checkbox" name="wizards" value="ron weasley"> Ron Weasley
+  <input type="checkbox" name="wizards" value="aberforth dumbledore"> Aberforth Dumbledore
 </form>
 ```
 
@@ -1185,7 +1185,7 @@ Facebook:
 
 **Example**
 ```html
-<textarea name="about" placeholder="Please let us know about your self "></textarea>
+<textarea name="about" placeholder="Please let us know about yourself"></textarea>
 ```
 
 * The **cols** attribute sets the textarea amount of columns
@@ -1357,7 +1357,7 @@ OR
 **Example**
 ```html
 <form>
-  <input type="url" name="sitiopersonal" />
+  <input type="url" name="personalsite" />
 </form>
 ```
 
@@ -1515,7 +1515,7 @@ OR
 * To specify a video source, use either the **src** attribute or the **source** element (the browser will choose the most suitable one)
 * Different browsers might support different media types
   * H264: Internet Explorer & Safari
-  * WebM: Android, Chrome, Firefox y Opera
+  * WebM: Android, Chrome, Firefox and Opera
 * For a list of supported formats you can see the [MDN supported media formats guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats)
 * Each browser will show the player in a different way
 * Also we can still use flash plugin to reach more users
@@ -1652,7 +1652,7 @@ OR
 **Example**
 ```html
 <body>
-  <p>&lt; lower than</p>
+  <p>&lt; less than</p>
   <p>&gt; greater than</p>
   <p>&amp; ampersand</p>
   <p>&copy; Copyright</p>
