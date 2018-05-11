@@ -3268,7 +3268,7 @@ person.greet(); // Hi, how are you?
 * When we call a string, number or array literal methods JavaScript will transform the literal value into a object
 * So calling `'text'` will transform into a String object and the same will happen with the others values types
 * Now we can create our own
-* Un método también puede aceptar parámetros:
+* A method can also accept parameters:
 
 **Example:**
 ```js
