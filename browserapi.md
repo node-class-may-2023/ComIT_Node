@@ -1931,7 +1931,22 @@ console.log(JSONuser);
 * [Youtube - REST API concepts and examples](https://www.youtube.com/watch?v=7YcW25PHnAA)
 
 ### Fetch
-* The Fetch API provides an interface for fetching resources (including across the network)
+* Open the following link and take a look at the JSON object that we get back from the API
+* [https://api.tvmaze.com/search/shows?q=batman](https://api.tvmaze.com/search/shows?q=batman)
+
+![JSON](./resources/images/browser/json.png)
+
+* As you can see we can get JSON back from a server but it might be difficult to read this way
+* Open the following url: [https://codebeautify.org/jsonviewer](https://codebeautify.org/jsonviewer)
+
+* Click the load url button and enter the https://api.tvmaze.com/search/shows?q=batman url
+* This site will help us see the response that we get from the server on the left side
+* We can see the JSON object representation in a way that is more readable
+
+![JSON](./resources/images/browser/json2.png)
+
+* Now that we know what we want to retrieve from the API call we can learn how to get it using JavaScript
+* The **Fetch** API provides an interface for fetching resources (including across the network)
 * It will seem familiar to anyone who has used XMLHttpRequest, but the new API provides a more powerful and flexible feature set
 * Fetch provides a generic definition of Request and Response objects
 * The **fetch** method takes one mandatory argument, the path to the resource you want to fetch
@@ -1952,42 +1967,16 @@ fetch(apiURL);
 ```js
 const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
-fetch(apiURL).then(function(response) {
-  console.log(response); // we get a Response object back with the TV data
-});
+fetch(apiURL)
+  .then(function(response) {
+    console.log(response); // we get a Response object back with the TV data
+  });
 ```
 
 * The Response object looks like this
 ![API Response](./resources/images/js-browser/api_response.png)
 
-* We can see that the Response object has a `ok` property with a boolean value
-* If the `ok` property it's true it means that everything went well
-* Now we can check for fetch errors
-
-**Example:**
-```js
-const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
-
-fetch(apiURL).then(function(response) {
-  if (response.ok) {
-    console.log(response);
-  } else {
-    console.log('Ups... there was a network error');
-  }
-});
-```
-
-* Now that we're sure that the call is over we'll need to resolve the promsie
-* JavaScript has a `Promise` object that we can use
-* This object has a `resolve` method that will resolve the expected promise
-* For example we can use it this way:
-
-**Example:**
-```js
-Promise.resolve(promise); // This will resolve a promise
-```
-
-* Now let's put every thing together
+* The Response object has a `json` method that returns a promise that resolves with the result of parsing the body text as JSON
 
 **Example:**
 ```js
@@ -1995,71 +1984,91 @@ const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
 fetch(apiURL)
   .then(function(response) {
-    if (response.ok) {
-      return Promise.resolve(response); // resolve the promise and return the value
-    } else {
-      console.log('Ups... there was a network error');
-    }
+    return response.json();
   });
 ```
 
-* The value that we get back it's a JSON string object so we need to convert it to a JavaScript one
 * Promises can be chained using the `then` method as we return values
 
 **Example:**
 ```js
-promise.then().then().then(); 
-```
-
-**Example:**
-```js
 const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
 fetch(apiURL)
   .then(function(response) {
-    if (response.ok) {
-      return Promise.resolve(response); // resolve the promise and return the value
-    } else {
-      console.log('Ups... there was a network error');
-    }
-  })
-  .then(function(JSONresponse) {
-    return JSONresponse.json();
-  });
-
-```
-
-* As we have a JSON string object we can convert it to JavaScript one using the `json()` method
-* In this example we chain the then calls and return the JavaScript object that we get back from JSONresponse.json();
-* So we can use `then` again
-
-**Example:**
-```js
-const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
-
-fetch(apiURL)
-  .then(function(response) {
-    if (response.ok) {
-      return Promise.resolve(response); // resolve the promise and return the value
-    } else {
-      console.log('Ups... there was a network error');
-    }
-  })
-  .then(function(JSONresponse) {
-    return JSONresponse.json();
+    return response.json();
   })
   .then(function(data) {
     console.log(data);
   });
 ```
 
-* In this case data will have all the TV show data
-* So we need to know what the API returns as we're going to be dealing with it
-* To see what the data looks like you can open the following [link](https://api.tvmaze.com/search/shows?q=batman)
-* In this case we get an array back with 10 objects on it
-* As it might be a little hard to read you can check this [JSON version](./resources/code/json/tv.json)
-* At the end we have a Array value with 10 objects inside and each of those object has properties that we'll use
-* So we can iterate this data array or just use its objects
+![data](./resources/images/browser/response.png)
+
+* Each episode JSON has the following structure:
+
+```json
+{
+  "score": 23.0327,
+  "show": {
+    "id": 975,
+    "url": "http://www.tvmaze.com/shows/975/batman",
+    "name": "Batman",
+    "type": "Scripted",
+    "language": "English",
+    "genres": [
+      "Comedy",
+      "Action",
+      "Science-Fiction"
+    ],
+    "status": "Ended",
+    "runtime": 30,
+    "premiered": "1966-01-12",
+    "officialSite": null,
+    "schedule": {
+      "time": "19:30",
+      "days": [
+        "Thursday"
+      ]
+    },
+    "rating": {
+      "average": 8.2
+    },
+    "weight": 86,
+    "network": {
+      "id": 3,
+      "name": "ABC",
+      "country": {
+        "name": "United States",
+        "code": "US",
+        "timezone": "America/New_York"
+      }
+    },
+    "webChannel": null,
+    "externals": {
+      "tvrage": 2719,
+      "thetvdb": 77871,
+      "imdb": "tt0059968"
+    },
+    "image": {
+      "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg",
+      "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg"
+    },
+    "summary": "<p>Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.</p>",
+    "updated": 1523760926,
+    "_links": {
+      "self": {
+        "href": "http://api.tvmaze.com/shows/975"
+      },
+      "previousepisode": {
+        "href": "http://api.tvmaze.com/episodes/95649"
+      }
+    }
+  }
+}
+```
+
+* Now that we have the data and know the JSON structure we can use it:
 
 **Example:**
 ```js
@@ -2067,48 +2076,34 @@ const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
 fetch(apiURL)
   .then(function(response) {
-    if (response.ok) {
-      return Promise.resolve(response); // resolve the promise and return the value
-    } else {
-      console.log('Ups... there was a network error');
-    }
-  })
-  .then(function(JSONresponse) {
-    return JSONresponse.json();
+    return response.json();
   })
   .then(function(data) {
     const show = data[0];
 
-    console.log(show.show.name);
-    console.log(show.show.premiered);
-    console.log(show.show.image.original);
+    console.log(show.show.name); // Batman
+    console.log(show.show.premiered); // 1966-01-12
+    console.log(show.show.image.original); // http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg
   });
 ```
-
-* In this example we get the batman show data
-* Once we're done parsing the response we have a 10 items array with JavaScript objects that represent Batman shows
-* We get the first show from the collection
-* Then we can access some properties from the show like name, date it has been premiered and the image source
-* This is the way that we retrieve data from a server API using fetch, JSON objects and JavaScript
-* So if this is the way to retrieve data from the server....
-* How do we post data to an API?
 
 #### Practice
 [Exercise 52](./exercises/browser/ex_52.md)
 
-### Using fetch and POST
-* The `fetch` method accepts a second parameter
-* This parameter is a JavaScript object with `request data`
+## Congrats!!!
+* Browser will fight to parse and interpret you JavaScript code
 
-* [MDN fetch doc](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-* [Youtube - Fetch API](https://www.youtube.com/watch?v=g6-ZwZmRncs)
-* [Working with the Fetch API](https://www.youtube.com/watch?v=9Qtvjd0UbAs)
-* [MDN promises doc](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise)
-* [MDN Using promises guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
-* [Youtube - How to Use Javascript Promises](https://www.youtube.com/watch?v=104J7_HyaG4)
-* [Google Developers - JavaScript Promises: an Introduction](https://goo.gl/ZH6spE)
+![Browsers](./resources/images/browser/browserfight.jpg)
+
+* You Rock! 🤘🏻
+
+![Congrats](https://media.giphy.com/media/RPwrO4b46mOdy/giphy.gif)
+
+* Now you know JavaScript Browser side, we no longer need a droid! Thanks C-3PO 🤖
+
+![Java](https://media.giphy.com/media/10bdAP4IOmoN7G/giphy.gif)
 
 ## Assets / Resources
+* [Wes Bos - 30 Day Vanilla JS Coding Challenge (Great practice)](https://javascript30.com)
 * [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
-* [Wes Bos - 30 Day Vanilla JS Coding Challenge](https://javascript30.com)
 * [Superhero.js](http://superherojs.com)
