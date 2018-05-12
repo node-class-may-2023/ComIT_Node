@@ -147,19 +147,19 @@ span {
   * Site
 
 ### Inline style
-* We can use the **style** attribute to apply css to only one HTLM element
-* This attribute accepts pair of property:value
+* We can use the **style** attribute to apply css to only one HTML element
+* This attribute accepts a pair of property:value
 * To apply more than one style we separate the property:value with a semicolon
   * Example: property:value; other-property: other-value
-* We don't need to select the element as we are already the style to it
+* We don't need to select the element as we are directly applying the style to it
 
 **Example:**
 ```html
 <span style="color: white;">White text</span>
 ```
 
-* This is the most singular way to apply CSS to HTML
-* Apply the style attribute to each element in case that you need to have more than one element with the same style
+* This is the most singular way to apply CSS to HTML.  The style will apply only to the single element.
+* You would need to apply the style attribute to each element if you want more than one element with the same style
 
 **Example:**
 ```html
@@ -169,8 +169,8 @@ span {
 
 * This type of selection is usefull if we only need a couple of elements
 * It's hard to change values if we have many items
-* As it's the last property than the browser reads it's also the higher priority one
-* Also, it's a good option in case you need to overide styles
+* As it's the last property that the browser reads, it's also the [higher priority one](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+* Because it is the last property read, it's a good option when you need to override styles
 
 #### Practice
 [Exercise 2](exercises/css/ex_2.md)

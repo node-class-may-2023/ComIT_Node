@@ -158,7 +158,7 @@ git status
 * By executing **git add** we add the documents that we want to **commit**
 
 ### Git commit
-* This command record changes to the repository
+* This command records changes to the repository
 * When we commit one or many files we create a new version of our project
 * To know what changed over time it's a good practice to write a descriptive message
 * Now we can commit our changes running **git commit -m 'Commit message'**
@@ -184,7 +184,7 @@ git status
 * As we just commited our changes there's nothing new to commit
 
 ### Git log
-* This command show commit logs
+* This command shows commit logs
 * We can check our project commit history by running **git log**
 
 ```bash
@@ -198,7 +198,7 @@ git log
 ```
 
 * Once we run this command we can see all the commits that this project has
-* By writing good commits messages we can know more about what changed over time
+* By writing good commit messages we can know more about what changed over time
 * Open the index.html file again and change the following lines:
 
 ```html
@@ -335,7 +335,7 @@ git status
 ```
 
 * Git rm works like git add but instead of adding the file we'll delete it from the project
-* Now we need to commit our change and delete de index.html file
+* Now we need to commit our change and delete the index.html file
 
 ```bash
 git commit -m 'Deleted index.html'
@@ -389,8 +389,8 @@ Date:   Sun Mar 11 21:39:21 2018 -0500
 ```
 
 * We can see that we added a index.html file
-* Then we updated this file content
-* Finaly we deleted it
+* Then we updated the file contents
+* Finally we deleted it
 * Now we have an empty project again but with git history
 * Create a html folder
 ```bash
@@ -431,7 +431,7 @@ git status
 ```
 
 * By adding the folder we're adding all the exercises files
-* Commit this files
+* Commit these files
 
 ```bash
 git commit -m 'Added html exercises files'
@@ -454,7 +454,7 @@ git remote add origin https://github.com/nisnardi/nodewpg.git
 ```
 
 * By executing this command we're configuring a remote git server (github)
-* We run the **git remote** to work with a remote server
+* We run the **git remote** commands to work with a remote server
 * Then we are adding a new server so we have **add**
 * Origin is the default name by convention for our main source
 * So with this command we let git know that we want to add a remote server with the url https://github.com/nisnardi/nodewpg.git that we'll call origin
