@@ -214,7 +214,7 @@ filename: index.html
 </html>
 ```
 
-Archivo: contact.html
+filename: contact.html
 ```html
 <!DOCTYPE html>
 <html>
@@ -236,7 +236,7 @@ Archivo: contact.html
 </html>
 ```
 
-* We can change the way spans looks like in both documents by only changing one CSS value
+* We can change the way spans look in both documents by only changing one CSS value
 
 **Example:** 
 filename: styles.css
@@ -289,8 +289,8 @@ filename: contact.html
 * To use CSS on our site we need more ways to select elements and apply styles
 * By using different types of selector we can select one or many elements at the same time
 * For example: 
-  * The element selector (tag name) apply the style to all the elements with the same tag name
-  * The id selector apply the style to only the element that has the id attribute
+  * The element selector (tag name) applies the style to all the elements with the same tag name
+  * The id selector applies the style to only the element that has the id attribute
 * [Read the MDN selectors guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
 
 ## ID Selector
@@ -344,7 +344,7 @@ div {
 /* Only select the div with main id */
 div#main { color: red; }
 
-/* Only select the paragraph with red class */
+/* Only select the paragraph with blue class */
 p.blue { color: blue; }
 ```
 ```html
@@ -388,7 +388,7 @@ div, p { color: red; }
 
 ## Universal selector
 * The `*` universal selector matches elements of any type
-* You can use this selector to delete the browser initial styles (Many CSS libraries does it)
+* You can use this selector to delete the browser initial styles (Many CSS libraries do it)
 * [MDN Universal selectors doc](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors)
 
 **Example:**
@@ -408,8 +408,8 @@ div, p { color: red; }
 ## Attribute selectors
 * Selects elements based on the value of the given attribute
 * First we select the element
-* Then we add brakets
-* Between brakets we add the attribute = value
+* Then we add brackets
+* Between brackets we add the attribute = value
 * [MDN Attribute selectors doc](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 
 **Example:**
@@ -475,7 +475,7 @@ div a {
 ```
 
 ## Child selectors
-* Using the **>** selector we can select only those elements matched by the second selector that are the children of elements matched by the first
+* Using the **>** selector we can select only those elements matched by the second selector that are the direct children of elements matched by the first
 * The child combinator **>** is placed between two CSS selectors. 
 * Elements matched by the second selector must be the immediate children of the elements matched by the first selector
 * This is stricter than the descendant selector
@@ -506,12 +506,12 @@ div > p {
 ## Pseudo-elements
 * A CSS **pseudo-element** is a keyword added to a selector that lets you style a specific part of the selected element(s)
 * We use the **::** operator to select **pseudo-element**
-* This are the most used **pseudo-element**:
-* ::first-line
-* ::first-letter
-* ::selection
-* ::after
-* ::before
+* These are the most used **pseudo-element**:
+  * ::first-line
+  * ::first-letter
+  * ::selection
+  * ::after
+  * ::before
 * The pseudo-elements ::after & ::before need to use a special property called **content**
 * [MDN Pseudo elements docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
@@ -618,6 +618,7 @@ body {
 * Any browser that supports web fonts can have exactly the fonts you specify available to it
 * The @font-face CSS rule allows authors to specify fonts (online url(), and locally local()), to display text on their web pages 
 * By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers
+* Don't forget that not all fonts are free! 
 * To use custom fonts first we need to define it
 [MDN font-face doc](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
 
@@ -700,11 +701,11 @@ body { font-family: 'IBM Plex Mono', monospace; }
 /* We set the body font size in 16px using a absolute value */
 body { font-size: 16px; }
 
-/* Now the font-size is 16px so we can use a realite value like 2em to change it (32px) */
+/* Now the font-size is 16px so we can use a relative value like 2em to change it (32px) */
 h1 { font-size: 2em; }
 ```
 
-* In the previous example if we change the body font-size it will change how every element with a relative value looks like
+* In the previous example if we change the body font-size it will change how every element with a relative value looks 
 
 ### Weight
 * The font-weight property specifies the weight (or boldness) of the font
@@ -999,8 +1000,8 @@ img {
 * **Width** =	width + padding-left + padding-right + border-left + border-right
 * **Height** = height + padding-top + padding-bottom + border-top + border-bottom
 
-* Older browser use to calculate the box model in a different way and this was one of the biggest issues developers had creating layouts
-* [Wikipedia - Internet Explorer box model bug](https://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug)
+* Older browsers used to calculate the box model in a different way and this was one of the biggest issues developers had creating layouts
+  * [Wikipedia - Internet Explorer box model bug](https://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug)
 
 ### Border:
 * The **border** property is a shorthand for setting all individual border property values in a single declaration
@@ -1053,7 +1054,7 @@ div {
 * When `two values` are specified, the first width applies to the `top and bottom`, the second to the `left and right`
 * When `three values` are specified, the first width applies to the `top`, the second to the `left and right`, the third to the `bottom`
 * When `four values` are specified, the widths apply to the `top, right, bottom, and left` in that order **(clockwise)**
-* Many CSS property works this way
+* Many CSS properties works this way
 * We can also set keyword values using: **thin, medium & thick**
 * [MDN border-width doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-width)
 
@@ -1480,7 +1481,7 @@ span {
 ```
 
 * The value **none** lets you turn off the display of an element
-* when you use none, all descendant elements also have their display turned off
+* When you use none, all descendant elements also have their display turned off
 * The document is rendered as though the element doesn't exist in the document tree
 
 #### Practice
@@ -1859,9 +1860,9 @@ input[type="submit"]:hover {
 * If the row should be 960px wide then we can create 1 column and set the value to 12
 * In case we need 2 columns then each column can be 6 columns big
 * For 3 columns then each column will use 4 columns space
-* So we can thinkg our web design as rows and columns
-* Now we need this grids to be responsive as we'll need to support different screens resolutions
-* The number of columns may changes depending the grid we use
+* So we can think of our web design as rows and columns
+* Now in modern days we need these grids to be responsive as we need to support different screen resolutions
+* The number of columns may change depending the grid we use
 * Some examples of grid systems:
   * [Unsemantic](https://unsemantic.com)
   * [Boostrap](https://getbootstrap.com/docs/4.0/layout/grid)
@@ -1934,8 +1935,8 @@ div.relative {
 #### Absolute
 * The element is removed from the normal document flow
 * No space is created for the element in the page layout
-* It is positioned relative to its closest positioned ancestor if any, otherwise, it is placed relative to the initial containing block
-* Its final position is determined by the values of `top, right, bottom, and left`
+* It is positioned relative to its closest positioned ancestor (if any), otherwise it is placed relative to the initial containing block
+* It's final position is determined by the values of `top, right, bottom, and left`
 * Absolutely positioned boxes can have margins, and they do not collapse with any other margins
 
 **Example:**
@@ -2039,7 +2040,7 @@ div.second {
 
 * In this case we can use the **z-index** property to change the way elements will overlap
 * Position value: a number
-* Lower numbers are overlaped by higher ones
+* Lower numbers are overlap]ped by higher ones
 * [MDN z-index doc](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
 **Example:**
@@ -2288,8 +2289,8 @@ div {
 [Exercise 25](exercises/css/ex_25.md)
 
 ## Media Query
-* Media query are a great way to apply CSS only to selected devices depending there type or characteristics
-* For example we can apply CSS only to print a document or if the device screen is bigger or smaller than a specific value
+* Media query are a great way to apply CSS only to selected devices depending on their type or characteristics
+* For example we can apply CSS only when printing a document or if the device screen is bigger or smaller than a specific value
 * Using Media query we can make our site responsive
 * Grids system already helps us dealing with responsive design
 * Use the **@media** to specify a media query
@@ -2358,7 +2359,7 @@ body {
 
 * [Media Query example](./examples/css/media/resolution.html)
 
-* Also we can specify the device **orintation** using **landscape or portrait** as values
+* Also we can specify the device **orientation** using **landscape or portrait** as values
 
 **Example:** 
 ```css
@@ -2427,7 +2428,7 @@ body {
 ### CSS animation
 [CodeSchool - Adventures in Web animations](https://www.codeschool.com/courses/adventures-in-web-animations)
 
-## Congratulations, you made it, now you know CSS and can enjoin this great joke!!
+## Congratulations, you made it, now you know CSS and can enjoy this great joke!!
 ![Family Guy CSS](./resources/images/css/css.gif)
 
 #### Practice
