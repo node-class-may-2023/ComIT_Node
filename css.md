@@ -2433,4 +2433,3 @@ body {
 
 #### Practice
 * Now you're ready to style your personal site and show it to the rest of the world!
-[Exercise 27](exercises/css/ex_27.md)
