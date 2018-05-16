@@ -2087,6 +2087,8 @@ fetch(apiURL)
   });
 ```
 
+* Now we can use everything that we learned on [this fetch example](https://github.com/nisnardi/fetch-demo)
+
 #### Practice
 [Exercise 52](./exercises/browser/ex_52.md)
 
