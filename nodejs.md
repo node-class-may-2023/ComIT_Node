@@ -563,7 +563,7 @@ npm start
 * Also, we can export more code using just `exports` 
 
 ```js
-exports = calcularPrecio
+exports = getPrice;
 ```
 
 * Read and learn more about [Node.js modules](https://nodejs.org/api/modules.html)
@@ -578,3 +578,132 @@ exports = calcularPrecio
 [Exercise 4](./exercises/js/ex_4.md)
 
 [Exercise 5](./exercises/js/ex_5.md)
+
+## Arrow Functions
+* Node.js uses arrow functions for there callbacks and you can see many examples on there documentation
+* Arrow functions are just JavaScript functions that we write in a different way
+* We won't use the function reserved word
+* Arrow function definition
+```js
+// Regular function
+function() {}
+
+// Arror function
+() => {}
+```
+
+* We can assign them to variables in the same way that we used to
+
+```js
+const myFunction = function() {
+  console.log('my function call');
+}
+
+const myES6Function = () => {
+  console.log('my function');
+}
+```
+
+* Then we can call them in the same way we used to:
+
+```js
+const myFunction = function() {
+  console.log('my function call');
+}
+
+const myES6Function = () => {
+  console.log('my function');
+}
+
+myFunction();
+myES6Function();
+```
+
+* In this example we see how similar functions and arrow functions are
+* Arrow functions are part of the ES6 definition and they are simple to write
+* We can [almost use them on any Browser](https://caniuse.com/#search=arrow%20functions) too
+
+```js
+const myFunction = function(parameter) {
+  console.log('parameter: ', parameter);
+}
+
+const myES6Function = (parameter) => {
+  console.log('parameter: ', parameter);
+}
+```
+
+* Passing parameters works the same way too
+* The only difference is that if we only pass one parameter we can remove the parentheses
+
+```js
+const myFunction = function(parameter) {
+  console.log('parameter: ', parameter);
+}
+
+const myES6Function = parameter => {
+  console.log('parameter: ', parameter);
+}
+```
+
+* They are really usefull when we use them as callbacks:
+
+```js
+const students = ['tom', 'peter', 'maria', 'claire'];
+
+students.forEach(function(student) {
+  console.log(student);
+});
+
+students.forEach(student => {
+  console.log(student);
+});
+```
+
+* In both cases the functions are working as callbacks but arrow functions looks much simpler
+* Arrow functions change the way that we can return values from it
+* Using arrow functions will return the value after the => symbol
+
+```js
+function getMessage() {
+  return 'hi, this is a message';
+}
+
+const getMessageArrowFunction = () => 'hi, this is a message';
+const message = getMessageArrowFunction();
+```
+
+* As `{ }` in arrow functions are used to limit the function body we need to find a different way in case we need them to return an object
+* We can use parentheses and curly brackets 
+
+```js
+function getUser() {
+  const user = {
+    name: 'Mateo',
+    age: 26
+  };
+  
+  return user;
+}
+
+const getUserArrowFunction = () => ({
+  name: 'Mateo',
+  age: 26
+});
+
+const user = getUserArrowFunction();
+console.log(user.name);
+```
+
+* Arrow functions do not have their own this value
+* This means that the `this` inside the function it's going to work in a differen way
+* Lexical Scoping just means that it uses this from the code that contains the Arrow Function
+* You can see [great examples](https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4)
+* Read the [MDN Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) doc to learn more about Arrow Functions
+* [ES6 in depth arrow functions](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
+* [The Coding Train - ES6 Arrow Function - YouTube](https://www.youtube.com/watch?v=mrYMzpbFz18)
+
+#### Practice
+[Exercise 6](./exercises/js/ex_6.md)
+
+[Exercise 7](./exercises/js/ex_7.md)
