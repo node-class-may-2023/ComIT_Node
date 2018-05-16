@@ -2103,7 +2103,7 @@ fetch(apiURL)
 
 * Now you know JavaScript Browser side, we no longer need a droid! Thanks C-3PO 🤖
 
-![Java](https://media.giphy.com/media/10bdAP4IOmoN7G/giphy.gif)
+![Java](./resources/images/browser/java.webp)
 
 ## Assets / Resources
 * [Wes Bos - 30 Day Vanilla JS Coding Challenge (Great practice)](https://javascript30.com)
