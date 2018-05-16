@@ -7,7 +7,10 @@
 
 > As a `multi-paradigm` language, JavaScript supports `event-driven`, `functional`, and `imperative (including object-oriented and prototype-based)` > programming styles.
 
-> `Initially only implemented client-side in web browsers`, JavaScript engines `are now embedded in many other types of host software, including server-side in web servers and databases`, and in non-web programs such as word processors and PDF software, and in runtime environments that make > JavaScript aconst person = {
+> `Initially only implemented client-side in web browsers`, JavaScript engines `are now embedded in many other types of host software, including server-side in web servers and databases`, and in non-web programs such as word processors and PDF software, and in runtime environments that make JavaScript viable for writing mobile and desktop applications, including desktop widgets.
+
+```js
+const person = {
   name: 'Nico',
   age: 38
 }
@@ -17,14 +20,14 @@ const properties = Object.keys(person);
 person.forEach(function(property) {
   console.log(person[property]);
 });
-vailable for writing mobile and desktop applications, including desktop widgets.
+```
 
 * This definition comes from [Wikipedia - JavaScript](https://en.wikipedia.org/wiki/JavaScript) document
 * Over this course we'll try to figure out what this means and how it works
 * By the end of the programing section we should be able to read this definition again and understand it
 
 ## JS History
-* It's important to know this lenguage history to understand were it comes from and where it's going
+* It's important to know the language's history to understand where it comes from and where it's going
 * Read [auth0 - A brief history of JavaScript](https://auth0.com/blog/a-brief-history-of-javascript)
 * Watch & Read [TXJS 2011 A6 – Brendan Eich – Ecma TC39: The Good, The Bad, and The Ugly.](https://brendaneich.com/2011/08/my-txjs-talk-twitter-remix)
 * Watch [Tyler McGinnis - Computing Conversations with Brendan Eich](https://www.youtube.com/watch?v=IPxQ9kEaF8c)
@@ -37,7 +40,7 @@ vailable for writing mobile and desktop applications, including desktop widgets.
 * JavaScript now runs Client and Server side
 * Using a Web Browser is one of the easiest way to execute JS Client side
 * Using Node.js we can execute JS Server side
-* JavaScript is no longer a scripting lenguage to create interactive browser animations
+* JavaScript is no longer a scripting language to create interactive browser animations
 
 ### Client Side - Browser
 * Open Chrome
@@ -61,19 +64,19 @@ console.log(2 + 2);
 * Now run the following code:
 
 ```javascript
-console.log('Congrats!!!, you just ran your firs JS code');
+console.log('Congrats!!!, you just ran your first JS code');
 ```
 
 ### Node.js - Server Side
 
 * [Node.js®](https://nodejs.org/) is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 * It was created by [Ryan Dahl](https://wikipedia.org/wiki/Node.js) in 2009
-* We'll use Node.js from now on to learn the lenguage and run our JavaScript exercises
-* Once we know the lenguage core concepts we'll learn about the Browsers API's
+* We'll use Node.js from now on to learn the language and run our JavaScript exercises
+* Once we know the language core concepts we'll learn about the Browsers API's
 * [Download & install Node.js](https://nodejs.org/en/download/)
 * [Install Node.js & npm Windows](http://blog.teamtreehouse.com/install-node-js-npm-windows)
 
-* After installing Node.js open a terminar window and run the following command:
+* After installing Node.js open a terminal window and run the following command:
 
 ```bash
 node --version
@@ -102,7 +105,7 @@ node
 
 ### Using Node.js REPL
 * Open your terminal
-* Execute de `node` command
+* Execute the `node` command
 * Write the following sentence once you see the **>** symbol:
 
 ```javascript
@@ -162,7 +165,7 @@ console.log(2 + 2);
 ```
 
 ```bash
-node progama.js
+node index.js
 ```
 
 * Now we see the expected output!!!
@@ -173,22 +176,22 @@ node progama.js
 * V8 is maintained by Google
 * We'll use browser to run JavaScript client side and Node.js for Server side
 
-## Variables declaration & assignment operator
+## Variables declaration & assignment operators
 
 ## Variables declaration
 
 * Many times when coding we need to store a value to interact with it
 * This value is stored in our computer memory
-* As this values might change over time we'll call `variables` to this memory positions
-* We can assign variables `name` to identify them
+* As this values might change over time we'll call this memory position a `variable` 
+* We can assign variables a `name` to identify them
 * It's a good practice to use descriptive names to define our variables
 * If we use names like a, b, foo they don't add any context about what we're coding
-* We can then define that a variables are named memory positions where we can assign different values and override them in case we need to
+* We can then define that variables are named memory positions where we can assign different values and override them when needed
 
 ### ES5
 * To define a variable in JavaScript we just need a variable name
 * The variable statement **var** declares a variable, optionally initializing it to a value
-* Also end each statement with a `;`
+* Also end each statement with `;`
 * [MDN var doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 
 **Example:**
@@ -196,7 +199,7 @@ node progama.js
 var variableName;
 ```
 
-* For example we can define a name and age variables to use in our program
+* For example we can define name and age variables to use in our program
 
 **Example:**
 ```js
@@ -204,12 +207,12 @@ var name;
 var age;
 ```
 
-* Not using **var** it's a bad coding practice
+* Not using **var** is a bad coding practice
 * To avoid  unexpected errors use var to declare your variables
 * Variable names must start with a letter
-* Use descriptive variable names
+* Use descriptive variable names to keep your code [smelling nice](https://en.wikipedia.org/wiki/Code_smell)
 * In JavaScript it's common to use camel case to define variable names
-* In camel case the first word is writen in lower case and the rest of the words start with a capitalize letter
+* In camel case the first word is written in lower case and the rest of the words start with a capitalize letter
 
 **Example:**
 ```js
@@ -309,7 +312,7 @@ node index.js
 [Exercise 6](./exercises/js/ex_6.md)
 
 ### ES6
-* In the lenguage new version we can use **let** to define variables
+* In the language new version we can use **let** to define variables
 * This statement declares a **block scope local variable**, optionally initializing it to a value
 * Using **let** will help us scope our variables in a better way
 * [MDN let doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
@@ -3216,7 +3219,7 @@ console.log(persona.married); // true
 
 ### Methods
 * JavaScript objects have methods
-* In this lenguage an object method is a property with a function as value
+* In this language an object method is a property with a function as value
 
 **Example:**
 ```js
