@@ -14,4 +14,4 @@
   * Your date of birth (string, format mm/dd/yyyy)
   * Your address (string)
 
-* **TIP:** Use strings single or double quotes for strings
+* **TIP:** Use single or double quotes around the text for strings

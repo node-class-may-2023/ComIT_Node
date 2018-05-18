@@ -12,7 +12,7 @@
 * Define a firstName and lastName variables and assign your first and last name
 * Using console.log show the following message as output:
 ```
-Wellcome to the browser %firstName% %lastName% again!!
+Welcome to the browser %firstName% %lastName% again!!
 ```
 * Start the http-server inside this folder
 ```bash

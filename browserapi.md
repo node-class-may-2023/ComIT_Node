@@ -90,7 +90,7 @@ Ctrl+`
 <head>
   <script>
     // You can add your JavaScript code here!
-    console.log('Wellcome to the Browser again!!');
+    console.log('Welcome to the Browser again!!');
   </script>
 </head>
 ```
@@ -105,7 +105,7 @@ Ctrl+`
   
   <script>
     // You can add your JavaScript code here!
-    console.log('Wellcome to the Browser again!!');
+    console.log('Welcome to the Browser again!!');
   </script>
 </body>
 ```
@@ -130,7 +130,7 @@ Ctrl+`
 * Code inside the `script.js` file
 ```js
 // archivo script.js
-console.log('Wellcome to the browser');
+console.log('Welcome to the browser');
 ```
 
 * When the browser finds a **script** tag will request the js file, download it and then execute it

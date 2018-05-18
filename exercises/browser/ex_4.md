@@ -12,7 +12,7 @@
 * Using prompt method ask the user to input his firstname
 * Using prompt method ask the user to input his lastname
 * Show the following message using the alert method
-Mostrar al usuario una alerta con el siguiente mensaje:
+
 ```
-Wellcome %firstname% %lastname% to JavaScript client side!!!
+Welcome %firstname% %lastname% to JavaScript client side!!!
 ```

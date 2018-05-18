@@ -3,7 +3,7 @@
 * Create a new index3.js file
 * Declare the following values using only one line: 
   * First name
-  * Last apellido
+  * Last name
   * Age
   * Date of birth
   * Address
@@ -14,4 +14,4 @@
   * Your date of birth (string, format mm/dd/yyyy)
   * Your address (string)
 
-* **TIP:** Use strings single or double quotes for strings
+* **TIP:** Use single or double quotes for strings
