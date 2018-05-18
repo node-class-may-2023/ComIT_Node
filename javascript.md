@@ -586,7 +586,7 @@ console.log(married);
 * A variable that has not been assigned a value is of type **undefined**
 * A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value
 * A function returns undefined if a value was not returned
-* Also we can assign it as variable value
+* Also we can assign it as a value to a variable
 
 **Example:**
 ```js
@@ -614,8 +614,8 @@ console.log(nullVariable);
 #### Practice
 [Exercise 24](./exercises/js/ex_24.md)
 
-* At the begining **null** & **undefined** looks similar but they don't
-* We can assign a null value and know that the variable has been defined but it has a null value
+* At the beginning **null** & **undefined** look similar but they are different
+* We can assign a null value and know that the variable has been defined but it has no value
 
 ### typeof
 * The **typeof** operator returns a string indicating the type of the unevaluated operand
@@ -636,7 +636,7 @@ console.log(typeof nullVar); // object
 ```
 
 * In this example we can see that typeof will return different values for different data types
-* For **null** it will return object and that is something unexpected
+* For **null** it will return `object`! Now that was unexpected...
 * Object is a different type of JavaScript data value and we'll talk more about it in a different section
 
 #### Practice
@@ -656,7 +656,7 @@ console.log(typeof nullVar); // object
 2 + 2
 ```
 
-* In this example we add to literal numbers
+* In this example we add two literal numbers
 
 **Example:**
 ```js
@@ -783,7 +783,7 @@ console.log(result); // 10
 ```
 
 * With code we can have the same problem that we can have in math when we divide by 0
-* JavaScript has a especial number type called **Infinity**
+* JavaScript has a special number type called **Infinity**
 * We get **Infinity** if we try to divide by 0
 * [MDN Infinity doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity)
 
@@ -825,7 +825,7 @@ console.log(result); // 0
 
 #### Increment
 * The increment operator **++** increments (adds one to) its operand and returns a value
-* If used postfix, with operator after operand (for example, x++), then it returns the value before incrementing
+* If used [postfix](http://www.cs.man.ac.uk/~pjj/cs212/fix.html), with the operator after the operand (for example, x++), then it returns the value before incrementing
  
 **Example:**
 ```js
@@ -836,7 +836,7 @@ number++;
 console.log(number); // 1
 ```
 
-* If used prefix with operator before operand (for example, ++x), then it returns the value after incrementing
+* If used prefix with the operator before the operand (for example, ++x), then it returns the value after incrementing
 
 **Example:**
 ```js
@@ -868,9 +868,8 @@ console.log(number); // 8
 ```
 
 #### Assignment operators
-* We can assigna a number to a variable
-* Then use this variable to do any arithmetic operation
-* Also we can re use the variable to assign the result of the arithmetic operation
+* We can assign a number to a variable then use this variable to do any arithmetic operation
+* Also we can reuse the variable to assign the result of the arithmetic operation
 * Take a look at the following example:
 
 **Example:**
@@ -890,7 +889,7 @@ number++;
 ```
 
 * We see in this examples that we increment and assign the result to the variable
-* The increment and decrement operators are great but we can only add or substract by one
+* The increment and decrement operators are great but we can only add or subtract by one
 * We can use different assignment operators to do this task for different operations
 * Assignment operators:
   * `+=` Addition assignment
@@ -898,7 +897,7 @@ number++;
   * `*=` Multiplication assignment
   * `/=` Division assignment
   * `%=` Remainder assignment
-* This concept is easier to undestand using code:
+* This concept is easier to understand using code:
 
 **Example:**
 ```js
@@ -929,8 +928,8 @@ number += 10;
 console.log(number); // 11
 ```
 
-* We can add 10 to the current number variable value using the addition assignmet operator `+=`
-* Then we can use any of the other assignmet operators
+* We can add 10 to the current number variable value using the addition assignment operator `+=`
+* Then we can use any of the other assignment operators
 
 **Example:**
 ```js
