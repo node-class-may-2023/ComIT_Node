@@ -569,15 +569,15 @@ exports = getPrice;
 * Read and learn more about [Node.js modules](https://nodejs.org/api/modules.html)
 
 #### Practice
-[Exercise 1](./exercises/js/ex_1.md)
+[Exercise 1](./exercises/node/ex_1.md)
 
-[Exercise 2](./exercises/js/ex_2.md)
+[Exercise 2](./exercises/node/ex_2.md)
 
-[Exercise 3](./exercises/js/ex_3.md)
+[Exercise 3](./exercises/node/ex_3.md)
 
-[Exercise 4](./exercises/js/ex_4.md)
+[Exercise 4](./exercises/node/ex_4.md)
 
-[Exercise 5](./exercises/js/ex_5.md)
+[Exercise 5](./exercises/node/ex_5.md)
 
 ## Arrow Functions
 * Node.js uses arrow functions for there callbacks and you can see many examples on there documentation
@@ -704,9 +704,9 @@ console.log(user.name);
 * [The Coding Train - ES6 Arrow Function - YouTube](https://www.youtube.com/watch?v=mrYMzpbFz18)
 
 #### Practice
-[Exercise 6](./exercises/js/ex_6.md)
+[Exercise 6](./exercises/node/ex_6.md)
 
-[Exercise 7](./exercises/js/ex_7.md)
+[Exercise 7](./exercises/node/ex_7.md)
 
 ## Web Server
 * Node.js has a build in [HTTP](https://nodejs.org/dist/latest-v8.x/docs/api/http.html) module
@@ -818,7 +818,7 @@ server is listening on 3000
 * In this course we'll use `Express.js`
 
 #### Practice
-[Exercise 8](./exercises/js/ex_8.md)
+[Exercise 8](./exercises/node/ex_8.md)
 
 ## Express
 * Using express we'll be able to execute the following tasks:
@@ -885,7 +885,7 @@ app.listen(3000, function() {
 * Now that we have our server running we can visit `localhost:3000` using a browser to get the response back from the server
 
 #### Practice
-[Exercise 9](./exercises/js/ex_9.md)
+[Exercise 9](./exercises/node/ex_9.md)
 
 ### Using GET routes
 * As you can see creating routes with express is really easy
@@ -968,7 +968,7 @@ app.delete('/product/:id', function(req, res) {
 ![Postman](./resources/images/node/postman2.png)
 
 #### Practice
-[Exercise 10](./exercises/js/ex_10.md)
+[Exercise 10](./exercises/node/ex_10.md)
 
 ### Response handling
 * Using the `response` object we can send the response to the client and choose different formats
@@ -1019,9 +1019,9 @@ app.listen(3000, function() {
 * By joining the current direname and the file name we're creating an absolute path so sendFile knows exactly where it needs to get the file from
 
 #### Practice
-[Exercise 11](./exercises/js/ex_11.md)
+[Exercise 11](./exercises/node/ex_11.md)
 
-[Exercise 12](./exercises/js/ex_12.md)
+[Exercise 12](./exercises/node/ex_12.md)
 
 ### Express Router
 * As we saw on the products route example we can have many routes for one resource and our server file can grow
@@ -1091,7 +1091,7 @@ app.use('/products', products);
 * We call this process `router mounting`
 
 #### Practice
-[Exercise 13](./exercises/js/ex_13.md)
+[Exercise 13](./exercises/node/ex_13.md)
 
 ### Status and error handling
 * The response object has a `status` method that allows us to set the HTTP status response codes
@@ -1142,4 +1142,4 @@ app.use(function (err, req, res, next) {
 ```
 
 #### Practice
-[Exercise 14](./exercises/js/ex_14.md)
+[Exercise 14](./exercises/node/ex_14.md)
