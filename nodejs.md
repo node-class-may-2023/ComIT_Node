@@ -179,9 +179,9 @@ var firstname = 'Ciro';
 var lastname = 'Rodriguez';
 var age = 20;
 
-constole.log(firstname);
-constole.log(lastname);
-constole.log(age);
+console.log(firstname);
+console.log(lastname);
+console.log(age);
 ```
 
 * Now run the following npm command
