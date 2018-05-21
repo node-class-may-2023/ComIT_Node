@@ -1143,3 +1143,1079 @@ app.use(function (err, req, res, next) {
 
 #### Practice
 [Exercise 14](./exercises/node/ex_14.md)
+
+### Middleware
+* A **Middleware** is a function that has access to the request & response objects
+* We can chain middleware calls using the `next` function in the application’s request-response cycle
+* The `next` function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware
+* So this means that the middleware gets three parameters: `request, response and a function callback called next`
+* Express has many middlawares that we can install, configure and use
+
+**Example:**
+```js
+const express = require('express');
+const app = express();
+
+const myMiddleware = function(req, res, next) {
+  // We set a new property in the request object
+  req.someValue = 'This is a value to test the Middleware';
+  
+  // We call the next middleware
+  next();
+}
+
+app.listen(3000);
+```
+
+* To use a middleware we use the express `use` method
+* This method accepts the function callback as parameter that will get executed on each request
+
+**Example:**
+```js
+const express = require('express');
+const app = express();
+
+const myMiddleware = function(req, res, next) {
+  req.someValue = 'This is a value to test the Middleware';
+  
+  next();
+}
+
+app.use(myMiddleware); // Add a middleware
+
+app.listen(3000);
+```
+
+* Now we can define a new route
+
+**Example:**
+```js
+const express = require('express');
+const app = express();
+
+const myMiddleware = function(req, res, next) {
+  req.someValue = 'This is a value to test the Middleware';
+  
+  next();
+}
+
+app.use(myMiddleware);
+
+app.get('/', (req, res) => {
+  const responseMessage = req.someValue; // We get the request value that we setted from the middleware
+  
+  res.send(responseMessage);
+});
+
+app.listen(3000);
+```
+
+* So, a middleware is just a function that will get executed on each request
+* The callback function will accept three parameters:
+  * req: `request` object
+  * res: `response` object
+  * next: it's a function to call the following middleware
+* To call the next middleware we need to call `next()` function 
+* Using the express app and the `use` method we can configure express to use middlewares
+* For example we can use other modules like [morgan](https://github.com/expressjs/morgan):
+
+**Example:**
+```js
+const express = require('express');
+const logger = require('morgan');
+const app = express();
+
+app.use(logger('dev'));
+```
+
+* In this case we imported `morgan` and configured it as a middleware
+* We can use morgan as our server logger
+* Learn about morgan and how to use it reading the module doc
+* Using other express middleware is really simple
+* [Express Middlewares](http://expressjs.com/en/resources/middleware.html)
+* Learn more about [Express middleware reading the docs](https://expressjs.com/guide/writing-middleware.html)
+
+#### Practice
+[Exercise 15](./exercises/node/ex_15.md)
+
+### Static Content
+* So far we created routes to handle our requests
+* Many times we just need to return a file like index.html, styles.css or scripts.js
+* All this files doesn't change on the server as they're all static assets
+* We can configure express to serve statics files from a folder
+* By convention we call this folder public
+* Express has a `static` method that accepts one string parameter
+* This parameter represents the static folder name
+* As this method returns a function we can use it as a middleware
+* We use express `use` method to configure a middleware
+
+**Example:**
+```js
+const express = require('express');
+const app = express();
+
+app.use(express.static('public'));
+```
+
+* In this example we set a public folder to serve our static assets
+* So for example we can call the express server and request for files like index.html, styles.css or scripts.js
+  * http://localhost:3000/img/logo.png
+  * http://localhost:3000/js/script.js
+  * http://localhost:3000/css/styles.css
+  * http://localhost:3000/index.html
+* We don't need to define our own routes for static assests (get, post, etc)
+* If we take a deep look to this urls we can see that the public folder will be our site root for static assets
+
+```bash
+/
+|-public
+| |- img
+| |  |- logo.png
+| |
+| |- js
+| |  |- script.js
+| |
+| |- css
+| |  |- styles.css
+|
+|- index.html
+```
+
+* We can also create a static assets alias using
+* To create an alias we use the alias name as `app.use` first parameter
+* Then we pass the middleware as second parameter
+
+**Example:**
+```js
+const express = require('express')
+const app = express()
+
+app.use('/assets', express.static('public'));
+```
+* In this example we create `/assets` as our public static assets
+* This means that using `/assets` as url we'll have access to the `public` folder content
+* Due to this change we need to update the way that we call our assets:
+  * http://localhost:3000/assets/img/logo.png
+  * http://localhost:3000/assets/js/script.js
+  * http://localhost:3000/assets/css/styles.css
+  * http://localhost:3000/assets/index.html
+* Using an alias we don't let the user know about our folder architecture
+* Also, we can use any folder for our static assets
+* We can change the folder name without having to update the alias
+* Also we can configure more than one folder in case we need to
+* Express will keep on looking for assets in all configured folders in case that it doesn't find it
+
+**Example:**
+```js
+app.use(express.static('public'));
+app.use(express.static('imgs'));
+```
+
+* In this case express will try to find first our assets on the `public` folder
+* If it doesn't find it, then it will look for them on the `imgs` folder
+
+#### Practice
+[Exercise 16](./exercises/node/ex_16.md)
+
+### Templates
+* Using express we can configure a template engine
+* Express can use many [different templates engines](http://expressjs.com/en/guide/using-template-engines.html)
+* We'll use Pug as it's express default template engine
+* Pug it’s a high performance and feature-rich templating engine
+* Pug helps us write shorter HTML content
+* This template used to be called `Jade` and it was renamed to `Pug`
+* Pug works with indentation or white spaces (like Python)
+* To see Pug in action we'll have to configure express to use Pug as template engine and also create our first template
+* Install pug and set it as template engine
+
+```
+npm install pug
+```
+
+**Example:**
+```js
+app.set('view engine', 'pug');
+```
+
+* Use `app.set` method to set our `view engine` and use `pug`
+* And now we create our first pug template
+* As it's a pug template we'll use the `.pug` extension
+
+**Example:**
+* index.pug
+```
+doctype html
+html(lang='en')
+  head
+    title= title
+  body
+    h1= message
+    div.container
+     p Starting using Pug!
+```
+
+* In some way this looks like HTML but it's much shorter as we're using Pug to write the template
+* To use this template from express we need to save it on the views folder
+* If you don't have a views folder you can create one
+
+**Project structure:**
+```
+/
+|- index.js
+|- views
+    |- index.pug
+```
+
+* The html, head, title, body & h1 template values will render the corresponding HTML tags
+* Pug compiles this templates into HTML and it will throw a compilation error if identation it's not right
+* Using pug we can assign values to the elements in the following way: `title= title` or `h1= message`
+* In boths cases we're assigning a value to the title element and the h1 too
+* Now we need to pass those values to the template so it can render it
+* `title & message` are JavaScript variables
+* Using the `=` operator in pug will assign the variables value as HTML element content
+* Use `.classname` to define a class name like div.container
+* And we can just write text if it's static content like `p Starting using Pug!` where the element p will have Starting using Pug! as content
+
+**index.js**
+```js
+const express = require('express');
+const app = express();
+
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Hey', message: 'Hello there!' });
+});
+
+app.listen(3000);
+```
+
+* In this example we configured a root route
+* Using the reponse `render` method we can send a response to the user
+* The render method accepts two parameters
+  * The first parameter is the template name
+  * The second parameter is a JavaScript object where each property will become a template variable
+* So, calling http://localhost:3000 will render the index.pug template passing Hey text as title value and Hello there! as message
+* Express will render the template and create the content to send to the user
+* The final template result will be:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hey</title>
+  </head>
+  <body>
+    <h1>Hello there!</h1>
+    <div class="container">
+      <p>Starting using Pug!</p>
+    </div>
+  </body>
+</html>
+```
+
+* You can read more about the render method on [Express render doc](http://expressjs.com/api.html#app.render)
+* Using Pug we have different ways to set HTML content
+* We already saw that we can change the content using variables
+* Also, we can use three different ways to set static content:
+  * Leaving one space between the element and the content
+  ```
+  p text as content
+  ```
+  * Adding pipe and identation 
+  ```
+  p
+    | text as content
+  ```
+  * Finaly using a dot and identation
+  ```
+  p.
+    text as content
+  ```
+
+* Use parenthesis to write HTML element attributes
+
+```
+a(href='contat.html', target='_blank') Contact
+```
+
+* Once this renders it will became a link tag with href and target attributes
+
+```html
+<a href="contact.html" target="_blank">Contact</a>
+```
+
+* Use ids and clasess using the CSS notation, `#` for ids and `.` for classes
+
+```
+div#main main content
+div.red text in red
+```
+
+```html
+<div id="main">main content</div>
+<div class="red">text in red</div>
+```
+
+* Also, we can combine ids and classes
+
+```
+div#container.left
+```
+
+* Pug has link and script tags support
+* We use the tag name and parenthesis for the attributes like the rest of the elements
+
+```
+link(href='/css/styles.css', rel='stylesheet')
+
+script(src='/js/scripts.js')
+```
+
+* We can also add css and js code as content in case we need to add styles or JavaScript to the document
+* For CSS we need to replace link for style but for JavaScript it will still be script (like in the HTML that we already know)
+
+```
+style.
+  body { 
+    color: red;
+  }
+
+script(type='text/javascript').  
+  const message = 'Using JS from PUG';
+  alert(message);
+```
+
+```html
+<style>
+  body {
+    color: red;
+  }
+</style>
+
+<script type="text/javascript">
+  const message = 'Using JS from PUG';
+  alert(message);
+</script>
+```
+
+* So far Pug it's great but we're still building a complete HTML document
+* It would be nice to have a more modular way of building our UI so we can reuse sections
+* Pug has mixin support that allow us to use code blocks
+
+* product-mixin.pug
+```
+mixin product
+  .product-wrapper
+    h2 Product
+    p Product description
+```
+
+* Now that we created the product mixin we can include it on our index.pug file and use it
+
+* index.pug
+```
+include product-mixin
+
+body
+  +product
+```
+
+* In this example we use pug include to get the mixin content and call it from the index template
+* Using `+` we let Pug know that this is a mixin that we want to use
+* We can think about mixin like functions that we call
+* At this moment we're using the product code but it's just static so it's not that helpful
+* Adding variables we can make this mixin more useful
+
+* product-mixin.pug
+```
+mixin product(product)
+  .product-wrapper
+    h2= product.title
+    p= product.description
+```
+
+* index.pug
+```
+include product-mixin
+
+body
+  +product({title: 'PS4 Pro', description: 'Best console ever, so far..' })
+```
+
+* In this example we added a product parameter to the mixin so we can pass data to it
+* When we call the mixin now we need to pass the product object as it's what the mixin is using
+* Once Pug renders this template we get the expected output
+```html
+<section>
+  <div class="product-wrapper">
+    <h2>PS4 Pro</h2>
+    <p>Best console ever, so far..</p>
+  </div>
+</section>
+```
+
+* We can re-use this mixin for other products
+* index.pug
+```
+include product-mixin
+
+body
+  section  
+    +product({title: 'PS4 Pro', description: 'Best console ever, so far..' })
+  section
+    +product({title: 'XBOX', description: 'Other great console' })
+```
+
+```html
+<section>
+  <div class="product-wrapper">
+    <h2>PS4 Pro</h2>
+    <p>Best console ever, so far..</p>
+  </div>
+</section>
+<section>
+  <div class="product-wrapper">
+    <h2>XBOX</h2>
+    <p>Other great console</p>
+  </div>
+</section>
+```
+
+* Learn more about mixins on [Pug mixin docs](https://pugjs.org/language/mixins.html)
+* Pug supports template inheritance
+* To use this useful feature we need to use `block and extends keywords`
+* A `block` is simply a “block” of Pug that a child template may replace over the template
+* This process is recursive
+* Pug blocks can provide default content in case we need it
+* This provides a default content and is purely optional
+* The following example defines a scripts, content & foot block
+
+* layout.pug
+```
+doctype html
+html(lang='en')
+  head
+    title= title
+    style(type="text/css").
+      body { 
+        color: red;
+      }
+    block scripts
+  body
+    block content
+    block foot
+```
+
+* With this layout we can call the scripts, content and foot blocks
+* Now we can extend this layout for other templates
+
+* index.pug
+```
+extends ./layout.pug
+include product-mixin
+
+block scripts
+  script.
+    alert('alert from a block');
+
+block content
+  h1= message
+  div.container
+    p Starting using Pug!
+  p
+    | text as content
+  p.
+    text as content
+  p text as content
+  a.foo_link(href='about.html', target='_blank') About Us
+  div#main main content
+  div.red text in red
+  section  
+    +product({title: 'PS4 Pro', description: 'Best console ever, so far..' })
+  section
+    +product({title: 'XBOX', description: 'Other great console' })
+
+block foot
+  div This footer content comes from a block
+```
+
+* Using block scripts we're able to add code to the scripts layout section
+* The same happens with content and foot
+* Once Pug renders everything together we get the final HTML result
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hey</title>
+      <style type="text/css">body { 
+        color: red;
+      }
+      </style>
+      <script>
+        alert('alert from a block');
+      </script>
+  </head>
+  <body>
+    <h1>Hello there!</h1>
+    <div class="container">
+      <p>Starting using Pug!</p>
+    </div>
+    <p>text as content</p>
+    <p>text as content</p>
+    <p>text as content</p>
+    <a class="foo_link" href="about.html" target="_blank">About Us</a>
+    <div id="main">main content</div>
+    <div class="red">text in red</div>
+    <section>
+      <div class="product-wrapper">
+        <h2>PS4 Pro</h2>
+        <p>Best console ever, so far..</p>
+      </div>
+    </section>
+    <section>
+      <div class="product-wrapper">
+        <h2>XBOX</h2>
+        <p>Other great console</p>
+      </div>
+    </section>
+    <div>This footer content comes from a block</div>
+  </body>
+</html>
+```
+
+* You can learn more about layouts and blocks on the [Pug inheritance docs](https://pugjs.org/language/inheritance.html)
+* So far we learned a lot about Pug and how it works and it looks like it's a really helpful tool to build our ui
+* But we're still missing some main features like using js code, iterating elements or using conditionals inside our templates
+* Use `-` to define JavaScript variables inside the templates
+
+```
+- const niceTitle = 'This is a nice title';
+```
+
+* Then we can use this title variable on our templates
+
+```
+h1= niceTitle
+p This template has a nice #{niceTitle}
+```
+
+* In this example we defined a niceTitle string variable with the text: This is a nice title
+* The we used this variable on our template in two different ways
+  * First we assign `niceTitle` value as `h1 element content` using `=` operator
+  * The we used the same `niceTitle` value as string Interpolation using `#{niceTitle}`
+* We could even use HTML encoded content and Pug will escape that content for us
+
+```
+- myDivContent = '<span>This content is from a template variable</span>';
+
+div This div has a span #{myDivContent}
+```
+
+``html
+<div>
+  This div has a span &lt;span&gt;This content is from a template variable&lt;/span&gt;
+</div>
+```
+
+* We can see that Pug will replace the `< >` simbols for the HTML entities so we can show the HTML tags as content instead of real html content
+* You can learn more about string interpolation, escape sequence, whitespace and more on [Pug interpolation docs](https://pugjs.org/language/interpolation.html)
+
+* We can use conditional inside our templates
+
+```
+- var language = "spanish"
+
+if language == "spanish"
+    p Estas programando muy bien, felicitaciones!!
+else  
+    p Your code rocks, Congrats!!
+```
+
+* In this case we'll get the following HTML as we defined language as spanish
+* Also, we could change the language value to other language and we'll see the message in english
+
+```html
+<p>Estas programando muy bien, felicitaciones!!</p>
+```
+
+* Pug gives us a `unless` that works like a negated if (!)
+
+```
+unless language != "spanish"
+  p Your code rocks, Congrats!!
+```
+
+* Learn more about conditionals on [Pug conditionals doc](https://pugjs.org/language/conditionals.html)
+* We have different options to iterate over our values using Pug
+* Use each to iterate over an array
+```
+- hookCharacters = ['Peter', 'Nana', 'Captain Hook']
+
+ul
+  each character in hookCharacters
+    li= character
+```
+
+```html
+<ul>
+  <li>Peter</li>
+  <li>Nana</li>
+  <li>Captain Hook</li>
+</ul>
+```
+
+* In this example we use a local array but we could get this value from express and the render method
+* Using `each` we get each value of the array
+* In this case we iterate the `hookCharacters` array
+* So on each iteration we get a `character` value
+* Then we tell Pug to use the character name as li element content `li= character`
+* We can also get the iteration index
+
+```
+- hookCharacters = ['Peter', 'Nana', 'Captain Hook']
+
+ul
+  each character, index in hookCharacters
+    li= index + ': ' + character
+```
+
+```html
+<ul>
+  <li>0: Peter</li>
+  <li>1: Nana</li>
+  <li>2: Captain Hook</li>
+</ul>
+```
+* We can also use `while` as PUG iterator
+
+```
+- var n = 0;
+ul
+  while n < 4
+    li= n++
+```
+
+```html
+<ul>
+  <li>0</li>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+```
+
+* Learn more about iteration on [Pug iteration doc](https://pugjs.org/language/iteration.html)
+* Check out Pug assets and sources to learm much more about this powerful template engine
+
+![Pug](./resources/images/node/pug.jpg)
+
+## Pug Assets / Sources
+* [pugjs.org](https://pugjs.org)
+* [Codeburst - getting-started-with-pug-template-engine - Medium ()](https://codeburst.io/getting-started-with-pug-template-engine-e49cfa291e33)
+* [dcode - Pug (Jade) Tutorial #1 - Getting Started | HTML + NodeJS - Youtube](https://www.youtube.com/watch?v=AY99ODBchIA&list=PLVvjrrRCBy2JbOPP2JXfCtADABI1QHzWg)
+* [jade](https://webapplog.com/jade)
+* [Learn pug.js with pugs](https://codepen.io/mimoduo/post/learn-pug-js-with-pugs)
+* [Pug.js - Cheat sheet](https://codepen.io/mimoduo/post/pug-js-cheat-sheet)
+* [Express server side rendering](https://gist.github.com/joepie91/c0069ab0e0da40cc7b54b8c2203befe1)
+* [Practical Node - online book](https://gittobook.org/books/185/practicalnode) (look at the PUG sections over the index)
+
+
+### Building a site using Node.js and Express
+* Now that we know how to create a project with NPM
+* Add Express as dependency and create a web server
+* We can also create some routes to handle our requests
+* And configure our statics assets
+* Also, we can create templates using Pug and render them from Express server using the render method
+* It's time to put everything in action
+* You can donwload the project code from the [github repo]()
+* First lets create a node-site-example folder and change directory into it
+
+```bash
+mkdir node-site-example
+cd node-site-example
+```
+
+* After creating the folder lets install pug, express and [nodemon](https://github.com/remy/nodemon)
+
+```
+npm install express pug nodemon
+```
+* Nodemon is a Node.js module that will watch our files to see if we save them and reload the server for us
+* Configure NPM start script
+
+```json
+"start": "nodemon"
+```
+* Nodemon will look for an index.js file to start the server and watch for changes
+* Create an `index.js` file and add a express server
+
+* index.js
+```js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+```
+
+* And start the server
+```bash
+npm start
+
+> node-site-example@1.0.0 start /node-site-example
+> nodemon
+
+[nodemon] 1.17.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node index.js`
+Server running on port 3000
+```
+
+* Now we have our server running and we need to configure routes, static assets and the template engine
+* We can see that nodemon is looking for all our files `[nodemon] watching: *.*`
+* Also we can restart the server writing `rs` on the terminal that is running nodemon on in case we need to
+* Create a `views` folder
+* Add `index.pug` to the views folder
+* Add this code to index.pug
+
+* index.pug
+```
+doctype html
+  head
+    title Simple site using Node.js, Express and Pug
+  body
+    h1 Wellcome to Node.js, Express and Pug
+    p This project is just to practice
+```
+* Configure Express to use pug
+```index.js
+app.set('view engine', 'pug');
+```
+* Finaly add a root get route handler to render the home content using index.html
+```
+app.get('/', (req, res) => {
+  res.render('index', {});
+});
+```
+* Your index.js file must look like this
+
+* index.js
+```js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => {
+  res.render('index', {});
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+```
+* It's time to add the static public folder and configure express to use it
+* Create a `public` folder
+* Configure Express to use the public folder 
+* index.js
+```
+app.use(express.static('public'));
+```
+* We could add all the static assets together as siblings but it's better to organize our code
+* Create the following folder structure
+```
+/node-site-example
+|- public
+    |- css
+        |- styles.css
+    |- img
+    |- js
+      |- scripts.js
+```
+* Add some CSS to the site
+* styles.css
+```css
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+```
+* Add some JS to the site
+* scripts.js
+```js
+window.onload = function() {
+  console.log('Loaded site');
+}
+```
+* Now that we have the css and js files ready we need to add it to the template
+* index.pug
+```
+link(rel='stylesheet', href="/css/styles.css")
+script(src="/js/scripts.js")
+```
+* We use link for the CSS file and script for the JavaScript file
+* If you refresh the browser now the font should look different and the size too
+* Also is nice that we removed all padding and margins from the elements
+* As we'll have to create more than one page we need to create a layout
+* Create the `layout.pug` file inside the view folder
+* Copy and paste all the content from index.pug template into the layout.pug one
+* Also we need to add a styles, scripts & content block so we can change the content from the different templates
+* layout.pug
+```
+doctype html
+html
+  head
+    title Simple site using Node.js, Express and Pug
+    link(rel='stylesheet', href="/css/styles.css")
+    block styles
+    script(src="/js/scripts.js")
+    block scripts
+  body
+    block content
+```
+* Now the index.pug file will only contain the code that is relative only to that file
+* We need to extend the layout and create the block content
+
+```index.pug
+extends ./layout.pug
+
+block content
+  h1 Wellcome to Node.js, Express and Pug
+  p This project is just to practice
+```
+* Check that the site it still works as expected
+* If we don't have any errors we must see the same content but now using the layout
+* Inside the public/img create a `superheroes` folder and download the following images
+```
+/node-site-example
+|- public
+    |- img
+        |- blackwidow.jpg
+        |- captainmarvel.jpg
+        |- captanamerica.jpg
+        |- daredevil.jpg
+        |- hulk.jpg
+        |- ironman.jpg
+        |- spiderman.jpg
+        |- thor.jpg
+        |- wolverine.jpg
+```
+* Now we have the superheroes images in our static assets folder
+* We want to create a homepage with some superheores picture and name
+* Then we can create a superheroe description page
+* Start by creating a superheroes array in the root route handler
+* index.js
+
+```js
+app.get('/', (req, res) => {
+  const superheroes = [
+    { name: 'SPIDER-MAN', image: 'spiderman.jpg' },
+    { name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
+    { name: 'HULK', image: 'hulk.jpg' },
+    { name: 'THOR', image: 'thor.jpg' },
+    { name: 'IRON MAN', image: 'ironman.jpg' },
+    { name: 'DAREDEVIL', image: 'daredevil.jpg' },
+    { name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
+    { name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
+    { name: 'WOLVERINE', image: 'wolverine.jpg' },
+  ];
+
+  res.render('index', { superheroes: superheroes });
+});
+```
+* We can see that we have a `superheroes array` that has JavaScript objects as content
+* Each object has a superheroe name and image
+* Then we pass this superheroes array as superheroes object property
+* This means that at the template level we'll have a `superheroes` variable that represents this objects
+* Now lets show the superheroes on our home page
+* Using each we can iterate the superheroes collection
+```index.pug
+each superheroe in superheroes
+  div.superheroe-container
+    img(src='/img/superheroes/' + superheroe.image)
+    h3= superheroe.name
+```
+* Update index.pug to match this code:
+```
+extends ./layout.pug
+
+block content
+  h1 Superheroes
+  p This site shows superheroes information
+  each superheroe in superheroes
+    div.superheroe-container
+      img(src='/img/superheroes/' + superheroe.image)
+      h3= superheroe.name
+```
+* Now our site has all the superheroes pictures and name but it would be nice to change the design a little
+* Add the following class to your styles.css file
+* styles.css
+```css
+.superheroe-container {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 40px;
+}  
+```
+* It would be nice to be able to click the image or the superhero name and see a detail page
+* To create this feature we need to do a couple of changes
+* First we need to change the template
+```index.pug
+extends ./layout.pug
+
+block content
+  h1 Superheroes
+  p This site shows superheroes information
+  each superheroe in superheroes
+    div.superheroe-container
+      a(href="/superheroes/")
+        img(src='/img/superheroes/' + superheroe.image)
+        h3= superheroe.name
+```
+* We added a link element that relates this page with `/superheroes/`
+* So far so good but we still don't have the superheroes route configured
+* Lets add a new route config
+* index.js
+```js
+app.get('/superheros/', (req, res) => {
+  const superheroes = [
+    { name: 'SPIDER-MAN', image: 'spiderman.jpg' },
+    { name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
+    { name: 'HULK', image: 'hulk.jpg' },
+    { name: 'THOR', image: 'thor.jpg' },
+    { name: 'IRON MAN', image: 'ironman.jpg' },
+    { name: 'DAREDEVIL', image: 'daredevil.jpg' },
+    { name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
+    { name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
+    { name: 'WOLVERINE', image: 'wolverine.jpg' },
+  ];
+
+  res.render('superhero', { superheroes: superheroes });
+});
+```
+* Great now we have the route but it looks like we have the superheroes repeated
+* Also we only need to show one superhero at the time
+* And.. we need to create the superhero template
+* Uff.. so many things we better start soon!
+* Create the `superhero.pug` template inside the views folder
+* Add the following code
+* superheroe.pug
+```
+extends ./layout.pug
+
+block content
+  img(src='/img/superheroes/' + superheroe.image)
+  h3= superheroe.name
+```
+* Great we are using the layout template that we created but we don't have the superheroe data
+* How can we deal with this situation?
+* So we know that we can use the router to pass data to the template
+* But we need to know the selected superheroe, right?
+* We can use the superhero name to select the selected superhero
+* Or we can use an id
+* To use the id will have to update the superheroes array objects
+```js
+const superheroes = [
+  { id: 1, name: 'SPIDER-MAN', image: 'spiderman.jpg' },
+  { id: 2, name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
+  { id: 3, name: 'HULK', image: 'hulk.jpg' },
+  { id: 4, name: 'THOR', image: 'thor.jpg' },
+  { id: 5, name: 'IRON MAN', image: 'ironman.jpg' },
+  { id: 6, name: 'DAREDEVIL', image: 'daredevil.jpg' },
+  { id: 7, name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
+  { id: 8, name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
+  { id: 9, name: 'WOLVERINE', image: 'wolverine.jpg' },
+];
+```
+* Great now we have ids on our superheroes objects
+* I don't know about you but I think it's still pretty bad to have this duplicated array
+* Also we'll need the ids to create the links
+* What about if we move this array to a higher scoe level so both routes can use it?
+* index.js
+```js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'pug');
+app.use(express.static('public'));
+
+const superheroes = [
+  { id: 1, name: 'SPIDER-MAN', image: 'spiderman.jpg' },
+  { id: 2, name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
+  { id: 3, name: 'HULK', image: 'hulk.jpg' },
+  { id: 4, name: 'THOR', image: 'thor.jpg' },
+  { id: 5, name: 'IRON MAN', image: 'ironman.jpg' },
+  { id: 6, name: 'DAREDEVIL', image: 'daredevil.jpg' },
+  { id: 7, name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
+  { id: 8, name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
+  { id: 9, name: 'WOLVERINE', image: 'wolverine.jpg' },
+];
+
+app.get('/', (req, res) => {
+  res.render('index', { superheroes: superheroes });
+});
+
+app.get('/superheros/', (req, res) => {
+  res.render('superhero', { superheroes: superheroes });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+```
+* This is looking much better now
+* We still have a problem on how to know the selected superhero
+* Having the ids to identify them is great but we still need to update our code
+* First modify the links to use the superhero id
+* index.pug
+```
+a(href="/superheroes/" + superheroe.id)
+```
+* If the user clicks on this link it will redirect to a url that looks like this: http://localhost:3000/superheroes/2
+* So it looks like the user will select a superhero and we'll go to the /superheroes/ page and we have the id
+* Now we need to update our express route so we can get the id param and get the superhero data
+* index.js
+```js
+app.get('/superheros/:id', (req, res) => {
+  const selectedId = req.params.id;
+
+  let selectedSuperhero = superheroes.filter(superhero => {
+    return superhero.id === +selectedId;
+  });
+
+  selectedSuperhero = selectedSuperhero[0];
+  
+  res.render('superhero', { superheroe: selectedSuperhero });
+});
+```
+* Using `'/superheros/:id'` we define that this route contains a parameter that we need to get
+* This request parameter is called id and will come after the `superheros` route
+* To get this value we use `req.params.id`
+* We could name this parameter with any name
+* Then we filter the superheroes array by id
+* And assighn the selected superhero to the `selectedSuperhero` variable
+* The only remainding thing to do is render the template using the selectedSuperhero data
+* Now we can call any this url http://localhost:3000/superheros/2 changing the id from 1 to 9
+* Our home page still has blue and violet links so update the css so it looks better
+* styles.css
+```css
+.superheroe-container a {
+  color: black;
+  text-decoration: none;
+}
+```
