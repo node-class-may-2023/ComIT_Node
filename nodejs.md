@@ -1811,7 +1811,261 @@ ul
 
 ![Pug](./resources/images/node/pug.jpg)
 
-## Pug Assets / Sources
+
+## Sending/getting data from the client to the server
+* To send data from the client to the server we can use forms or ajax calls
+* Using forms we'll be able to send values using GET and POST
+* By doing AJAX calls we can use HTTP GET, POST, UPDATE and DELETE
+* We need to configure Express routes to get the request values using one of this methods
+* If the server expects the values from GET, the client will send them using GET method
+* In case the server expects the value from POST, the client will send them using POST method
+* So we need to send values to the server the way it expected them
+* One of the most simple way to pass a value to the route handler is using the express params
+* For example we can create a route handler for `/products/` and add a product id
+* In this case the URL it's going to look like: `http://localhost:3000/products/1`
+* In this case we're calling the products handler and passing an id to it
+* Express has a special way to configure URL parameters and it's using `:` on the route handler
+* For example we can create a route like `/products/:id`
+* In this URL `:id` it's the parameter that we're going to pass
+* Lets define the route this way
+
+```js
+app.get('/products/:id', (req, res) => {
+  res.send('Product with the id: ');
+})
+```
+
+* In this example we see that we can create a route handler that it's specting a URL parameter
+* In this case the url it's going to be `http://localhost:3000/products/10`
+* Now we need to know how to retrieve this id parameter using Express
+* The request object has a params property that it's an object with all the parameters that this request has
+* As we configured `:id` and we called using `/products/10` there's going to be an `id` property on the request.params object
+* To get the id from the url we use `req.params.id`
+
+```js
+app.get('/products/:id', (req, res) => {
+  const id = req.params.id;
+
+  res.send(`Product with the id: ${id}`);
+});
+```
+
+* In this example we see how using req.params.id we can get the id from the URL
+* Other way to send values to the server it's using query string
+* We know that using an url like `http://localhost:3000/products/?id=1` we are passing `id=1` as query string
+* The request object has a query property that allows us to get the URL query string params
+* Using `req.query` we get an object back that represents the URL query string
+* In this case we want to get the id value so we can do `req.query.id` to get `1` as value back
+```js
+app.get('/products', (req, res) => {
+  const id = req.query.id;
+  
+  res.send(`Product with the id: ${id}`);
+});
+```
+
+* In this example we see that the route it's waiting for a query parameter with the id name
+* If we call `http://localhost:3000/products?id=1` we pass id as query parameter with value 1
+* In this case this req.query.id will become 1 and we assign it to the id variable
+* So we can say that this are two different ways to pass values using GET and express routes
+* Notice the different between using `/products/:id` and `req.params.id`
+* The other option is to use  `/products` and query string like `req.query.id`
+* Now that we know this we can create a form and send values to the server
+
+```html
+<form action="/products" method="get">
+  <input type="text" name="username" placeholder="username">
+  <input type="text" name="firstname" placeholder="firstname">
+  <input type="text" name="lastname" placeholder="lastname">
+  <input type="submit" value="Submit">
+</form>
+```
+
+* This form has three inputs username, firstname & lastname
+* When we submit this form all this values will be submited to `/products`
+* As the form is configured to use GET it will send all this values using query string
+* The URL it's going to look like: `http://localhost:3000/products?username=nisnardi&firstname=nicolas&lastname=isnardi`
+* We can see that we'll have a `username, firstname & lastname` values
+* On the Express route handler this will become: 
+```js
+req.query.username;
+req.query.firstname;
+req.query.lastname;
+```
+* Now we can configure our route to handle this values
+```js
+app.get('/products', (req, res) => {
+  const username = req.query.username;
+  const firstname = req.query.firstname;
+  const lastname = req.query.lastname;
+  
+  res.send(`We got the following values from the query string: ${username}, ${firstname} & ${lastname}`);
+});
+```
+
+* We can see that we can use query string to retrieve values from the form
+* As we sent them using GET from the form we need to use req.query to retrieve the values
+* Once the route handler gets executed it will get the query values and we define three variables to store each query string value
+* Then we just send the response using this query string values
+```
+We got the following values from the query string: nisnardi, nicolas & isnardi
+```
+
+* To send data to the server using POST we can change the form action
+
+```html
+<form action="/products" method="post">
+  <input type="text" name="username" placeholder="username">
+  <input type="text" name="firstname" placeholder="firstname">
+  <input type="text" name="lastname" placeholder="lastname">
+  <input type="submit" value="Submit">
+</form>
+```
+
+* As you can see the only value that changed is `method="post"` (it used to be get)
+* Now the values won't be submited as query string and instead we'll send them on the request body
+* To use Express to get POST values we need to add [body-parser](https://github.com/expressjs/body-parser) that's a Express middleware
+* Body parser can get all the POST requests or we can configure it just fo the routes that we want
+* Then it will get the POST values and append then as request body property
+* So in this case we're sending `username, firstname & lastname`
+* And they will become `req.body.username, req.body.firstname & req.body.lastname` after executing body-parser as middleware
+* To use this module we need to install it
+```
+npm install body-parser
+```
+* Once we installed the module we need to configure it
+```js
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+```
+
+* First we required body-parser module
+* Then we configure body-parser for urlencoded (the form enctype that we use by default)
+* We assign the body-parser return value to the `urlencodedParser`
+* Now we can use this middleware in our routes
+* We'll add `urlencodedParser` to any route that we want body-parser to append the POST values into the request body
+
+```js
+app.post('/products', urlencodedParser, (req, res) => {
+  const username = req.body.username;
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  
+  console.log(req.body);
+
+  res.send(`We got the following values from the query string: ${username}, ${firstname} & ${lastname}`);
+});
+```
+
+* In this example we configured a post route handler for `/products/`
+* When we submit the form it will send the requerst to this route handler
+* The request will send all the form values
+* Using `urlencodedParser` we configure this route to use body-parser
+* This means that when this route gets called we'll have all the form values in the `req.body` object
+* To get the values sent from the form we use: `req.body.username, req.body.firstname & req.body.lastname`
+* This names comes from the form inputs name
+* When we show the `req.body` value on the console we get:
+```js
+{ 
+  username: 'nisnardi',
+  firstname: 'nicolas',
+  lastname: 'isnardi' 
+}
+```
+
+* The req.body it's a JavaScript object and body-parsed added username, firstname & lastname as properties
+* Then using this properties we can get the values
+* The last thing that we need to know is how to send files
+* Express won't handle our files upload so we need to use a module called [Multer](https://github.com/expressjs/multer)
+* Multer works in a similar way that body-parser
+* We can only use multer if we're uploading images
+* Something really important is that as we're going to be uploading a file we need to set the form enctype in a different way
+* When using multer set the `form enctype` to `multipart/form-data`
+* Multer will append the values to the request body
+* We can configure multer to use one or many files
+* For now we can configure to use it with one file to make it easier
+* First we need to install multer to our project
+```
+npm i multer
+```
+* Now that we have multer installed we need to require ir and configure it
+```js
+const multer  = require('multer');
+const upload = multer({ dest: 'upload' });
+```
+
+* After requiring multer as module we need to configure the folder that we're going to store the uploaded images
+* In this case we configured `upload` as the destination folder
+* As we're going to send a file we need to update our form
+
+```html
+<form action="/products" method="post" enctype="multipart/form-data">
+  <input type="text" name="username" placeholder="username">
+  <input type="text" name="firstname" placeholder="firstname">
+  <input type="text" name="lastname" placeholder="lastname">
+  <input type="file" name="file">
+  <input type="submit" value="Submit">
+</form>
+```
+* To upload the file we need to change the `enctype="multipart/form-data"` so multer can take care of it
+* Also we need to add a `<input type="file" name="file">`
+* Note that the name of the input is `file` as this is the value that we need to set up in multer too
+```js
+app.post('/products', upload.single('file'), (req, res) => {
+  const filename = req.file.originalname;
+  
+  console.log(req.body);
+  console.log(req.file);
+  
+  res.send(`Congrats we uploaded the following file ${filename}`);
+});
+```
+* in this example we can see that multer will store the inputs values into the request body (the same as body-parser)
+* The body object will look something like:
+```js
+{ 
+  username: 'nisnardi',
+  firstname: 'nicolas',
+  lastname: 'isnardi' 
+}
+```
+* In this example we see that it looks the same way that using body-parser
+* As we configure `upload.single('file')` we told multer to get the `file` value and upload it to the `upload` folder
+* Using `req.file` we can access the uploaded file values
+* When we configure multer with `upload.single` it will use `req.file` to append all the file values
+* Remember that we used `file` as input name
+* If we use other input name like `avatar` we still use req.file to get the values but `upload.single('avatar')` to configure the rout handler
+* Our `req.file` object will look like this:
+```js
+{ 
+  fieldname: 'file',
+  originalname: 'lukecage.jpg',
+  encoding: '7bit',
+  mimetype: 'image/jpeg',
+  destination: 'upload',
+  filename: '7b4f43860a856577f5c47aba1ae592c5',
+  path: 'upload/7b4f43860a856577f5c47aba1ae592c5',
+  size: 13078 
+}
+```
+* In this example we can see that using `originalname` property we get the uploaded file real name
+* Multer will add a random name to the uploaded file by default `filename: '7b4f43860a856577f5c47aba1ae592c5'`
+* This means that the file on the server won't be `lukecage.jpg` but `7b4f43860a856577f5c47aba1ae592c5`
+* We can configure multer to use a different file name in case we want to
+* You can read about it on the [multer doc](https://github.com/expressjs/multer)
+* Express has many cool forms to handle sessions, form validations, security and much more!
+* Go for it and look for more Express modules and learn how to use it by reading the modules doc
+* [Node.js file upload using Multer](https://medium.com/@bmshamsnahid/nodejs-file-upload-using-multer-3a904516f6d2)
+
+## We're CRAZY about JavaScript, Node.js and Express.js
+![The End](./resources/images/node/crazy1.gif)
+![The End](./resources/images/node/crazy2.webp)
+![The End](./resources/images/node/crazy3.webp)
+![The End](./resources/images/node/crazy4.webp)
+![The End](./resources/images/node/crazy5.webp)
+
+## Assets / Sources
+* [NodeSchool - Free Node.js, JavaScript and more courses](https://nodeschool.io/)
 * [pugjs.org](https://pugjs.org)
 * [Codeburst - getting-started-with-pug-template-engine - Medium ()](https://codeburst.io/getting-started-with-pug-template-engine-e49cfa291e33)
 * [dcode - Pug (Jade) Tutorial #1 - Getting Started | HTML + NodeJS - Youtube](https://www.youtube.com/watch?v=AY99ODBchIA&list=PLVvjrrRCBy2JbOPP2JXfCtADABI1QHzWg)
@@ -1822,400 +2076,4 @@ ul
 * [Practical Node - online book](https://gittobook.org/books/185/practicalnode) (look at the PUG sections over the index)
 
 
-### Building a site using Node.js and Express
-* Now that we know how to create a project with NPM
-* Add Express as dependency and create a web server
-* We can also create some routes to handle our requests
-* And configure our statics assets
-* Also, we can create templates using Pug and render them from Express server using the render method
-* It's time to put everything in action
-* You can donwload the project code from the [github repo]()
-* First lets create a node-site-example folder and change directory into it
 
-```bash
-mkdir node-site-example
-cd node-site-example
-```
-
-* After creating the folder lets install pug, express and [nodemon](https://github.com/remy/nodemon)
-
-```
-npm install express pug nodemon
-```
-* Nodemon is a Node.js module that will watch our files to see if we save them and reload the server for us
-* Configure NPM start script
-
-```json
-"start": "nodemon"
-```
-* Nodemon will look for an index.js file to start the server and watch for changes
-* Create an `index.js` file and add a express server
-
-* index.js
-```js
-const express = require('express');
-const app = express();
-const port = 3000;
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-```
-
-* And start the server
-```bash
-npm start
-
-> node-site-example@1.0.0 start /node-site-example
-> nodemon
-
-[nodemon] 1.17.4
-[nodemon] to restart at any time, enter `rs`
-[nodemon] watching: *.*
-[nodemon] starting `node index.js`
-Server running on port 3000
-```
-
-* Now we have our server running and we need to configure routes, static assets and the template engine
-* We can see that nodemon is looking for all our files `[nodemon] watching: *.*`
-* Also we can restart the server writing `rs` on the terminal that is running nodemon on in case we need to
-* Create a `views` folder
-* Add `index.pug` to the views folder
-* Add this code to index.pug
-
-* index.pug
-```
-doctype html
-  head
-    title Simple site using Node.js, Express and Pug
-  body
-    h1 Wellcome to Node.js, Express and Pug
-    p This project is just to practice
-```
-* Configure Express to use pug
-```index.js
-app.set('view engine', 'pug');
-```
-* Finaly add a root get route handler to render the home content using index.html
-```
-app.get('/', (req, res) => {
-  res.render('index', {});
-});
-```
-* Your index.js file must look like this
-
-* index.js
-```js
-const express = require('express');
-const app = express();
-const port = 3000;
-
-app.set('view engine', 'pug');
-
-app.get('/', (req, res) => {
-  res.render('index', {});
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-```
-* It's time to add the static public folder and configure express to use it
-* Create a `public` folder
-* Configure Express to use the public folder 
-* index.js
-```
-app.use(express.static('public'));
-```
-* We could add all the static assets together as siblings but it's better to organize our code
-* Create the following folder structure
-```
-/node-site-example
-|- public
-    |- css
-        |- styles.css
-    |- img
-    |- js
-      |- scripts.js
-```
-* Add some CSS to the site
-* styles.css
-```css
-* {
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-```
-* Add some JS to the site
-* scripts.js
-```js
-window.onload = function() {
-  console.log('Loaded site');
-}
-```
-* Now that we have the css and js files ready we need to add it to the template
-* index.pug
-```
-link(rel='stylesheet', href="/css/styles.css")
-script(src="/js/scripts.js")
-```
-* We use link for the CSS file and script for the JavaScript file
-* If you refresh the browser now the font should look different and the size too
-* Also is nice that we removed all padding and margins from the elements
-* As we'll have to create more than one page we need to create a layout
-* Create the `layout.pug` file inside the view folder
-* Copy and paste all the content from index.pug template into the layout.pug one
-* Also we need to add a styles, scripts & content block so we can change the content from the different templates
-* layout.pug
-```
-doctype html
-html
-  head
-    title Simple site using Node.js, Express and Pug
-    link(rel='stylesheet', href="/css/styles.css")
-    block styles
-    script(src="/js/scripts.js")
-    block scripts
-  body
-    block content
-```
-* Now the index.pug file will only contain the code that is relative only to that file
-* We need to extend the layout and create the block content
-
-```index.pug
-extends ./layout.pug
-
-block content
-  h1 Wellcome to Node.js, Express and Pug
-  p This project is just to practice
-```
-* Check that the site it still works as expected
-* If we don't have any errors we must see the same content but now using the layout
-* Inside the public/img create a `superheroes` folder and download the following images
-```
-/node-site-example
-|- public
-    |- img
-        |- blackwidow.jpg
-        |- captainmarvel.jpg
-        |- captanamerica.jpg
-        |- daredevil.jpg
-        |- hulk.jpg
-        |- ironman.jpg
-        |- spiderman.jpg
-        |- thor.jpg
-        |- wolverine.jpg
-```
-* Now we have the superheroes images in our static assets folder
-* We want to create a homepage with some superheores picture and name
-* Then we can create a superheroe description page
-* Start by creating a superheroes array in the root route handler
-* index.js
-
-```js
-app.get('/', (req, res) => {
-  const superheroes = [
-    { name: 'SPIDER-MAN', image: 'spiderman.jpg' },
-    { name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
-    { name: 'HULK', image: 'hulk.jpg' },
-    { name: 'THOR', image: 'thor.jpg' },
-    { name: 'IRON MAN', image: 'ironman.jpg' },
-    { name: 'DAREDEVIL', image: 'daredevil.jpg' },
-    { name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
-    { name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
-    { name: 'WOLVERINE', image: 'wolverine.jpg' },
-  ];
-
-  res.render('index', { superheroes: superheroes });
-});
-```
-* We can see that we have a `superheroes array` that has JavaScript objects as content
-* Each object has a superheroe name and image
-* Then we pass this superheroes array as superheroes object property
-* This means that at the template level we'll have a `superheroes` variable that represents this objects
-* Now lets show the superheroes on our home page
-* Using each we can iterate the superheroes collection
-```index.pug
-each superheroe in superheroes
-  div.superheroe-container
-    img(src='/img/superheroes/' + superheroe.image)
-    h3= superheroe.name
-```
-* Update index.pug to match this code:
-```
-extends ./layout.pug
-
-block content
-  h1 Superheroes
-  p This site shows superheroes information
-  each superheroe in superheroes
-    div.superheroe-container
-      img(src='/img/superheroes/' + superheroe.image)
-      h3= superheroe.name
-```
-* Now our site has all the superheroes pictures and name but it would be nice to change the design a little
-* Add the following class to your styles.css file
-* styles.css
-```css
-.superheroe-container {
-  display: inline-block;
-  width: 200px;
-  text-align: center;
-  margin-right: 10px;
-  margin-bottom: 40px;
-}  
-```
-* It would be nice to be able to click the image or the superhero name and see a detail page
-* To create this feature we need to do a couple of changes
-* First we need to change the template
-```index.pug
-extends ./layout.pug
-
-block content
-  h1 Superheroes
-  p This site shows superheroes information
-  each superheroe in superheroes
-    div.superheroe-container
-      a(href="/superheroes/")
-        img(src='/img/superheroes/' + superheroe.image)
-        h3= superheroe.name
-```
-* We added a link element that relates this page with `/superheroes/`
-* So far so good but we still don't have the superheroes route configured
-* Lets add a new route config
-* index.js
-```js
-app.get('/superheros/', (req, res) => {
-  const superheroes = [
-    { name: 'SPIDER-MAN', image: 'spiderman.jpg' },
-    { name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
-    { name: 'HULK', image: 'hulk.jpg' },
-    { name: 'THOR', image: 'thor.jpg' },
-    { name: 'IRON MAN', image: 'ironman.jpg' },
-    { name: 'DAREDEVIL', image: 'daredevil.jpg' },
-    { name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
-    { name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
-    { name: 'WOLVERINE', image: 'wolverine.jpg' },
-  ];
-
-  res.render('superhero', { superheroes: superheroes });
-});
-```
-* Great now we have the route but it looks like we have the superheroes repeated
-* Also we only need to show one superhero at the time
-* And.. we need to create the superhero template
-* Uff.. so many things we better start soon!
-* Create the `superhero.pug` template inside the views folder
-* Add the following code
-* superheroe.pug
-```
-extends ./layout.pug
-
-block content
-  img(src='/img/superheroes/' + superheroe.image)
-  h3= superheroe.name
-```
-* Great we are using the layout template that we created but we don't have the superheroe data
-* How can we deal with this situation?
-* So we know that we can use the router to pass data to the template
-* But we need to know the selected superheroe, right?
-* We can use the superhero name to select the selected superhero
-* Or we can use an id
-* To use the id will have to update the superheroes array objects
-```js
-const superheroes = [
-  { id: 1, name: 'SPIDER-MAN', image: 'spiderman.jpg' },
-  { id: 2, name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
-  { id: 3, name: 'HULK', image: 'hulk.jpg' },
-  { id: 4, name: 'THOR', image: 'thor.jpg' },
-  { id: 5, name: 'IRON MAN', image: 'ironman.jpg' },
-  { id: 6, name: 'DAREDEVIL', image: 'daredevil.jpg' },
-  { id: 7, name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
-  { id: 8, name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
-  { id: 9, name: 'WOLVERINE', image: 'wolverine.jpg' },
-];
-```
-* Great now we have ids on our superheroes objects
-* I don't know about you but I think it's still pretty bad to have this duplicated array
-* Also we'll need the ids to create the links
-* What about if we move this array to a higher scoe level so both routes can use it?
-* index.js
-```js
-const express = require('express');
-const app = express();
-const port = 3000;
-
-app.set('view engine', 'pug');
-app.use(express.static('public'));
-
-const superheroes = [
-  { id: 1, name: 'SPIDER-MAN', image: 'spiderman.jpg' },
-  { id: 2, name: 'CAPTAIN MARVEL', image: 'captainmarvel.jpg' },
-  { id: 3, name: 'HULK', image: 'hulk.jpg' },
-  { id: 4, name: 'THOR', image: 'thor.jpg' },
-  { id: 5, name: 'IRON MAN', image: 'ironman.jpg' },
-  { id: 6, name: 'DAREDEVIL', image: 'daredevil.jpg' },
-  { id: 7, name: 'BLACK WIDOW', image: 'blackwidow.jpg' },
-  { id: 8, name: 'CAPTAIN AMERICA', image: 'captanamerica.jpg' },
-  { id: 9, name: 'WOLVERINE', image: 'wolverine.jpg' },
-];
-
-app.get('/', (req, res) => {
-  res.render('index', { superheroes: superheroes });
-});
-
-app.get('/superheros/', (req, res) => {
-  res.render('superhero', { superheroes: superheroes });
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-```
-* This is looking much better now
-* We still have a problem on how to know the selected superhero
-* Having the ids to identify them is great but we still need to update our code
-* First modify the links to use the superhero id
-* index.pug
-```
-a(href="/superheroes/" + superheroe.id)
-```
-* If the user clicks on this link it will redirect to a url that looks like this: http://localhost:3000/superheroes/2
-* So it looks like the user will select a superhero and we'll go to the /superheroes/ page and we have the id
-* Now we need to update our express route so we can get the id param and get the superhero data
-* index.js
-```js
-app.get('/superheros/:id', (req, res) => {
-  const selectedId = req.params.id;
-
-  let selectedSuperhero = superheroes.filter(superhero => {
-    return superhero.id === +selectedId;
-  });
-
-  selectedSuperhero = selectedSuperhero[0];
-  
-  res.render('superhero', { superheroe: selectedSuperhero });
-});
-```
-* Using `'/superheros/:id'` we define that this route contains a parameter that we need to get
-* This request parameter is called id and will come after the `superheros` route
-* To get this value we use `req.params.id`
-* We could name this parameter with any name
-* Then we filter the superheroes array by id
-* And assighn the selected superhero to the `selectedSuperhero` variable
-* The only remainding thing to do is render the template using the selectedSuperhero data
-* Now we can call any this url http://localhost:3000/superheros/2 changing the id from 1 to 9
-* Our home page still has blue and violet links so update the css so it looks better
-* styles.css
-```css
-.superheroe-container a {
-  color: black;
-  text-decoration: none;
-}
-```
