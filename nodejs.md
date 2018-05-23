@@ -2059,9 +2059,13 @@ app.post('/products', upload.single('file'), (req, res) => {
 
 ## We're CRAZY about JavaScript, Node.js and Express.js
 ![The End](./resources/images/node/crazy1.gif)
+
 ![The End](./resources/images/node/crazy2.webp)
+
 ![The End](./resources/images/node/crazy3.webp)
+
 ![The End](./resources/images/node/crazy4.webp)
+
 ![The End](./resources/images/node/crazy5.webp)
 
 ## Assets / Sources
