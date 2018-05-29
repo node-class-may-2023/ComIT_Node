@@ -39,7 +39,7 @@
 * MongoDB also it's prepared to horizontal scale in a easy way
 * As we learned JavaScript we'll use a database engine that allows us to keep on using this language to store our data
 
-### Instalar MongoDB
+### Install MongoDB
 * To use MongoDB localy we need to download & install it
 * Open the [MongoDB download section](https://www.mongodb.com/download-center#community) and choose your OS MongoDB version
 * Make sure you choose the Community Server version
