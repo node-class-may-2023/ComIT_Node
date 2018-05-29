@@ -2078,6 +2078,6 @@ app.post('/products', upload.single('file'), (req, res) => {
 * [Pug.js - Cheat sheet](https://codepen.io/mimoduo/post/pug-js-cheat-sheet)
 * [Express server side rendering](https://gist.github.com/joepie91/c0069ab0e0da40cc7b54b8c2203befe1)
 * [Practical Node - online book](https://gittobook.org/books/185/practicalnode) (look at the PUG sections over the index)
-
-
+* [Youtube - Node.js / Express / MongoDB - Build a Shopping Cart](https://www.youtube.com/watch?v=-3vvxn78MH4&t=1s)
+* [Youtube - Node Authentication Tutorial | Creating a User Based App from Scratch](https://www.youtube.com/watch?v=gYjHDMPrkWU&list=PLpPnRKq7eNW3Qm2OfoJ3Hyvf-36TulLDp)
 
