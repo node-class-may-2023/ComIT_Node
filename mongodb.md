@@ -706,85 +706,184 @@ switched to db comics
 
 * As we passed an empty array we delete all the collections documents
 
+#### Practice
+[Exercise 9](./exercises/mongo/ex_9.md)
+
 ## Node.js integration
 * To use MongoDB from Node.js we need to use the MongoDB official driver
 ```bash
 npm i mongodb
 ```
 * Once we installed Mongo we need to require MongoClient from this module
+
 ```js
 const MongoClient = require('mongodb').MongoClient;
 ```
+
 * Also we need to set up MongoDB url to connect with
+
 ```js
 const url = 'mongodb://localhost:27017';
 ```
+
 * We know that by default MongoDB uses port 27017 and we have it installed in our local environment
-* To connect to the server we can use the following configuration:
+* `MongoClient` has a `connect` method that allows us to connect to MongoDB using Node.j
+* This method accepts the MongoDB server `address (url)` and a `callback function`
+* The callback function gets two parameters:
+	* The first parameter is an `error` object
+	* The second parameter ir a `client` object
+
 ```js
 MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
   console.log("Connected successfully to server");
- 
-  const db = client.db('comics');
 });
 ```
+
+* We're going to use the client object to get the database
+* The client object has a `db` method that accepts a string with the database name
+* It returns a database object
+
+```js
+const db = client.db('comics');
+```
+  
 * The same as using MongoDB shell we need to use a collection
-* We can do this using const db.collection('collection');
+* The `db` object that we got from the `client` one has a `collection` method that allow us to select the collection
+* This method accepts a string with the collection name
+* This method returns a collection object
+
 ```js
 const collection = db.collection('superheroes');
 ```
-* Then we can execute a query
+
+* Now that we have the collection we can use the `find` method to query
+* The `find` method accepts an object with the criteria to search by
+
 ```js
-const findDocuments = function(db, callback) {
-  // Get the documents collection
-  const collection = db.collection('superheroes');
-  // Find some documents
-  collection.find({}).toArray(function(err, docs) {
-    assert.equal(err, null);
-    console.log("Found the following records");
-    console.log(docs)
-    callback(docs);
-  });
-}
+collection.find({})
 ```
-* The final code should be
+
+* The `find` method returns a `cursor` object
+* We need to find a way to transform our cursor into objects to use the documents we get back
+* That's why the cursor object has a `toArray` method that will transform the result into an array of objects (documents)
+* The toArray object accepts a callback
+* This callback gets two parameters, first an error and second the documents that it get back
+
+```js
+collection.find({}).toArray((error, documents) => {
+	console.log(documents);
+})
+```
+
+* As we opened a connection to the MongoDB we need to close it if we're not using it
+* The `client` object has a `close` method that will close the database connection
+
+```js
+client.close();
+```
+
+* Great now we know how the mongodb driver works
+* Lets put everything together
+
 ```js
 const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
- 
-// Connection URL
 const url = 'mongodb://localhost:27017';
- 
-// Database Name
-const dbName = 'myproject';
 
-const findDocuments = function(db, callback) {
-// Get the documents collection
-const collection = db.collection('superheroes');
-// Find some documents
-collection.find({}).toArray(function(err, docs) {
-	assert.equal(err, null);
-	console.log("Found the following records");
-	console.log(docs)
-	callback(docs);
-});
-}
-
-
-// Use connect method to connect to the server
 MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
-  console.log("Connected correctly to server");
- 
-  const db = client.db(dbName);
- 
-	findDocuments(db, function() {
+	const db = client.db('comics');
+	const collection = db.collection('superheroes');
+
+	collection.find({}).toArray((error, documents) => {
+		console.log(documents);
 		client.close();
 	});
 });
 ```
 
-* To avoid using MongoDB directly from Node.js we can use Mongoose to map our documents
+* Using express we'll need to add this code to our route handler
 
-## Mongoose
+```js
+app.get('/', (req, res) => {
+	MongoClient.connect(url, function(err, client) {
+		const db = client.db('comics');
+		const collection = db.collection('superheroes');
+
+		collection.find({}).toArray((error, documents) => {
+			client.close();
+			res.render('index', { documents: documents });
+		});
+	});
+});
+```
+
+* Close the connection before sending the response to the client
+* Now we know how to query MongoDB from Node.js and also using Express route
+* But what about inserting, updating or deleting documents?
+* The MongoDB driver has methods for each case
+* Check the [MongoDB driver collection methods doc](http://mongodb.github.io/node-mongodb-native/3.0/api/Collection.html)
+* As you can see there're a lot of things that we can do once we have a collection
+* To insert documents we have two methods: `insertOne & insertMany`
+
+```js
+const doc = { "name": "CAPTAIN MARVEL", "image": "captainmarvel.jpg" };
+
+collection.insertOne(doc, (err, result) => {
+	callback(result);
+});
+```
+
+* Now insert many documents using an array
+
+```js
+const documents = [
+	{ "name": "CAPTAIN MARVEL", "image": "captainmarvel.jpg" },
+	{ "name": "HULK", "image": "hulk.jpg" },
+	{ "name": "THOR", "image": "thor.jpg" }
+];
+
+collection.insertMany(documents, (err, result) => {
+	callback(result);
+});
+```
+
+* Update also has two methods: `updateOne & updateMany`
+* This updates methods accepts a filter object as first parameter
+* Also accepts a second parameter that's a callback
+
+```js
+const filter = { name: 'HULK' };
+const update = { $set: { power: 100 } };
+
+collection.updateOne(filter, update, (err, result) => {
+    callback(result);
+});
+```
+
+* We can do the same with updateMany
+
+```js
+const filter = { name: 'HULK' };
+const update = { $set: { power: 100 } };
+
+collection.updateMany(doc, update, (err, result) => {
+    callback(result);
+});
+```
+
+* If we have more than one document with the name HULK it will update the power to 100
+* Finally we can delete documents using MongoDB driver two methods: `deleteOne & deleteMany`
+* As we're going to delete documents now it's a good time about MongoDB ObjectID
+* MongoDB driver has a 
+
+```js
+const ObjectID = require('mongodb').ObjectID;
+const filter = { _id:  ObjectID('5b07560bda15952ac0b33e6c')};
+
+collection.deleteOne(query, function(err, result) {
+    callback(result);
+  });    
+```
+
+
+
+http://mongodb.github.io/node-mongodb-native/3.0/api/
