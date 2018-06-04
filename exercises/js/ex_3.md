@@ -1,4 +1,4 @@
-# Excercise 3
+# Exercise 3
 
 * Create a new index3.js file
 * Declare the following values using only one line: 

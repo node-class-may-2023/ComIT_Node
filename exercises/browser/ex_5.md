@@ -1,4 +1,4 @@
-# Excercise 5
+# Exercise 5
 
 * Create the following folder/file structure:
 ```

@@ -1,4 +1,4 @@
-# Excercise 9
+# Exercise 9
 
 * Create a new index9.js file
 * Declare a constant variable with the name first name and assign your name

@@ -1,4 +1,4 @@
-# Excercise 4
+# Exercise 4
 
 * Create a new index4.js file
 * Declare the following values and assign a value (one per line) 

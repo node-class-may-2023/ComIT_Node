@@ -980,9 +980,9 @@ console.log(number); // 0
 ### Equality operators
 * We can compare two values using the equality operators **==**
 * Using the equality operators we get a **boolean** value as result (true or false)
-* This type of equality only compares values by value
+* This type of equality only compares values (or the current values of variables) by value
 * For example using this operator we can compare a number value and string value with a number
-* If both values are equals we get **true** as result
+* If both values are equal we get **true** as result
 * In case they are not the same value we'll get **false** as result
 
 **Example:**
@@ -997,12 +997,12 @@ console.log(firstNumber == thirdNumber); // false
 
 * As we only compare by value:
 
-**Ejemplo:**
+**Example:**
 ```js
-console.log(10 == '10'); // This is true even having different values type
+console.log(10 == '10'); // This is true even though the variables have different value type
 ```
 
-* Also we can know if the values are differen using the inequality operator **!=**
+* Also we can know if the values are different using the inequality operator **!=**
 
 **Example:**
 ```js
@@ -1087,10 +1087,10 @@ console.log(10 !== '10'); // true
 ## Logical Operators
 * Logical operators are typically used with Boolean (logical) values
 * When they are, they return a **Boolean** value
-* We can use the **&&** **and operator** to know if both expressions are true
-* We can know if the user age is grater than 18 and the password is equal to other value
+* We can use the **`&&`** **"Boolean AND" operator** to know if both expressions are true
+* We can know if the user age is greater than 18 and the password is equal to another value
 * In this case we'll get a true value if both expressions are true
-* If one of the expressions is **false**, we get false as value too
+* If one of the expressions is **false**, we get false as the return value too
 
 **Example:**
 ```js
@@ -1101,12 +1101,12 @@ console.log('Result: ', result); // We get true as both expressions are true
 ```
 
 * In this example we get **true** as both expressions are **true**
-* We also have the **&&** **or operator** to check if at least one of the expressions is true
+* We also have the **`||`** **"Boolean OR" operator** to check if at least one of the expressions is true
 * Using this operator we only need one of the expressions to be true
 * If the first expression is true the following one is not evaluated
 * If the first expression is false then the following one is evaluated 
 * At least one of the expressions needs to be true to get a true value 
-* If not we'll get false as result
+* If not we'll get false as the result
 
 **Example:**
 ```js
@@ -1117,7 +1117,7 @@ console.log('Result: ', result); // true
 ```
 
 * In this case the condition is **true** as the user age is greater than 18 (first expression)
-* It doesn't matter if the password is the same or not as the previous expression is true
+* It doesn't matter if the password is the same or not as the first expression is true
 
 **Example:**
 ```js
@@ -1128,7 +1128,7 @@ console.log('Result: ', result); // true
 ```
 
 * In this case the condition is **true** as the password is correct
-* It doesn't matter if the age it's not greated than 18
+* It doesn't matter if the age is not greater than or equal to 18
 
 **Example:**
 ```js
@@ -1159,7 +1159,7 @@ console.log(!false); // true
 let age = 21;
 let result = age < 18; 
 
-console.log('User age greater than 18?: ', !result);
+console.log('User age greater than or equal to 18?: ', !result);
 ```
 
 * The age condition is **false** but as we use the not operator it will be **true**
@@ -1170,10 +1170,10 @@ console.log('User age greater than 18?: ', !result);
 [Exercise 37](./exercises/js/ex_37.md)
 
 ## String special characters
-* Strings support some special characters that will provide exta functionality
+* Strings support some special characters that will provide extra functionality
 * \n  New Line
 * \t  Tab
-* \r  Carriage back
+* \r  Carriage Return
 
 **Example:**
 ```js
@@ -1186,14 +1186,14 @@ message = '\t \t tab text';
 console.log(message); // tab text
 ```
 
-* Special characters escape:
+* Special characters need to be "escaped" :
 * \'  Single quote
 * \"  Double quote
 * \\  Backslash
 
 **Example:**
 ```js
-let message = 'scaping backslash \\ as string content';
+let message = 'Escaping backslash \\ as string content';
 console.log(message); // we show \ as string content
 
 message = 'I love to have coffee at Gianu\'s';
@@ -1208,7 +1208,7 @@ console.log(message);
 #### Practice
 * Open a browser console and try all the examples to see the output
 
-## String object property and method
+## String object properties and methods
 
 ### Length
 * The **length** property of a **String object** indicates the length of a string
@@ -1234,9 +1234,9 @@ console.log(text.length);
 console.log('Welcome to JavaScript!!'.length);
 ```
 
-* Strings has a length property that allows us to know the string value length (characters)
+* Strings have a length property that allows us to know the string value length (characters)
 * We can use it with string literals
-* Also using a string stored in a variable
+* We can also use it on a string stored in a variable
 * Finally we can store the length in a variable too in case we need it
 * [MDN length doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 
@@ -1246,12 +1246,10 @@ console.log('Welcome to JavaScript!!'.length);
 [Exercise 39](./exercises/js/ex_39.md)
 
 ### String methods
-* Object methods will allow us to have some functionality for different data types
+* Object methods can give us different functionality for different data types
 * In this section we'll explore the String object methods
-* JavaScript transform string literals into String objects when calling a method
+* JavaScript transforms string literals into String objects when calling a method
 * [MDN String methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-
-* Este método retorna un nuevo string con el texto concatenado
 
 **Example:**
 ```js
@@ -1269,14 +1267,16 @@ stringVariable.method(methodParameter);
 stringVariable.method(methodParameter, otherMethodParameter);
 ```
 
+* This method returns a new string with the text of the inputs concatenated (put together)
+
 ## Concat
-* Using the **+** operator we can concat string values
-* String object has a **concat** method to do the same using methods instead of operators
+* Using the **+** operator we can concatenate string values
+* The String object has a **concat** method to do the same using methods instead of operators
 * [MDN concat doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
 
 **Example:**
 ```js
-const text = 'My mom name is ';
+const text = 'My mom name is '; // Note the trailing space!  It's a common mistake to forget whitespace when using concat
 const name = 'Marta';
 
 // We get one string back as result with both strings concatenated
@@ -1289,13 +1289,13 @@ console.log(text); // My mom name is
 console.log(name); // Marta
 ```
 
-* Some methos might change the object value
+* Some methods might change the object value
 * In this case concat only returns a new string without changing the original values
 * The concat method also accepts multiple parameters
 
 **Example:**
 ```js
-let text = 'Java';
+let text = 'Java'; // Sometimes we don't want that trailing space ;)
 
 console.log(text.concat('Script', ' is the best', ' Programming language!!'));
 ```
@@ -1364,8 +1364,8 @@ console.log( text.charAt(text.length - 1) ); // ?
 
 ### String slice
 * The **slice** method extracts a section of a string and returns it as a new string
-* This method accepts two parameter slice(start, end)
-* Use 0 index for the begining of the text
+* This method accepts two parameters slice(start, end)
+* Use 0 index for the beginning of the text
 * The end parameter is optional and if we don't pass any value it will return the rest of the text
 
 **Example:**
@@ -1376,7 +1376,7 @@ const result = text.slice(4, 15);
 console.log(result); // JavaScript
 ```
 
-* Counting from the begining we have 4 index before the **J** letter
+* Counting from the beginning we have 4 index before the **J** letter
 * Then we slice the string until the 15 index
 * The final result is the JavaScript word
 * Also we can avoid passing the second slice parameter and get the rest of the text from a starting point until the end
@@ -1406,7 +1406,7 @@ console.log(result);
 * The **substr** method returns the part of a string between the start index and a number of characters after it
 * We can also use 2 parameters (start and end)
 * First parameter is the substring start
-* Second parameter is the characters length
+* Second parameter is the number of characters
 
 **Example:**
 ```js
@@ -1432,9 +1432,9 @@ console.log(result); // JavaScript
 
 ### String split
 * The **split** method splits a String object into an array of strings by separating the string into substrings, using a specified separator string to determine where to make each split
-* The first method parameter will be the separator value to split the string by
+* The first method parameter will be the separator value to split the string by (also known as a "delimiter")
 * We'll get an **array** object as result
-* For now think about **array** as a list or collection of elements (in this case strings)
+* For now think about an **array** as a list or collection of elements (in this case strings)
 * Learn more about the [split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) method on the MDN guide
 
 **Example:**
@@ -1460,7 +1460,7 @@ console.log(friendsArray);
 #### Practice
 [Exercise 47](./exercises/js/ex_47.md)
 
-* String object has a lot of methods that we can use
+* The String object has a lot of methods that we can use
 * Read about them on the [MDN string guide -  methods section](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 * Read about:
   * String.prototype.includes()
@@ -1469,11 +1469,12 @@ console.log(friendsArray);
   * String.prototype.replace()
   * String.prototype.trim()
   * And more
-* Try using this methods on your own code!! `it will be 'fun'.toUpperCase()`
-* We don't need to remember all methods, just know that they exist and what they can do for us :)
+* Try using these methods on your own code!! `it will be 'fun'.toUpperCase()`
+* We don't need to memorize all the methods, just know that they exist and what they can do for us :)
 
 ## Number methods
 * The Number JavaScript object is a wrapper object allowing you to work with numerical values
+* Great learning project: Find out about wrappers and why Strings are different than "primitives" in most computer languages
 
 ### parseInt
 * The **parseInt** method parses a string argument and returns an integer of the specified radix or base
@@ -1503,13 +1504,14 @@ console.log(number); // 3
 ```
 
 * We can get a **number** from a **string**
-* parseInt will return a integer number
+* parseInt will return an integer number
 
 ### parseFloat
 * The **parseFloat** function parses an argument and returns a floating point number
 * This method returns a floating point number parsed from the given value
 * If the value cannot be converted to a number, NaN is returned
 * [MDN parseFloat doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+* What happens if you pass in a String representation of an Integer (3) instead of a Float (3.14)? 
 
 **Example:**
 ```js

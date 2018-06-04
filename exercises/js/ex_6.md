@@ -1,4 +1,4 @@
-# Excercise 6
+# Exercise 6
 
 * Create a new index6.js file
 * Copy and paste the code from ex_5

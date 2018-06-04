@@ -1,4 +1,4 @@
-# Excercise 7
+# Exercise 7
 
 * Create a folder with the name ex_7
 * Create a index.html file inside the ex_7 folder

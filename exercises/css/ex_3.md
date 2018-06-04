@@ -1,4 +1,4 @@
-# Excercise 3
+# Exercise 3
 
 * Create a new folder with the name `ex_3`
 * Create the following files:

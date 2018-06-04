@@ -1,4 +1,4 @@
-# Excercise 5
+# Exercise 5
 
 * Start MongoDB server
 * Connect to MongoDB server using MongoDB shell and 

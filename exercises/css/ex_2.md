@@ -1,4 +1,4 @@
-# Excercise 2
+# Exercise 2
 
 * Create a new index2.html file
 * Copy and paste the code from the previous exercise (ex_1)

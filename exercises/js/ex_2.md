@@ -1,4 +1,4 @@
-# Excercise 2
+# Exercise 2
 
 * Create a new index2.js file
 * Declare the following values: 

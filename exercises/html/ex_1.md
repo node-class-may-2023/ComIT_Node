@@ -1,4 +1,4 @@
-# Excercise 1
+# Exercise 1
 
 Create a basic HTML document with the following elements:
 * Filename: index1.html

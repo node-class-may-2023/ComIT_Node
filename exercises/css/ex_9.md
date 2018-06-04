@@ -1,4 +1,4 @@
-# Excercise 9
+# Exercise 9
 
 * Create a index9.html file
 * Copy and paste the following HTML code:

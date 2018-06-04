@@ -1,4 +1,4 @@
-# Excercise 6
+# Exercise 6
 
 * Inside your git repository create a index6.html file
 * Copy and paste the following HTML code:
