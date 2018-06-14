@@ -13,7 +13,7 @@ Follow the next steps to create your first site!!
 ![open Visual Studio Code](resources/images/open_folder_2.png)
 5. Create the following files inside the my-first-site folder :
   * index.html
-  * style.css
+  * styles.css
   * script.js
 ![open Visual Studio Code](resources/images/create_files.png)
 6. Copy and Paste the following code on each document
@@ -24,7 +24,7 @@ Follow the next steps to create your first site!!
 <html lang="en">
 <head>
   <title>My First Site</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -105,8 +105,8 @@ To be able to publish it we need a free hosting and a domain.
 4. Create your account using Facebook, Google or by input new credentials
 ![Awardspace](resources/images/awardspace_signup.png)
 5. You'll get a confirmation email with the system login information (it will be something like: [https://cp1.awardspace.net/beta](https://cp1.awardspace.net/beta))
-6. Confirmate you email account
-7. Login to the system using your credentials
+6. Confirm your email account (if the email asks you to)
+7. Login to the system using your credentials from the email
 ![AwardSpace Dashboard](resources/images/awardspace-panel.png)
 8. Configure a subdomain by clicking `Domain Manager` under the **First Steps Made Easy**
 ![First Steps Made Easy](resources/images/domain.png)
