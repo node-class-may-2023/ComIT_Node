@@ -55,7 +55,7 @@ Finaly, this is how the news HTML code looks like:
 
 ## Tag Structure
 
-* As HTML is a markup lenguage we'll use tags to create HTML elements that will show the user the different document sections and content.
+* As HTML is a markup language we'll use tags to create HTML elements that will show the user the different document sections and content.
 * A tag will have the following parts:
   * The `<` character defines the initial part of our tag
   * Then well add the `tagname` that we want to use
