@@ -113,7 +113,6 @@ To be able to publish it we need a free hosting and a domain.
 9. Select `Create a Free Subdomain`
 ![First Steps Made Easy](resources/images/awardspace_subdomain.png)
 10. Input a subdomain name and click the create button (this is the URL that we'll access online)
-11. Open a new tab and navigate to the URL that you just created. You should see a landing page
 12. Now that we have a hosting and domain configured we need to upload our site to publish it.
 13. Download & install [Filezilla](https://sourceforge.net/projects/filezilla/files/latest/download)
 or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
@@ -124,6 +123,8 @@ or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
 16. Click on your ftp user name options button
 ![FTP options button](resources/images/awardspace_fpt_configuration.png)
 17. Download FileZilla configuration file by clicking FTP configurations files button
+* (If the FTP configuration download does not work, you will need to manually enter your FTP site, 
+   username and password in FileZilla instead of opening the config in the next step)
 ![FTP account](resources/images/awardspace_filezilla_configuration_file.png)
 18. Open & configure Filezilla using the configuration file
 ![FTP account](resources/images/awardspace_filezilla_how_to_configure.png)
