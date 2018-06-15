@@ -233,7 +233,7 @@ attribute="value"
 * This tag accepts content so we'll have an open and close tags
 * The paragraph tag is a `block element`
 * By default the browser will show block elements one below the other
-* The browser will render only a space chracter even if we write many
+* The browser will render only a space character even if we write many
 * We can use &nbsp; [HTML entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity) to display the space character
 * [MDN paragraph doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
 
