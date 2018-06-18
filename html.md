@@ -892,7 +892,7 @@ Facebook:
 
 * The form element has 3 important attributes:
   * action: the URI of a program that processes the form information
-  * method: the HTTP method that the browser uses to submit the form: get o post 
+  * method: the HTTP method that the browser uses to submit the form: get or post 
     * get: corresponds to the HTTP GET method; form data are appended to the action attribute URI with a '?' as separator, and the resulting URI is sent to the server
     * post: corresponds to the HTTP POST method ; form data are included in the body of the form and sent to the server
   * enctype: when the value of the method attribute is post, enctype is the MIME type of content that is used to submit the form to the server. Possible values:
