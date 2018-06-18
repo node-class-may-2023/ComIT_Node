@@ -300,7 +300,7 @@ attribute="value"
 
 ### Line Break
 * The **br** element produces a line break in our text (carriage-return)
-* It is useful where the division of lines is significan
+* It is useful where the division of lines is significant
 * [MDN br doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)
 
 **Example:**
@@ -339,7 +339,7 @@ attribute="value"
 ```
 
 ## Lists
-* As web developers we'll use lists for many differnt things 
+* As web developers we'll use lists for many different things 
 * HTML has 3 different list types:
   * Unordered
   * Ordered
@@ -722,8 +722,8 @@ Absolute URL:
 * The **tbody** encapsulates a set of table row (**tr** elements, indicating that they comprise the body of the table)
 * The **tfoot** element defines a set of rows summarizing the columns of the table
 * A well structured table has all 3 sections
-* This is  also usefull for the screen readers
-* We can combien the **thead** and **th** element
+* This is also useful for the screen readers
+* We can combine the **thead** and **th** element
 
 **Example**
 ```html
@@ -861,7 +861,7 @@ Absolute URL:
 
 ##  Forms
 * The **form** element represents a document section that contains interactive controls for submitting information to a web server
-* We can find them everywere and in different styles too!
+* We can find them everywhere and in different styles too!
 
 **Search engines:**
 
@@ -909,9 +909,9 @@ Facebook:
 
 * A form can have many different input types elements
 * We can submit the form using a button to execute the form action and send the form data
-* Many programing lenguages can process form data server side like C#, Java, JavaScript, PHP, Ruby and others
+* Many programing languages can process form data server side like C#, Java, JavaScript, PHP, Ruby and others
 * Each input will have a `name` attribute so we can identify it
-* The user will get a response after submiting and procesing the data server side
+* The user will get a response after submitting and processing the data server side
 
 ### Inputs
 * The **input** element is used to create interactive controls for web-based forms in order to accept data from the user
@@ -1303,7 +1303,7 @@ OR
 #### File 
 * The **file** input type is a control that lets the user select a file
 * Use the accept attribute to define the types of files that the control can select
-* As we're going to be submiting more than just text we need to change the form enctype to enctype="multipart/form-data" and use the post method
+* As we're going to be submitting more than just text we need to change the form enctype to enctype="multipart/form-data" and use the post method
 * By default we can only select one file
 * Use the **multiple** attribute indicates whether the user can enter more than one value (only HTML5 and all browsers might not support it)
 * [MDN input type file doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
@@ -1564,7 +1564,6 @@ OR
 * The **audio** element is used to embed sound content in documents
 * It may contain one or more audio sources, represented using the src attribute or the **source** element: the browser will choose the most suitable one 
 * It can also be the destination for streamed media, using a MediaStream
-* Para incorporar audio utilizamos la etiqueta **audio**
 * This element works in a similar way as the **video** one
 * The **audio** element supports the same attribute video does: **src**, **controls**, **autoplay**, **preload** & **loop**
 * Some browsers have better support for some media types:
