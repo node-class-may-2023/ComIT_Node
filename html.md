@@ -1655,7 +1655,7 @@ OR
   <p>&gt; greater than</p>
   <p>&amp; ampersand</p>
   <p>&copy; Copyright</p>
-  <p>&reg; Registred Trademark</p>
+  <p>&reg; Registered Trademark</p>
   <p>&trade; Trademark</p>
 </body>
 ```
