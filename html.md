@@ -645,7 +645,6 @@ Absolute URL:
 * As **figure** content we'll add an image (**img**) and a caption (**figcaption**) elements
 * Older browser won't know how to show this element but they will render the image
 * [MDN figure doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
-* [MDN figure doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
 * [Test your browser](https://html5test.com)
 
 **Example**
@@ -915,7 +914,7 @@ Facebook:
 
 ### Inputs
 * The **input** element is used to create interactive controls for web-based forms in order to accept data from the user
-* How an it works varies considerably depending on the value of its `type attribute`
+* How it works varies considerably depending on the value of its `type attribute`
 * If this attributes is not specified, the `default` type adopted is `text`
 * The available types are as follows: button, checkbox, color, date, datetime-local, email, file, hidden, image, month, number, password, range, reset, search, submit, tel, text, time, url, week
 * [MDN input doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
@@ -929,7 +928,7 @@ Facebook:
 
 #### Text
 * Create basic single-line text fields (name, lastname, username, address)
-* Use the type value of text to define this type of input
+* Use the type value of `text` to define this type of input
 * You must remember to include name attribute on the **input** element, otherwise the text field's value won't be included with the submitted data
 * [MDN input type text doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text)
 
@@ -956,7 +955,7 @@ Facebook:
 <input type="text" name="username" placeholder="Please input a username" >
 ```
 
-* The **size** attribute specify the number of characters the text input can display at a time
+* The **size** attribute specified the number of characters the text input can display at a time
 * This affects the width of the element, letting you specify the width in terms of characters rather than pixels
 * As it's only a visual effect we can update it with CSS
 
