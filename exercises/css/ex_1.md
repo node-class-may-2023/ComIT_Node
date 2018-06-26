@@ -12,7 +12,7 @@
   <body>
     <h1>Welcome to CSS</h1>
     <p>Use css to add visual styles to your document</p>
-    <p>For example you can select all paragrpahs</p>
+    <p>For example you can select all paragraphs</p>
     <p>and make them Green</p>
     <div>Or maybe you can select</div>
     <div>all the div elements</div>
