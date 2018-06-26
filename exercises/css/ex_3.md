@@ -33,7 +33,7 @@
 ## news.html
 * Add the html structure
 * Add a document title with the text: Same CSS
-* Add a link element to link index.html with styles.css
+* Add a link element to link news.html with styles.css
 * Add a main title with the text: News
 * Add a paragraph with the text: CSS rules!! 
 * Add a link element to navigate to index.html
