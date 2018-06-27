@@ -1865,14 +1865,14 @@ input[type="submit"]:hover {
 * The number of columns may change depending the grid we use
 * Some examples of grid systems:
   * [Unsemantic](https://unsemantic.com)
-  * [Boostrap](https://getbootstrap.com/docs/4.0/layout/grid)
+  * [Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid)
   * [Foundation](https://foundation.zurb.com/grid.html)
 
-![Boostrap](./resources/images/css/using-grids-2.jpg)
+![Bootstrap](./resources/images/css/using-grids-2.jpg)
 
 ### Position
 * The **position** property specifies how an element is positioned in a document
-* Property values: 
+* Property values:
   * static
   * relative
   * absolute
@@ -2329,7 +2329,7 @@ body {
 * [Media Query print example](./examples/css/media/print.html)
 
 * Also we can select devices by specific characteristics
-* Boostrap for example uses the following configuration for different displays:
+* Bootstrap for example uses the following configuration for different displays:
   * Extra small devices: Phones width < 768px
   * Small devices: Tablets width ≥768px
   * Medium devices: Desktops width ≥992px
