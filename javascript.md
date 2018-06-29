@@ -17,7 +17,7 @@ const person = {
 
 const properties = Object.keys(person);
 
-person.forEach(function(property) {
+properties.forEach(function(property) {
   console.log(person[property]);
 });
 ```
@@ -99,13 +99,14 @@ node
 ```
 
 * It looks like nothing happened but in reality we are executing Node.js JavaScript console
-* The **>** symbol means that we opened the Node.js console and it's wating for us to input JS code
+* The **>** symbol means that we opened the Node.js console and it's waiting for us to input JS code
 * Now we can write JS code and execute it the same way we did using the browser
 * This console is called `REPL("Read-Eval-Print-Loop")`
 
 ### Using Node.js REPL
 * Open your terminal
 * Execute the `node` command
+* If you do not see the **>** symbol (and you are using Windows) try `winpty node` instead
 * Write the following sentence once you see the **>** symbol:
 
 ```javascript
@@ -1543,7 +1544,7 @@ console.log(message); // 42
 console.log(typeof message); // string
 ```
 
-* In this example we transfor the number value into a string one
+* In this example we transfer the number value into a string one
 * We use the + operator and instead of adding both values together it will concatenate them as they are both strings
 * This is why we need to be careful of which type of value we operate with
 
@@ -1558,8 +1559,8 @@ console.log(typeof message); // string
 * [MDN conditionals doc](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
 
 ## If statement
-* The **if** statement executes a statement if a specified condition is **truthy**
-* If the condition is **falsy**, another statement can be executed
+* The **if** statement executes a statement if a specified condition is **true**
+* If the condition is **false**, another statement can be executed
 * [if else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 
 ![if](./resources/images/js/if.gif)
@@ -1569,14 +1570,14 @@ console.log(typeof message); // string
 // Basic if statement structure
 if (condition) {
   // If statement body
-  // We'll add the code that we want to execute if the condition is truthy
+  // We'll add the code that we want to execute if the condition is true
 }
 ```
 
 * When coding we need to make decisions based on the conditions that we need
-* The if statements will execute this conditions and check wether they are true or false (boolean / truthy & falsy values, more about this soon)
-* If the statement it's truthy then it will execute the if statement body
-* If not, in case the condition is falsy it will ignore the if statement body and won't execute the code
+* The if statements will execute this conditions and check whether they are true or false (boolean / true & false values, more about this soon)
+* If the statement is true then it will execute the if statement body
+* If not, in case the condition is false it will ignore the if statement body and won't execute the code
 * Whether the condition it's true or false the code after the if statement it's going to be executed anyway following the natural code flow
 
 **Example:**
@@ -1621,15 +1622,15 @@ console.log('We will see this massege all the time as it doesn\'t depend on the 
 [Exercise 51](./exercises/js/ex_51.md)
 
 ## If / else statement
-* Now we know how to use a if statement to check for a given condition but we only care about when it's a truthy value
-* In some cases we need to control also what happens in case the condition is falsy
+* Now we know how to use a if statement to check for a given condition but we only care about when it's a true value
+* In some cases we need to control also what happens in case the condition is false
 
 ![if/else](./resources/images/js/if-else.gif)
 
 **Example:**
 ```js
 if (condition) {
-  // if truthy then it will execute this code
+  // if true then it will execute this code
 } else {
   // if not, then it will execute this code
 }
@@ -1658,8 +1659,8 @@ if (number === 2) {
 * The conditional **ternary operator** is the only JavaScript operator that takes three operands
 * This operator is frequently used as a shortcut for the if statement
 * To use this operator we do it the following way: `(condition) ? true : false`
-* If the condition is truthy then it will execute the code that follows the question character
-* In case it's falsy then it will execute the code that follows the double colon character
+* If the condition is true then it will execute the code that follows the question character
+* In case it's false then it will execute the code that follows the double colon character
 
 **Example:**
 ```js
@@ -1788,15 +1789,15 @@ console.log(message);
 [Exercise 63](./exercises/js/ex_63.md)
 
 
-## Truthy and Falsy (true and false values)
-* In JavaScript we have values that are truthy and falsy
+## true and false (true and false values)
+* In JavaScript we have values that are true and false
 * This means that some values might be true and some values might be false
 * For true and false values we use boolean
-* When using some values as condition they wi'll evaluated as true (truthy) or false (falsy) values depending the value data type
-* So, a **truthy** value is a value that is considered true when evaluated in a Boolean context
-* All values are truthy unless they are defined as falsy
-* A falsy value is a value that translates to false when evaluated in a Boolean context
-* The following values are considered falsy values:
+* When using some values as condition they will be evaluated as true (true) or false (false) values depending the value data type
+* So, a **true** value is a value that is considered true when evaluated in a Boolean context
+* All values are true unless they are defined as false
+* A false value is a value that translates to false when evaluated in a Boolean context
+* The following values are considered false values:
   * false
   * null
   * undefined
@@ -1807,7 +1808,7 @@ console.log(message);
 **Example:**
 ```js
 if ('') {
-  // This code won't get executed as an empty string is a falsy value
+  // This code won't get executed as an empty string is a false value
 } else {
   // This code gets executed
 }
@@ -1837,8 +1838,8 @@ if (name) {
 }
 ```
 
-* If name is empty then it will be evaluated as a falsy value so in this case we don't need to compare it to an empty string
-* Truthy and falsy values are an easy way to use some conditions
+* If name is empty then it will be evaluated as a false value so in this case we don't need to compare it to an empty string
+* true and false values are an easy way to use some conditions
 * One special case is using null:
 
 **Example:**
@@ -1854,7 +1855,7 @@ if (name) {
 console.log(typeof name) // object
 ```
 
-* Using a null value it's going to be evaluated as an object and it will become truthy
+* Using a null value it's going to be evaluated as an object and it will become true
 * When using null we'll have to add an extra validation
 
 **Example:**
@@ -1868,8 +1869,8 @@ if (name && null !== null) {
 }
 ```
 
-* [MDN Falsy doc](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
-* [MDN Truthy doc](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+* [MDN false doc](https://developer.mozilla.org/en-US/docs/Glossary/false)
+* [MDN true doc](https://developer.mozilla.org/en-US/docs/Glossary/true)
 * [MDN Type Conversion doc](https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion)
 
 #### Practice
@@ -1878,7 +1879,7 @@ if (name && null !== null) {
 [Exercise 65](./exercises/js/ex_65.md)
 
 #### Iterators
-* It's common that when coding we need to keep repeting the same code execution until a given condition it's true
+* It's common that when coding we need to keep repeating the same code execution until a given condition it's true
 * For example I might want to show numbers from 0 to 10 to create a list
 
 **Example:**
@@ -1970,8 +1971,8 @@ while (number < 1001) {
 * Once we reach 1001 number will no longer be lower than 1001 so the condition will be false
 * The code will continue the normal code flow
 * We need to be careful as the condition might be always true and this script will continue to execute for ever
-* At some point the engine will throw a recursivity exeption and we'll get an error
-* Always to asure to change the condition so it becomes false at some point
+* At some point the engine will throw a recursivity exception and we'll get an error
+* Always be sure to change the condition so it becomes false at some point
 
 **Example:**
 ```js
@@ -2004,7 +2005,7 @@ while (number < 10) {
 }
 ```
 
-* If the condition is false the engine will ingnore it
+* If the condition is false the engine will ignore it
 * [MDN while doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 
 #### Practice
@@ -3980,7 +3981,7 @@ console.log(result); // 30
 * **addBothNumbers** will add number 20 that is the value that we get from the **otherNumber** param and 10 that was the number passed as parameter to the parent function
 * Using JavaScript scope the **addBothNumbers** still has access to the **number** value
 * At the end we add 10 and 20 using JavaScript scope
-* BUMMMMMMM..... Mind Blowing!!!
+* BOOOOOMMMMM..... Mind Blowing!!!
 
 ![mind](resources/images/js/mind.gif)
 
