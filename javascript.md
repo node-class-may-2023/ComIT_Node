@@ -1599,7 +1599,7 @@ if (playerLife == 0) {
 }
 ```
 
-* We can read this statement like: `if the players like it's 0 then show a Game Over message`
+* We can read this statement like: `if the players life is 0 then show a Game Over message`
 * It's easy to use **if condition then** phrase to detect that we need a if statement
 * Once the if statement has been executed the code flow continues
 
@@ -1733,7 +1733,7 @@ if (name === 'Miriam') {
 }
 ```
 
-* If we keep nesting statements it's going to be difficut to follow this code
+* If we keep nesting statements it's going to be difficult to follow this code
 
 ```js
 const name = 'Marta';
@@ -1757,7 +1757,7 @@ if (name === 'Miriam') {
 ```js
 const name = 'marta';
 let message = null;
-,
+
 switch (name) {
   case 'Miriam':
     message = 'The name is Miriam';
@@ -1988,7 +1988,7 @@ while (number < 10000) {
 }
 
 ```
-* The while statement will not be executed if the condition it's false from the begining
+* The while statement will not be executed if the condition is false from the beginning
 
 **Example:**
 ```js
@@ -2033,7 +2033,7 @@ while (number < 10) {
 * The **do/while** statement creates a loop that executes a specified statement until the test condition evaluates to false
 * The condition is evaluated after executing the statement, resulting in the specified statement executing **at least once**
 * In this case the code will be executed once and then ask for a condition
-* It's similar to while but the difference it's where we use the condition to evaluate wether it will iterate or not
+* It's similar to while but the difference it's where we use the condition to evaluate whether it will iterate or not
 
 **Example:**
 ```js
@@ -2136,7 +2136,7 @@ for (let number = 0; number <= 10; number++) {
 * Then the condition it's going to be evaluated
 * If the condition is true it will execute the block statements
 * After iterating it will execute the final expression, in this case it's to increment one more number value
-* It's still preatty easy to refactor code:
+* It's still pretty easy to refactor code:
 
 **Example:**
 ```js
@@ -2182,7 +2182,8 @@ for (let i = 0; i < 1000; i++){
 }
 ```
 
-* En este ejemplo se va a intentar correr el for, va a declarar la variable i, se le va a asignar el valor y luego se va a cortar la ejecución por el break.
+* In this example we will iterate until index is 10 and then cut the iteration execution
+* So we only show numbers from 0 to 9
 
 **Example:**
 ```js
@@ -2195,8 +2196,6 @@ for (let index = 0; index < 1000; index++){
 }
 ```
 
-* In this example we will iterate until index is 10 and then cut the iteration execution
-* So we only show numbers from 0 to 9
 * [MDN break doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
 
 #### Practice
@@ -2207,7 +2206,7 @@ for (let index = 0; index < 1000; index++){
 ## Functions
 * In JavaScript **function** is a value
 * We use functions to group functionality
-* Using functions allows us to avoid repeting code
+* Using functions allows us to avoid repeating code
 * Use the **function** reserved word to define a function
 * We need to define the function before executing it
 * Use the function name and () to call the given function
@@ -2225,7 +2224,7 @@ greeting(); // Shows Hello as output
 * In this example we define a greeting function
 * Then we call the greeting function using ()
 * Each time we call the greeting function it will execute the function block code
-* That's why we output 2 times hello as the greating function only has a console.log('Hello'); 
+* That's why we output 2 times hello as the greeting function only has a console.log('Hello'); 
 * Now we can use this function many times without having to repeat the code
 * We can also use functions to test our code too
 
@@ -2250,7 +2249,7 @@ greeting(); // Shows Hello as output
 greeting(); // Shows Hello as output
 ```
 
-* In this example we define a **greeting** and then assing a **function** value
+* In this example we define a **greeting** and then assign a **function** value
 * Assigning the variable works the same way that any other data type (string, number, boolean)
 * This is because a function is a JavaScript data type!! :)
 
@@ -2288,7 +2287,7 @@ console.log(getGreetingMessage());
 
 * In this example we call the function getGreetingMessage() we get a string back
 * Then we get that returned string value and print it using console.log()
-* We can use the returned valur for anything for example we can assign it to a variable
+* We can use the returned value for anything for example we can assign it to a variable
 
 **Example:**
 ```js
@@ -2352,7 +2351,7 @@ if (isUserLoggedIn()) {
 
 * Functions can accept none, one or many parameters
 * We can have more flexible functions using parameters
-* Also we can reuse the function functionality for differen parameters values
+* Also we can reuse the function functionality for different parameters values
 * Define the amount of functions parameters while defining the function
 * Also we can name each parameter so it has more context inside the function
 * We can use the functions parameters inside the function block content
@@ -2382,8 +2381,7 @@ greeting('Raul'); // Hi Raul!!!
   * The greeting function accepts a **username** parameter
   * **username** works as an function internal variable
   * The **username** param will get the value that we pass calling the function 
-  * Al ejecutar la función `saludar('Marta')` estamos pasando 'Marta' como parámetro `Example: greeting('Marta')`
-  * The first time we call the greeting function we pass 'Marta' as parameter and it will become username in the greeting block content
+  * The first time we call the greeting function we pass 'Marta' as parameter and it will become the username in the greeting block content
   * We can pass a function different parameters values (example: Marta, Xime, Raul)
 
 **Example:**
@@ -2431,8 +2429,8 @@ greeting('Nico', 39); // The user: Nico has 39 years!!!
 greeting(18, 'Marta'); // The user: 18 has Marta years!!!
 ```
 
-* The first call has the right parameters order, so we get the spected result
-* In the second call we get we pass the parameters order in the wrong way so we get an unespected result back
+* The first call has the right parameters order, so we get the expected result
+* In the second call we get we pass the parameters order in the wrong way so we get an unexpected result back
 
 #### Practice
 [Exercise 107](./exercises/js/ex_107.md)
@@ -2457,7 +2455,7 @@ greeting(18, 'Marta'); // The user: 18 has Marta years!!!
 
 #### Array
 * An **array** literal is a list of zero or more expressions
-* Each value represents an array elementent
+* Each value represents an array element
 * The values are closed in square brackets **[]**
 * Creating an array using an array literal, it's initialized with the specified values as its elements, and its length is set to the number of arguments specified
 * This type of value allows us to store more than one value into a variable
@@ -2489,7 +2487,7 @@ const people = [
 ];
 ```
 
-* To asigna an empty array we just asing the **[]** to a variable like this:
+* To assign an empty array we just assign the **[]** to a variable like this:
 
 **Example:**
 ```js
@@ -2526,7 +2524,7 @@ const name = people[0];
 console.log(name);
 ```
 
-* Also, we can get any array item incrising the index value
+* Also, we can get any array item increasing the index value
 
 **Example:**
 ```js
@@ -2663,8 +2661,8 @@ console.log(students.length); // 5
 
 * We can use this property to get the last item from an array
 * Array index in JavaScript starts in 0
-* The lenght property will return the number of elements
-* To get the last element index we can substract one from the array lenght
+* The length property will return the number of elements
+* To get the last element index we can subtract one from the array lenght
 
 **Example:**
 ```js
@@ -2685,7 +2683,7 @@ console.log(students[ students.length - 1 ]); // emilia
 ```
 
 * In this example we use the students array to get the length
-* Then we substract one from the students array length
+* Then we subtract one from the students array length
 * Then we get a number as result and use it as students index
 * [MDN array length doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
 
@@ -2831,7 +2829,7 @@ console.log(dog); // dog
 * Some return the element from the begining or the end and return the element
 * Some adds a new element to the begining or end and return the new array length
 
-### Sort y reverse
+### Sort and reverse
 
 #### Sort
 * The **sort** method sorts the elements of an array in place and `returns the array`
@@ -3126,10 +3124,10 @@ const myObject = {}; // object assigned to a variable
 [Exercise 143](./exercises/js/ex_143.md)
 
 ### Properties
-* An object can properties that will describe it
-* Properties have a name like variables
+* An object can have properties that will describe it
+* Properties have a name (just like variables)
 * To assign a value to a property we use colon
-* Porperties are separated using coma
+* Properties are separated using comas
 * Properties can be of any type of value
 
 **Example:**
@@ -3151,18 +3149,14 @@ const person = {
   age: 38
 };
 
-console.log(persona.name);
-console.log(persona.age);
+console.log(person.name);
+console.log(person.age);
 ```
 
 #### Practice
 [Exercise 144](./exercises/js/ex_144.md)
 
 [Exercise 145](./exercises/js/ex_145.md)
-
-[Exercise 146](./exercises/js/ex_146.md)
-
-[Exercise 147](./exercises/js/ex_147.md)
 
 
 * We can access a property that doesn't exist on the object and get undefined as value
@@ -3177,8 +3171,8 @@ const person = {
 console.log(person.married); // undefined
 ```
 
-* Assing a property value the same way that you would do it for a variable
-* To access the property that will recibe the value you need to still use the object name, dot and the property name
+* Changing a property value can be done the same way that you would do it for a variable
+* To access the property that will receive the value you need to still use the object name, dot and the property name
 
 **Example:**
 ```js
@@ -3194,9 +3188,9 @@ console.log(person);
 // { name: 'Martín', age: 20 }
 ```
 
-* The object properties are variables too so we can assign or get there value
+* The object properties are variables too so we can assign or get their value
 * Object properties in JavaScript are dynamic
-* This means that if we assign a value to an object property that hasen't been defined it will create it
+* This means that if we assign a value to an object property that hasn't been defined it will create it
 * We need to make sure we get the variable name wright
 
 **Example:**
@@ -3213,7 +3207,7 @@ person.married = true;
 console.log(person);
 // { name: 'Nico', age: 38, married: true }
 
-console.log(persona.married); // true
+console.log(person.married); // true
 ```
 
 #### Practice
@@ -3290,7 +3284,7 @@ person.greet('Marta'); // Hi Marta, how are you?
 ```
 
 * In this example we see that calling a method is similar to calling just a function
-* And this is because we are actualy calling a function that's an object property
+* And this is because we are actually calling a function that's an object property
 * In the methods body we can access the current object properties using the **this** reserved word
 * For now we can think about **this** being the object
 
@@ -3306,6 +3300,10 @@ person.greet(); // Hi my name is: Nico
 ```
 
 #### Practice
+[Exercise 146](./exercises/js/ex_146.md)
+
+[Exercise 147](./exercises/js/ex_147.md)
+
 [Exercise 152](./exercises/js/ex_152.md)
 
 [Exercise 153](./exercises/js/ex_153.md)
@@ -3357,8 +3355,8 @@ const person = {
   }
 }
 
-console.log(persona['name']);  // Nico
-console.log(persona['age']);  // 38
+console.log(person['name']);  // Nico
+console.log(person['age']);  // 38
 ```
 
 * We can also use variables to do the same
@@ -3379,7 +3377,7 @@ const person = {
   }
 }
 
-console.log(person[name]);  // nico
+console.log(person[name]);  // Nico
 console.log(person[age]);  // 38
 ```
 
@@ -3391,7 +3389,7 @@ console.log(person[age]);  // 38
 * Now that we know how to access dynamic properties from an object we'll learn about objects keys!
 * `Object.keys` returns an array value with all the objects properties names (not the value)
 * To call this method we need to use the `Object` value
-* This method accpets an object as parameter
+* This method accepts an object as parameter
 
 **Example:**
 ```js
@@ -3445,7 +3443,7 @@ properties.forEach(function(property) {
 * We get the properties from the person object using Object keys method
 * As we get an array back we can use forEach to iterate over the properties names
 * On each iteration we get a property name value (name then age)
-* We use the property variable (with the property value on it) to access dynamicly to the person object properties
+* We use the property variable (with the property value on it) to access dynamically to the person object properties
 * If we add more properties to the object we can still access them using dynamic properties and iterating over the properties array
 
 **Example:**
@@ -3523,7 +3521,7 @@ doSomething();
 * In this example we just use a global function to do something similar to what we can do with a callback
 * Callback important concepts:
   * A callback is just a function passed as parameter to other function
-  * The function that recived the function as parameter will call it
+  * The function that received the function as parameter will call it
 
 **Example:**
 ```js
@@ -3591,7 +3589,7 @@ let mappedNumbers = numbers.map(function(number) {
 });
 ```
 
-* We can see that the filter, reduce and map functions recieve a function as parameter
+* We can see that the filter, reduce and map functions receive a function as parameter
 * This functions will get called internally
 * If you know jQuery you will find this code familiar
 
@@ -3635,7 +3633,7 @@ function greet() {
 * This practice it's called **Hoisting**
 * Remember that JavaScript was created to be an easy language to use and learn
 * When running the code JavaScript will go through the code 2 times
-* First time it will check the variables and funcitons definition and move them to the higher part of the code
+* First time it will check the variables and functions definition and move them to the higher part of the code
 * Second time will execute the rest of the code
 
 **Example:**
@@ -3649,7 +3647,7 @@ greet(); // Hi i'm showing a message without being defined
 
 * This is a better way to write our code
 * First we declare the function and then we use it
-* Hoisting can crear unexpected bugs
+* Hoisting can clear unexpected bugs
 * This won't happen in the newer node.js versions
 * You can prevent this problem setting your code to the [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * Use `use strict` in the following way
@@ -3750,7 +3748,7 @@ console.log(otherName); // otherName is not defined
 * Using **let** or **const** this changes as they have block level scope
 * So now you know, use let and const whenever you can to avoid having unexpected problems
 
-### Funcitons inside functions
+### Functions inside functions
 * Functions can have other functions inside
 
 **Example:**
@@ -3767,7 +3765,7 @@ function welcome() {
 welcome(); // Hi Coco!!!
 greeting(); // greeting is not defined
 ```
-* The function inside (children) other function it's not accessable from outside the parent function
+* The function inside (children) other function it's not accessible from outside the parent function
 * In this example we see that we can call the **welcome** function but not the **greeting** one as is a inner function
 * The **greeting** is a local function and it can only be called from inside the **welcome** function
 
@@ -3812,7 +3810,7 @@ console.log(name) // Coco
 console.log(message) // message is not defined
 ```
 
-* The **message** variable es defined as local inisde the **welcome** function
+* The **message** variable es defined as local inside the **welcome** function
 * Following the pattern from inside out we can access the **message** variable from the **greet** function and from the **welcome** function body
 * Since **message** is a local variable we can't access it from outside the **welcome** function
 * We can think about child functions being able to access the parent scope
@@ -3974,7 +3972,7 @@ console.log(result); // 30
 * In example we call the **add** function and pass 10 as parameter
 * The add function returns a function that's **addBothNumbers**
 * This function that we get as result accepts a parameter
-* We assing the returned function in the **adding** variable
+* We assign the returned function in the **adding** variable
 * We can pass a parameter when we call the **adding** function
 * In this case we pass the number 20
 * The **addBothNumbers** gets executed using the **adding** function

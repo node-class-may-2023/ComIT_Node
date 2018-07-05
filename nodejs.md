@@ -13,8 +13,8 @@
 * When we installed Node.js we also installed other program called NPM
 
 ## NPM
-* NPM used to stando for Node Package Manager but now a day it's just NPM as name
-* Thanks to NPM we can install many different Node.js modules and import them on our projects
+* NPM used to stand for Node Package Manager but nowadays it's just known as "NPM"
+* Thanks to NPM we can install many different Node.js modules and import them into our projects
 * This way we reuse code and we can contribute to other modules too
 * NPM is one of the largest modules repository 
 * Visit [NPM site](https://www.npmjs.com) to learn more about it
@@ -24,15 +24,16 @@
 ![Wombat](./resources/images/node/wombat.png)
 
 ### Start a new NPM project
-* To start a new project firs we need to create a new folder and change directory inside it
+* To start a new project first we need to create a new folder and change directory to go inside of it
 * You can do this in unix like systems
 
 ```
-mkdir learning-node && cd learning-node
+mkdir learning-node
+cd learning-node
 ```
 
-* Once we're in the right folder we run the NPM command and init
-* This command ask a lot of questions to configure our project
+* Once we're in the right folder we run the NPM command `init`
+* This command asks a lot of questions to configure our project
 * We can ignore them and just press enter
 * [NPM init doc](https://docs.npmjs.com/cli/init)
 
@@ -67,7 +68,7 @@ npm init -y
 * Once we have the file we can update any value on it
 
 ### NPM scripts
-* On the **package.json** file we can find a **sripts** key
+* In the **package.json** file we can find a **scripts** key
 * By default we have a test script
 * We can create our own scripts
 * Add a **start** script
@@ -115,7 +116,9 @@ Welcome to JavaScript and Node.js server side
 * Using NPM we can install modules and use them on our projects
 * Run **npm install** and the module name to install the given module
 * You can check and search for modules on the [NPM site](https://www.npmjs.com)
-* In this case we're going to install **Express** that's a popular module to create a web server
+* In this case we're going to install **Express** which is a popular module to create a web server
+* A web server is the magic that gives you a web page when you ask the internet for one :)
+  * If you are interested in knowing more, [here](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server) is a good place to start
 * Check out [express npm page](https://www.npmjs.com/package/express)
 * Also, take a look at [express site and doc](http://expressjs.com)
 
@@ -130,14 +133,14 @@ npm install express
 }
 ```
 
-* Runnig NPM install creates a **node_modules** folder
+* Running NPM install creates a **node_modules** folder
 * Inside **node_modules** we find all the installed modules for a given project
 * This folder can grow in size as we can have many installed modules or dependencies
 * To avoid having issues we can [.gitignore](https://git-scm.com/docs/gitignore) this folder
 * So if we're not sharing the node_modules folder with other team members... do we need to remember the list of installed modules?
-* By default now NPM installs the modules and add them to our package.json dependecies
+* By default now NPM installs the modules and add them to our package.json dependencies
 * Delete the node_modules folder
-* Run the npm install command but whitout the module name
+* Run the npm install command but without the module name
 
 ```bash
 npm install
@@ -145,10 +148,10 @@ npm install
 
 * NPM reads our list of dependencies, downloads and install all the modules for us
 * In this case we have only Express as dependency
-* In many cases we need dependecies that are only for development purposes like for example a library to run our tests, build our bundle or deploy our project
+* In many cases we need dependencies that are only for development purposes like for example a library to run our tests, build our bundle or deploy our project
 * NPM supports devDependencies that are modules that we don't deploy on our server
 * To install a devDependencies we run npm install and add --save-dev as command parameter
-* By default npm install now runs `npm install --save` to save the module as dependecy
+* By default npm install now runs `npm install --save` to save the module as dependency
 * Lets install a dev dependency called [UglifyJS](https://github.com/mishoo/UglifyJS2)
 
 ```
@@ -163,7 +166,7 @@ npm install uglify-js --save-dev
 }
 ```
 
-* Now we have express installed as dependecy and uglify.js as dev dependency
+* Now we have express installed as dependency and uglify.js as dev dependency
 * Delete the node_modules and run npm install again to make sure that npm install both dependencies
 * Lets configure uglify.js to run as script
 * Add the following script to your package.json file
@@ -191,7 +194,7 @@ npn run uglify
 ```
 
 * When running this command you'll see the following output: `> uglifyjs index.js --output script.js`
-* NPM has configured some scritps names as shorcuts like start and test
+* NPM has configured some scripts names as shortcuts like start and test
 * When we need to run our own scripts we need to use `npm run scriptname`
 * NPM can execute the code configured on this script as uglify.js is installed in the node_modules folder
 * NPM can access installed node_modules modules
@@ -208,7 +211,7 @@ var firstname="Ciro";var lastname="Rodriguez";var age=20;constole.log(firstname)
 * The index.js file still has our code and that it's more readable
 * We don't need uglify.js as dependency as we prepare our files before we deploy them
 * This is why we can install it as devDependency
-* NPM can also uninstall packages running the unninstall command
+* NPM can also uninstall packages running the uninstall command
 * First we'll install a new module so we can then test this new command
 * Install [Morgan.js](https://github.com/expressjs/morgan)
 
@@ -240,7 +243,7 @@ npm uninstall morgan
 ```
 
 * All this modules has been installed as local dependencies
-* NPM can also install modules as global so we can run them as programs from anywere
+* NPM can also install modules as global so we can run them as programs from anywhere
 * To install a module as global we also run npm install but we add the **-g** parameter
 * For example when we installed [http-server](https://github.com/indexzero/http-server) we installed it as global so we can use it from any folder
 
@@ -262,7 +265,7 @@ npm install express-generator -g
 express --help
 ```
 
-* If you get an error running the provious command try closing and opening your terminal again
+* If you get an error running the previous command try closing and opening your terminal again
 * Sometimes you need to restart your terminal so the terminal notice that there's other modules installed (not so common but it might happen)
 * Now you should get the following output
 
@@ -290,7 +293,7 @@ Options:
 npm uninstall express-generator -g
 ```
 
-* As you can see NPM is a great package module and will help us install and uninstal regular o dev dependencies
+* As you can see NPM is a great package module and will help us install and uninstall regular o dev dependencies
 
 ## Modules
 * A module is just a way to encapsulate our code in a single code unit
@@ -696,7 +699,7 @@ console.log(user.name);
 ```
 
 * Arrow functions do not have their own this value
-* This means that the `this` inside the function it's going to work in a differen way
+* This means that the `this` inside the function it's going to work in a different way
 * Lexical Scoping just means that it uses this from the code that contains the Arrow Function
 * You can see [great examples](https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4)
 * Read the [MDN Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) doc to learn more about Arrow Functions
@@ -830,7 +833,7 @@ server is listening on 3000
   * And much, much more!
 * Express is a minimal and flexible Node.js web application framework
 * This is why we'll add many modules to configure our server like sessions, coockies and more
-* Some known modules are manteined by the [express core team](http://expressjs.com/en/resources/middleware.html)
+* Some known modules are maintained by the [express core team](http://expressjs.com/en/resources/middleware.html)
 * There's no silver bullets on how to create/configure an Express server
 
 ### Create a web server using Express
@@ -840,13 +843,13 @@ server is listening on 3000
   * Request the module
   * Configure the server
   * Handle request
-  * Send reponse
+  * Send response
 * The request object allow us to get a lot of data from the user like username & password, product id or search query
 * Using this values we can define what we should do like for example if we need to interact with a database, create a session or just send some asset
-* We can configure express to reponde static content like we have been doing using HTTP-Server module
+* We can configure express to respond with static content like we have been doing using HTTP-Server module
 * Also we can create dynamic content
 * We might do it using a database or not
-* To create dynamic contet we'll use JavaScript and a template engine
+* To create dynamic content we'll use JavaScript and a template engine
 * So, Express allows us to handle http routes for each request and configure the corresponding response
 * Configure static assets
 * Configure template engine
@@ -890,7 +893,7 @@ app.listen(3000, function() {
 ### Using GET routes
 * As you can see creating routes with express is really easy
 * We use the `get` method to obtain `GET` requests
-* This method accpets a string as first parameter that represents the route that we want to handle
+* This method accepts a string as first parameter that represents the route that we want to handle
 * For example we used `/` to handle our root route
 * The second parameter is a callback function that accepts 2 objects (`request & response`) as parameters
 * The response object has a `send` method that we can use to send some data to the client as response
@@ -1112,7 +1115,7 @@ app.get('/error', function(request, response) {
 
 * In the first example we set 200 as status code and send a JavaScript object as JSON as response
 * On the error call we want to send an error status back so we set 500 to let the user know that there's a server error
-* Also, we can hande 404 routes the following way:
+* Also, we can handle 404 routes the following way:
 
 **Example:**
 ```js
@@ -1149,7 +1152,7 @@ app.use(function (err, req, res, next) {
 * We can chain middleware calls using the `next` function in the application’s request-response cycle
 * The `next` function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware
 * So this means that the middleware gets three parameters: `request, response and a function callback called next`
-* Express has many middlawares that we can install, configure and use
+* Express has many middlewares that we can install, configure and use
 
 **Example:**
 ```js
@@ -1263,7 +1266,7 @@ app.use(express.static('public'));
   * http://localhost:3000/js/script.js
   * http://localhost:3000/css/styles.css
   * http://localhost:3000/index.html
-* We don't need to define our own routes for static assests (get, post, etc)
+* We don't need to define our own routes for static assets (get, post, etc)
 * If we take a deep look to this urls we can see that the public folder will be our site root for static assets
 
 ```bash
@@ -1391,7 +1394,7 @@ app.listen(3000);
 ```
 
 * In this example we configured a root route
-* Using the reponse `render` method we can send a response to the user
+* Using the response `render` method we can send a response to the user
 * The render method accepts two parameters
   * The first parameter is the template name
   * The second parameter is a JavaScript object where each property will become a template variable
@@ -1422,12 +1425,12 @@ app.listen(3000);
   ```
   p text as content
   ```
-  * Adding pipe and identation 
+  * Adding pipe and indentation 
   ```
   p
     | text as content
   ```
-  * Finaly using a dot and identation
+  * Finally using a dot and indentation
   ```
   p.
     text as content
@@ -1445,7 +1448,7 @@ a(href='contat.html', target='_blank') Contact
 <a href="contact.html" target="_blank">Contact</a>
 ```
 
-* Use ids and clasess using the CSS notation, `#` for ids and `.` for classes
+* Use ids and classes using the CSS notation, `#` for ids and `.` for classes
 
 ```
 div#main main content
@@ -1835,7 +1838,7 @@ app.get('/products/:id', (req, res) => {
 })
 ```
 
-* In this example we see that we can create a route handler that it's specting a URL parameter
+* In this example we see that we can create a route handler that it's expecting a URL parameter
 * In this case the url it's going to be `http://localhost:3000/products/10`
 * Now we need to know how to retrieve this id parameter using Express
 * The request object has a params property that it's an object with all the parameters that this request has
@@ -1882,7 +1885,7 @@ app.get('/products', (req, res) => {
 ```
 
 * This form has three inputs username, firstname & lastname
-* When we submit this form all this values will be submited to `/products`
+* When we submit this form all this values will be submitted to `/products`
 * As the form is configured to use GET it will send all this values using query string
 * The URL it's going to look like: `http://localhost:3000/products?username=nisnardi&firstname=nicolas&lastname=isnardi`
 * We can see that we'll have a `username, firstname & lastname` values
@@ -1923,7 +1926,7 @@ We got the following values from the query string: nisnardi, nicolas & isnardi
 ```
 
 * As you can see the only value that changed is `method="post"` (it used to be get)
-* Now the values won't be submited as query string and instead we'll send them on the request body
+* Now the values won't be submitted as query string and instead we'll send them on the request body
 * To use Express to get POST values we need to add [body-parser](https://github.com/expressjs/body-parser) that's a Express middleware
 * Body parser can get all the POST requests or we can configure it just fo the routes that we want
 * Then it will get the POST values and append then as request body property
@@ -1958,7 +1961,7 @@ app.post('/products', urlencodedParser, (req, res) => {
 ```
 
 * In this example we configured a post route handler for `/products/`
-* When we submit the form it will send the requerst to this route handler
+* When we submit the form it will send the request to this route handler
 * The request will send all the form values
 * Using `urlencodedParser` we configure this route to use body-parser
 * This means that when this route gets called we'll have all the form values in the `req.body` object
