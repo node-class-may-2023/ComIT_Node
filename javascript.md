@@ -1862,7 +1862,7 @@ console.log(typeof name) // object
 ```js
 const name = null;
 
-if (name && null !== null) {
+if (name && name !== null) {
   console.log('welcome: ' + name);
 } else {
   console.log('Please input your name');  
