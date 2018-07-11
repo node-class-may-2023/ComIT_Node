@@ -3687,10 +3687,10 @@ console.log(name); // Pedro
 * In this example we defined the **name** variable as global
 * Since it's a global variable we can access it from any place
 * In this example we access the name value within the function
-* This is a good practice as the function it's accessing the global environment
-* A function should't depend on the context to function
-* In this case it's much better to pass the variable as parameter
-* As it's a global variable we can also change it's value too
+* This is not a good practice as the function is accessing the global environment
+* A function should not depend on the context to function
+* In this case it's much better to pass the variable as a parameter
+* Another bad example: as it's a global variable we can also change it's value too
 
 **Example:**
 ```js
@@ -3708,8 +3708,8 @@ console.log(name); // Marta
 ```
 
 * In this example we see how we can change the name value
-* This can affect or change our code workflow so it's better if we pass the value as parameter and then return a new value if we need it
-* Local variables are the once that we only can access from the same place they were defined
+* This can affect or change our code workflow so it's better if we pass the value as a parameter and then return a new value if we need it
+* Local variables are the ones that we only can access from the same place they were defined
 
 **Example:**
 ```js
@@ -3722,10 +3722,10 @@ showName();
 console.log(name); // name is not defined
 ```
 
-* In this example the **name** variable is defined as a local variable as it only can be access within the function showName
-* Scope in JavaScript we can say that works from inner to outer bounds (it will make sense, I promise)
+* In this example the **name** variable is defined as a local variable as it only can be accessed within the function showName
+* We can say that scope in JavaScript works from inner to outer bounds (it will make sense, I promise)
 * let and const have block element scope
-* var doesn't have block scope
+* var does not have block scope
 
 **Example:**
 ```js
@@ -3745,11 +3745,11 @@ console.log(otherName); // otherName is not defined
 ```
 
 * Using var won't give us block element scope, that's why we can access the **otherName** variable outside the { }
-* Using **let** or **const** this changes as they have block level scope
+* Using **let** or **const** changes this as they have block level scope
 * So now you know, use let and const whenever you can to avoid having unexpected problems
 
 ### Functions inside functions
-* Functions can have other functions inside
+* Functions can have other functions inside of them
 
 **Example:**
 ```js
@@ -3765,8 +3765,8 @@ function welcome() {
 welcome(); // Hi Coco!!!
 greeting(); // greeting is not defined
 ```
-* The function inside (children) other function it's not accessible from outside the parent function
-* In this example we see that we can call the **welcome** function but not the **greeting** one as is a inner function
+* Functions inside (children) another function are not accessible from outside the parent function
+* In this example we see that we can call the **welcome** function but not the **greeting** one as it is an inner function
 * The **greeting** is a local function and it can only be called from inside the **welcome** function
 
 **Example:**
@@ -3810,7 +3810,7 @@ console.log(name) // Coco
 console.log(message) // message is not defined
 ```
 
-* The **message** variable es defined as local inside the **welcome** function
+* The **message** variable is defined as local inside the **welcome** function
 * Following the pattern from inside out we can access the **message** variable from the **greet** function and from the **welcome** function body
 * Since **message** is a local variable we can't access it from outside the **welcome** function
 * We can think about child functions being able to access the parent scope
@@ -3856,8 +3856,8 @@ function welcome(name) {
 console.log(welcome('Coco')); // welcome Coco
 ```
 
-* Child functions can access even to the parents parameters
-* This concept is know as **closures**
+* Child functions can even access their parent's parameters
+* This concept is known as **closures**
 * [MDN Scope doc](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 * [MDN Closures doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 * [Robert Nyman - Explaining JavaScript scope and closures](https://robertnyman.com/2008/10/09/explaining-javascript-scope-and-closures)
@@ -3869,7 +3869,7 @@ console.log(welcome('Coco')); // welcome Coco
 * The **arguments object** `is an Array-like object` corresponding to the arguments passed to a function
 * It might look like an array but it's not
 * This value will contain all the parameter values that have been passed to the function
-* arguments has a **length** property that returns a number with the amount of parameter that has been passed to the function
+* arguments has a **length** property that returns a number with the amount of parameters that were passed to the function
 
 **Example:**
 ```js
@@ -3947,7 +3947,7 @@ let myFunction = greet(); // Calling the greet function we get other function ba
 
 console.log(typeof myFunction); // function
 
-myFunction(); // Call the returned function and get I don't know you but this drives me crazzy!!! as output
+myFunction(); // Call the returned function and get "I don't know you but this drives me crazzy!!!" as output
 ```
 
 * Using JavaScript scope we can do things like:
@@ -3957,7 +3957,7 @@ myFunction(); // Call the returned function and get I don't know you but this dr
 function add(number) {
   
   let addBothNumbers = function(otherNumber) {
-    return number + otroNumero;
+    return number + otherNumber;
   }
   
   return addBothNumbers;
