@@ -171,8 +171,8 @@ console.log('Welcome to the browser');
 
 ## User interaction
 * Browsers have a **window** object that represents a window containing a DOM document
-* This object has 3 methods that allows use to interact with the user: `alert, prompt & confirm`
-* The browsers have allready configured a reference so we can call this methods without the window object
+* This object has 3 methods that allows us to interact with the user: `alert, prompt & confirm`
+* The browsers have already configured a reference so we can call this methods without the window object
 * All this methods block the browser flow until they are resolved
 
 **Example:**
@@ -311,7 +311,7 @@ console.log(location.hash);     // #go-jets-go
 * Hostname just retrieves the full host name
 * As you can see using location we can get all the URL components
 * Also, we can set a location value using the href property
-* As we chang the document/window location the browser will navigate to the new location
+* As we change the document/window location the browser will navigate to the new location
 
 **Example:**
 ```js
@@ -346,7 +346,7 @@ setTimeout(greet, 5000);
 
 * In this example we set a new timeout that will execute the greet function after 5000 milliseconds
 * So the greet function will get executed once after 5 seconds
-* We can use an anonymus function too
+* We can use an anonymous function too
 
 **Example:**
 ```js
@@ -389,7 +389,7 @@ setTimeout(greet, 5000, 'Marta', 'Martita');
 * Then we pass 2 other values as params (marta and martita)
 * This params will be params for the greet callback
 * So name will become Marta
-* And nicname will be Martita
+* And nickname will be Martita
 * Now we know how to pass params to a callback function that will be executed by setTimeout
 
 * [MDN setTimeout doc](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
@@ -403,7 +403,7 @@ setTimeout(greet, 5000, 'Marta', 'Martita');
 * The **setInterval()** method `repeatedly` calls a function or executes a code snippet, with a fixed time delay between each call
 * It returns an interval ID which uniquely identifies the interval, so you can remove it later by calling **clearInterval()**
 * This methods accepts the function to be called as first parameter
-* The second parameter is a number that represents time in miliseconds (1 second -> 1000 miliseconds)
+* The second parameter is a number that represents time in milliseconds (1 second -> 1000 milliseconds)
 
 **Example:**
 ```js
@@ -455,11 +455,11 @@ setInterval(saludar, 1000, 'Marta', 'Martita');
 ![element](./resources/images/browser/anatomy-of-an-html-element.png)
 
 * Element structure:
-  * **Opening tag:** We define the begining of a new element
+  * **Opening tag:** We define the beginning of a new element
     * **name:** we specify the element type, it can be p, a, div or any other valid element name
-    * **attributes** the attributes allows us to describe elements and add functionality to them. To set an attribute we use the `attribute="atribute value"`. Some common attributes are 
-    La estructura es siempre la misma y es **nombredeatributo="valor del atributo"**. Algunos atributos `id`, `class`, `href`, `src` and more
-  * **content:** the element content is what we add bettwen the opening and close tags. It can be text or other html elements as well
+    * **attributes** the attributes allows us to describe elements and add functionality to them. To set an attribute we use `attribute="atribute value"`. 
+      * Some common attributes are `id`, `class`, `href`, `src` and more
+  * **content:** the element content is what we add between the opening and close tags. It can be text or other html elements as well
   * **Close tag:** The browser needs to know where the element ends
 
 * Using JavaScript we will be able to create, insert, update and delete elements
@@ -484,7 +484,7 @@ setInterval(saludar, 1000, 'Marta', 'Martita');
 * The window object has a property called **onload**
 * The **onload** property is an `event handler` for the `load event of a Window`, XMLHttpRequest, img element, etc
 * This event is fired when the resource has loaded
-* Suscribing to this event we can make sure that the document or elements are loaded before we reference them from our JavaScript code
+* Subscribing to this event we can make sure that the document or elements are loaded before we reference them from our JavaScript code
 
 **example:**
 ```js
@@ -498,7 +498,7 @@ window.onload = function() {
 [Exercise 14](./exercises/browser/ex_14.md)
 
 * Now we know that the window object has a `onload` property that accepts a function as value that will be executed once the document is loaded
-* Everytime we assign a function to an event property is called event handler, in this case we're hadling the window load event
+* Every time we assign a function to an event property is called event handler, in this case we're handling the window load event
 
 **FROM NOW ON USE THE LOAD HANDLER ON YOUR BROWSER EXERCISES TO MAKE SURE IT'S LOADED**
 
@@ -524,7 +524,7 @@ console.log(mainElement); // we can see the DOM representation of this element
 * In this example we see how to use the method getElementById
 * The HTML has the attribute id with the value main
 * Using `document.getElementById('main')` we get the element passing main as the id value
-* As this object exists on the DOM we retrive the element back
+* As this object exists on the DOM we retrieve the element back
 * In this case we `assign` the `element reference` to the `mainElement variable`
 * **querySelector** & **querySelectorAll** allow us to select elements using CSS selector
 * Both of this selector accepts a string as parameter
@@ -532,7 +532,7 @@ console.log(mainElement); // we can see the DOM representation of this element
 * The document method **querySelector** returns the first Element within the document that matches the specified selector, or group of selectors
 * In case it doesn't matches are found, null is returned
 * The method **querySelectorAll** returns a static (not live) `NodeList` representing a list of the document's elements that match the specified group of selectors
-* So we need to remember that **querySelector** returns one elment and **querySelectorAll** a collection
+* So we need to remember that **querySelector** returns one element and **querySelectorAll** a collection
 
 * querySelector
 
@@ -612,7 +612,7 @@ console.log(redElements); // NodeList(2) [div.red, span.red]
 ```
 
 * In this case we use the class selector (.red) to get all elements that have the class="red" attribute
-* Using this method we get a node colecction back with 2 elements but in this case we have a div and span as both of them have the class="red" attribute and value
+* Using this method we get a node collection back with 2 elements but in this case we have a div and span as both of them have the class="red" attribute and value
 * In this examples we can see that we have different selector methods to select elements with different criteria
 
 * [MDN querySelectorAll doc](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
@@ -911,7 +911,7 @@ const children = div.children;
 console.log(children); // HTMLCollection(4) [p, p, p, p]
 ```
 
-* As we get a collection back we can use indexes to access the childs in different positions
+* As we get a collection back we can use indexes to access the children in different positions
 
 **Example:**
 * HTML
@@ -935,8 +935,8 @@ console.log(children.item(0));
 ```
 
 * In this example we use index 0 to get the first element
-* Also, HTMLCollection has an `item` method that retieves an element in a specific possition
-* We can see 2 different ways of accomplish the same objective (retrive a child element)
+* Also, HTMLCollection has an `item` method that retrieves an element in a specific position
+* We can see 2 different ways of accomplish the same objective (retrieve a child element)
 * Also we could do the same using CSS selectors and querySelector method
 
 * [MDN parentElement doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement)
@@ -1058,7 +1058,7 @@ paragraph.innerHTML = '<span>Ohhhhhhhhhhhhhhhh what are we doing??</span>';
 console.log(paragraph.innerHTML); // <span>Ohhhhhhhhhhhhhhhh what are we doing??</span>
 ```
 
-* Using innerHTML we can retrieve the element content wether it's text or other HTML content
+* Using innerHTML we can retrieve the element content whether it's text or other HTML content
 * We can set the innerHTML property using a string
 * If the string has valid HTML content, the browser will parse it and create the proper elements
 * It's an easy way of creating new elements
@@ -1103,7 +1103,7 @@ element.style.color = 'red'; // As style is an object we can set properties, in 
 element.style.fontWeight = 'bold'; // using font-weight we can set the font to bold, as it's JavaScript the property name is fontWeight
 ```
 
-* Using the style property and CSS property names writen in JavaScript form we can style our components using JS
+* Using the style property and CSS property names written in JavaScript form we can style our components using JS
 
 #### Practice
 [Exercise 24](./exercises/browser/ex_24.md)
@@ -1115,10 +1115,10 @@ element.style.fontWeight = 'bold'; // using font-weight we can set the font to b
   * Update
   * Delete
 * This means that we can create, update & delete elements
-* The read action we can say it's when we select an element and get properies from it
+* The read action we can say it's when we select an element and get properties from it
 
 #### Creating elements
-* The document object has a **createElement** method that allows us to create new elemets
+* The document object has a **createElement** method that allows us to create new elements
 * `createElement` accepts a string as parameter with the HTML element name (a, div, span, li, ul, etc)
 
 **Example:**
@@ -1304,7 +1304,7 @@ button.onclick = handleClickEvent;
 * This method can be used in any object like window, document and other html elements
 * **addEventListener** accepts 2 parameters
   * **event type:** it's a string with the event name ('click')
-  * **event handler:** it's a funciton that will work as callback
+  * **event handler:** it's a function that will work as callback
 
 **Example:**
 * HTML
@@ -1354,7 +1354,7 @@ button.addEventListener('dblclick', dblclickHandler);
 * This method can also be used on window, document, and HTML elements
 * Also, this method accepts two parameters:
   * **event type:** it's a string with the event name ('click')
-  * **event handler:** it's a funciton that will work as callback
+  * **event handler:** it's a function that will work as callback
 
 **Example:**
 ```js
@@ -1369,8 +1369,8 @@ button.addEventListener('click', clickHandler);     // We add the click event li
 button.removeEventListener('click', clickHandler);  // We remove the same event listener that we previously added
 ```
 
-* Remeber always to remove the event listener before removing your DOM elements
-* Otherwise you might have unespected results and memory issues (if many elements)
+* Remember to always remove the event listener before removing your DOM elements
+* Otherwise you might have unexpected results and memory issues (if many elements)
 
 * [MDN removeEventListener doc](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
 
@@ -1421,7 +1421,7 @@ body.addEventListener('click', function(event) {
 [Exercise 36](./exercises/browser/ex_36.md)
 
 * With JavaScript we can handle keyboard events too like `keypress, keydown y keyup`
-* The event object that we get as parameter has a `charCode` property with a numberic value that represents the pressed key
+* The event object that we get as parameter has a `charCode` property with a numeric value that represents the pressed key
 * Strings has a static method called fromCharCode (`String.fromCharCode`) that will accept a number value as parameter and returns the key value
 * Combining `charCode` and `String.fromCharCode` we can know the key that the user pressed
 
@@ -1442,7 +1442,7 @@ body.addEventListener('click', function(event) {
 
 [Exercise 38](./exercises/browser/ex_38.md)
 
-#### Lista de eventos que se pueden utilizar:
+#### List of Events you can use:
 * The browser API allow us to use many events handlers to create interactive UI's:
   * onchange
   * onclick / ondblclick / onmousedown / onmousedown
@@ -1522,7 +1522,7 @@ console.log(form.name); // login
 
 * The form elements have a `value` property that returns the element value
 * We can use this property on many form elements like:
-  * inputs de texto, password, hidden
+  * inputs of text, password, hidden
   * checkbox
   * radio
   * textarea
@@ -1551,7 +1551,7 @@ username.value = 'Pepe'; // We can also set an input value
 
 * Forms emit a submit event
 * We can handle the form submit event using event handlers
-* When the form gets submited it will send the input values to the action document
+* When the form gets submitted it will send the input values to the action document
 * We can prevent the default form behaviour using the event preventDefault method
 * Other way to do this with forms is returning a false value
 
@@ -1658,8 +1658,8 @@ console.log(male.value); // returns m as it's the element value
 * HTML
 ```html
 <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="checkbox" name="sexo" value="f" checked> Female
-  <input type="checkbox" name="sexo" value="m"> Male
+  <input type="checkbox" name="sex" value="f" checked> Female
+  <input type="checkbox" name="sex" value="m"> Male
 </form>
 ```
 ```js
@@ -1717,7 +1717,7 @@ username.oninput = function() {
 * HTML
 ```html
 <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <select name="paises" id="countries">
+  <select name="countries" id="countries">
     <option value="ar">Argentina</option>
     <option value="br">Brazil</option>
     <option value="cl">Chile</option>
@@ -1742,7 +1742,7 @@ select.onchange = function() {
 #### Practice
 [Exercise 48](./exercises/browser/ex_48.md)
 
-* To validate if an imput is empty we can combine the `length` and `value` properties
+* To validate if an input is empty we can combine the `length` and `value` properties
 
 **Example:**
 * HTML
@@ -1906,7 +1906,7 @@ console.log(JSONuser);
 ```
 
 * In this example we see how easy it's to transform from JSON and JavaScript objects
-* We'll use JSON objects to comunicate with the server and also when using other API's (twitter, etc)
+* We'll use JSON objects to communicate with the server and also when using other API's (twitter, etc)
 * [MDN JSON parse doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
 * [MDN JSON stringify doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 * [Youtube - JSON Crash Course](https://www.youtube.com/watch?v=wI1CWzNtE-M)
@@ -1922,7 +1922,7 @@ console.log(JSONuser);
 * The two major features of AJAX allow you to do the following:
   * Make requests to the server without reloading the page
   * Receive and work with data from the server
-* As XMLHttpRequest it's kind of complex to use and that we don't longer use XML that mutch we can use `fetch` to have the same features
+* As XMLHttpRequest is kind of complex to use and given that we no longer use XML that much we can instead use `fetch` and get the same features
 
 * [MDN AJAX doc](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
 * [MDN XMLHttpRequest doc](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
