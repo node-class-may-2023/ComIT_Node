@@ -213,7 +213,7 @@ alert('How cool is that!!');
 **Example:**
 ```js
 let name = window.prompt('Please input your name');
-let superHeroe = prompt('Please input your favourite superheroe name');
+let superHero = prompt('Please input your favourite superheroe name');
 ```
 
 * [MDN prompt doc](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
