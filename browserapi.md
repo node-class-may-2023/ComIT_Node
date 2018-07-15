@@ -61,7 +61,7 @@ http-server
 * Using http-server we have a local server running and we are able to simulate a real site
 * From now on use http-server or similar to create your sites
 * If you need to stop the server just press `CTRL + C`
-* You can open the terminal using the following shorcut
+* You can open the terminal using the following shortcut
 ```
 Ctrl+` 
 ```
@@ -332,7 +332,7 @@ location = 'http://google.com';
 
 ### setTimeout / clearTimeout
 * The **setTimeout()** method `sets a timer which executes a function or specified piece of code once after the timer expires`
-* This method accepts a function as first paramter that will be executed based on the delay that we configure `(callback)`
+* This method accepts a function as first parameter that will be executed based on the delay that we configure `(callback)`
 * The second parameter is a number that represents the delay in milliseconds and by default is 0
 
 **Example:**
@@ -749,14 +749,14 @@ element.classList.toggle('hide'); // as the element has the hide class it will r
 
 element.classList.remove('bold'); // we remove the bold class
 
-element.item(0); // using 0 based index we can get any class using the class index position
+element.classList.item(0); // using 0 based index we can get any class using the class index position
 
-element.contains('red'); // in this case it will return true as the element has the red class
+element.classList.contains('red'); // in this case it will return true as the element has the red class
 
-element.replace('red', 'green'); // we change red for green class
+element.classList.replace('red', 'green'); // we change red for green class
 ```
 
-* classList it's great to interact with elements classes
+* classList is great to interact with an element's classes
 * [MDN classList doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
 
 #### Practice
@@ -788,7 +788,7 @@ console.log(element.hasAttribute('class')); // true
 [Exercise 18](./exercises/browser/ex_18.md)
 
 ### Has Attributes?
-* The **hasAttributes** method returns Boolean value, indicating if the current element has any attributes or not
+* The **hasAttributes** method returns a Boolean value, indicating if the current element has any attributes or not
 
 **Example:**
 * HTML
@@ -834,7 +834,7 @@ console.log(title.getAttribute('id')); // main
 ```
 
 * In this example we have an h2 element without attributes
-* Then we set a id attribute with the main value (id="main") using `setAttribute` method
+* Then we set an id attribute with the main value (id="main") using `setAttribute` method
 * Using `hasAttributes` we know that this element has at least one attribute
 * Then we get the id attribute value using `getAttribute`
 
@@ -870,13 +870,13 @@ console.log(title.hasAttributes()); // false
 
 ### Elements relationship
 * The **parentElement** read-only property returns the DOM node's parent Element, or null if the node either has no parent, or its parent isn't a DOM Element
-* An element that contains other elements is consider a parent element
+* An element that contains other elements is considered a parent element
 
 **Example:**
 * HTML
 ```html
 <div>
-  <p>Children element</p>
+  <p>Child element</p>
 </div>
 ```
 
@@ -888,9 +888,9 @@ const parent = parragraph.parentElement;
 console.log(parent); // <div></div>
 ```
 
-* Also, we can retrieve the element children elements using the `children` property
-* An element that inside other element is consider a children element
-* This method returns a HTMLCollection
+* Also, we can retrieve the element's child elements using the `children` property
+* An element that inside other element is consider a child element
+* This method returns an HTMLCollection
 
 **Example:**
 * HTML
@@ -947,7 +947,7 @@ console.log(children.item(0));
 [Exercise 20](./exercises/browser/ex_20.md)
 
 * Elements can have **sibling** 
-* This elements are at the same element level
+* These elements are at the same element level
 
 **Example:**
 * HTML
@@ -973,9 +973,6 @@ console.log(children.item(0));
 ```js
 const paragraphs = document.querySelectorAll('p');
 const middleElement = paragraphs[1];
-
-middleElement.previousElementSibling; 
-middleElement.nextElementSibling; 
 
 console.log(middleElement.previousElementSibling);  // <p>Paragraph element 1</p>
 console.log(middleElement.nextElementSibling);      // <p>Paragraph element 3</p>
@@ -1004,13 +1001,13 @@ const paragraph = document.querySelector('p');
 
 console.log(paragraph.innerText); // This is a great text to get using JavaScript
 
-paragraph.innerText = 'JavaScript browser ser it\'s amaizing'; 
+paragraph.innerText = 'JavaScript in browsers is amazing'; 
 
-console.log(paragraph.innerText); // JavaScript browser ser it's amaizing
+console.log(paragraph.innerText); // JavaScript in browsers is amazing
 ```
 
 * In this example we get the content text from the paragraph using `paragraph.innerText`
-* Also, use the property to set a new value `paragraph.innerText = 'JavaScript browser ser it\'s amaizing';`
+* Also, use the property to set a new value `paragraph.innerText = 'JavaScript in browsers is amazing';`
 * The **textContent** property represents the text content of a node and its descendants
 * [MDN innerText doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/innerText)
 
@@ -1026,9 +1023,9 @@ const paragraph = document.querySelector('p');
 
 console.log(paragraph.textContent); // This is a great text to get using JavaScript
 
-paragraph.textContent = 'JavaScript browser ser it\'s amaizing'; 
+paragraph.textContent = 'JavaScript in browsers is amazing'; 
 
-console.log(paragraph.textContent); // JavaScript browser ser it's amaizing
+console.log(paragraph.textContent); // JavaScript in browsers is amazing
 ```
 
 * Both `innerText` & `textContent` allows us to get and set an element content
