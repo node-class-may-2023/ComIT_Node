@@ -1629,8 +1629,8 @@ console.log(select.options[index].value); // returns the selected option value
 * HTML
 ```html
 <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="checkbox" name="sexo" value="f" checked> Female
-  <input type="checkbox" name="sexo" value="m"> Male
+  <input type="checkbox" name="sex" value="f" checked> Female
+  <input type="checkbox" name="sex" value="m"> Male
 </form>
 ```
 
