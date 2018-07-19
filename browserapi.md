@@ -1212,12 +1212,12 @@ document.body.appendChild(div);
 var div = document.querySelector('div');
 var firstParagraph = div.children.item(0); 
 
-div.removeChild(parrafo);
+div.removeChild(firstParagraph);
 ```
 
 * In this example we select the div element
 * Then we get the first children
-* Once we have the child reference we remove it from the div using `div.removeChild(parrafo)`
+* Once we have the child reference we remove it from the div using `div.removeChild(firstParagraph)`
 * In case we would like to delete all children at once we can set the innerHTML value to ''
 
 **Example:**
