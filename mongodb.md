@@ -40,16 +40,17 @@
 * As we learned JavaScript we'll use a database engine that allows us to keep on using this language to store our data
 
 ### Install MongoDB
-* To use MongoDB localy we need to download & install it
+* To use MongoDB locally we need to download & install it
 * Open the [MongoDB download section](https://www.mongodb.com/download-center#community) and choose your OS MongoDB version
 * Make sure you choose the Community Server version
 * When you're sure you got the right version just hit the Download button
-* Execute the downloaded installer and follow all the wizzard steps
+* Execute the downloaded installer and follow all the wizard steps
+* Uncheck (do not do) the option to install MongoDB as a service
 * Install the full version
 * In windows MongoDB will be installed on the following path `C:\Program Files\MongoDB\Server\3.4\.`
 * In this example 3.4 is the MongoDB installed version
 * This will change for newer versions
-* MongoDB doesn't have any other dependecies so it can be executed from the downloaded/installed folder
+* MongoDB doesn't have any other dependencies so it can be executed from the downloaded/installed folder
 
 ### Configure MongoDB
 * MongoDB needs a directory to store our data
