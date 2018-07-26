@@ -190,7 +190,7 @@ console.log(age);
 * Now run the following npm command
 
 ```bash
-npn run uglify
+npm run uglify
 ```
 
 * When running this command you'll see the following output: `> uglifyjs index.js --output script.js`
