@@ -722,7 +722,7 @@ console.log(user.name);
 * server.js
 ```js
 const http = require('http');
-const post = 3000;
+const port = 3000;
 ```
 
 * We defined an http variable and assigned what http node module exported
