@@ -293,7 +293,7 @@ Options:
 npm uninstall express-generator -g
 ```
 
-* As you can see NPM is a great package module and will help us install and uninstall regular o dev dependencies
+* As you can see NPM is a great package module and will help us install and uninstall regular or dev dependencies
 
 ## Modules
 * A module is just a way to encapsulate our code in a single code unit
@@ -583,7 +583,7 @@ exports = getPrice;
 [Exercise 5](./exercises/node/ex_5.md)
 
 ## Arrow Functions
-* Node.js uses arrow functions for there callbacks and you can see many examples on there documentation
+* Node.js uses arrow functions for its callbacks and you can see many examples in their documentation
 * Arrow functions are just JavaScript functions that we write in a different way
 * We won't use the function reserved word
 * Arrow function definition
@@ -591,7 +591,7 @@ exports = getPrice;
 // Regular function
 function() {}
 
-// Arror function
+// Arrow function
 () => {}
 ```
 
