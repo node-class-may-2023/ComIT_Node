@@ -813,7 +813,7 @@ server is listening on 3000
 * The HTTP module provides the basic features to have an HTTP server
 * To create a real application we need more abstraction so we can handle more complexity
 * This is the reason why we have many other modules that uses the basic HTTP adding more features and abstraction
-* Some the of the most know web server modules are:
+* Some the of the most common web server modules are:
   * [Express](http://expressjs.com/)
   * [Hapi](http://hapijs.com/) 
   * [Koa](http://koajs.com/)
@@ -845,7 +845,7 @@ server is listening on 3000
   * Handle request
   * Send response
 * The request object allow us to get a lot of data from the user like username & password, product id or search query
-* Using this values we can define what we should do like for example if we need to interact with a database, create a session or just send some asset
+* Using these values we can define what we should do, be it: interact with a database, create a session or just send some asset
 * We can configure express to respond with static content like we have been doing using HTTP-Server module
 * Also we can create dynamic content
 * We might do it using a database or not
@@ -965,7 +965,7 @@ app.delete('/product/:id', function(req, res) {
 ![Postman](./resources/images/node/postman.png)
 
 * Using Postman we can know the response status (in this example it's 200)
-* Also we can che the request and response HTTP headers
+* We can also change the request and response HTTP headers
 * And configure different HTTP methods (POST, PUT, DELETE, etc)s
 
 ![Postman](./resources/images/node/postman2.png)
