@@ -1,17 +1,19 @@
 # Our First Site
 
+[<- Go Back](internet.md)
+
 Follow the next steps to create your first site!!
 
 ## Create a local site
 
 1. Download & install [Visual Studio Code](https://code.visualstudio.com)
-2. Create a folder with the name: my-first-site
+2. Create a folder with the name: `my-first-site`
 ![create site folder](resources/images/folder.png)
 3. Open Visual Studio Code
 ![open Visual Studio Code](resources/images/open_folder.png)
 4. Open my-first-site using Visual Studio Code
 ![open Visual Studio Code](resources/images/open_folder_2.png)
-5. Create the following files inside the my-first-site folder :
+5. Create the following files inside the `my-first-site` folder :
   * index.html
   * styles.css
   * script.js
@@ -89,57 +91,35 @@ window.onload = function() {
 ```
 
 7. Download the following [favicon.ico](resources/icons/favicon.ico) to my-first-site folder
-8. Go to the my-first-site folder and double click the file `index.html`
+8. Go to the `my-first-site` folder and double click the file `index.html`
 9. You should see a web page like this one:
 ![My First Site](resources/images/my_first_site.png)
 
 ## Publish our Site
 
 At this point we created our first web but we can only access it from our computer as it's running locally.
-To be able to publish it we need a free hosting and a domain.
+To be able to publish it we need a free hosting and a domain. For this we will use [GitHub Pages](https://pages.github.com/)
 
-1. Open a browser and navigate to [https://www.awardspace.com](https://www.awardspace.com)
-2. Click on `Free hosting`
-3. Click on `Give it a try`
-![Awardspace](resources/images/awardspace.png)
-4. Create your account using Facebook, Google or by input new credentials
-![Awardspace](resources/images/awardspace_signup.png)
-5. You'll get a confirmation email with the system login information (it will be something like: [https://cp1.awardspace.net/beta](https://cp1.awardspace.net/beta))
-6. Confirm your email account (if the email asks you to)
-7. Login to the system using your credentials from the email
-![AwardSpace Dashboard](resources/images/awardspace-panel.png)
-8. Configure a subdomain by clicking `Domain Manager` under the **First Steps Made Easy**
-![First Steps Made Easy](resources/images/domain.png)
-9. Select `Create a Free Subdomain`
-![First Steps Made Easy](resources/images/awardspace_subdomain.png)
-10. Input a subdomain name and click the create button (this is the URL that we'll access online)
-12. Now that we have a hosting and domain configured we need to upload our site to publish it.
-13. Download & install [Filezilla](https://sourceforge.net/projects/filezilla/files/latest/download)
-or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
-14. Head to the AwardSpace Dashboard and click `FTP manager` section
-![FTP manager](resources/images/ftp-configure.png)
-15. Create an FTP account using username and password
-![FTP account](resources/images/awardspace_ftp_account.png)
-16. Click on your ftp user name options button
-![FTP options button](resources/images/awardspace_fpt_configuration.png)
-17. Download FileZilla configuration file by clicking FTP configurations files button
-* (If the FTP configuration download does not work, you will need to manually enter your FTP site, 
-   username and password in FileZilla instead of opening the config in the next step)
-![FTP account](resources/images/awardspace_filezilla_configuration_file.png)
-18. Open & configure Filezilla using the configuration file
-![FTP account](resources/images/awardspace_filezilla_how_to_configure.png)
-19. Click on the upper left icon to open the site manager
-![FTP - Sites](resources/images/ftp-sites.png)
-20. Change the **Login type:** to normal
-21. Configure your **Password:** that you used while creating the ftp user
-19. On the left side of the `Site Manager` you have your local files and on the right the hosting one
-![Filezilla Files](resources/images/filezilla_files.png)
-20. Find you my-first-site folder on the left side
-21. Select all the files (press shift to select multiple files)
-22. Drag the selected files to the right side
-23. FileZilla will upload the selected files and place them on our hosting
-24. Once it's done uploading refresh the subdomain that we created
-25. **Congratulations, you have your first site online!!**
+1. Open a browser and navigate to https://github.com/join.
+2. Set up your account. Pick a username that is professional since employeers will look at this account. Click "Create an account". 
+3. Choose your subscription. Choose **Free** and click "Continue".
+4. (Optional) Tailor your experience. Fill out the details and click "Submit".
+5. Verify email and log into your [GitHub Account](https://github.com/login).
+6. Create a new repository called `my-first-site` and click "Create Repository".
+7. Click the copy to keyboard the commands in "…or create a new repository on the command line" section. ![GitHub new repository](resources/images/first-site/github1.png)
+8. In Visual Studio Code, open the [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal). ![Integrated Terminal](resources/images/first-site/terminal.png)
+9. In the Integrated Terminal, paste the copied line from the "…or create a new repository on the command line" section. 
+10. Login using your GitHub username and password.
+    * If you are having issues using HTTPS, use SSH instead by [adding a new SSH key to your GitHub account](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account).
+11. Go to the Version Control tab (in side navigation).
+12. Click the "+" next to "Changes" to stage all changes. ![Visual Studio Code version control tab](resources/images/first-site/vs-code1.png)
+13. At the top type "my first commit" into the bar and click the "✔". ![Visual Studio Code commiting changes](resources/images/first-site/vs-code2.png)
+14. Click the "Syncronize Changes" button  and click "OK" to syncronize with GitHub. ![Visual Studio Code](resources/images/first-site/vs-code3.png)
+15. Go to the repository page and refresh. You should see the files that you created. ![GitHub my-first-website repository](resources/images/first-site/github2.png)
+16. Under your repository name, click "Settings". ![Repository settings button](https://help.github.com/assets/images/help/repository/repo-actions-settings.png)
+17. Use the "Select" source drop-down menu to select "master branch" folder as your GitHub Pages publishing source. ![Select master as source](resources/images/first-site/github3.png)
+18. Click the link in the GitHub pages section. ![Link where site is ready to published](resources/images/first-site/github4.png)
+19. **Congratulations, you have your first site online!!**
 ![Congratulations](resources/images/congratulations.gif)
 
 ## Extra
@@ -150,8 +130,12 @@ or any other [FTP](https://simple.wikipedia.org/wiki/FTP) client
 * Try to create your own version of the site
 
 ## Resources
+* [Create a GitHub account](https://github.com/join)
+* [Create a repository](https://help.github.com/en/articles/create-a-repo)
+* [Git Integration in Visual Studio Code](https://scotch.io/tutorials/git-integration-in-visual-studio-code)
+* [Publish files using GitHub pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages)
 * [Favicon Generator](https://www.favicon-generator.org)
-* [Awardspace FAQ](https://www.awardspace.com/frequently-asked-questions)
 * [Getting started with Visual Studio Code - by John Papa](https://johnpapa.net/getting-started-with-visual-studio-code)
 
-[<- Go Back](README.md)
+## Let's Git started
+* [<- Internet](internet.md) - [Git & GitHub ->](git.md)

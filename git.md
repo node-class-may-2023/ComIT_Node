@@ -7,7 +7,7 @@
 
 > Git is a free and open source **distributed version control system** designed to handle everything from small to very large projects with speed and efficiency.
 
-* [Donwload and install Git](https://git-scm.com)
+* [Download and install Git](https://git-scm.com)
 * After install run the following command on your terminal
 
 ```bash
