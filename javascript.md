@@ -1201,7 +1201,7 @@ message = 'I love to have coffee at Gianu\'s';
 
 console.log(message);
 
-message = "Jets are \"the\" best NHL team";
+message = "Riders are \"the\" best CFL team";
 
 console.log(message);
 ```

@@ -26,25 +26,25 @@ git --version
   * [Windows Command Prompt Cheat sheet](http://simplyadvanced.net/blog/cheat-sheet-for-windows-command-prompt)
   * [Linux/Mac Bash Cheat sheet](https://learncodethehardway.org/unix/bash_cheat_sheet.pdf)
 * This tutorial uses the Linux/Mac commands (If you use Windows please check the previous guide)
-* Create a folder with the name `nodewpg`
+* Create a folder with the name `nodeyqr`
 
 ```bash
-mkdir nodewpg
+mkdir nodeyqr
 ```
 
-* Change directory to `nodewpg`
+* Change directory to `nodeyqr`
 
 ```bash
-cd nodewpg
+cd nodeyqr
 ```
 
-* Make sure you're on the right folder (`nodewpg`)
+* Make sure you're on the right folder (`nodeyqr`)
 
 ```bash
 pwd
 ```
-* You must see your path and **/nodewpg**
-* At this point we have everything we need to start versioning our `nodewpg` folder / project
+* You must see your path and **/nodeyqr**
+* At this point we have everything we need to start versioning our `nodeyqr` folder / project
 
 ### Git Status
 * **git status** show the working tree status
@@ -81,7 +81,7 @@ git status
 
 * After running **git init** we don't longer see an error
 * Now we find out that we'll be using **branches**, **commits** & **add**ing files
-* Open the folder `nodewpg` using VSC (Visual Studio Code)
+* Open the folder `nodeyqr` using VSC (Visual Studio Code)
 * Git creates a hidden folder to keep track of our project
 * List your folder files to see the `.git` folder
 
@@ -443,21 +443,21 @@ git commit -m 'Added html exercises files'
 ## Github
 * Go to [github.com](https://github.com)
 * Create a new Github account
-* Create a new project with the name `nodewpg`
+* Create a new project with the name `nodeyqr`
 * Once you create a new project Github will show you all the possible options that we have
 * As we already created a project we can run the following commands
 
 ### Git remote
 
 ```bash
-git remote add origin https://github.com/nisnardi/nodewpg.git
+git remote add origin https://github.com/DJCrossman/nodeyqr.git
 ```
 
 * By executing this command we're configuring a remote git server (github)
 * We run the **git remote** commands to work with a remote server
 * Then we are adding a new server so we have **add**
 * Origin is the default name by convention for our main source
-* So with this command we let git know that we want to add a remote server with the url https://github.com/nisnardi/nodewpg.git that we'll call origin
+* So with this command we let git know that we want to add a remote server with the url https://github.com/DJCrossman/nodeyqr.git that we'll call origin
 * We can list the project remote servers
 
 ```bash
@@ -472,8 +472,8 @@ git remote
 ```bash
 git remote -v
 
-origin	https://github.com/nisnardi/nodewpg.git (fetch)
-origin	https://github.com/nisnardi/nodewpg.git (push)
+origin	https://github.com/DJCrossman/nodeyqr.git (fetch)
+origin	https://github.com/DJCrossman/nodeyqr.git (push)
 ```
 
 * Now I can see that I have **fetch** & **push** permission
@@ -490,7 +490,7 @@ git push origin master
 > Writing objects: 100% (12/12), 1.20 KiB | 1.20 MiB/s, done.
 > Total 12 (delta 1), reused 0 (delta 0)
 > remote: Resolving deltas: 100% (1/1), done.
-To github.com:nisnardi/nodewpg.git
+To github.com:nisnardi/nodeyqr.git
  * [new branch]      master -> master
 ```
 
@@ -511,7 +511,7 @@ To github.com:nisnardi/nodewpg.git
 * Add the following content to README.md
 
 ```
-# Node.js Winnipeg
+# Node.js Regina
 
 This project it's to learn HTML, CSS, JS, Node.js and MongoDB
 
@@ -624,11 +624,11 @@ git push origin master
 
 ## git clone
 * This command clone a repository into a new directory
-* Create a test folder outside the `nodewpg` one
+* Create a test folder outside the `nodeyqr` one
 * Change directory to the test folder
 
 ```bash
-cd ..  (to get out the nodewpg folder)
+cd ..  (to get out the nodeyqr folder)
 mkdir test
 cd test
 pwd
@@ -637,10 +637,10 @@ pwd
 ```
 
 * We created this folder so we can clone our Github project in a different folder
-* Now we can clone the nodewpg Github project into this test folder one
+* Now we can clone the nodeyqr Github project into this test folder one
 
 ```bash
-git clone https://github.com/nisnardi/nodewpg.git
+git clone https://github.com/DJCrossman/nodeyqr.git
 ```
 
 * List the files
@@ -650,14 +650,14 @@ ls -la
 
 > .
 > ..
-> nodewpg
+> nodeyqr
 ```
 
 * Git by default uses the project name as project folder name
-* Change directory to `nodewpg`
+* Change directory to `nodeyqr`
 
 ```bash
-cd nodewpg
+cd nodeyqr
 ```
 
 * Check Git status
@@ -703,7 +703,7 @@ git commit -m 'Added css exercises link to README.md'
 ```
 
 * So at this moment we have 2 folders that have the same project
-* The test one has one more commit that the initial `nodewpg` one
+* The test one has one more commit that the initial `nodeyqr` one
 * Push your code to the Github server
 
 ```bash
@@ -719,14 +719,14 @@ git push origin master
 >    98db347..1678975  master -> master
 ```
 
-* Now we have the changes in the test/nodewpg folder and on the Github server
-* We still need to update our initial `nodewpg`
+* Now we have the changes in the test/nodeyqr folder and on the Github server
+* We still need to update our initial `nodeyqr`
 * Lets change directory to the previous folder
 
 ```bash
-cd .. (to leave the nodewpg folder)
+cd .. (to leave the nodeyqr folder)
 cd .. (to leave the test folder)
-cd nodewpg (to enter the nodewpg folder)
+cd nodeyqr (to enter the nodeyqr folder)
 git status
 
 > On branch master

@@ -1098,9 +1098,9 @@ Facebook:
 **Example**
 ```html
 <form>
-  Are you a Jets Fan?
-  <input type="radio" name="jetsfan" value="true"> Oh Yeahhhhhh, Go Jets!!!
-  <input type="radio" name="jetsfan" value="false"> No
+  Are you a Riders Fan?
+  <input type="radio" name="ridersfan" value="true"> Oh Yeahhhhhh, Go Riders!!!
+  <input type="radio" name="ridersfan" value="false"> No
 </form>
 ```
 
@@ -1110,10 +1110,10 @@ Facebook:
 **Example**
 ```html
 <form>
-  Are you a Jets Fan?
-  <input type="radio" name="jetsfan" value="true" checked="checked"> Oh Yeahhhhhh, Go Jets!!!
-  <input type="radio" name="jetsfan" value="false"> No
-  <!-- <input type="radio" name="jetsfan" value="true" checked> Oh Yeahhhhhh, Go Jets!!! -->
+  Are you a Riders Fan?
+  <input type="radio" name="ridersfan" value="true" checked="checked"> Oh Yeahhhhhh, Go Riders!!!
+  <input type="radio" name="ridersfan" value="false"> No
+  <!-- <input type="radio" name="ridersfan" value="true" checked> Oh Yeahhhhhh, Go Riders!!! -->
 </form>
 ```
 

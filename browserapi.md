@@ -291,19 +291,19 @@ location.hash;
 * You can try it too, go to a site page like facebook or a news site and log each property using console.log and see the result
 * For example consider the following URL:
 ```
-https://www.winnipegfreepress.com/sports/hockey/jets/white-magic-480439263.html#go-jets-go
+https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
 ```
 
 **Example:**
 ```js
-console.log(location.href);     // https://www.winnipegfreepress.com/sports/hockey/jets/white-magic-480439263.html#go-jets-go
+console.log(location.href);     // https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
 console.log(location.protocol); // https:
-console.log(location.host);     // www.winnipegfreepress.com 
-console.log(location.hostname); // www.winnipegfreepress.com
+console.log(location.host);     // leaderpost.com
+console.log(location.hostname); // leaderpost.com
 console.log(location.port);     // empty string as it doesn't have a port number
-console.log(location.pathname); // /sports/hockey/jets/white-magic-480439263.html
+console.log(location.pathname); // /sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game
 console.log(location.search);   // empty string as we don't have a query string params (you can try this submiting a form using GET)
-console.log(location.hash);     // #go-jets-go
+console.log(location.hash);     // #go-riders
 ```
 
 * Host and Hostname look the same as this url is using the default port number
