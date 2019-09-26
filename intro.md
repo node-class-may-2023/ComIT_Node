@@ -29,7 +29,7 @@ Visual Studio Code is a simple, code-centric integrated development environment 
 
 ### Download Visual Studio Code
 
-1. Go to (Visual Studio Code)[https://code.visualstudio.com/]
+1. Go to [Visual Studio Code](https://code.visualstudio.com/)
 2. Click the big **"Download for xxx"** button ![VS Code download](/resources/images/intro/vs-code1.png) *If you're having trouble, scroll to the bottom of the page and manually select the correct package for your system* ![VS Code alternative download](/resources/images/intro/vs-code2.png)
 
 3. Open the VSCode .zip file after it has finished downloading to set up Visual Studio Code. Your browser may let you open the file directly from the download page... ![VS Code extract](/resources/images/intro/vs-code3.png) ...or you may have to open your Downloads folder and select the .zip file: ![VS Code extract from folder](/resources/images/intro/vs-code4.png)
