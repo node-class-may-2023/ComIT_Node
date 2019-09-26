@@ -1,6 +1,6 @@
 # Git & Github
 
-[<- Go Back](README.md)
+[<- Go Back](first-site.md)
 
 
 ## Git
@@ -14,11 +14,11 @@
 git --version
 ```
 
-* Current version is `2.16.2`
+* Current version is `2.21.0`
 * [Configure git user mail](https://help.github.com/articles/setting-your-commit-email-address-in-git/)
 
 ## Using Git
-* Before we start go over the following [Git tutorial](https://try.github.io/levels/1/challenges/1)
+* You’ve downloaded Git, now what? [Download Git-It](https://github.com/jlord/git-it-electron#what-to-install) to your machine and you’ll get a hands-on tutorial that teaches you to use Git right from your local environment, using commands on real repositories.
 
 ## Configure and use Git in our local environment
 * To configure our Git/Github project we'll need to use our [command line interface](https://en.wikipedia.org/wiki/Command-line_interface)
@@ -855,3 +855,7 @@ Date:   Sun Mar 11 21:39:21 2018 -0500
 * [Github](https://github.com)
 * [Github Hello World](https://guides.github.com/activities/hello-world)
 * [Github Guides](https://www.youtube.com/githubguides)
+* [Resources to learn Git](https://try.github.io/)
+
+## Let's Checkout HTML
+* [<- Our First Site](first-site.md) - [HTML ->](html.md)
