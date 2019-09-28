@@ -9,10 +9,9 @@
 
 * [Download and install Git](https://git-scm.com)
 * After install run the following command on your terminal
-
-```bash
-git --version
-```
+    ```bash
+    git --version
+    ```
 
 * Current version is `2.21.0`
 * [Configure git user mail](https://help.github.com/articles/setting-your-commit-email-address-in-git/)

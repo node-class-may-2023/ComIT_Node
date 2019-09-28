@@ -2,7 +2,7 @@
 
 [<- Go Back](internet.md)
 
-Follow the next steps to create your first site!!
+Follow the next steps to create your first site!! These steps are fast pace but follow them and know that __we will review every component of this tutorial__ throughout the course.
 
 ## Create a local site
 
@@ -98,7 +98,7 @@ window.onload = function() {
 ## Publish our Site
 
 At this point we created our first web but we can only access it from our computer as it's running locally.
-To be able to publish it we need a free hosting and a domain. For this we will use [GitHub Pages](https://pages.github.com/)
+To be able to publish it we need a free hosting and a domain. For this we will use [GitHub Pages](https://pages.github.com/). Now the next section moves quickly but we will cover Git in the next section.
 
 1. Open a browser and navigate to https://github.com/join.
 2. Set up your account. Pick a username that is professional since employeers will look at this account. Click "Create an account". 
@@ -106,20 +106,26 @@ To be able to publish it we need a free hosting and a domain. For this we will u
 4. (Optional) Tailor your experience. Fill out the details and click "Submit".
 5. Verify email and log into your [GitHub Account](https://github.com/login).
 6. Create a new repository called `my-first-site` and click "Create Repository".
-7. Click the copy to keyboard the commands in "…or create a new repository on the command line" section. ![GitHub new repository](resources/images/first-site/github1.png)
-8. In Visual Studio Code, open the [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal). ![Integrated Terminal](resources/images/first-site/terminal.png)
-9. In the Integrated Terminal, paste the copied line from the "…or create a new repository on the command line" section. 
-10. Login using your GitHub username and password.
-    * If you are having issues using HTTPS, use SSH instead by [adding a new SSH key to your GitHub account](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account).
-11. Go to the Version Control tab (in side navigation).
-12. Click the "+" next to "Changes" to stage all changes. ![Visual Studio Code version control tab](resources/images/first-site/vs-code1.png)
-13. At the top type "my first commit" into the bar and click the "✔". ![Visual Studio Code commiting changes](resources/images/first-site/vs-code2.png)
-14. Click the "Syncronize Changes" button  and click "OK" to syncronize with GitHub. ![Visual Studio Code](resources/images/first-site/vs-code3.png)
-15. Go to the repository page and refresh. You should see the files that you created. ![GitHub my-first-website repository](resources/images/first-site/github2.png)
-16. Under your repository name, click "Settings". ![Repository settings button](https://help.github.com/assets/images/help/repository/repo-actions-settings.png)
-17. Use the "Select" source drop-down menu to select "master branch" folder as your GitHub Pages publishing source. ![Select master as source](resources/images/first-site/github3.png)
-18. Click the link in the GitHub pages section. ![Link where site is ready to published](resources/images/first-site/github4.png)
-19. **Congratulations, you have your first site online!!**
+7. In Visual Studio Code, open the [Integrated Terminal](https://code.visualstudio.com/docs/editor/integrated-terminal). ![Integrated Terminal](resources/images/first-site/terminal.png)
+8. In the Integrated Terminal, enter the following lines in the terminal __replaced with your GitHub details__:
+    ```bash
+    git config --global user.name <github userID>
+    git config --global user.email <github email>
+    ```
+9. In the Integrated Terminal, copy and paste the following line:
+    ```bash
+    git init
+    git add .
+    git commit -m "my first commit"
+    ```
+10. In GitHub, Click the copy to keyboard the commands in "…or push an existing repository on the command line" section. ![GitHub new repository](resources/images/first-site/github1.png)
+11. In the Integrated Terminal, paste the copied line from the "…or push an existing repository on the command line" section. You may be required to Login using your GitHub username and password.
+  * If you are having issues using HTTPS, use SSH instead by [adding a new SSH key to your GitHub account](https://help.github.com/en/enterprise/2.15/user/articles/adding-a-new-ssh-key-to-your-github-account).
+12. Go to the repository page and refresh. You should see the files that you created. ![GitHub my-first-website repository](resources/images/first-site/github2.png)
+13. Under your repository name, click "Settings". ![Repository settings button](https://help.github.com/assets/images/help/repository/repo-actions-settings.png)
+14. Use the "Select" source drop-down menu to select "master branch" folder as your GitHub Pages publishing source. ![Select master as source](resources/images/first-site/github3.png)
+15. Click the link in the GitHub pages section. ![Link where site is ready to published](resources/images/first-site/github4.png)
+16. **Congratulations, you have your first site online!!**
 ![Congratulations](resources/images/congratulations.gif)
 
 ## Extra
