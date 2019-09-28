@@ -8,13 +8,15 @@
 > Git is a free and open source **distributed version control system** designed to handle everything from small to very large projects with speed and efficiency.
 
 * [Download and install Git](https://git-scm.com)
-* After install run the following command on your terminal
+* After install run the following command on your terminal. This should tell us the version of Git (Current version is `2.21.0`). 
     ```bash
     git --version
     ```
-
-* Current version is `2.21.0`
-* [Configure git user mail](https://help.github.com/articles/setting-your-commit-email-address-in-git/)
+* [Configure Git name and email](https://help.github.com/articles/setting-your-commit-email-address-in-git/)
+    ```bash
+    git config --global user.name <github userID>
+    git config --global user.email <github email>
+    ```
 
 ## Using Git
 * You’ve downloaded Git, now what? [Download Git-It](https://github.com/jlord/git-it-electron#what-to-install) to your machine and you’ll get a hands-on tutorial that teaches you to use Git right from your local environment, using commands on real repositories.
