@@ -161,7 +161,7 @@
 	> On branch master
 	> nothing to commit, working tree clean
 	```
-* As we just commited our changes there's nothing new to commit
+* As we just committed our changes there's nothing new to commit
 
 ### `git log`
 * This command shows commit logs
@@ -261,7 +261,7 @@
 	> On branch master
 	> nothing to commit, working tree clean
 	```
-* Also if we list our folder files wi'll see that index.html is still there
+* Also if we list our folder files we'll see that index.html is still there
 	```bash
 	ls -la
 
@@ -314,7 +314,7 @@
 	> ..
 	> .git
 	```
-* Finaly check git log
+* Finally check git log
 	```bash
 	git log
 
@@ -470,7 +470,7 @@
 
 			Added index.html file to project
 	```
-* Look at the last commint and the the previous one
+* Look at the last commit and the the previous one
 * The last commit shows (HEAD -> master)
 * The previous one (origin/master)
 * So it looks like our local project is ahead 1 commit from origin (our remote server)

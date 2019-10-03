@@ -1,6 +1,6 @@
 # HTML
 
-[<- Go Back](README.md)
+[<- Go Back](git.md)
 
 ## What is HTML?
 
@@ -32,26 +32,12 @@ Studio estimates Sunday say “Black Panther” is still performing as one of th
 Of those, only “The Force Awakens” had a better second weekend.
 In two weeks of release, “Black Panther” has grossed $400 million domestically and $704 million worldwide.
 Of new releases, faring the best is the Warner Bros. comedy “Game Night,” starring Jason Bateman and Rachel McAdams. It debuted with $16.6 million.
-The well-reviewed sci-fi thriller “Annihilation” opened with $11 million.
-
-![Black Panther news](resources/images/html/html_news_content.png)
-
+The well-reviewed sci-fi thriller “Annihilation” opened with $11 million.![Black Panther news](resources/images/html/html_news_content.png)
 * Comments section: 0 Comments
-* Share your thoughts
-
-![Black Panther news](resources/images/html/html_news_comments_title.png)
-
-* Featured Articles title
-
-![Black Panther news](resources/images/html/html_news_feature_news.png)
-
-* Comments form
-
-![Black Panther news](resources/images/html/html_news_comments.png)
-
-Finaly, this is how the news HTML code looks like:
-
-![Black Panther news](resources/images/html/html_news_html.png)
+* Share your thoughts ![Black Panther news](resources/images/html/html_news_comments_title.png)
+* Featured Articles title ![Black Panther news](resources/images/html/html_news_feature_news.png)
+* Comments form ![Black Panther news](resources/images/html/html_news_comments.png)
+* Finally, this is how the news HTML code looks like: ![Black Panther news](resources/images/html/html_news_html.png)
 
 ## Tag Structure
 
@@ -61,34 +47,34 @@ Finaly, this is how the news HTML code looks like:
   * Then well add the `tagname` that we want to use
   * At the end we'll use the `>` character
   * We can call this void or empty element as it doesn't have any content
-```html
-<tagname>
-```
+  ```html
+  <tagname>
+  ```
 
 * There're other tags that will have content
 * To add content we just write it after the `>` character
 
-```html
-<tagname>Content of our tag
-```
+  ```html
+  <tagname>Content of our tag
+  ```
 
 * In this case the first tag is working as an opening one
 * We need to close this structure to let the browser know that we finished definening this structure
 * Closing tags are pretty similar to the opening ones but with a minor difference
 * Add a `/` character after the `<` and the tagname
 
-```html
-<tagname>Content of our tag</tagname>
-```
+  ```html
+  <tagname>Content of our tag</tagname>
+  ```
 
 * We can write this in a different format too
 * Using [identation](https://en.wikipedia.org/wiki/Indentation_(typesetting)) it's a good practice when we code as it allows us to see complex structures in a simpler way
 
-```html
-<tagname>
-  Content of our tag
-</tagname>
-```
+  ```html
+  <tagname>
+    Content of our tag
+  </tagname>
+  ```
 
 * We have 2 different types of tags:
   * Void or empty - just 1 tag
@@ -97,16 +83,16 @@ Finaly, this is how the news HTML code looks like:
 ### Tag attribute
 * Tag attributes are additional values that configure the tags or adjust their behavior in various ways to meet the criteria the users want.
 * The attributes will have an attribute name and a value
-```html
-attribute="value"
-```
+  ```html
+  attribute="value"
+  ```
 * Attributes are part of the tag
 
-```html
-<tagname attribute="value">
+  ```html
+  <tagname attribute="value">
 
-<tagname attribute="value">Content of our tag</tagname>
-```
+  <tagname attribute="value">Content of our tag</tagname>
+  ```
 
 * HTML defines elements attributes
 * Some attributes are global
@@ -114,31 +100,31 @@ attribute="value"
 * We can add an id attribute to any HTML element
 * There must only one element by id
 
-```html
-<tagname id="first-element">
-<tagname id="second-element">Content of our tag</tagname>
-```
+  ```html
+  <tagname id="first-element">
+  <tagname id="second-element">Content of our tag</tagname>
+  ```
 
 * The **class** attribute accepts a CSS class name
 * We can use the class attribute to identify many elements by the same criteria
 
-```html
-<tagname class="red">Text in red</tagname>
-<tagname class="red">Text in red</tagname>
-<tagname class="red">Text in red</tagname>
-<tagname class="red">Text in red</tagname>
-<tagname class="red">Text in red</tagname>
-```
+  ```html
+  <tagname class="red">Text in red</tagname>
+  <tagname class="red">Text in red</tagname>
+  <tagname class="red">Text in red</tagname>
+  <tagname class="red">Text in red</tagname>
+  <tagname class="red">Text in red</tagname>
+  ```
 
 ### Tag with tags!
 * Also, we can have tags as content from other tags:
 
-```html
-<tagname>
-  <tagname>Hi I'm a title</tagname>
+  ```html
   <tagname>
-</tagname>
-```
+    <tagname>Hi I'm a title</tagname>
+    <tagname>
+  </tagname>
+  ```
 
 * Using tags inside other tags we can create more complex structures
 * This looks great but it doesn't make sense as all the tags have the same name
@@ -209,7 +195,7 @@ attribute="value"
 ```
 
 #### Practice
-[Exercise 1](exercises/html/ex_1.md)
+[Exercise 1](exercises/html/ex_01.md)
 
 ### Heading Elements
 * HTML has 6 title levels
@@ -264,7 +250,7 @@ attribute="value"
 ```html
 <span>This is a inline element</span>
 <span>Next element inline and it's right next the previous one</span> 
-<p>This parragraph has a <span>section</span></p>
+<p>This paragraph has a <span>section</span></p>
 ```
 
 ### Inline vs Block elements
@@ -305,7 +291,7 @@ attribute="value"
 
 **Example:**
 ```html
-<p>This text will have a line breack<br> and then we keep on writing</p>
+<p>This text will have a line break<br> and then we keep on writing</p>
 <br>
 <br>
 <p>We can use a line break in any <br> part of our documents body</p>
@@ -397,14 +383,14 @@ attribute="value"
 ### Nested list
 * List can be nested inside list items
 * We can use any list type
-* Very helful and used to create sites menues adding CSS
+* Very helpful and used to create sites menus adding CSS
 
 ![mindblown](resources/images/html/mindblown.gif)
 
 **Example:**
 ```html
 <ul>
-  <li>Unorder list item</li>
+  <li>Unordered list item</li>
   <li>
     <ol>
       <li>Order list item</li>
@@ -756,7 +742,7 @@ Absolute URL:
 [Exercise 9](exercises/html/ex_09.md)
 
 ### Make the tables happier!
-* The table element has some attributes that will allow us to add color and other visual efects
+* The table element has some attributes that will allow us to add color and other visual effects
 * This attributes belong to previous HTML versions but we can still use them
 * Remember that we only should use HTML to structure our documents and add CSS to change the way things look
 * The **border** attribute defines, in pixels, the size of the frame surrounding the table. If set to 0, the frame attribute is set to void
@@ -941,7 +927,7 @@ Facebook:
 
 * The `value` attribute contains the value of the text input
 * The user will see any predefined value
-* To clear the input the user will have to manualy delete the input content
+* To clear the input the user will have to manually delete the input content
 
 **Example:**
 ```html
@@ -1042,8 +1028,8 @@ Facebook:
 ```
 
 * The label element has a **for** attribute
-* Once we set the **for** attribute, the user will be able to click on the **label** element to get focus in the setted for value
-* The id of a labelable form-related element in the same document as the label element.
+* Once we set the **for** attribute, the user will be able to click on the **label** element to get focus in the set **for** value
+* The id of a label form-related element in the same document as the label element.
 * The first such element in the document with an ID matching the value of the for attribute is the labeled control for this label element
 
 **Example:**
@@ -1130,7 +1116,7 @@ Facebook:
 **Example**
 ```html
 <form>
-  Select your favourite Harry Potter wizzards
+  Select your favourite Harry Potter wizards
   <input type="checkbox" name="wizards" value="harry potter" checked="checked" > Harry Potter
   <input type="checkbox" name="wizards" value="hermione granger" checked> Hermione Granger
   <input type="checkbox" name="wizards" value="ron weasley"> Ron Weasley
@@ -1407,7 +1393,7 @@ OR
 * The pattern is not surrounded by forward slashes
 * It's a good practice to add the **title** attribute to explain the allowed values
 * Add the placeholder if you use this attribute or it might not show the title content
-* [Wikipeda - Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
+* [Wikipedia - Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
 * [Nice regex tutorial](https://regexone.com)
 
 **Example**
@@ -1554,7 +1540,7 @@ OR
     height="400"
     controls
   >
-    <p>Video Descritpion</p>
+    <p>Video Description</p>
   </video>
 </body>
 ```
@@ -1567,7 +1553,7 @@ OR
 * The **audio** element supports the same attribute video does: **src**, **controls**, **autoplay**, **preload** & **loop**
 * Some browsers have better support for some media types:
   * **MP3:** Safari 5+, Chrome 6+ e IE9
-  * **Ogg Vorbis:** Firefox 3.6, Chome 6, Opera 1.5 e IE9
+  * **Ogg Vorbis:** Firefox 3.6, Chrome 6, Opera 1.5 e IE9
 * Also if the browser doesn't support this tag it will render the element content (like the paragraph in the example)
 * [MDN audio doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
 * [MDN media stream doc](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
@@ -1637,7 +1623,7 @@ OR
 </head>
 ```
 
-* Read the [Wikiped character encoding doc](https://en.wikipedia.org/wiki/Character_encoding) to know more about how encoding works
+* Read the [Wikipedia character encoding doc](https://en.wikipedia.org/wiki/Character_encoding) to know more about how encoding works
 * [Wikipedia UTF-8 doc](https://en.wikipedia.org/wiki/UTF-8)
 
 ## HTML Entity
