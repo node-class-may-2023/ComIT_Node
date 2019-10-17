@@ -1,26 +1,28 @@
 # CSS - Cascade Style Sheet
 
-[<- Go Back](README.md)
+[<- Go Back](html.md)
+
+## Intro to CSS
 
 * **CSS** stands for **C**ascading **S**tyle **S**heets and it's a language used to describe the presentation of a document written in HTML
 * CSS describes how elements should be rendered on screen, on paper, in speech, or on other media types
 
-**CSS code example:**
-```CSS
-span {
-  color: white;
-}
-```
+  **CSS code example:**
+  ```CSS
+  span {
+    color: white;
+  }
+  ```
 
 * In this example we define that all span elements will show white text
 * Using this code we can see that with CSS we'll select one or many elements & set some property and value to update the way the element should look
 
-**CSS code example:**
-```CSS
-element_selector {
-  property_name: property_value;
-}
-```
+  **CSS code example:**
+  ```CSS
+  element_selector {
+    property_name: property_value;
+  }
+  ```
 
 * By working with CSS we'll be selecting elements and defining how they should look
 * We can also define if the style should be applied at the element, document or site level
@@ -33,23 +35,23 @@ element_selector {
 * Between **{ }** goes CSS code
 * [MDN type selecto doc](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors)
 
-**Selector Example**
-```css
-/* This selector selects all p elements */
-p {
-  /* CSS Code */
-}
+  **Selector Example**
+  ```css
+  /* This selector selects all p elements */
+  p {
+    /* CSS Code */
+  }
 
-/* This selector selects all div elements */
-div {
-  /* CSS Code */
-}
+  /* This selector selects all div elements */
+  div {
+    /* CSS Code */
+  }
 
-/* This selector selects all span elements */
-span {
-  /* CSS Code */
-}
-```
+  /* This selector selects all span elements */
+  span {
+    /* CSS Code */
+  }
+  ```
 
 ### Color
 * The **color** CSS property sets the foreground color value of an element's text content and text decorations
@@ -62,31 +64,31 @@ span {
 * [To learn more about color models](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 * [Hexadecimal system](https://en.wikipedia.org/wiki/Hexadecimal)
 
-**Example:**
-```css
-  /* All p elements are blue */
-  p {
-    color: blue;
-  }
+  **Example:**
+  ```css
+    /* All p elements are blue */
+    p {
+      color: blue;
+    }
 
-  /* All div elements are red */
-  div {
-    color: rgb(255, 0, 0);
-  }
+    /* All div elements are red */
+    div {
+      color: rgb(255, 0, 0);
+    }
 
-  /* All span elements are green */
-  span {
-    color: #00FF00;
-  }
-```
+    /* All span elements are green */
+    span {
+      color: #00FF00;
+    }
+  ```
 
-```html
-<p>Blue text</p>
-<p>Blue &amp; <span>green</span> text</p> 
-<div>Red text</div>
-<div>Red &amp; <span>green</span> text</div>
-<span>Green text</span>
-```
+  ```html
+  <p>Blue text</p>
+  <p>Blue &amp; <span>green</span> text</p> 
+  <div>Red text</div>
+  <div>Red &amp; <span>green</span> text</div>
+  <span>Green text</span>
+  ```
 
 ## How to apply CSS to a document
 * The **style** element contains style information for a document, or part of a document
@@ -94,52 +96,54 @@ span {
 * The **type** attribute is optional and defaults to **text/css** if it is missing
 * [MDN style element doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style)
 
-**Example:**
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Using CSS in a Document</title>
-    <style type="text/css">
-      /* We select all the document span elements and apply the color property with a white value */
-      span {
-        color: white;
-      }
-    </style>
-  </head>
-  <body>
-    <span>White text</span>
-    <span>White text</span>
-    <span>White text</span>
-  </body>
-</html>
-```
+  **Example:**
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Using CSS in a Document</title>
+      <style type="text/css">
+        /* We select all the document span elements and apply the color property with a white value */
+        span {
+          color: white;
+        }
+      </style>
+    </head>
+    <body>
+      <span>White text</span>
+      <span>White text</span>
+      <span>White text</span>
+    </body>
+  </html>
+  ```
 
 * We can make our document different by only changing the color value
 
-**Example:**
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Using CSS in a Document</title>
-    <style type="text/css">
-      /* We select all the document span elements and apply the color property with a red value */
-      span {
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <span>Red text</span>
-    <span>Red text</span>
-    <span>Red text</span>
-  </body>
-</html>
-```
+  **Example:**
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Using CSS in a Document</title>
+      <style type="text/css">
+        /* We select all the document span elements and apply the color property with a red value */
+        span {
+          color: red;
+        }
+      </style>
+    </head>
+    <body>
+      <span>Red text</span>
+      <span>Red text</span>
+      <span>Red text</span>
+    </body>
+  </html>
+  ```
 
 #### Practice
 [Exercise 1](exercises/css/ex_1.md)
+
+## CSS Styles
 
 * As we know we can apply css in different ways:
   * Document
@@ -153,19 +157,19 @@ span {
   * Example: property:value; other-property: other-value
 * We don't need to select the element as we are directly applying the style to it
 
-**Example:**
-```html
-<span style="color: white;">White text</span>
-```
+  **Example:**
+  ```html
+  <span style="color: white;">White text</span>
+  ```
 
 * This is the most singular way to apply CSS to HTML.  The style will apply only to the single element.
 * You would need to apply the style attribute to each element if you want more than one element with the same style
 
-**Example:**
-```html
-<span style="color: white;">White text</span>
-<span style="color: white;">Other white text</span>
-```
+  **Example:**
+  ```html
+  <span style="color: white;">White text</span>
+  <span style="color: white;">Other white text</span>
+  ```
 
 * This type of selection is usefull if we only need a couple of elements
 * It's hard to change values if we have many items
@@ -184,103 +188,103 @@ span {
   * **type:** as we are linking CSS we use the value "text/css"
   * **rel:** as we are linking CSS we use the value "stylesheet"
 
-**Example:** 
+  **Example:** 
 
-filename: styles.css
-```css
-span {
-  color: white;
-}
-```
+  filename: styles.css
+  ```css
+  span {
+    color: white;
+  }
+  ```
 
-filename: index.html
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Index</title>
-    <!-- 
-      We link the index.html file with the styles.css one
-    -->
-    <link href="styles.css" type="text/css" rel="stylesheet" />
-  </head>
-  <body>
-    <span>white text</span>
-    <span>white text</span>
-    <span>white text</span>
-    <span>white text</span>
-    <span>white text</span>
-  </body>
-</html>
-```
+  filename: index.html
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Index</title>
+      <!-- 
+        We link the index.html file with the styles.css one
+      -->
+      <link href="styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+      <span>white text</span>
+      <span>white text</span>
+      <span>white text</span>
+      <span>white text</span>
+      <span>white text</span>
+    </body>
+  </html>
+  ```
 
-filename: contact.html
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Contact</title>
-    <!-- 
-      If we have more than one document we can link the same style sheet
-      Every rule defined on the external CSS file works here
-    -->
-    <link href="styles.css" type="text/css" rel="stylesheet" />
-  </head>
-  <body>
-    <span>Other white text</span>
-    <span>Other white text</span>
-    <span>Other white text</span>
-    <span>Other white text</span>
-    <span>Other white text</span>
-  </body>
-</html>
-```
+  filename: contact.html
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Contact</title>
+      <!-- 
+        If we have more than one document we can link the same style sheet
+        Every rule defined on the external CSS file works here
+      -->
+      <link href="styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+      <span>Other white text</span>
+      <span>Other white text</span>
+      <span>Other white text</span>
+      <span>Other white text</span>
+      <span>Other white text</span>
+    </body>
+  </html>
+  ```
 
 * We can change the way spans look in both documents by only changing one CSS value
 
-**Example:** 
-filename: styles.css
-```css
-span {
-  color: red;
-}
-```
+  **Example:** 
+  filename: styles.css
+  ```css
+  span {
+    color: red;
+  }
+  ```
 
-filename: index.html
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Index</title>
-    <link href="styles.css" type="text/css" rel="stylesheet" />
-  </head>
-  <body>
-    <span>Red Text</span>
-    <span>Red Text</span>
-    <span>Red Text</span>
-    <span>Red Text</span>
-    <span>Red Text</span>
-  </body>
-</html>
-```
+  filename: index.html
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Index</title>
+      <link href="styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+      <span>Red Text</span>
+      <span>Red Text</span>
+      <span>Red Text</span>
+      <span>Red Text</span>
+      <span>Red Text</span>
+    </body>
+  </html>
+  ```
 
-filename: contact.html
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Contact</title>
-    <link href="styles.css" type="text/css" rel="stylesheet" />
-  </head>
-  <body>
-    <span>Other Red Text</span>
-    <span>Other Red Text</span>
-    <span>Other Red Text</span>
-    <span>Other Red Text</span>
-    <span>Other Red Text</span>
-  </body>
-</html>
-```
+  filename: contact.html
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Contact</title>
+      <link href="styles.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+      <span>Other Red Text</span>
+      <span>Other Red Text</span>
+      <span>Other Red Text</span>
+      <span>Other Red Text</span>
+      <span>Other Red Text</span>
+    </body>
+  </html>
+  ```
 
 #### Practice
 [Exercise 3](exercises/css/ex_3.md)
@@ -297,113 +301,113 @@ filename: contact.html
 * To select elements by id we use the **#** character and the element id value
 * [MDN ID selectors doc](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors)
 
-**Example:** 
-```css
-/* Element with id="main" */
-#main {
-  color: red;
-}
+  **Example:** 
+  ```css
+  /* Element with id="main" */
+  #main {
+    color: red;
+  }
 
-div {
-  color: blue;
-}
-```
+  div {
+    color: blue;
+  }
+  ```
 
-```html
-<div id="main">Red Main Div</div>
-<div>Blue div</div>
-<div>Blue div</div>
-```
+  ```html
+  <div id="main">Red Main Div</div>
+  <div>Blue div</div>
+  <div>Blue div</div>
+  ```
 
 ## Class Selector
 * Also we can select all elements with same class name by using a **.** and the element class name
 * [MDN Class selectors doc](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors)
 
-**Example:** 
-```css
-/* All elements that have class="red" */
-.red {
-  color: red;
-}
+  **Example:** 
+  ```css
+  /* All elements that have class="red" */
+  .red {
+    color: red;
+  }
 
-div {
-  color: blue;
-}
-```
+  div {
+    color: blue;
+  }
+  ```
 
-```html
-<div class="red">Red Main Div</div>
-<div>Blue div</div>
-<div class="red">Red Main Div</div>
-```
+  ```html
+  <div class="red">Red Main Div</div>
+  <div>Blue div</div>
+  <div class="red">Red Main Div</div>
+  ```
 
 * Both **id** and **class** selector can be even more specific by adding the element type before the id or class selector
 
-**Example:**
-```css
-/* Only select the div with main id */
-div#main { color: red; }
+  **Example:**
+  ```css
+  /* Only select the div with main id */
+  div#main { color: red; }
 
-/* Only select the paragraph with blue class */
-p.blue { color: blue; }
-```
-```html
-<div id="main">Red Text</div>
-<p class="blue">Blue Text</p>
-<p> Text</p>
-<div class="blue">Text</div>
-```
+  /* Only select the paragraph with blue class */
+  p.blue { color: blue; }
+  ```
+  ```html
+  <div id="main">Red Text</div>
+  <p class="blue">Blue Text</p>
+  <p> Text</p>
+  <div class="blue">Text</div>
+  ```
 
 ## Shared CSS code between selectors
 * In some cases we need to use the same style for more than one element and we can choose:
   * Create a class and apply it to both elements
   * Or we can add more selectors separated by a comma
 
-**Example:**
-```css
-.red{ color: red; }
-```
-```html
-<div class="red">Red Text</div>
-<p class="red">Red Text</p>
-```
+  **Example:**
+  ```css
+  .red{ color: red; }
+  ```
+  ```html
+  <div class="red">Red Text</div>
+  <p class="red">Red Text</p>
+  ```
 
 * Or
 
-**Example:**
-```css
-selector1, selector2 {
-  /* CSS code */
-}
-```
+  **Example:**
+  ```css
+  selector1, selector2 {
+    /* CSS code */
+  }
+  ```
 
-**Example:**
-```css
-div, p { color: red; }
-```
-```html
-<div>Red Text</div>
-<p>Red Text</p>
-```
+  **Example:**
+  ```css
+  div, p { color: red; }
+  ```
+  ```html
+  <div>Red Text</div>
+  <p>Red Text</p>
+  ```
 
 ## Universal selector
 * The `*` universal selector matches elements of any type
 * You can use this selector to delete the browser initial styles (Many CSS libraries do it)
 * [MDN Universal selectors doc](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors)
 
-**Example:**
-```css
-/* The universal selector will match all the elements and sets the color to white */
-* {
-  color: white;
-}
-```
-```html
-<div>White div text</div>
-<p>White paragraph text</p>
-<span>White span text</span>
-<a href="#">White link text</a>
-```
+  **Example:**
+  ```css
+  /* The universal selector will match all the elements and sets the color to white */
+  * {
+    color: white;
+  }
+  ```
+  ```html
+  <div>White div text</div>
+  <p>White paragraph text</p>
+  <span>White span text</span>
+  <a href="#">White link text</a>
+  ```
 
 ## Attribute selectors
 * Selects elements based on the value of the given attribute
@@ -412,19 +416,19 @@ div, p { color: red; }
 * Between brackets we add the attribute = value
 * [MDN Attribute selectors doc](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 
-**Example:**
-```css
-/* Select all a elements that have a href="#" attribute */
-a[href="#"] { color: pink; }
+  **Example:**
+  ```css
+  /* Select all a elements that have a href="#" attribute */
+  a[href="#"] { color: pink; }
 
-/* Select all div elements that have the name main attribute */
-div[name="main"] { color: yellow; }
-```
-```html
-<div name="main">Yellow div text</div>
-<a href="#">Pink link text</a>
-<a href="http://www.google.com"></a>
-```
+  /* Select all div elements that have the name main attribute */
+  div[name="main"] { color: yellow; }
+  ```
+  ```html
+  <div name="main">Yellow div text</div>
+  <a href="#">Pink link text</a>
+  <a href="http://www.google.com"></a>
+  ```
 
 #### Practice
 [Exercise 4](exercises/css/ex_4.md)
@@ -435,44 +439,44 @@ div[name="main"] { color: yellow; }
 * For links we can use the following pseudo-classes: **:link, :active, :hover & :visited**
 * See a complete Pseudo-classes list on [MDN Pseudo-classes doc](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 
-**Example:**
-```css
-a:link {
-  color: red;
-}
+  **Example:**
+  ```css
+  a:link {
+    color: red;
+  }
 
-a:active {
-  color: pink;
-}
+  a:active {
+    color: pink;
+  }
 
-a:hover {
-  color: gray;
-}
+  a:hover {
+    color: gray;
+  }
 
-a:visited {
-  color: green;
-}
-```
+  a:visited {
+    color: green;
+  }
+  ```
 
 ## Descendant selectors
 * This selector is represented by a single space ( ) character & combines two selectors such that elements matched by the second selector are selected if they have an ancestor element matching the first selector
 * It will apply to any element inside other element without being a direct dependency
 * [MDN Descendant selectors doc]()https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_selectors
 
-**Example:**
-```css
-div a {
-  color: red;
-}
-```
-```html
-<div>
-  <a href="#">Link inside a div</a>
-  <p>
-    <a href="#">Link inside a parragraph inside a div</a>
-  </p>
-</div>
-```
+  **Example:**
+  ```css
+  div a {
+    color: red;
+  }
+  ```
+  ```html
+  <div>
+    <a href="#">Link inside a div</a>
+    <p>
+      <a href="#">Link inside a parragraph inside a div</a>
+    </p>
+  </div>
+  ```
 
 ## Child selectors
 * Using the **>** selector we can select only those elements matched by the second selector that are the direct children of elements matched by the first
@@ -481,25 +485,25 @@ div a {
 * This is stricter than the descendant selector
 * [Child selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_selectors)
 
-**Example:**
-```css
-/* Select the paragraph elements that are direct children from a div element*/
-div > p {
-  color: red;
-}
-```
-```html
-<p>Black text</p>
-<div>
-  <p>Red Text</p>
-  <table>
-    <tr>
-      <td><p>Black Text</p></td>
-    </tr>  
-  </table>
-  <h1>Black text</h1>
-</div>
-```
+  **Example:**
+  ```css
+  /* Select the paragraph elements that are direct children from a div element*/
+  div > p {
+    color: red;
+  }
+  ```
+  ```html
+  <p>Black text</p>
+  <div>
+    <p>Red Text</p>
+    <table>
+      <tr>
+        <td><p>Black Text</p></td>
+      </tr>  
+    </table>
+    <h1>Black text</h1>
+  </div>
+  ```
 
 * In this example we can see that this selector only affects the div child paragraph
 
@@ -515,24 +519,24 @@ div > p {
 * The pseudo-elements ::after & ::before need to use a special property called **content**
 * [MDN Pseudo elements docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
-**Example:**
-```css
-div::first-line {
-  color: red;
-}
+  **Example:**
+  ```css
+  div::first-line {
+    color: red;
+  }
 
-p::first-letter {
-  color: blue;
-}
+  p::first-letter {
+    color: blue;
+  }
 
-span::before {
-  content: '1';
-}
+  span::before {
+    content: '1';
+  }
 
-span::after {
-  content: '2';
-}
-```
+  span::after {
+    content: '2';
+  }
+  ```
 
 ## Adjacent sibling combinator
 * The **+** separates two selectors and matches the second element only if it immediately follows the first element, and both are children of the same parent element
@@ -552,17 +556,17 @@ p + div {
 ## General sibling combinator
 * The **~** separates two selectors and matches the second element only if it follows the first element (though not necessarily immediately), and both are children of the same parent element
 
-**Example:**
-```css
-p ~ div {
-  color: red;
-}
-```
-```html
-<p>Parragraph content</p>
-<div>Red text sibling Div</div>
-<div>Red text sibling Div</div>
-```
+  **Example:**
+  ```css
+  p ~ div {
+    color: red;
+  }
+  ```
+  ```html
+  <p>Parragraph content</p>
+  <div>Red text sibling Div</div>
+  <div>Red text sibling Div</div>
+  ```
 
 #### Practice
 [Exercise 5](exercises/css/ex_5.md)
@@ -586,28 +590,28 @@ p ~ div {
 * Generic family name list: **serif, sans-serif, monospace, cursive, fantasy, system-ui**
 * [MDN font-family doc](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)
 
-![Fonts](./resources/images/css/fonts.png)
+  ![Fonts](./resources/images/css/fonts.png)
 
-**Example:**
-```css
-body { font-family: serif; }
-```
+  **Example:**
+  ```css
+  body { font-family: serif; }
+  ```
 
-or
+  or
 
-```css
-body {
-  font-family: "Times New Roman", Times, serif;
-}
-```
+  ```css
+  body {
+    font-family: "Times New Roman", Times, serif;
+  }
+  ```
 
-or
+  or
 
-```css
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-```
+  ```css
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  ```
 
 * In this case the browser will try to use the first value (Times new roman or arial depending the case)
 * We can add a different font family that might be similar to the previous one just in case the first one doesn't work
@@ -622,58 +626,58 @@ body {
 * To use custom fonts first we need to define it
 [MDN font-face doc](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
 
-**Example:**
-```css
-/* We define the font Bitstream Vera Serif Bold from a external source */
-@font-face {
-  font-family: "Bitstream Vera Serif Bold";
-  src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
-}
+  **Example:**
+  ```css
+  /* We define the font Bitstream Vera Serif Bold from a external source */
+  @font-face {
+    font-family: "Bitstream Vera Serif Bold";
+    src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
+  }
 
-/* In this case we define a local (our server) font */
-@font-face {
-  font-family: MyHelvetica;
-  src: local("Helvetica Neue Bold"),
-       local("HelveticaNeue-Bold"),
-       url(MgOpenModernaBold.ttf);
-  font-weight: bold;
-}
-```
+  /* In this case we define a local (our server) font */
+  @font-face {
+    font-family: MyHelvetica;
+    src: local("Helvetica Neue Bold"),
+        local("HelveticaNeue-Bold"),
+        url(MgOpenModernaBold.ttf);
+    font-weight: bold;
+  }
+  ```
 
 * For local fonts we need to use the **src** property
 * We can use it by name or url (path to the file)
 
-**Example:**
-```css
-body {
-  font-family: "Bitstream Vera Serif Bold";
-}
+  **Example:**
+  ```css
+  body {
+    font-family: "Bitstream Vera Serif Bold";
+  }
 
-span {
-  font-family: "Helvetica Neue Bold";
-}
-```
+  span {
+    font-family: "Helvetica Neue Bold";
+  }
+  ```
 
 * Also we can use [Google fonts](https://fonts.google.com) in our documents
 * First we need to select a font using the + icon
 * Then we'll see a dialog on the bottom righ section of the site
 * We'll have to use the **link HTML element** to add a reference to the google font site
 
-**Example:**
-```html
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
-```
+  **Example:**
+  ```html
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
+  ```
 
 * After adding the reference we can call using the font name
 
-**Example:**
-```css
-body { font-family: 'IBM Plex Mono', monospace; }
-```
+  **Example:**
+  ```css
+  body { font-family: 'IBM Plex Mono', monospace; }
+  ```
 
 * Google fonts does a great work to help us adding our fonts
 
-![Google fonts image](./resources/images/css/google_fonts.png)
+  ![Google fonts image](./resources/images/css/google_fonts.png)
 
 * To know more about Google Fonts read the following [guide](https://developers.google.com/fonts/docs/getting_started)
 
@@ -694,16 +698,16 @@ body { font-family: 'IBM Plex Mono', monospace; }
 * [Viewport sized yypography tutorial](https://css-tricks.com/viewport-sized-typography/)
 * [Read the How to size text in css a list apart guide!](https://alistapart.com/article/howtosizetextincss)
 
-![Font size](./resources/images/css/size.png)
+  ![Font size](./resources/images/css/size.png)
 
-**Example:**
-```css
-/* We set the body font size in 16px using a absolute value */
-body { font-size: 16px; }
+  **Example:**
+  ```css
+  /* We set the body font size in 16px using a absolute value */
+  body { font-size: 16px; }
 
-/* Now the font-size is 16px so we can use a relative value like 2em to change it (32px) */
-h1 { font-size: 2em; }
-```
+  /* Now the font-size is 16px so we can use a relative value like 2em to change it (32px) */
+  h1 { font-size: 2em; }
+  ```
 
 * In the previous example if we change the body font-size it will change how every element with a relative value looks 
 
@@ -720,44 +724,44 @@ h1 { font-size: 2em; }
 * [MDN font-weight doc](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)
 * [CSS tricks font-weight tutorial](https://css-tricks.com/almanac/properties/f/font-weight)
 
-**Example:**
-```css
-body {
-  font-weight: normal;
-}
+  **Example:**
+  ```css
+  body {
+    font-weight: normal;
+  }
 
-.bold {
-  font-weight: bold;
-}
+  .bold {
+    font-weight: bold;
+  }
 
-.bolder {
-  font-weight: bolder;
-}
+  .bolder {
+    font-weight: bolder;
+  }
 
-div {
-  font-weight: 600;
-}
-```
-```html
-<body>
-  <p>This span is <span class="bold">bold</span></p>
-  <div>
-    <p>This paragraph uses 600 font-weight and this <span class="bolder">span use 700</span></p>
-  </div>
-</body>
-```
+  div {
+    font-weight: 600;
+  }
+  ```
+  ```html
+  <body>
+    <p>This span is <span class="bold">bold</span></p>
+    <div>
+      <p>This paragraph uses 600 font-weight and this <span class="bolder">span use 700</span></p>
+    </div>
+  </body>
+  ```
 
 ### Style
 * The **font-style** CSS property specifies whether a font should be styled with a normal, italic, or oblique face from its font-family
 * [MDN font-style doc](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)
 * [Stackoverflow font-style italic vs oblique](https://stackoverflow.com/questions/1680624/font-style-italic-vs-oblique-in-css)
 
-**Example:**
-```css
-.quote { font-style: oblique; }
+  **Example:**
+  ```css
+  .quote { font-style: oblique; }
 
-div { font-style: italic; }
-```
+  div { font-style: italic; }
+  ```
 
 ### Transform
 * The **text-transform** property specifies how to capitalize an element's text
@@ -765,20 +769,20 @@ div { font-style: italic; }
 * It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized
 * [MDN text-transform doc](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)
 
-**Example:**
-```css
-div {
-  text-transform: capitalize;
-}
+  **Example:**
+  ```css
+  div {
+    text-transform: capitalize;
+  }
 
-p {
-  text-transform: lowercase;
-}
+  p {
+    text-transform: lowercase;
+  }
 
-span {
-  text-transform: uppercase;
-}
-```
+  span {
+    text-transform: uppercase;
+  }
+  ```
 
 ### Align
 * The **text-align** property describes how inline content like text is aligned in its parent block element
@@ -790,21 +794,21 @@ span {
   * match-parent: similar to inherit, but the values start and end are calculated according to the parent's direction and are replaced by the appropriate left or right value
 * [MDN text-align doc](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
 
-**Example:**
-```css
-body { text-align: left; }
+  **Example:**
+  ```css
+  body { text-align: left; }
 
-.right { text-align: right; }
-.justify { text-align: justify; }
-```
+  .right { text-align: right; }
+  .justify { text-align: justify; }
+  ```
 
-```html
-<body>
-  <p>Normal text in a paragraph</p>
-  <div class="right">This text it's aligned to the right</div>
-  <div class="justify">If we add a long text it's going to be justified</div>
-</body>
-```
+  ```html
+  <body>
+    <p>Normal text in a paragraph</p>
+    <div class="right">This text it's aligned to the right</div>
+    <div class="justify">If we add a long text it's going to be justified</div>
+  </body>
+  ```
 
 ### Decoration
 
@@ -814,16 +818,16 @@ body { text-align: left; }
 * We can add more than one value to this property
 * [MDN text-decoration-line doc](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)
 
-**Example:**
-```css
-div {
-  text-decoration-line: overline;
-}
+  **Example:**
+  ```css
+  div {
+    text-decoration-line: overline;
+  }
 
-p {
-  text-decoration-line: line-through overline ;
-}
-```
+  p {
+    text-decoration-line: line-through overline ;
+  }
+  ```
 
 #### Color
 * The **text-decoration-color** property sets the color of the decorative additions to text that are specified by text-decoration-line
@@ -831,13 +835,13 @@ p {
 * The specified color applies to all such decorative lines in the scope of the property's value
 * [MDN text-decoration-color doc](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)
 
-**Example:**
-```css
-div {
-  text-decoration-line: overline;
-  text-decoration-color: red;
-}
-```
+  **Example:**
+  ```css
+  div {
+    text-decoration-line: overline;
+    text-decoration-color: red;
+  }
+  ```
 
 #### Style
 * The **text-decoration-style** property sets the style of the lines specified by **text-decoration-line**
@@ -861,34 +865,34 @@ div {
 * Format syntax: text-decoration-style text-decoration-line text-decoration-color
 * [MDN text-decoration doc](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
 
-**Example:**
-```css
-div {
-  text-decoration: dashed underline red;
-}
+  **Example:**
+  ```css
+  div {
+    text-decoration: dashed underline red;
+  }
 
-/* same as: */
-div {
-  text-decoration-style: dashed;
-  text-decoration-line: underline;
-  text-decoration-color: red;
-}
-```
+  /* same as: */
+  div {
+    text-decoration-style: dashed;
+    text-decoration-line: underline;
+    text-decoration-color: red;
+  }
+  ```
 
 ### Indent
 * The **text-indent** property specifies the amount of indentation (empty space) that is put before lines of text in a block
 * [MDN text-indent doc](https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent)
 
-**Example:**
-```css
-div {
-  text-indent: 10px;
-}
+  **Example:**
+  ```css
+  div {
+    text-indent: 10px;
+  }
 
-p {
-  text-indent: 15%;
-}
-```
+  p {
+    text-indent: 15%;
+  }
+  ```
 
 ### Shadow
 * The **text-shadow** property adds shadows to text
@@ -902,34 +906,34 @@ p {
 * [CSS3 text-shadow generator](http://www.cssportal.com/css3-text-shadow-generator)
 * [CSS Tricks - CSS text-shadow](https://css-tricks.com/snippets/css/css-text-shadow)
 
-**Example:**
-```css
-div{
-  /* offset-x | offset-y | blur-radius | color */
-  text-shadow: 5px 5px 1px black; 
-}
-```
+  **Example:**
+  ```css
+  div{
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: 5px 5px 1px black; 
+  }
+  ```
 
 ### Letter Spacing
 * The **letter-spacing**  property specifies the spacing behavior between text characters
 * [MDN letter-spacing doc](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
 
-**Example:**
-```css
-p {
-  letter-spacing: 3px;
-}
-```
+  **Example:**
+  ```css
+  p {
+    letter-spacing: 3px;
+  }
+  ```
 
 * The **word-spacing** property specifies the spacing behavior between tags and words
 * [MDN word-spacing doc](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
 
-**Example:**
-```css
-div {
-  word-spacing: 2px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    word-spacing: 2px;
+  }
+  ```
 
 ### Line height
 * The **line-height** property sets the amount of space used for lines, such as in text
@@ -948,14 +952,14 @@ div {
 * [MDN line-height doc](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height)
 * [CSS Tricks - line-height](https://css-tricks.com/almanac/properties/l/line-height)
 
-**Example:**
-```css
-/* 10 * 1.2 => 12 */
-div { 
-  font-size: 10pt;
-  line-height: 1.2;
-}
-```
+  **Example:**
+  ```css
+  /* 10 * 1.2 => 12 */
+  div { 
+    font-size: 10pt;
+    line-height: 1.2;
+  }
+  ```
 
 #### Practice
 [Exercise 6](exercises/css/ex_6.md)
@@ -968,12 +972,12 @@ div {
 * [CSS Tricks - vertical-align](https://css-tricks.com/almanac/properties/v/vertical-align)
 * [CSS Tricks - What is vertical align?](https://css-tricks.com/what-is-vertical-align)
 
-**Example:**
-```css
-img {
-  vertical-align: text-top;
-}
-```
+  **Example:**
+  ```css
+  img {
+    vertical-align: text-top;
+  }
+  ```
 
 #### Practice
 [Exercise 7](exercises/css/ex_7.md)
@@ -984,7 +988,7 @@ img {
 * This concept is known as CSS box model
 * The CSS box model is the foundation of layout on the Web as each element is represented as a rectangular box
 
-![Box Model](./resources/images/css/css-box-model.png)
+  ![Box Model](./resources/images/css/css-box-model.png)
 
 * The box model has 5 parts:
   * **Content area**
@@ -1010,43 +1014,43 @@ img {
   * border-color
 * [MDN border doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 
-**Example:**
-```css
-div {
-  border: 1px solid red;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border: 1px solid red;
+  }
+  ```
 
-![Box model border](./resources/images/css/border.png)
+  ![Box model border](./resources/images/css/border.png)
 
 * We can also use individual property for each of the values:
   * border-width
   * border-style
   * border-color 
 
-**Example:**
-```css
-div {
-  border-width: 1px;
-  border-style: solid;
-  border-color: red;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+  }
+  ```
 
 * Using the **border** property we set the same width, style and color for all 4 element borders
 * We can set individual borders for each border using the border name: left, top, right, bottom
 
-**Example:**
-```css
-div {
-  border-top: 1px solid red;
-  border-bottom: 2px solid green;
-  border-left: 3px solid purple;
-  border-right: 4px solid blue;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border-top: 1px solid red;
+    border-bottom: 2px solid green;
+    border-left: 3px solid purple;
+    border-right: 4px solid blue;
+  }
+  ```
 
-![Box model border](./resources/images/css/border-name.png)
+  ![Box model border](./resources/images/css/border-name.png)
 
 ### Width
 * The **border-width** property is a shorthand property for setting the widths on all four sides of an element's border
@@ -1058,28 +1062,28 @@ div {
 * We can also set keyword values using: **thin, medium & thick**
 * [MDN border-width doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-width)
 
-**Example:**
-```css
-/* All borders width are set to 2px */
-div {
-  border-width: 2px;
-}
+  **Example:**
+  ```css
+  /* All borders width are set to 2px */
+  div {
+    border-width: 2px;
+  }
 
-/* Top, Bottom are set to 2px and left, right to 3px */
-p {
-  border-width: 2px 3px;
-}
+  /* Top, Bottom are set to 2px and left, right to 3px */
+  p {
+    border-width: 2px 3px;
+  }
 
-/* Top is set to 2px, left &  right to 3px and finaly bottom is set to 1px */
-span {
-  border-width: 2px 3px 1px;
-}
+  /* Top is set to 2px, left &  right to 3px and finaly bottom is set to 1px */
+  span {
+    border-width: 2px 3px 1px;
+  }
 
-/* top: 2px, right: 3px, bottom: 4px and left: 5px */
-a {
-  border-width: 2px 3px 4px 5px;
-}
-```
+  /* top: 2px, right: 3px, bottom: 4px and left: 5px */
+  a {
+    border-width: 2px 3px 4px 5px;
+  }
+  ```
 
 ### Style
 * The **border-style** property is a shorthand property that sets the line style for all four sides of an element's border
@@ -1087,55 +1091,55 @@ a {
 * Property values: **none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset**
 * [MDN border-style doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-style)
 
-**Example:**
-```css
-/* All borders set to dotted */
-div {
-  border-width: dotted;
-}
-```
+  **Example:**
+  ```css
+  /* All borders set to dotted */
+  div {
+    border-width: dotted;
+  }
+  ```
 
 ### Color
 * The **border-color** property is a shorthand property for setting the colors on all four sides of an element's border
 
 * [MDN border-color doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-color)
 
-**Example:**
-```css
-div {
-  border-color: blue;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border-color: blue;
+  }
+  ```
 
 * Each of this property can use the border name to set the property value to each individual border:
 
-**Example:**
-```css
-/* We can use the border properties shortcuts or use individual values for each property and border type */
-div {
-  border: 1px solid red;
+  **Example:**
+  ```css
+  /* We can use the border properties shortcuts or use individual values for each property and border type */
+  div {
+    border: 1px solid red;
 
-  border-top: 1px solid red;
-  border-bottom: 1px solid red;
-  border-left: 1px solid red;
-  border-right: 1px solid red;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
 
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
 
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
 
-  border-top-color: red;
-  border-bottom-color: red;
-  border-left-color: red;
-  border-right-color: red;
-}
-```
+    border-top-color: red;
+    border-bottom-color: red;
+    border-left-color: red;
+    border-right-color: red;
+  }
+  ```
 
 ### Border Radius
 * The **border-radius** property lets you round the corners of an element's outer border edge
@@ -1144,29 +1148,29 @@ div {
 * [MDN border-radius doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)
 * [Border radius generator](http://border-radius.com)
 
-**Example:**
-```css
-div {
-  /* Radius is set for all 4 sides */
-  border-radius: 10px;
-}
+  **Example:**
+  ```css
+  div {
+    /* Radius is set for all 4 sides */
+    border-radius: 10px;
+  }
 
-p {
-  /* top-left-and-bottom-right | top-right-and-bottom-left */
-  border-radius: 10px 5%;
-}
+  p {
+    /* top-left-and-bottom-right | top-right-and-bottom-left */
+    border-radius: 10px 5%;
+  }
 
-section {
-  /* top-left | top-right-and-bottom-left | bottom-right */
-  border-radius: 2px 4px 2px;
-}
+  section {
+    /* top-left | top-right-and-bottom-left | bottom-right */
+    border-radius: 2px 4px 2px;
+  }
 
-a {
-  /* top-left | top-right | bottom-right | bottom-left */
-  border-radius: 1px 0 3px 4px;
-}
+  a {
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: 1px 0 3px 4px;
+  }
 
-```
+  ```
 
 * This property is a shorthand to set the four properties: 
   * border-top-left-radius
@@ -1174,25 +1178,25 @@ a {
   * border-bottom-right-radius
   * border-bottom-left-radius
 
-**Example:**
-```css
-div {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  ```
 
 * Now we can set the border width, style, color & radius
 
-**Example:**
-```css
-div {
-  border: 1px solid red;
-  border-radius: 40px 50px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border: 1px solid red;
+    border-radius: 40px 50px;
+  }
+  ```
 
 #### Practice
 [Exercise 8](exercises/css/ex_8.md)
@@ -1206,15 +1210,15 @@ div {
 * [MDN padding doc](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 * [CSS Tricks doc](https://css-tricks.com/almanac/properties/p/padding/)
 
-**Example:**
-```css
-div {
-  border: 1px solid red;
-  padding: 20px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border: 1px solid red;
+    padding: 20px;
+  }
+  ```
 
-![Padding](./resources/images/css/padding.png)
+  ![Padding](./resources/images/css/padding.png)
 
 * It is a shorthand for setting all individual paddings at once: 
   * padding-top
@@ -1222,65 +1226,65 @@ div {
   * padding-bottom
   * padding-left
 
-**Example:**
-```css
-div {
-  border: 1px solid red;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border: 1px solid red;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  ```
 
 * We can also use the padding property to set values for each individual side:
 
-**Example:**
-```css
-div {
-  border: 1px solid red;
+  **Example:**
+  ```css
+  div {
+    border: 1px solid red;
 
-  /* top, bottom: 10px and left, right: 20px*/
-  padding: 10px 20px;
-  
-  /* top: 10px, left, right: 20px and bottom: 30px */
-  padding: 10px 20px 30px;
-  
-  /* top: 10px, right: 20px, bottom: 30px and left: 40px */
-  padding: 10px 20px 30px 40px;
-}
-```
+    /* top, bottom: 10px and left, right: 20px*/
+    padding: 10px 20px;
+    
+    /* top: 10px, left, right: 20px and bottom: 30px */
+    padding: 10px 20px 30px;
+    
+    /* top: 10px, right: 20px, bottom: 30px and left: 40px */
+    padding: 10px 20px 30px 40px;
+  }
+  ```
 
 ### Margin
 * The margin property defines the outermost portion of the box model, creating space around an element, outside of any defined borders
 * Property values: same as padding
 * [MDN margin doc](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
 
-**Example:**
-```css
-body {
-  padding: 0;
-  margin: 0;
-  border: 2px solid purple;
-}
+  **Example:**
+  ```css
+  body {
+    padding: 0;
+    margin: 0;
+    border: 2px solid purple;
+  }
 
-div {
-  border: 1px solid red;
-  margin: 0px;
-}
-```
+  div {
+    border: 1px solid red;
+    margin: 0px;
+  }
+  ```
 
-![Margin](./resources/images/css/margin-1.png)
+  ![Margin](./resources/images/css/margin-1.png)
 
-**Example:**
-```css
-div {
-  border: 1px solid red;
-  margin: 10px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border: 1px solid red;
+    margin: 10px;
+  }
+  ```
 
-![Margin](./resources/images/css/margin-2.png)
+  ![Margin](./resources/images/css/margin-2.png)
 
 * It is a shorthand for setting all individual margins at once: 
   * margin-top
@@ -1289,16 +1293,16 @@ div {
   * margin-left
 
 
-**Example:**
-```css
-div {
-  border: 1px solid red;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    border: 1px solid red;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  ```
 
 ### Width & Height
 * The **width** property specifies the width of an element
@@ -1308,13 +1312,13 @@ div {
 * [MDN width doc](https://developer.mozilla.org/en-US/docs/Web/CSS/width)
 * [MDN height doc](https://developer.mozilla.org/en-US/docs/Web/CSS/height)
 
-**Example:**
-```css
-div {
-  width: 200px;
-  height: 200px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    width: 200px;
+    height: 200px;
+  }
+  ```
 
 * The **min-width** property sets the minimum width of an element
   * It prevents the used value of the width property from becoming smaller than the value specified for min-width
@@ -1323,13 +1327,13 @@ div {
 * [MDN min-width doc](https://developer.mozilla.org/en-US/docs/Web/CSS/min-width)
 * [MDN min-height doc](https://developer.mozilla.org/en-US/docs/Web/CSS/min-height)
 
-**Example:**
-```css
-div {
-  min-height: 100px;
-  min-width: 100px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    min-height: 100px;
+    min-width: 100px;
+  }
+  ```
 
 * The max-width CSS property sets the maximum width of an element
   * It prevents the used value of the width property from becoming larger than the value specified by max-width
@@ -1338,13 +1342,13 @@ div {
 * [MDN max-width doc](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
 * [MDN max-height doc](https://developer.mozilla.org/en-US/docs/Web/CSS/max-height)
 
-**Example:**
-```css
-div {
-  max-height: 300px;
-  max-width: 300px;
-}
-```
+  **Example:**
+  ```css
+  div {
+    max-height: 300px;
+    max-width: 300px;
+  }
+  ```
 
 ### Center element using auto margin
 * We can set the margin value to **auto**
@@ -1354,14 +1358,14 @@ div {
 * Use margin auto with `block` elements only
 * To center an inline element we can always use **text-align:center**
 
-**Example:**
-```css
-div {
-  width: 500px;
-  /* We set the top, bottom margin to 0 and left, right to be auto */
-  margin: 0 auto;
-}
-```
+  **Example:**
+  ```css
+  div {
+    width: 500px;
+    /* We set the top, bottom margin to 0 and left, right to be auto */
+    margin: 0 auto;
+  }
+  ```
 
 #### Practice
 [Exercise 9](exercises/css/ex_9.md)
@@ -1371,22 +1375,22 @@ div {
 * This property is specified as a single **color** value
 * [MDN background-color doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)
 
-**Example:**
-```css
-div {
-  background-color: #eee;
-}
-```
+  **Example:**
+  ```css
+  div {
+    background-color: #eee;
+  }
+  ```
 
 * Also we can se the background color to be **transparent**
 * This is the value by default
 
-**Example:**
-```css
-div {
-  background-color: transparent;
-}
-```
+  **Example:**
+  ```css
+  div {
+    background-color: transparent;
+  }
+  ```
 
 ### Content overflow
 * The **overflow** property specifies what to do when an element's content is too large to fit in its block formatting context
@@ -1394,19 +1398,19 @@ div {
 * Property values: **auto**, **hidden** & **scroll**
 * [MDN overflow doc](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
 
-**Example:**
-```css
-div {
-  /* x and y axis */
-  overflow: scroll;
+  **Example:**
+  ```css
+  div {
+    /* x and y axis */
+    overflow: scroll;
 
-  /* Only y axis */
-  overflow-y: scroll;
+    /* Only y axis */
+    overflow-y: scroll;
 
-  /* Only y axis */
-  overflow-x: scroll;
-}
-```
+    /* Only y axis */
+    overflow-x: scroll;
+  }
+  ```
 
 ### Box Shadow
 * The **box-shadow** property is used to add shadow effects around an element's frame
@@ -1415,12 +1419,12 @@ div {
 * [MDN box-shadow doc](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
 * [Box shadow CSS Generator](https://cssgenerator.org/box-shadow-css-generator.html)
 
-**Example:**
-```css
-div {
-  box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8);
-}
-```
+  **Example:**
+  ```css
+  div {
+    box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8);
+  }
+  ```
 
 * The first value is the `horizontal shadow length` (2px)
 * Second value is the `vertical shadow length` (3px)
@@ -1429,21 +1433,21 @@ div {
 * And the last value is the `shadow color`
 * In this example we use the rgba function that allows us to use a rgb color + alpha channel (value from 0 to 1) to set the `shadow color ppacity` (0.8)
 
-**Example:**
-```css
-div {
-  box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8);
-}
-```
+  **Example:**
+  ```css
+  div {
+    box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8);
+  }
+  ```
 
 * With this property we can also use the value **inset** to have an inner shadow
 
-**Example:**
-```css
-div {
-  box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8) inset;
-}
-```
+  **Example:**
+  ```css
+  div {
+    box-shadow: 2px 3px 170px -8px rgba(0,0,0,0.8) inset;
+  }
+  ```
 
 #### Practice
 [Exercise 10](exercises/css/ex_10.md)
@@ -1466,19 +1470,19 @@ div {
 * [Inline vs Block elements & inline-block](https://medium.com/@DaphneWatson/css-display-properties-block-inline-and-inline-block-how-to-tell-the-difference-7d3a1e6e3051)
 * [Difference block inline CSS](https://www.impressivewebs.com/difference-block-inline-css/)
 
-```css
-div {
-  display: inline;
-}
+  ```css
+  div {
+    display: inline;
+  }
 
-span {
-  display: block;
-}
+  span {
+    display: block;
+  }
 
-.remove {
-  display: none;
-}
-```
+  .remove {
+    display: none;
+  }
+  ```
 
 * The value **none** lets you turn off the display of an element
 * When you use none, all descendant elements also have their display turned off
@@ -1494,17 +1498,17 @@ span {
 * The **visibility** property can show or hide an element without affecting the layout of a document
 * Property values: **visible & hidden**
 
-```css
-/* Hide all links */
-a {
-  visibility: hidden;
-}
+  ```css
+  /* Hide all links */
+  a {
+    visibility: hidden;
+  }
 
-/* Show all paragraphs */
-p {
-  visibility: visible;
-}
-```
+  /* Show all paragraphs */
+  p {
+    visibility: visible;
+  }
+  ```
 
 * Both `display:none` and `visibility:hidden` they look like they work in the same way but they have a difference:
   * **display none:** will remove the element
@@ -1518,21 +1522,21 @@ p {
 * To set the image url we use the **url(image URL or path)**
 * [MDN background-image doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
 
-**Example:**
-```css
-div {
-  background-image: url(/path/to/the/image.png);
-}
-```
+  **Example:**
+  ```css
+  div {
+    background-image: url(/path/to/the/image.png);
+  }
+  ```
 
 * Also we can use multiple images comma separeted 
 
-**Example:**
-```css
-div {
-  background-image: url(/path/to/the/image.png), url(/path/to/the/image2.png);
-}
-```
+  **Example:**
+  ```css
+  div {
+    background-image: url(/path/to/the/image.png), url(/path/to/the/image2.png);
+  }
+  ```
 
 ### Background Repeat
 * The **background-repeat** property defines how background images are repeated
@@ -1541,24 +1545,24 @@ div {
 * Remember to use optimized size and compression images
 * [MDN background-repeat doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
 
-**Example:**
-```css
-div {
-  background-image: url(/path/to/the/image.png);
+  **Example:**
+  ```css
+  div {
+    background-image: url(/path/to/the/image.png);
 
-  /* Only use the image once */
-  background-repeat: no-repeat;
+    /* Only use the image once */
+    background-repeat: no-repeat;
 
-  /* Only repeat the image using the x axis */
-  background-repeat: repeat-x;
+    /* Only repeat the image using the x axis */
+    background-repeat: repeat-x;
 
-  /* Only repeat the image using the y axis */
-  background-repeat: repeat-x;
+    /* Only repeat the image using the y axis */
+    background-repeat: repeat-x;
 
-  /* Repeat both x & y axix */
-  background-repeat: repeat;
-}
-```
+    /* Repeat both x & y axix */
+    background-repeat: repeat;
+  }
+  ```
 
 ### Background Position
 * The **background-position** property sets the initial position, relative to the background position layer defined by background-origin, for each defined background image
@@ -1576,18 +1580,18 @@ div {
     * bottom 
 * [MDN background-position doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
 
-**Example:**  
-```css
-  /* This background it's going to be 10px from left to right and 20px from top to bottom */
-  div {
-    background-position: 10px 20px;
-  }
+  **Example:**  
+  ```css
+    /* This background it's going to be 10px from left to right and 20px from top to bottom */
+    div {
+      background-position: 10px 20px;
+    }
 
-  /* The background image is going to be centered over the x axis and at the bottom of the element */
-  section {
-    background-position: center bottom;
-  }
-```
+    /* The background image is going to be centered over the x axis and at the bottom of the element */
+    section {
+      background-position: center bottom;
+    }
+  ```
 
 * We can use different values combination:
   * left top
@@ -1607,18 +1611,18 @@ div {
 * [Code it down - Background attachment Demo](https://codeitdown.com/css/background-attachment)
 * [CSS Tricks - background-attachment](https://css-tricks.com/almanac/properties/b/background-attachment)
 
-**Example:**
-```css
-div {
-  background-image: url(background.png);
-  background-attachment: fixed;
-}
+  **Example:**
+  ```css
+  div {
+    background-image: url(background.png);
+    background-attachment: fixed;
+  }
 
-div.scroll {
-  background-image: url(background.png);
-  background-attachment: scroll;
-}
-```
+  div.scroll {
+    background-image: url(background.png);
+    background-attachment: scroll;
+  }
+  ```
 
 ### Background
 * The **background** property lets you adjust all background style options at once, including color, image, origin and size, repeat method, and other features:
@@ -1630,12 +1634,12 @@ div.scroll {
 * [MDN background doc](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
 
 
-**Example:**
-```css
-div {
-  background: red url(background.png) no-repeat fixed center center;
-}
-```
+  **Example:**
+  ```css
+  div {
+    background: red url(background.png) no-repeat fixed center center;
+  }
+  ```
 
 * [CSS Tricks - Perfect full page background image tutorial](https://css-tricks.com/perfect-full-page-background-image)
 
@@ -1648,12 +1652,12 @@ div {
 * [MDN Using CSS gradients guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
 * [Do you really understand CSS linear-gradients](https://medium.com/@patrickbrosset/do-you-really-understand-css-linear-gradients-631d9a895caf)
 
-**Example:**
-```css
-div {
-  background: linear-gradient(60deg, blue, green);
-}
-```
+  **Example:**
+  ```css
+  div {
+    background: linear-gradient(60deg, blue, green);
+  }
+  ```
 
 #### Practice
 [Exercise 14](exercises/css/ex_14.md)
@@ -1666,11 +1670,11 @@ div {
 * We can change the **cursos** value to give more information about what the user can do
 * [MDN cursor doc](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
 
-**Example:**
-```css
-body { cursor: pointer; }
-button { cursor: help; }
-```
+  **Example:**
+  ```css
+  body { cursor: pointer; }
+  button { cursor: help; }
+  ```
 
 ## Lists
 
@@ -1690,44 +1694,44 @@ button { cursor: help; }
   * upper-roman
 * [MDN list-style-type doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
 
-**Example:**
-```css
-ul {
-  list-style-type: none;
-}
+  **Example:**
+  ```css
+  ul {
+    list-style-type: none;
+  }
 
-ol {
-  list-style-type: decimal-leading-zero;
-}
-```
+  ol {
+    list-style-type: decimal-leading-zero;
+  }
+  ```
 
 ### Position
 * The **list-style-position** property specifies the position of the ::marker relative to a list item
 * Property values: **outside & inside**
 * [MDN list-style-position doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position)
 
-**Example:**
-```css
-ul {
-  list-style-position: inside;
-}
+  **Example:**
+  ```css
+  ul {
+    list-style-position: inside;
+  }
 
-ol {
-  list-style-position: inside;
-}
-```
+  ol {
+    list-style-position: inside;
+  }
+  ```
 
 ### Images
 * The **list-style-image** property specifies an image to be used as the list item marker
 * Use the **url()** function to set the image path/url
 * [MDN list-style-image doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-image)
 
-**Example:**
-```css
-ul {
-  list-style-image: url("cat-icon.png");
-}
-```
+  **Example:**
+  ```css
+  ul {
+    list-style-image: url("cat-icon.png");
+  }
+  ```
 
 ### List Style
 * The list-style CSS property is a shorthand for setting the individual values that define how a list is displayed: 
@@ -1735,15 +1739,15 @@ ul {
   * We don't have to use all values together
 * [MDN list-style doc](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style)
 
-**Example:**
-```css
-ul {
-  list-style: square inside;
-}
-ol {
-  list-style: upper-roman outside;
-}
-```
+  **Example:**
+  ```css
+  ul {
+    list-style: square inside;
+  }
+  ol {
+    list-style: upper-roman outside;
+  }
+  ```
 
 #### Practice
 [Exercise 16](exercises/css/ex_16.md)
@@ -1759,33 +1763,33 @@ ol {
 * We can use the same value for all sides
 * [MDN border-spacing doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing)
 
-**Example:**
-```css
-table {
-  border-spacing: 10px;
-}
-```
+  **Example:**
+  ```css
+  table {
+    border-spacing: 10px;
+  }
+  ```
 
 * If we use 2 values we set the horizontal and vertical spacing
 
-**Example:**
-```css
-table {
-  border-spacing: 10px 20px;
-}
-```
+  **Example:**
+  ```css
+  table {
+    border-spacing: 10px 20px;
+  }
+  ```
 
 ### Border Collapse
 * The border-collapse CSS property specifies whether cells inside a table have shared or separate borders
 * Property values: **collapse & separate**
 * [MDN border-collapse doc](https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse)
 
-**Example:**
-```css
-table {
-  border-collapse: collapse;
-}
-```
+  **Example:**
+  ```css
+  table {
+    border-collapse: collapse;
+  }
+  ```
 
 #### Practice
 [Exercise 17](exercises/css/ex_17.md)
@@ -1793,50 +1797,50 @@ table {
 ## Forms
 * We can use the CSS properties that we learned to styles our forms
 
-**Example:**
-```css
-input[type="text"] {
-  border: 1px solid #ddd;
-  background-color: white;
-  color: gray;
-  font-size: 16px;
-}
+  **Example:**
+  ```css
+  input[type="text"] {
+    border: 1px solid #ddd;
+    background-color: white;
+    color: gray;
+    font-size: 16px;
+  }
 
-input.error {
-  color: red;
-  border-color: red;
-}
+  input.error {
+    color: red;
+    border-color: red;
+  }
 
-input.success {
-  color: green;
-  border-color: green;
-}
+  input.success {
+    color: green;
+    border-color: green;
+  }
 
-input[type="submit"] {
-  display: block;
-  border: 2px solid black;
-  margin: 20px;
-  color: black;
-  padding: 20px;
-  font-weight: bold;
-  border-radius: 10px;
-}
+  input[type="submit"] {
+    display: block;
+    border: 2px solid black;
+    margin: 20px;
+    color: black;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+  }
 
-input[type="submit"]:hover {
-  background-color: #ddd;
-  cursor: pointer;
-}
-```
-```html
-<body>
-  <form action="#">
-    <input type="text" name="name">
-    <input class="error" type="text" name="name">
-    <input class="success" type="text" name="name">
-    <input type="submit" value="Send Request">
-  </form>
-</body>
-```
+  input[type="submit"]:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  ```
+  ```html
+  <body>
+    <form action="#">
+      <input type="text" name="name">
+      <input class="error" type="text" name="name">
+      <input class="success" type="text" name="name">
+      <input type="submit" value="Send Request">
+    </form>
+  </body>
+  ```
 
 #### Practice
 [Exercise 18](exercises/css/ex_18.md)
@@ -1847,7 +1851,7 @@ input[type="submit"]:hover {
 
 * We can think about our web layout the same way designers design editorial layouts
 
-![Editorial design](./resources/images/css/editorial.png)
+  ![Editorial design](./resources/images/css/editorial.png)
 
 * Using a grid system with rows and columns we can create flexible layouts
 * This creates a better web design experience
@@ -1855,7 +1859,7 @@ input[type="submit"]:hover {
 * Some time ago we used to design [sites 960px wide](https://960.gs)
 * Using this grid system we have 12 columns
 
-![Grid](./resources/images/css/using-grids-1.jpg)
+  ![Grid](./resources/images/css/using-grids-1.jpg)
 
 * If the row should be 960px wide then we can create 1 column and set the value to 12
 * In case we need 2 columns then each column can be 6 columns big
@@ -1868,7 +1872,7 @@ input[type="submit"]:hover {
   * [Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid)
   * [Foundation](https://foundation.zurb.com/grid.html)
 
-![Bootstrap](./resources/images/css/using-grids-2.jpg)
+  ![Bootstrap](./resources/images/css/using-grids-2.jpg)
 
 ### Position
 * The **position** property specifies how an element is positioned in a document
@@ -1886,12 +1890,12 @@ input[type="submit"]:hover {
 * The element is positioned according to the normal flow of the document
 * The top, right, bottom, left, and z-index properties have no effect
 
-**Example:**
-```css
-div {
-  position: static;
-}
-```
+  **Example:**
+  ```css
+  div {
+    position: static;
+  }
+  ```
 
 #### Relative
 * The element is positioned according to the normal flow of the document
@@ -1900,32 +1904,32 @@ div {
 * The space given for the element in the page layout is the same as if position were static
 * This value creates a new stacking context when the value of z-index is not auto
 
-**Example:**
-```css
-div {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-```
+  **Example:**
+  ```css
+  div {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  ```
 
-**Example:**
-```css
-div {
-  border: 1px solid black;
-  background-color: #eee;
-}
+  **Example:**
+  ```css
+  div {
+    border: 1px solid black;
+    background-color: #eee;
+  }
 
-div.relative {
-  position: relative;
-  top: 20px;
-  left: 20px;
-  background-color: pink;
-  border-color: red;
-}
-```
+  div.relative {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: pink;
+    border-color: red;
+  }
+  ```
 
-![Relative position](./resources/images/css/layout/relative.png)
+  ![Relative position](./resources/images/css/layout/relative.png)
 
 * [Position Relative example](./examples/css/layout/relative.html)
 
@@ -1939,125 +1943,125 @@ div.relative {
 * It's final position is determined by the values of `top, right, bottom, and left`
 * Absolutely positioned boxes can have margins, and they do not collapse with any other margins
 
-**Example:**
-```css
-  body {
-    border: 2px solid orange;
-  }
-  div {
-    border: 1px solid black;
-    background-color: #eee;
-  }
+  **Example:**
+  ```css
+    body {
+      border: 2px solid orange;
+    }
+    div {
+      border: 1px solid black;
+      background-color: #eee;
+    }
 
-  div.absolute {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: pink;
-    border-color: red;
-  }
-```
+    div.absolute {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: pink;
+      border-color: red;
+    }
+  ```
 
-![Absolute position](./resources/images/css/layout/absolute1.png)
+  ![Absolute position](./resources/images/css/layout/absolute1.png)
 
 * [Position Absolute example](./examples/css/layout/absolute.html)
 
 * In the previous example the absolute position is based on the body position as it's the parent element
 
-**Example:**
-```css
-body {
-  border: 2px solid orange;
-}
+  **Example:**
+  ```css
+  body {
+    border: 2px solid orange;
+  }
 
-div {
-  border: 1px solid black;
-  background-color: #eee;
-}
+  div {
+    border: 1px solid black;
+    background-color: #eee;
+  }
 
-div.container {
-  position: relative;
-  height: 150px;
-  background-color: green;
-}
+  div.container {
+    position: relative;
+    height: 150px;
+    background-color: green;
+  }
 
-div.container .absolute {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 50px;
-  background-color: pink;
-  border-color: red;
-}
-```
+  div.container .absolute {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 50px;
+    background-color: pink;
+    border-color: red;
+  }
+  ```
 
-![Absolute position](./resources/images/css/layout/absolute2.png)
+  ![Absolute position](./resources/images/css/layout/absolute2.png)
 * [Position Absolute using container example](./examples/css/layout/absolute2.html)
 
 * Now that we added a parent container the absolute element will get the initial position from the container element instead of the body
 * In some way we can say that using absolute position in this way is like creating a relative position between the parent and child element
 * To be able to create this type of layout we need to remember that the parent element must have a `position:relative` position
 
-**Example:**
-```css
-body {
-  position: relative;
-  border: 2px solid orange;
-  height: 400px;
-  padding: 0;
-  margin: 0;
-  font-size: 40px;
-}
+  **Example:**
+  ```css
+  body {
+    position: relative;
+    border: 2px solid orange;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+  }
 
-div.absolute {
-  position: absolute;
-  border: 1px solid black;
-  padding: 80px;
-}
+  div.absolute {
+    position: absolute;
+    border: 1px solid black;
+    padding: 80px;
+  }
 
-div.first {
-  background-color: red;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-}
+  div.first {
+    background-color: red;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+  }
 
-div.second {
-  background-color: green;
-  top: 60px;
-  left: 60px;
-  z-index: 2;
-}
-```
-```html
-  <body>
-    <div class="absolute first">First Div.</div>
-    <div class="absolute second">Second Div</div>
-  </body>
-```
+  div.second {
+    background-color: green;
+    top: 60px;
+    left: 60px;
+    z-index: 2;
+  }
+  ```
+  ```html
+    <body>
+      <div class="absolute first">First Div.</div>
+      <div class="absolute second">Second Div</div>
+    </body>
+  ```
 
-![Absolute position](./resources/images/css/layout/absolute3.png)
+  ![Absolute position](./resources/images/css/layout/absolute3.png)
 
 * In this case we can use the **z-index** property to change the way elements will overlap
 * Position value: a number
 * Lower numbers are overlap]ped by higher ones
 * [MDN z-index doc](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
-**Example:**
-```css
-div.first {
-  z-index: 2;
-}
+  **Example:**
+  ```css
+  div.first {
+    z-index: 2;
+  }
 
-div.second {
-  background-color: green;
-  top: 60px;
-  left: 60px;
-  z-index: 1;
-}
-```
+  div.second {
+    background-color: green;
+    top: 60px;
+    left: 60px;
+    z-index: 1;
+  }
+  ```
 
-![Absolute position](./resources/images/css/layout/absolute4.png)
+  ![Absolute position](./resources/images/css/layout/absolute4.png)
 
 * [Position Absolute z-index example](./examples/css/layout/absolute3.html)
 
@@ -2070,47 +2074,47 @@ div.second {
 * It is positioned relative to the screen's viewport and doesn't move when scrolled
 * Its final position is determined by the values of `top, right, bottom, and left`
 
-**Example:**
-```css
-div {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-```
+  **Example:**
+  ```css
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  ```
 
-**Example:**
-```css
-body {
-  margin: 0;
-  padding: 0 50px 0 250px; 
-  background: linear-gradient(180deg, #ddd, #111);
-  
-}
+  **Example:**
+  ```css
+  body {
+    margin: 0;
+    padding: 0 50px 0 250px; 
+    background: linear-gradient(180deg, #ddd, #111);
+    
+  }
 
-div {
-  text-align: justify;  
-  margin-bottom: 20px;
-  border: 1px solid blue;
-}
+  div {
+    text-align: justify;  
+    margin-bottom: 20px;
+    border: 1px solid blue;
+  }
 
-.fixed {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  border: 1px solid #444;
-  background-color: #ccc;
-  color: #444;
-  padding: 50px;
-}
-```
+  .fixed {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border: 1px solid #444;
+    background-color: #ccc;
+    color: #444;
+    padding: 50px;
+  }
+  ```
 
-![Fixed position](./resources/images/css/layout/fixed1.png)
+  ![Fixed position](./resources/images/css/layout/fixed1.png)
 
 * If we scroll down the static elements will follow the scroll flow
 * The fixed element is going to stay in the same possition
 
-![Fixed position](./resources/images/css/layout/fixed2.png)
+  ![Fixed position](./resources/images/css/layout/fixed2.png)
 * [Position fixed example](./examples/css/layout/fixed.html)
 
 #### Practice
@@ -2122,51 +2126,51 @@ div {
 * The offset does not affect the position of any other elements
 * By specification, `will not work inside element with overflow: hidden or auto`
 
-**Example:**
-```css
-div {
-  position: sticky;
-}
-```
+  **Example:**
+  ```css
+  div {
+    position: sticky;
+  }
+  ```
 
-**Example:**
-```css
-body {
-  margin: 0;
-  border: 1px solid orange;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  **Example:**
+  ```css
+  body {
+    margin: 0;
+    border: 1px solid orange;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-h1 {
-  border: 2px solid black;
-  background-color: #444;
-  color: white;
-  margin: 0;
-  margin-bottom: 10px;
-  position: sticky;
-  top: 0;
-  left: 0;
-  padding-left: 20px;
-}
+  h1 {
+    border: 2px solid black;
+    background-color: #444;
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-left: 20px;
+  }
 
-div {
-  text-align: justify;
-  margin-bottom: 10px;
-  padding: 0 20px;
-}
-```
+  div {
+    text-align: justify;
+    margin-bottom: 10px;
+    padding: 0 20px;
+  }
+  ```
 
 * In this example the h1 elements are positioned using a sticky value
 
-![Sticky position](./resources/images/css/layout/sticky1.png)
+  ![Sticky position](./resources/images/css/layout/sticky1.png)
 
 * As we scroll the document the browser will stick each h1 element to the same position
 
-![Sticky position](./resources/images/css/layout/sticky2.png)
+  ![Sticky position](./resources/images/css/layout/sticky2.png)
 
 * Each element is replaced if the section is over and there's other sticky elements
 
-![Sticky position](./resources/images/css/layout/sticky3.png)
+  ![Sticky position](./resources/images/css/layout/sticky3.png)
 
 * [Position sticky example](./examples/css/layout/sticky.html)
 
@@ -2179,36 +2183,36 @@ div {
 * The main uses of floats are to lay out columns and float text around an image
 * [MDN float doc](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
 
-**Example:**
-```css
-img {
-  float: left;
-}
-```
+  **Example:**
+  ```css
+  img {
+    float: left;
+  }
+  ```
 
-**Example:**
-```css
-img {
-  border: 2px solid orange;
-  margin: 20px 30px 20px 0;
-}
-```
+  **Example:**
+  ```css
+  img {
+    border: 2px solid orange;
+    margin: 20px 30px 20px 0;
+  }
+  ```
 
 * By default if we add a image bettwen text it's going to look like this:
 
-![Float](./resources/images/css/layout/float1.png)
+  ![Float](./resources/images/css/layout/float1.png)
 
 * If we float the element to the left the text can flow around it
 
-**Example:**
-```css
-img {
-  float: left;
-  border: 2px solid orange;
-  margin: 20px 30px 20px 0;
-}
-```
-![Float](./resources/images/css/layout/float2.png)
+  **Example:**
+  ```css
+  img {
+    float: left;
+    border: 2px solid orange;
+    margin: 20px 30px 20px 0;
+  }
+  ```
+  ![Float](./resources/images/css/layout/float2.png)
 
 * [Float image example](./examples/css/layout/float1.html)
 
@@ -2216,15 +2220,15 @@ img {
 * As we're going to float the elements we'll use the width property too
 * For example we can create a 2 column layout:
 
-**Example:**
-```css
-div {
-  float: left;
-  width: 50%;
-}
-```
+  **Example:**
+  ```css
+  div {
+    float: left;
+    width: 50%;
+  }
+  ```
 
-![Float](./resources/images/css/layout/float3.png)
+  ![Float](./resources/images/css/layout/float3.png)
 
 * [Float image example](./examples/css/layout/float2.html)
 
@@ -2239,43 +2243,43 @@ div {
 * Property values: **none, left, right & both**
 * [MDN clear doc](https://developer.mozilla.org/en-US/docs/Web/CSS/clear)
 
-**Example:**
-```css
-/* This way we remove any floating elements from both sides */
-div {
-  clear: both;
-}
-```
+  **Example:**
+  ```css
+  /* This way we remove any floating elements from both sides */
+  div {
+    clear: both;
+  }
+  ```
 
-**Example:**
-```css
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  **Example:**
+  ```css
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
-div {
-  border: 1px solid black;
-  background-color: #eee;
-  padding: 20px;
-}
+  div {
+    border: 1px solid black;
+    background-color: #eee;
+    padding: 20px;
+  }
 
-.floating {
-  float: left;
-  width: 30%;
-}
-```
+  .floating {
+    float: left;
+    width: 30%;
+  }
+  ```
 
-```html
-  <body>
-    <div class="floating">Floating Div</div>
-    <div class="floating">Floating Div</div>
-    <div class="clear">Figurative text</div>
-  </body>
-```
+  ```html
+    <body>
+      <div class="floating">Floating Div</div>
+      <div class="floating">Floating Div</div>
+      <div class="clear">Figurative text</div>
+    </body>
+  ```
 
-![Clear](./resources/images/css/layout/clear.png)
+  ![Clear](./resources/images/css/layout/clear.png)
 
 * [Clear example](./examples/css/layout/clear.html)
 
@@ -2297,35 +2301,35 @@ div {
 * To test different devices use the [developers tools device mode](https://developers.google.com/web/tools/chrome-devtools/device-mode)
 * [CSS Tricks - media queries for standard devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices)
 
-**Example:**
-```css
-@media print {
-  /* This style will only be apply to print devices */
-  div {
-    color: black;
-    background-color: white;
+  **Example:**
+  ```css
+  @media print {
+    /* This style will only be apply to print devices */
+    div {
+      color: black;
+      background-color: white;
+    }
   }
-}
-```
+  ```
 
-**Example:** 
-```css
-body {
-  background-color: blue;
-  color: white;
-}
-
-@media print {
+  **Example:** 
+  ```css
   body {
-    background-color: white;
-    color: black;
+    background-color: blue;
+    color: white;
   }
-}
-```
+
+  @media print {
+    body {
+      background-color: white;
+      color: black;
+    }
+  }
+  ```
 
 * We can set the default values for all media types and then override the specific one
 
-![Media Print](./resources/images/css/media.png)
+  ![Media Print](./resources/images/css/media.png)
 * [Media Query print example](./examples/css/media/print.html)
 
 * Also we can select devices by specific characteristics
@@ -2335,24 +2339,24 @@ body {
   * Medium devices: Desktops width ≥992px
   * Large devices: Desktops width ≥1200px
 
-**Example:** 
-```css
-body {
-  background-color: white;
-}
-
-@media only screen and (max-width: 768px) {
+  **Example:** 
+  ```css
   body {
-    background-color: yellow;
+    background-color: white;
   }
-}
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  body {
-    background-color: pink;
+  @media only screen and (max-width: 768px) {
+    body {
+      background-color: yellow;
+    }
   }
-}
-```
+
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    body {
+      background-color: pink;
+    }
+  }
+  ```
 
 * We configure a couple of media query so the body background color will change deppending the device screen resolution
 * Use the `and` operator to add more than one rule
@@ -2361,39 +2365,39 @@ body {
 
 * Also we can specify the device **orientation** using **landscape or portrait** as values
 
-**Example:** 
-```css
-body {
-  background-color: white;
-}
-
-@media only screen {
-  /* iPhone X in landscape */ 
-  @media (min-device-width : 375px) and (max-device-width : 812px)  and (-webkit-device-pixel-ratio : 3) and (orientation : landscape) {
-    body {
-      background-color: yellow;
-    }  
+  **Example:** 
+  ```css
+  body {
+    background-color: white;
   }
 
-  /* iPhone X in portrait */ 
-  @media (min-device-width : 375px) and (max-device-width : 812px)  and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-    body {
-      background-color: blue;
-    }  
+  @media only screen {
+    /* iPhone X in landscape */ 
+    @media (min-device-width : 375px) and (max-device-width : 812px)  and (-webkit-device-pixel-ratio : 3) and (orientation : landscape) {
+      body {
+        background-color: yellow;
+      }  
+    }
+
+    /* iPhone X in portrait */ 
+    @media (min-device-width : 375px) and (max-device-width : 812px)  and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
+      body {
+        background-color: blue;
+      }  
+    }
   }
-}
-```
+  ```
 
 * To learn more about device orientation read the [MDN Managing screen orientation guide](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Managing_screen_orientation)
 * For mobile devices we need to add the following meta tag to scale the document
 * [MDN responsive meta tag doc](https://css-tricks.com/snippets/html/responsive-meta-tag)
 
-**Example:**
-```html
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-```
+  **Example:**
+  ```html
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  ```
 
 #### Practice
 [Exercise 26](exercises/css/ex_26.md)
@@ -2433,3 +2437,6 @@ body {
 
 #### Practice
 * Now you're ready to style your personal site and show it to the rest of the world!
+
+## Let's Checkout Javascript
+* [<- Git](git.md) - [JavaScript ->](javascript.md)
