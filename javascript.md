@@ -1,6 +1,6 @@
 # JavaScript
 
-[<- Go Back](README.md)
+[<- Go Back](css.md)
 
 ## Definition
 > JavaScript often abbreviated as JS, is a `high-level`, `interpreted` programming language. It is a language which is also characterized as `dynamic`, >  `weakly typed`, `prototype-based` and `multi-paradigm`. 
@@ -362,14 +362,14 @@ constantVariable = otherValue;
 ## Data types
 * In JavaScript we can use different types of values to represent different things
 
-**Example:**
-```js
-var name = 'Pablo';
-var age = 20;
+  **Example:**
+  ```js
+  var name = 'Pablo';
+  var age = 20;
 
-console.log('name: ', name);
-console.log('age: ', age);
-```
+  console.log('name: ', name);
+  console.log('age: ', age);
+  ```
 
 * In this example we use different types of values:
   * For the name variable we use a value between quotes
@@ -395,30 +395,30 @@ console.log('age: ', age);
 * By default we use single quotes for strings but there are some special cases
 * [MDN string doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-**Example:**
-```js
-let firstname = 'Juan';
-let lastname = "Perez";
+  **Example:**
+  ```js
+  let firstname = 'Juan';
+  let lastname = "Perez";
 
-console.log(firstname);
-console.log(lastname);
-```
+  console.log(firstname);
+  console.log(lastname);
+  ```
 
 * In this example we defined two variables (firstname and lastname) and assigned them string values ('Juan', 'Perez')
 * We can also use this type of value for messages
 
-**Example:**
-```js
-let message = 'Welcome to JavaScript!!!';
-console.log(message);
-```
+  **Example:**
+  ```js
+  let message = 'Welcome to JavaScript!!!';
+  console.log(message);
+  ```
 
 * We can use primitives without having them assigned to a variable
 
-**Example:**
-```js
-console.log('Welcome to JavaScript!!!');
-```
+  **Example:**
+  ```js
+  console.log('Welcome to JavaScript!!!');
+  ```
 
 * In this example we use a literal **string** as `console.log()` parameter
 
@@ -430,25 +430,25 @@ console.log('Welcome to JavaScript!!!');
 ### String concatenation
 * The `+` operator allows us to concat two or more strings together
 
-**Example:**
-```js
-let name = 'Juan';
-let space = ' ';
-let lastname = 'Perez';
+  **Example:**
+  ```js
+  let name = 'Juan';
+  let space = ' ';
+  let lastname = 'Perez';
 
-console.log(name + space + lastname);
-```
+  console.log(name + space + lastname);
+  ```
 
 * In this example we concat all values using the `+` operator
 * We might not need to use a variable for the space and we can use a string literal instead
 
-**Example:**
-```js
-let name = 'Juan';
-let lastname = 'Perez';
+  **Example:**
+  ```js
+  let name = 'Juan';
+  let lastname = 'Perez';
 
-console.log(name + ' ' + lastname);
-```
+  console.log(name + ' ' + lastname);
+  ```
 
 * In this example we see how to use a literal value without being assigned to a variable
 
@@ -467,13 +467,13 @@ console.log(name + ' ' + lastname);
 * Take a look at the following example to better understand this concept
 * [MDN template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
-**Example:**
-```js
-var name = 'Pedro';
-var template = `Welcome ${name} to this great site`
+  **Example:**
+  ```js
+  var name = 'Pedro';
+  var template = `Welcome ${name} to this great site`
 
-console.log(template);
-```
+  console.log(template);
+  ```
 
 * In this example we defined a name variable and assigned the Pedro value
 * Then we create a template variable with a message and the name variable
@@ -481,27 +481,27 @@ console.log(template);
 * We can add all the variables that we need to a template
 * Templates can be multiline
 
-**Example:**
-```js
-let mom = 'Marta';
-let dad = 'Martín';
-let template = `My mother\'s name is ${mom} & my dad\'s name is ${dad}`;
+  **Example:**
+  ```js
+  let mom = 'Marta';
+  let dad = 'Martín';
+  let template = `My mother\'s name is ${mom} & my dad\'s name is ${dad}`;
 
-console.log(template);
-```
+  console.log(template);
+  ```
 
 * We'll get as result: My mother's name is Marta & my dad's name is Martín
 * We will explain the backslash quote thing later ;)
 * Using string concatenation we can get the same result
 
-**Example:**
-```js
-let mom = 'Marta';
-let dad = 'Martín';
-let message = 'My mother\'s name is ' + mom + ' & my dad\'s name is ' + dad;
+  **Example:**
+  ```js
+  let mom = 'Marta';
+  let dad = 'Martín';
+  let message = 'My mother\'s name is ' + mom + ' & my dad\'s name is ' + dad;
 
-console.log(message);
-```
+  console.log(message);
+  ```
 
 * We can get the same result using templates or string concat
 * Using templates looks like an easier way to do it!!
@@ -517,14 +517,14 @@ console.log(message);
 * In JavaScript we can choose between single or double quotes
 * There're some cases where we need to use one or the other
 
-**Example:**
-```js
-let text = 'text using "double quotes"';
-let otherText = "text using 'simple quotes'";
+  **Example:**
+  ```js
+  let text = 'text using "double quotes"';
+  let otherText = "text using 'simple quotes'";
 
-console.log(text);
-console.log(otherText);
-```
+  console.log(text);
+  console.log(otherText);
+  ```
 
 * In this case single or double quotes are part of the value
 * When using quotes as part of the value we have to choose between escaping the quotes or just using the quote type that is not part of the content:
@@ -540,14 +540,14 @@ console.log(otherText);
 * JavaScript also supports number type
 * This type of value doesn't use quotes
 
-**Example:**
-```js
-let age = 38;
-let capacity = 50;
+  **Example:**
+  ```js
+  let age = 38;
+  let capacity = 50;
 
-console.log(age);
-console.log(capacity);
-```
+  console.log(age);
+  console.log(capacity);
+  ```
 
 #### Practice
 [Exercise 20](./exercises/js/ex_20.md)
@@ -556,31 +556,31 @@ console.log(capacity);
 
 * A common mistake is to code numbers as strings
 
-**Example:**
-```js
-let age = 38;
-let capacity = "50";
-```
+  **Example:**
+  ```js
+  let age = 38;
+  let capacity = "50";
+  ```
 
-> In this example we have two variables that it looks like we are assigning number values. 
-> Age has a number type and capacity has a string value with the representation of a number.
-> Having different types allows us to do different types of operations, for example we can add or subtract numbers but not strings
+  > In this example we have two variables that it looks like we are assigning number values. 
+  > Age has a number type and capacity has a string value with the representation of a number.
+  > Having different types allows us to do different types of operations, for example we can add or subtract numbers but not strings
 
 * We'll talk later about doing math using number type values
 
 ### Boolean
 * This type of value only accepts `true or false` as value
 
-**Example:**
-```js
-let on = true;
-let voted = false;
-let married = false;
+  **Example:**
+  ```js
+  let on = true;
+  let voted = false;
+  let married = false;
 
-console.log(on);
-console.log(voted);
-console.log(married);
-```
+  console.log(on);
+  console.log(voted);
+  console.log(married);
+  ```
 
 #### Practice
 [Exercise 22](./exercises/js/ex_22.md)
@@ -591,12 +591,12 @@ console.log(married);
 * A function returns undefined if a value was not returned
 * Also we can assign it as a value to a variable
 
-**Example:**
-```js
-let variableWithoutDefinition = undefined;
+  **Example:**
+  ```js
+  let variableWithoutDefinition = undefined;
 
-console.log(variableWithoutDefinition);
-```
+  console.log(variableWithoutDefinition);
+  ```
 
 * We might need to assign **undefined** in some special cases
 
@@ -607,12 +607,12 @@ console.log(variableWithoutDefinition);
 * In JavaScript we also have a **null** value
 * We can assign a variable a null value
 
-**Example:**
-```js
-let nullVariable = null;
+  **Example:**
+  ```js
+  let nullVariable = null;
 
-console.log(nullVariable);
-```
+  console.log(nullVariable);
+  ```
 
 #### Practice
 [Exercise 24](./exercises/js/ex_24.md)
@@ -623,20 +623,20 @@ console.log(nullVariable);
 ### typeof
 * The **typeof** operator returns a string indicating the type of the unevaluated operand
 
-**Example:**
-```js
-let name = 'Marta';
-let age = 30;
-let married = false;
-let undefinedVar = undefined;
-let nullVar = null;
+  **Example:**
+  ```js
+  let name = 'Marta';
+  let age = 30;
+  let married = false;
+  let undefinedVar = undefined;
+  let nullVar = null;
 
-console.log(typeof name); // string
-console.log(typeof age); // number
-console.log(typeof married); // boolean
-console.log(typeof undefinedVar); // undefined
-console.log(typeof nullVar); // object
-```
+  console.log(typeof name); // string
+  console.log(typeof age); // number
+  console.log(typeof married); // boolean
+  console.log(typeof undefinedVar); // undefined
+  console.log(typeof nullVar); // object
+  ```
 
 * In this example we can see that typeof will return different values for different data types
 * For **null** it will return `object`! Now that was unexpected...
@@ -654,136 +654,136 @@ console.log(typeof nullVar); // object
 ### Addition
 * The addition operator **(+)** produces the sum of numeric operands or string concatenation
 
-**Example:**
-```js
-2 + 2
-```
+  **Example:**
+  ```js
+  2 + 2
+  ```
 
 * In this example we add two literal numbers
 
-**Example:**
-```js
-const myAge = 20;
-const myBrotherAge = 15;
+  **Example:**
+  ```js
+  const myAge = 20;
+  const myBrotherAge = 15;
 
-console.log(myAge + myBrotherAge);
-```
+  console.log(myAge + myBrotherAge);
+  ```
 
 * We can add two or more values using variables
 
-**Example:**
-```js
-const myAge = 20;
-const myBrotherAge = 15;
-const result = myAge + myBrotherAge;
+  **Example:**
+  ```js
+  const myAge = 20;
+  const myBrotherAge = 15;
+  const result = myAge + myBrotherAge;
 
-console.log(result);
-```
+  console.log(result);
+  ```
 
 * In this example we store the result of adding two values into the result variable
 
-**Example:**
-```js
-const myAge = 20;
-const myBrotherAge = 15;
-const result = myAge + myBrotherAge;
+  **Example:**
+  ```js
+  const myAge = 20;
+  const myBrotherAge = 15;
+  const result = myAge + myBrotherAge;
 
-console.log(result + 2);
-```
+  console.log(result + 2);
+  ```
 
 * Also we can add variables values and literal numbers too
 
 ### Subtraction
 * The subtraction operator **(-)** subtracts the two number operands, producing their difference
 
-**Example:**
-```js
-2 - 2; // We get 0 as result
+  **Example:**
+  ```js
+  2 - 2; // We get 0 as result
 
-const myAge = 20;
-const myBrotherAge = 15;
+  const myAge = 20;
+  const myBrotherAge = 15;
 
-// We show the difference between myAge and myBrotherAge
-console.log(myAge - myBrotherAge);
+  // We show the difference between myAge and myBrotherAge
+  console.log(myAge - myBrotherAge);
 
-// Also we can use a variable to store the subtraction result
-const result = myAge - myBrotherAge;
+  // Also we can use a variable to store the subtraction result
+  const result = myAge - myBrotherAge;
 
-console.log(result);
-```
+  console.log(result);
+  ```
 
 * Also we can combine operations
 
-**Example:**
-```js
-10 + 2 - 2; 
+  **Example:**
+  ```js
+  10 + 2 - 2; 
 
-const myAge = 20;
-const myBrotherAge = 15;
+  const myAge = 20;
+  const myBrotherAge = 15;
 
-// Use variables, literal number and different arithmetic operators
-console.log(myAge - myBrotherAge + 10);
+  // Use variables, literal number and different arithmetic operators
+  console.log(myAge - myBrotherAge + 10);
 
-const result = myAge - myBrotherAge + 10;
+  const result = myAge - myBrotherAge + 10;
 
-console.log('Result: ' + result);
-```
+  console.log('Result: ' + result);
+  ```
 
-### Multiplication
-* The multiplication operator **(*)** produces the product of the operands
+  ### Multiplication
+  * The multiplication operator **(*)** produces the product of the operands
 
-**Example:**
-```js
-2 * 2; // Returns 4 as result
+  **Example:**
+  ```js
+  2 * 2; // Returns 4 as result
 
-const firstNumber = 10;
-const secondNumber = 5;
+  const firstNumber = 10;
+  const secondNumber = 5;
 
-console.log(firstNumber * secondNumber);
+  console.log(firstNumber * secondNumber);
 
-const result = firstNumber * secondNumber;
+  const result = firstNumber * secondNumber;
 
-console.log(result);
-```
+  console.log(result);
+  ```
 
 * In some cases we can use grouping **(operation)** to let the engine know that it need to resolve this operation first
 * Read the [MND operator precedence doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) to know more about this subject
 
-**Example:**
-```js
-2 + 2 * 4; // 10
-(2 + 2) * 4; // 16
-```
+  **Example:**
+  ```js
+  2 + 2 * 4; // 10
+  (2 + 2) * 4; // 16
+  ```
 
 * In the first example it will multiply 2 times 4 and then add 2 to the result
 * In the second example as we are grouping 2 plus 2 it will resolve this operation first and then multiply by 4
 * This concept works with variables too
 
-**Example:**
-```js
-const two = 2;
-const four = 4;
+  **Example:**
+  ```js
+  const two = 2;
+  const four = 4;
 
-console.log(two + two * four); // 10
-console.log( (two + two) * four ); // 16
-```
+  console.log(two + two * four); // 10
+  console.log( (two + two) * four ); // 16
+  ```
 
 ### Division 
 * The division operator **(/)** produces the quotient of its operands where the left operand is the dividend and the right operand is the divisor
 
-**Example:**
-```js
-20 / 2; // 10
+  **Example:**
+  ```js
+  20 / 2; // 10
 
-const firstNumber = 20;
-const secondNumber = 2;
+  const firstNumber = 20;
+  const secondNumber = 2;
 
-console.log(firstNumber / secondNumber); // 10
+  console.log(firstNumber / secondNumber); // 10
 
-const result = firstNumber / secondNumber;
+  const result = firstNumber / secondNumber;
 
-console.log(result); // 10
-```
+  console.log(result); // 10
+  ```
 
 * With code we can have the same problem that we can have in math when we divide by 0
 * JavaScript has a special number type called **Infinity**
@@ -793,19 +793,19 @@ console.log(result); // 10
 ### Remainder
 * The remainder operator **(%)** returns the remainder left over when one operand is divided by a second operand
 
-**Example:**
-```js
-20 % 2; // 0
+  **Example:**
+  ```js
+  20 % 2; // 0
 
-const firstNumber = 20;
-const secondNumber = 2;
+  const firstNumber = 20;
+  const secondNumber = 2;
 
-console.log(firstNumber % secondNumber); // 0
+  console.log(firstNumber % secondNumber); // 0
 
-const result = firstNumber % secondNumber;
+  const result = firstNumber % secondNumber;
 
-console.log(result); // 0
-```
+  console.log(result); // 0
+  ```
 
 * We can use this operator to find out if a number is even or odd
 [Freecodecamp - Finding a remainder in JavaScript](https://www.freecodecamp.org/challenges/finding-a-remainder-in-javascript)
@@ -830,25 +830,25 @@ console.log(result); // 0
 * The increment operator **++** increments (adds one to) its operand and returns a value
 * If used [postfix](http://www.cs.man.ac.uk/~pjj/cs212/fix.html), with the operator after the operand (for example, x++), then it returns the value before incrementing
  
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-number++;
+  number++;
 
-console.log(number); // 1
-```
+  console.log(number); // 1
+  ```
 
 * If used prefix with the operator before the operand (for example, ++x), then it returns the value after incrementing
 
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-++number;
+  ++number;
 
-console.log(number); // 1
-```
+  console.log(number); // 1
+  ```
 
 * In this case we can use the operator before or after but there might be cases when we need to use one or the other depending if we're using the incremented result or not
 
@@ -857,39 +857,39 @@ console.log(number); // 1
 * If used postfix (for example, x--), then it returns the value before decrementing
 * If used prefix (for example, --x), then it returns the value after decrementing
 
-**Example:**
-```js
-let number = 10;
+  **Example:**
+  ```js
+  let number = 10;
 
---number;
+  --number;
 
-console.log(number); // 9
+  console.log(number); // 9
 
-number--;
+  number--;
 
-console.log(number); // 8
-```
+  console.log(number); // 8
+  ```
 
 #### Assignment operators
 * We can assign a number to a variable then use this variable to do any arithmetic operation
 * Also we can reuse the variable to assign the result of the arithmetic operation
 * Take a look at the following example:
 
-**Example:**
-```js
-let number = 1;
-number = number + 1
-```
+  **Example:**
+  ```js
+  let number = 1;
+  number = number + 1
+  ```
 
 * In this example we increment the value of the number variable by one
 * We already saw that we can use the increment operator **++** to do this
 
-**Example:**
-```js
-let number = 1;
+  **Example:**
+  ```js
+  let number = 1;
 
-number++;
-```
+  number++;
+  ```
 
 * We see in this examples that we increment and assign the result to the variable
 * The increment and decrement operators are great but we can only add or subtract by one
@@ -902,73 +902,73 @@ number++;
   * `%=` Remainder assignment
 * This concept is easier to understand using code:
 
-**Example:**
-```js
-let number = 1;
+  **Example:**
+  ```js
+  let number = 1;
 
-number += 1;
+  number += 1;
 
-console.log(number); // 2
-```
+  console.log(number); // 2
+  ```
 
-**Example:**
-```js
-let number = 1;
+  **Example:**
+  ```js
+  let number = 1;
 
-number = number + 10;
+  number = number + 10;
 
-console.log(number); // 11
-```
+  console.log(number); // 11
+  ```
 
 * Using the addition assignment we can do the same operation much easier:
 
-**Example:**
-```js
-let number = 1;
+  **Example:**
+  ```js
+  let number = 1;
 
-number += 10;
+  number += 10;
 
-console.log(number); // 11
-```
+  console.log(number); // 11
+  ```
 
 * We can add 10 to the current number variable value using the addition assignment operator `+=`
 * Then we can use any of the other assignment operators
 
-**Example:**
-```js
-let number = 10;
+  **Example:**
+  ```js
+  let number = 10;
 
-number -= 2;
+  number -= 2;
 
-console.log(number); // 8
-```
+  console.log(number); // 8
+  ```
 
-**Example:**
-```js
-let number = 10;
+  **Example:**
+  ```js
+  let number = 10;
 
-number *= 2;
+  number *= 2;
 
-console.log(number); // 20
-```
+  console.log(number); // 20
+  ```
 
-**Example:**
-```js
-let number = 20;
+  **Example:**
+  ```js
+  let number = 20;
 
-number /= 2;
+  number /= 2;
 
-console.log(number); // 10
-```
+  console.log(number); // 10
+  ```
 
-**Example:**
-```js
-let number = 20;
+  **Example:**
+  ```js
+  let number = 20;
 
-number %= 2;
+  number %= 2;
 
-console.log(number); // 0
-```
+  console.log(number); // 0
+  ```
 
 * The concept is always the same but it only changes the operation that we do over the given variable
 * You can learn more about assignment operators on [MDN site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators)
@@ -986,97 +986,97 @@ console.log(number); // 0
 * If both values are equal we get **true** as result
 * In case they are not the same value we'll get **false** as result
 
-**Example:**
-```js
-let firstNumber = 20;
-let secondNumber = 20;
-let thirdNumber = 10;
+  **Example:**
+  ```js
+  let firstNumber = 20;
+  let secondNumber = 20;
+  let thirdNumber = 10;
 
-console.log(firstNumber == secondNumber); // true
-console.log(firstNumber == thirdNumber); // false
-```
+  console.log(firstNumber == secondNumber); // true
+  console.log(firstNumber == thirdNumber); // false
+  ```
 
 * As we only compare by value:
 
-**Example:**
-```js
-console.log(10 == '10'); // This is true even though the variables have different value type
-```
+  **Example:**
+  ```js
+  console.log(10 == '10'); // This is true even though the variables have different value type
+  ```
 
 * Also we can know if the values are different using the inequality operator **!=**
 
-**Example:**
-```js
-let firstNumber = 20;
-let secondNumber = 20;
-let thirdNumber = 10;
+  **Example:**
+  ```js
+  let firstNumber = 20;
+  let secondNumber = 20;
+  let thirdNumber = 10;
 
-console.log(firstNumber != secondNumber); // false
-console.log(firstNumber != thirdNumber); // true
-```
+  console.log(firstNumber != secondNumber); // false
+  console.log(firstNumber != thirdNumber); // true
+  ```
 
 * Other way to compare values is to know if a value is greater than the other
 * The greater than operator **>** returns true if the left operand is greater than the right operand
 
-**Example:**
-```js
-let firstNumber = 20;
-let secondNumber = 10;
+  **Example:**
+  ```js
+  let firstNumber = 20;
+  let secondNumber = 10;
 
-console.log(firstNumber > secondNumber); // true
+  console.log(firstNumber > secondNumber); // true
 
-console.log(secondNumber > firstNumber); // false
-```
+  console.log(secondNumber > firstNumber); // false
+  ```
 
 * Also we can compare values by using the less than operator
 * The less than operator **<** returns true if the left operand is less than the right operand
 
-**Example:**
-```js
-let firstNumber = 20;
-let secondNumber = 10;
+  **Example:**
+  ```js
+  let firstNumber = 20;
+  let secondNumber = 10;
 
-console.log(secondNumber < firstNumber); // true
+  console.log(secondNumber < firstNumber); // true
 
-console.log(firstNumber < secondNumber); // false
-```
+  console.log(firstNumber < secondNumber); // false
+  ```
 
 * We can use the greater than or equal operator 
 * The greater than or equal operator >= returns true if the left operand is greater than or equal to the right operand
 
-**Example:**
-```js
-let firstNumber = 20;
-let secondNumber = 10;
-let thirdNumber = 20;
+  **Example:**
+  ```js
+  let firstNumber = 20;
+  let secondNumber = 10;
+  let thirdNumber = 20;
 
-console.log(firstNumber >= secondNumber); // true
+  console.log(firstNumber >= secondNumber); // true
 
-console.log(firstNumber >= thirdNumber); // true
-```
+  console.log(firstNumber >= thirdNumber); // true
+  ```
 
 * We can do the same using less than or equal
 * The less than or equal operator **<=** returns true if the left operand is less than or equal to the right operand
 
-**Example:**
-```js
-let firstNumber = 20;
-let secondNumber = 10;
-let thirdNumber = 10;
+  **Example:**
+  ```js
+  let firstNumber = 20;
+  let secondNumber = 10;
+  let thirdNumber = 10;
 
-console.log(secondNumber <= firstNumber); // true
-console.log(secondNumber <= thirdNumber); // true
-```
+  console.log(secondNumber <= firstNumber); // true
+  console.log(secondNumber <= thirdNumber); // true
+  ```
 
 ### Strict Equality Comparison 
 * The strict equality operators **===** and **!==** use the Strict Equality Comparison Algorithm and are intended for performing equality comparisons on operands of the **same type**
 
-**Example:**
-```js
-console.log(10 === '10'); // false
+  **Example:**
+  ```js
+  console.log(10 === '10'); // false
 
-console.log(10 !== '10'); // true
-```
+  console.log(10 !== '10'); // true
+  ```
 
 * Read more about the [comparison operators on MDN site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 
@@ -1093,13 +1093,13 @@ console.log(10 !== '10'); // true
 * In this case we'll get a true value if both expressions are true
 * If one of the expressions is **false**, we get false as the return value too
 
-**Example:**
-```js
-let age = 20;
-let password = 'js1234';
-let result = (age >= 18 && password ==='js1234');
-console.log('Result: ', result); // We get true as both expressions are true
-```
+  **Example:**
+  ```js
+  let age = 20;
+  let password = 'js1234';
+  let result = (age >= 18 && password ==='js1234');
+  console.log('Result: ', result); // We get true as both expressions are true
+  ```
 
 * In this example we get **true** as both expressions are **true**
 * We also have the **`||`** **"Boolean OR" operator** to check if at least one of the expressions is true
@@ -1109,35 +1109,35 @@ console.log('Result: ', result); // We get true as both expressions are true
 * At least one of the expressions needs to be true to get a true value 
 * If not we'll get false as the result
 
-**Example:**
-```js
-let age = 20;
-let password = 'js12345';
-let result = age >= 18 || password ==='js1234';
-console.log('Result: ', result); // true
-```
+  **Example:**
+  ```js
+  let age = 20;
+  let password = 'js12345';
+  let result = age >= 18 || password ==='js1234';
+  console.log('Result: ', result); // true
+  ```
 
 * In this case the condition is **true** as the user age is greater than 18 (first expression)
 * It doesn't matter if the password is the same or not as the first expression is true
 
-**Example:**
-```js
-let age = 10;
-let password = 'js1234';
-let result = age >= 18 || password ==='js1234';
-console.log('Result: ', result); // true
-```
+  **Example:**
+  ```js
+  let age = 10;
+  let password = 'js1234';
+  let result = age >= 18 || password ==='js1234';
+  console.log('Result: ', result); // true
+  ```
 
 * In this case the condition is **true** as the password is correct
 * It doesn't matter if the age is not greater than or equal to 18
 
-**Example:**
-```js
-let age = 10;
-let password = 'js12345';
-let result = age >= 18 || password ==='js1234';
-console.log('Result: ', result); // false
-```
+  **Example:**
+  ```js
+  let age = 10;
+  let password = 'js12345';
+  let result = age >= 18 || password ==='js1234';
+  console.log('Result: ', result); // false
+  ```
 
 * In this case we get **false** as both expressions are false
 * [MDN logical operators doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
@@ -1147,21 +1147,21 @@ console.log('Result: ', result); // false
 * If we have a **true** value and we use the not operator we get **false**
 * If we have a **false** value and we use the not operator we get **true**
 
-**Example:**
-```js
-console.log(!true); // false
-console.log(!false); // true
-```
+  **Example:**
+  ```js
+  console.log(!true); // false
+  console.log(!false); // true
+  ```
 
 * We can use the not operator like this: 
 
-**Example:**
-```js
-let age = 21;
-let result = age < 18; 
+  **Example:**
+  ```js
+  let age = 21;
+  let result = age < 18; 
 
-console.log('User age greater than or equal to 18?: ', !result);
-```
+  console.log('User age greater than or equal to 18?: ', !result);
+  ```
 
 * The age condition is **false** but as we use the not operator it will be **true**
 
@@ -1176,35 +1176,35 @@ console.log('User age greater than or equal to 18?: ', !result);
 * \t  Tab
 * \r  Carriage Return
 
-**Example:**
-```js
-let message = 'Multiline \n text';
+  **Example:**
+  ```js
+  let message = 'Multiline \n text';
 
-console.log(message); // two lines text
+  console.log(message); // two lines text
 
-message = '\t \t tab text';
+  message = '\t \t tab text';
 
-console.log(message); // tab text
-```
+  console.log(message); // tab text
+  ```
 
 * Special characters need to be "escaped" :
 * \'  Single quote
 * \"  Double quote
 * \\  Backslash
 
-**Example:**
-```js
-let message = 'Escaping backslash \\ as string content';
-console.log(message); // we show \ as string content
+  **Example:**
+  ```js
+  let message = 'Escaping backslash \\ as string content';
+  console.log(message); // we show \ as string content
 
-message = 'I love to have coffee at Gianu\'s';
+  message = 'I love to have coffee at Gianu\'s';
 
-console.log(message);
+  console.log(message);
 
-message = "Riders are \"the\" best CFL team";
+  message = "Riders are \"the\" best CFL team";
 
-console.log(message);
-```
+  console.log(message);
+  ```
 
 #### Practice
 * Open a browser console and try all the examples to see the output
@@ -1215,25 +1215,25 @@ console.log(message);
 * The **length** property of a **String object** indicates the length of a string
 * This property returns the **number** of code units in the string
 
-**Example:**
-```js
-const text = 'Welcome to JavaScript!!';
-const characterCount = text.length;
+  **Example:**
+  ```js
+  const text = 'Welcome to JavaScript!!';
+  const characterCount = text.length;
 
-console.log(characterCount); // 24
-```
+  console.log(characterCount); // 24
+  ```
 
-**Example:**
-```js
-const text = 'Welcome to JavaScript!!';
+  **Example:**
+  ```js
+  const text = 'Welcome to JavaScript!!';
 
-console.log(text.length);
-```
+  console.log(text.length);
+  ```
 
-**Example:**
-```js
-console.log('Welcome to JavaScript!!'.length);
-```
+  **Example:**
+  ```js
+  console.log('Welcome to JavaScript!!'.length);
+  ```
 
 * Strings have a length property that allows us to know the string value length (characters)
 * We can use it with string literals
@@ -1252,21 +1252,21 @@ console.log('Welcome to JavaScript!!'.length);
 * JavaScript transforms string literals into String objects when calling a method
 * [MDN String methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-**Example:**
-```js
-const stringVariable = 'string value';
+  **Example:**
+  ```js
+  const stringVariable = 'string value';
 
-// We can call String methods when we have a string value type. 
-// To call the method use a dot before the method name
-// After the method name we add () to execute it
-stringVariable.method();
+  // We can call String methods when we have a string value type. 
+  // To call the method use a dot before the method name
+  // After the method name we add () to execute it
+  stringVariable.method();
 
-// Also we can pass values to the method and they are called parameters
-stringVariable.method(methodParameter);
+  // Also we can pass values to the method and they are called parameters
+  stringVariable.method(methodParameter);
 
-// A method might accept more than one parameter and will depend on the method contract
-stringVariable.method(methodParameter, otherMethodParameter);
-```
+  // A method might accept more than one parameter and will depend on the method contract
+  stringVariable.method(methodParameter, otherMethodParameter);
+  ```
 
 * This method returns a new string with the text of the inputs concatenated (put together)
 
@@ -1275,31 +1275,31 @@ stringVariable.method(methodParameter, otherMethodParameter);
 * The String object has a **concat** method to do the same using methods instead of operators
 * [MDN concat doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
 
-**Example:**
-```js
-const text = 'My mom name is '; // Note the trailing space!  It's a common mistake to forget whitespace when using concat
-const name = 'Marta';
+  **Example:**
+  ```js
+  const text = 'My mom name is '; // Note the trailing space!  It's a common mistake to forget whitespace when using concat
+  const name = 'Marta';
 
-// We get one string back as result with both strings concatenated
-const message = text.concat(name);
+  // We get one string back as result with both strings concatenated
+  const message = text.concat(name);
 
-console.log(message); // My mom name is Marta
+  console.log(message); // My mom name is Marta
 
-console.log(text); // My mom name is
+  console.log(text); // My mom name is
 
-console.log(name); // Marta
-```
+  console.log(name); // Marta
+  ```
 
 * Some methods might change the object value
 * In this case concat only returns a new string without changing the original values
 * The concat method also accepts multiple parameters
 
-**Example:**
-```js
-let text = 'Java'; // Sometimes we don't want that trailing space ;)
+  **Example:**
+  ```js
+  let text = 'Java'; // Sometimes we don't want that trailing space ;)
 
-console.log(text.concat('Script', ' is the best', ' Programming language!!'));
-```
+  console.log(text.concat('Script', ' is the best', ' Programming language!!'));
+  ```
 * The concat method will return the following string: **JavaScript is the best Programming language!!**
 * In this example we used concat with many parameters using literal strings
 * We can also use variables
@@ -1310,17 +1310,17 @@ console.log(text.concat('Script', ' is the best', ' Programming language!!'));
 ### Upper and lower case
 * Using the **toUpperCase** & **toLowerCase** we can transform our text to upper and lower case
 
-**Example:**
-```js
-const upperCaseText = 'HELLO';
-const lowerCaseText = 'friends';
+  **Example:**
+  ```js
+  const upperCaseText = 'HELLO';
+  const lowerCaseText = 'friends';
 
-console.log(upperCaseText.toLowerCase()); // hello
-console.log(lowerCaseText.toUpperCase()); // FRIENDS
+  console.log(upperCaseText.toLowerCase()); // hello
+  console.log(lowerCaseText.toUpperCase()); // FRIENDS
 
-console.log(upperCaseText); // HELLO
-console.log(lowerCaseText); // friends
-```
+  console.log(upperCaseText); // HELLO
+  console.log(lowerCaseText); // friends
+  ```
 
 #### Practice
 [Exercise 41](./exercises/js/ex_41.md)
@@ -1333,29 +1333,29 @@ console.log(lowerCaseText); // friends
 * Index in JavaScript starts in 0
 * The first character will be at the 0 index position
 
-**Example:**
-```js
-const text = 'JavaScript rocks!! right?';
-const firstCharacter = text.charAt(0); 
+  **Example:**
+  ```js
+  const text = 'JavaScript rocks!! right?';
+  const firstCharacter = text.charAt(0); 
 
-console.log(firstCharacter); // J
+  console.log(firstCharacter); // J
 
-console.log(text.charAt(0)); // J
-```
+  console.log(text.charAt(0)); // J
+  ```
 
 * To know the last string character we can combine charAt and the length property
 * As length will return the amount of characters and the index starts at 0 to know the last character we need to substract one from the length value
 
-**Example:**
-```js
-const text = 'JavaScript rocks!! right?';
-const lastCharacterPosition = text.length - 1;
-const lastCharacter = text.charAt(lastCharacterPosition);
+  **Example:**
+  ```js
+  const text = 'JavaScript rocks!! right?';
+  const lastCharacterPosition = text.length - 1;
+  const lastCharacter = text.charAt(lastCharacterPosition);
 
-console.log(lastCharacter); // ?
+  console.log(lastCharacter); // ?
 
-console.log( text.charAt(text.length - 1) ); // ?
-```
+  console.log( text.charAt(text.length - 1) ); // ?
+  ```
 
 #### Practice
 [Exercise 43](./exercises/js/ex_43.md)
@@ -1369,37 +1369,37 @@ console.log( text.charAt(text.length - 1) ); // ?
 * Use 0 index for the beginning of the text
 * The end parameter is optional and if we don't pass any value it will return the rest of the text
 
-**Example:**
-```js
-const text = 'I <3 JavaScript!!';
-const result = text.slice(4, 15);
+  **Example:**
+  ```js
+  const text = 'I <3 JavaScript!!';
+  const result = text.slice(4, 15);
 
-console.log(result); // JavaScript
-```
+  console.log(result); // JavaScript
+  ```
 
 * Counting from the beginning we have 4 index before the **J** letter
 * Then we slice the string until the 15 index
 * The final result is the JavaScript word
 * Also we can avoid passing the second slice parameter and get the rest of the text from a starting point until the end
 
-**Example:**
-```js
-const text = 'I <3 JavaScript!!';
-const result = text.slice(4);
+  **Example:**
+  ```js
+  const text = 'I <3 JavaScript!!';
+  const result = text.slice(4);
 
-console.log(result); // JavaScript!!
-```
+  console.log(result); // JavaScript!!
+  ```
 
 * The end parameter can be a negative value
 * When using negative values it will position at the end of the string and start counting backwards
 
-**Example:**
-```js
-const text = 'JavaScript and Java are not the same';
-const result = text.slice(0, -25); // JavaScript
+  **Example:**
+  ```js
+  const text = 'JavaScript and Java are not the same';
+  const result = text.slice(0, -25); // JavaScript
 
-console.log(result);
-```
+  console.log(result);
+  ```
 
 #### Practice
 [Exercise 45](./exercises/js/ex_45.md)
@@ -1409,22 +1409,22 @@ console.log(result);
 * First parameter is the substring start
 * Second parameter is the number of characters
 
-**Example:**
-```js
-const text = 'I love JavaScript!!';
-const result = text.substr(7, 10);
+  **Example:**
+  ```js
+  const text = 'I love JavaScript!!';
+  const result = text.substr(7, 10);
 
-console.log(result); // JavaScript
-```
+  console.log(result); // JavaScript
+  ```
 
-**Example:**
-```js
-const text = 'I love JavaScript!!';
-const jsText = 'JavaScript';
-const result = text.substr(7, jsText.length);
+  **Example:**
+  ```js
+  const text = 'I love JavaScript!!';
+  const jsText = 'JavaScript';
+  const result = text.substr(7, jsText.length);
 
-console.log(result); // JavaScript
-```
+  console.log(result); // JavaScript
+  ```
 
 #### Practice
 [Exercise 46](./exercises/js/ex_46.md)
@@ -1438,25 +1438,25 @@ console.log(result); // JavaScript
 * For now think about an **array** as a list or collection of elements (in this case strings)
 * Learn more about the [split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) method on the MDN guide
 
-**Example:**
-```js
-let friends = 'tute, mati, pepe, raul, juan, marta, agus, loli';
-let friendsArray = friends.split(',');
+  **Example:**
+  ```js
+  let friends = 'tute, mati, pepe, raul, juan, marta, agus, loli';
+  let friendsArray = friends.split(',');
 
-console.log(friendsArray);
-/* 
-[ 
-  'tute',
-  ' mati',
-  ' pepe',
-  ' raul',
-  ' juan',
-  ' marta',
-  ' agus',
-  ' loli' 
-]
-*/
-```
+  console.log(friendsArray);
+  /* 
+  [ 
+    'tute',
+    ' mati',
+    ' pepe',
+    ' raul',
+    ' juan',
+    ' marta',
+    ' agus',
+    ' loli' 
+  ]
+  */
+  ```
 
 #### Practice
 [Exercise 47](./exercises/js/ex_47.md)
@@ -1483,26 +1483,26 @@ console.log(friendsArray);
 * If the first character cannot be converted to a number, **NaN** (not a number) is returned
 * [MDN parseInt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt)
 
-**Example:**
-```js
-const numberAsAString = '3';
+  **Example:**
+  ```js
+  const numberAsAString = '3';
 
-console.log(typeof numberAsAString) // string
+  console.log(typeof numberAsAString) // string
 
-const number = parseInt(numberAsAString);
+  const number = parseInt(numberAsAString);
 
-console.log(number); // 3
+  console.log(number); // 3
 
-console.log(typeof number) // number
-```
+  console.log(typeof number) // number
+  ```
 
-**Example:**
-```js
-const numberAsAString = '3.20';
-const number = parseInt(numberAsAString);
+  **Example:**
+  ```js
+  const numberAsAString = '3.20';
+  const number = parseInt(numberAsAString);
 
-console.log(number); // 3
-```
+  console.log(number); // 3
+  ```
 
 * We can get a **number** from a **string**
 * parseInt will return an integer number
@@ -1514,35 +1514,35 @@ console.log(number); // 3
 * [MDN parseFloat doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
 * What happens if you pass in a String representation of an Integer (3) instead of a Float (3.14)? 
 
-**Example:**
-```js
-const piAsText = '3.14';
+  **Example:**
+  ```js
+  const piAsText = '3.14';
 
-console.log(typeof piAsText); // string
+  console.log(typeof piAsText); // string
 
-const pi = parseFloat(piAsText);
+  const pi = parseFloat(piAsText);
 
-console.log(pi);
+  console.log(pi);
 
-console.log(typeof pi); // number
-```
+  console.log(typeof pi); // number
+  ```
 
 ### Number toString
 * The **toString** method returns a string representing the specified Number object
 * [MDN number toString doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)
 
-**Example:**
-```js
-let number = 4;
+  **Example:**
+  ```js
+  let number = 4;
 
-console.log(typeof number); // number
+  console.log(typeof number); // number
 
-let message = number.toString() + '2';
+  let message = number.toString() + '2';
 
-console.log(message); // 42
+  console.log(message); // 42
 
-console.log(typeof message); // string
-```
+  console.log(typeof message); // string
+  ```
 
 * In this example we transfer the number value into a string one
 * We use the + operator and instead of adding both values together it will concatenate them as they are both strings
@@ -1563,16 +1563,16 @@ console.log(typeof message); // string
 * If the condition is **false**, another statement can be executed
 * [if else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 
-![if](./resources/images/js/if.gif)
+  ![if](./resources/images/js/if.gif)
 
-**Example:**
-```js
-// Basic if statement structure
-if (condition) {
-  // If statement body
-  // We'll add the code that we want to execute if the condition is true
-}
-```
+  **Example:**
+  ```js
+  // Basic if statement structure
+  if (condition) {
+    // If statement body
+    // We'll add the code that we want to execute if the condition is true
+  }
+  ```
 
 * When coding we need to make decisions based on the conditions that we need
 * The if statements will execute this conditions and check whether they are true or false (boolean / true & false values, more about this soon)
@@ -1580,39 +1580,39 @@ if (condition) {
 * If not, in case the condition is false it will ignore the if statement body and won't execute the code
 * Whether the condition it's true or false the code after the if statement it's going to be executed anyway following the natural code flow
 
-**Example:**
-```js
-if (true) {
-  console.log('Using a if statement with a true condition');
-}
-```
+  **Example:**
+  ```js
+  if (true) {
+    console.log('Using a if statement with a true condition');
+  }
+  ```
 
 * In this example we use a **true** boolean value as condition so it's true all the time (its a literal value, no condition here!)
 * So we can read this like: `If condition is true then execute the following console.log()`
 
-**Example:**
-```js
-const playerLifer = 0;
+  **Example:**
+  ```js
+  const playerLifer = 0;
 
-if (playerLife == 0) {
-  console.log('Game Over!!!!');
-}
-```
+  if (playerLife == 0) {
+    console.log('Game Over!!!!');
+  }
+  ```
 
 * We can read this statement like: `if the players life is 0 then show a Game Over message`
 * It's easy to use **if condition then** phrase to detect that we need a if statement
 * Once the if statement has been executed the code flow continues
 
-**Example:**
-```js
-const number = 1;
+  **Example:**
+  ```js
+  const number = 1;
 
-if (number >= 2) {
-  console.log('We won\'t see this message as the condition it\'s always false');
-}
+  if (number >= 2) {
+    console.log('We won\'t see this message as the condition it\'s always false');
+  }
 
-console.log('We will see this massege all the time as it doesn\'t depend on the if statement and the code flows keeps on going');
-```
+  console.log('We will see this massege all the time as it doesn\'t depend on the if statement and the code flows keeps on going');
+  ```
 
 #### Practice
 [Exercise 49](./exercises/js/ex_49.md)
@@ -1625,26 +1625,26 @@ console.log('We will see this massege all the time as it doesn\'t depend on the 
 * Now we know how to use a if statement to check for a given condition but we only care about when it's a true value
 * In some cases we need to control also what happens in case the condition is false
 
-![if/else](./resources/images/js/if-else.gif)
+  ![if/else](./resources/images/js/if-else.gif)
 
-**Example:**
-```js
-if (condition) {
-  // if true then it will execute this code
-} else {
-  // if not, then it will execute this code
-}
-```
+  **Example:**
+  ```js
+  if (condition) {
+    // if true then it will execute this code
+  } else {
+    // if not, then it will execute this code
+  }
+  ```
 
-```js
-const number = 5;
+  ```js
+  const number = 5;
 
-if (number === 2) {
-  console.log('The number is 2');
-} else {
-  console.log('The number is not 2');
-}
-```
+  if (number === 2) {
+    console.log('The number is 2');
+  } else {
+    console.log('The number is not 2');
+  }
+  ```
 
 * We can read this code like: `IF number equals 2 THEN show the number is 2 message ELSE show the number is not 2 message` 
 
@@ -1662,13 +1662,13 @@ if (number === 2) {
 * If the condition is true then it will execute the code that follows the question character
 * In case it's false then it will execute the code that follows the double colon character
 
-**Example:**
-```js
-let number = 2;
-let message = (number === 2) ? 'The number is 2' : 'The number is not 2';
+  **Example:**
+  ```js
+  let number = 2;
+  let message = (number === 2) ? 'The number is 2' : 'The number is not 2';
 
-console.log(message);
-```
+  console.log(message);
+  ```
 
 #### Practice
 [Exercise 55](./exercises/js/ex_55.md)
@@ -1680,28 +1680,28 @@ console.log(message);
 ### If else if
 * We can also use if else if to check for more conditions
 
-**Example:**
-```js
-if (condition) {
-  // This code gets executed if the condition it's true
-} else if (otherCondition) {
-  // This code gets executed if the otherCondition it's true
-} else {
-  // This code gets executed if none of the other conditions where true
-}
-```
+  **Example:**
+  ```js
+  if (condition) {
+    // This code gets executed if the condition it's true
+  } else if (otherCondition) {
+    // This code gets executed if the otherCondition it's true
+  } else {
+    // This code gets executed if none of the other conditions where true
+  }
+  ```
 
-```js
-const name = 'Marta';
+  ```js
+  const name = 'Marta';
 
-if (name === 'Miriam') {
-  console.log('The name is Miriam');
-} else if (nombre === 'Felipa') {
-  console.log('The name is Felipa');
-} else {
-  console.log('The name is not Miriam or Felipa');
-}
-```
+  if (name === 'Miriam') {
+    console.log('The name is Miriam');
+  } else if (nombre === 'Felipa') {
+    console.log('The name is Felipa');
+  } else {
+    console.log('The name is not Miriam or Felipa');
+  }
+  ```
 
 * In this example we ask for different conditions
 * We can keep on adding if else if statements to check for more conditions
@@ -1721,62 +1721,62 @@ if (name === 'Miriam') {
 * Then executes statements associated with that case
 * If we don't break it will execute the follow the matching case
 
-```js
-const name = 'Marta';
+  ```js
+  const name = 'Marta';
 
-if (name === 'Miriam') {
-  console.log('The name is Miriam');
-} else if (nombre === 'Felipa') {
-  console.log('The name is Felipa');
-} else {
-  console.log('The name is not Miriam or Felipa');
-}
-```
+  if (name === 'Miriam') {
+    console.log('The name is Miriam');
+  } else if (nombre === 'Felipa') {
+    console.log('The name is Felipa');
+  } else {
+    console.log('The name is not Miriam or Felipa');
+  }
+  ```
 
 * If we keep nesting statements it's going to be difficult to follow this code
 
-```js
-const name = 'Marta';
+  ```js
+  const name = 'Marta';
 
-if (name === 'Miriam') {
-  console.log('The name is Miriam');
-} else if (name === 'Felipa') {
-  console.log('The name is Felipa');
-} else if (name === 'Xime') {
-  console.log('The name is Xime');
-} else if (name === 'Belu') {
-  console.log('The name is Belu');
-} else {
-  console.log('The name is not Marta, Felipa, Xime or Belu');
-}
-```
+  if (name === 'Miriam') {
+    console.log('The name is Miriam');
+  } else if (name === 'Felipa') {
+    console.log('The name is Felipa');
+  } else if (name === 'Xime') {
+    console.log('The name is Xime');
+  } else if (name === 'Belu') {
+    console.log('The name is Belu');
+  } else {
+    console.log('The name is not Marta, Felipa, Xime or Belu');
+  }
+  ```
 
 * We can acomplish the same result using a **switch** statement
 
-**Example:**
-```js
-const name = 'marta';
-let message = null;
+  **Example:**
+  ```js
+  const name = 'marta';
+  let message = null;
 
-switch (name) {
-  case 'Miriam':
-    message = 'The name is Miriam';
-    break;
-  case 'Felipa':
-    message = 'The name is Felipa';
-    break;
-  case 'Xime':
-    message = 'The name is Xime';
-    break;
-  case 'Belu':
-    message = 'The name is Belu';
-    break;
-  default:
-     message = 'The name is not Marta, Felipa, Xime or Belu';
-}
+  switch (name) {
+    case 'Miriam':
+      message = 'The name is Miriam';
+      break;
+    case 'Felipa':
+      message = 'The name is Felipa';
+      break;
+    case 'Xime':
+      message = 'The name is Xime';
+      break;
+    case 'Belu':
+      message = 'The name is Belu';
+      break;
+    default:
+      message = 'The name is not Marta, Felipa, Xime or Belu';
+  }
 
-console.log(message);
-```
+  console.log(message);
+  ```
 * The optional **break** statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch
 * If break is omitted, the program continues execution at the next statement in the switch statement
 * [MDN switch doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
@@ -1805,69 +1805,69 @@ console.log(message);
   * NaN
   * ''
 
-**Example:**
-```js
-if ('') {
-  // This code won't get executed as an empty string is a false value
-} else {
-  // This code gets executed
-}
-```
+  **Example:**
+  ```js
+  if ('') {
+    // This code won't get executed as an empty string is a false value
+  } else {
+    // This code gets executed
+  }
+  ```
 
-**Example:**
-```js
-const name = '';
+  **Example:**
+  ```js
+  const name = '';
 
-if (name === '') {
-  console.log('Please input your name');
-} else {
-  console.log('Welcome: ' + name);
-}
-```
+  if (name === '') {
+    console.log('Please input your name');
+  } else {
+    console.log('Welcome: ' + name);
+  }
+  ```
 
 * We can also try the following condition
 
-**Example:**
-```js
-const name = '';
+  **Example:**
+  ```js
+  const name = '';
 
-if (name) {
-  console.log('Welcome: ' + name);
-} else {
-  console.log('Please input your name');  
-}
-```
+  if (name) {
+    console.log('Welcome: ' + name);
+  } else {
+    console.log('Please input your name');  
+  }
+  ```
 
 * If name is empty then it will be evaluated as a false value so in this case we don't need to compare it to an empty string
 * true and false values are an easy way to use some conditions
 * One special case is using null:
 
-**Example:**
-```js
-const name = null;
+  **Example:**
+  ```js
+  const name = null;
 
-if (name) {
-  console.log('welcome: ' + name);
-} else {
-  console.log('Please input your name');  
-}
+  if (name) {
+    console.log('welcome: ' + name);
+  } else {
+    console.log('Please input your name');  
+  }
 
-console.log(typeof name) // object
-```
+  console.log(typeof name) // object
+  ```
 
 * Using a null value it's going to be evaluated as an object and it will become true
 * When using null we'll have to add an extra validation
 
-**Example:**
-```js
-const name = null;
+  **Example:**
+  ```js
+  const name = null;
 
-if (name && name !== null) {
-  console.log('welcome: ' + name);
-} else {
-  console.log('Please input your name');  
-}
-```
+  if (name && name !== null) {
+    console.log('welcome: ' + name);
+  } else {
+    console.log('Please input your name');  
+  }
+  ```
 
 * [MDN false doc](https://developer.mozilla.org/en-US/docs/Glossary/false)
 * [MDN true doc](https://developer.mozilla.org/en-US/docs/Glossary/true)
@@ -1882,39 +1882,39 @@ if (name && name !== null) {
 * It's common that when coding we need to keep repeating the same code execution until a given condition it's true
 * For example I might want to show numbers from 0 to 10 to create a list
 
-**Example:**
-```js
-console.log(0);
-console.log(1);
-console.log(2);
-console.log(3);
-console.log(4);
-console.log(5);
-console.log(6);
-console.log(7);
-console.log(8);
-console.log(9);
-console.log(10);
-```
+  **Example:**
+  ```js
+  console.log(0);
+  console.log(1);
+  console.log(2);
+  console.log(3);
+  console.log(4);
+  console.log(5);
+  console.log(6);
+  console.log(7);
+  console.log(8);
+  console.log(9);
+  console.log(10);
+  ```
 
 * This code works
 * But what about if you need to add more functionality or you need to show more numbers like to a 100 or to a 1000
 * We'll go crazy, right?
 
-**Example:**
-```js
-console.log('number: ', 0);
-console.log('number: ', 1);
-console.log('number: ', 2);
-console.log('number: ', 3);
-console.log('number: ', 4);
-console.log('number: ', 5);
-console.log('number: ', 6);
-console.log('number: ', 7);
-console.log('number: ', 8);
-console.log('number: ', 9);
-console.log('number: ', 10);
-```
+  **Example:**
+  ```js
+  console.log('number: ', 0);
+  console.log('number: ', 1);
+  console.log('number: ', 2);
+  console.log('number: ', 3);
+  console.log('number: ', 4);
+  console.log('number: ', 5);
+  console.log('number: ', 6);
+  console.log('number: ', 7);
+  console.log('number: ', 8);
+  console.log('number: ', 9);
+  console.log('number: ', 10);
+  ```
 
 * Thanks we can use iteration to solve this problem
 
@@ -1922,49 +1922,49 @@ console.log('number: ', 10);
 * The **while statement** creates a loop that executes a specified statement as long as the test condition evaluates to true
 * The condition is evaluated before executing the statement
 
-**Example:**
-```js
-while (condition) {
-  console.log('This code it\'s goin to be executed until the condition is false');
-}
-```
+  **Example:**
+  ```js
+  while (condition) {
+    console.log('This code it\'s goin to be executed until the condition is false');
+  }
+  ```
 
 * Let refactor the numbers code so it works for 10, 100 or 1000 numbers!
 
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-while (number < 11) {
-  console.log(number);
-  number++;
-}
-```
+  while (number < 11) {
+    console.log(number);
+    number++;
+  }
+  ```
 
 * With only a couple of lines of code we can solve the previous feature
 * Now we only need one change to show up to 1000 numbers
 
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-while (number < 1001) {
-  console.log(number);
-  number++;
-}
-```
+  while (number < 1001) {
+    console.log(number);
+    number++;
+  }
+  ```
 
 * Also, if we need to change the code to add more functionality we can do it in a really simple and easy way:
 
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-while (number < 1001) {
-  console.log('number: ', number);
-  number++;
-}
-```
+  while (number < 1001) {
+    console.log('number: ', number);
+    number++;
+  }
+  ```
 
 * Using while we can repeat the block code until the condition is false
 * In each iteration we use number++ to increase the number value
@@ -1974,36 +1974,36 @@ while (number < 1001) {
 * At some point the engine will throw a recursivity exception and we'll get an error
 * Always be sure to change the condition so it becomes false at some point
 
-**Example:**
-```js
-while (true) {
-  console.log('Server will run out after executing this code many times!');
-}
+  **Example:**
+  ```js
+  while (true) {
+    console.log('Server will run out after executing this code many times!');
+  }
 
-let number = 0;
+  let number = 0;
 
-while (number < 10000) {
-  console.log('number: ', number);
-  // We never changed number value so it's always going to be 0 and then less than 10000 so the condition will always be true :(
-}
+  while (number < 10000) {
+    console.log('number: ', number);
+    // We never changed number value so it's always going to be 0 and then less than 10000 so the condition will always be true :(
+  }
 
-```
+  ```
 * The while statement will not be executed if the condition is false from the beginning
 
-**Example:**
-```js
-while (false) {
-  console.log('This code doesn\'t get executed');
-}
+  **Example:**
+  ```js
+  while (false) {
+    console.log('This code doesn\'t get executed');
+  }
 
-let number = 1000;
+  let number = 1000;
 
-while (number < 10) {
-  console.log('number: ', number);
-  number++;
-  // All this code won't get executed as the initial condition is false
-}
-```
+  while (number < 10) {
+    console.log('number: ', number);
+    number++;
+    // All this code won't get executed as the initial condition is false
+  }
+  ```
 
 * If the condition is false the engine will ignore it
 * [MDN while doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
@@ -2035,49 +2035,49 @@ while (number < 10) {
 * In this case the code will be executed once and then ask for a condition
 * It's similar to while but the difference it's where we use the condition to evaluate whether it will iterate or not
 
-**Example:**
-```js
-do {
-  // This code will execute at least once
-} while (condition)
-```
+  **Example:**
+  ```js
+  do {
+    // This code will execute at least once
+  } while (condition)
+  ```
 
 * It will keep iterating until the condition is false
 * If the condition is always true we have the same while true problem
 
-**Example:**
-```js
-do {
-  // we'll get a exeption or error
-} while (true)
-```
+  **Example:**
+  ```js
+  do {
+    // we'll get a exeption or error
+  } while (true)
+  ```
 
 * We can refactor one of the previous examples using do while:
 
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-do {
-  console.log('number: ', number);
-  number++;
-} while (number < 10000) {
-```
+  do {
+    console.log('number: ', number);
+    number++;
+  } while (number < 10000) {
+  ```
 
 * In this case we show the message
 * Increment the number value
 * Then evaluate the condition
 * We'll iterate until the condition is false
 
-**Example:**
-```js
-let number = 1000;
+  **Example:**
+  ```js
+  let number = 1000;
 
-do {
-  console.log('number: ', number);
-  number++;
-} while (number < 10) {
-```
+  do {
+    console.log('number: ', number);
+    number++;
+  } while (number < 10) {
+  ```
 
 * In this example we'll only show number 1000 once and then it won't iterate
 * Here we can see that even having a false condition do/while gets executed at least once
@@ -2109,24 +2109,24 @@ do {
 * Enclosed in parentheses and separated by semicolons
 * Followed by a statement (usually a block statement) to be executed in the loop
 
-**Example:**
-```js
-for (initialization; condition; finalExpression) {
-  // statement
-}
-```
+  **Example:**
+  ```js
+  for (initialization; condition; finalExpression) {
+    // statement
+  }
+  ```
 
 * Initialization: An expression (including assignment expressions) or variable declaration
 * Condition: An expression to be evaluated before each loop iteration
 * finalExpression: An expression to be evaluated at the end of each loop iteration
 * For example to iterate over numbers between 0 and 10 we write the following code:
 
-**Example:**
-```js
-for (let number = 0; number <= 10; number++) {
-  console.log(number);
-}
-```
+  **Example:**
+  ```js
+  for (let number = 0; number <= 10; number++) {
+    console.log(number);
+  }
+  ```
 
 * Initialization: `let number = 0;`
 * Condition: `number <= 10;`
@@ -2138,12 +2138,12 @@ for (let number = 0; number <= 10; number++) {
 * After iterating it will execute the final expression, in this case it's to increment one more number value
 * It's still pretty easy to refactor code:
 
-**Example:**
-```js
-for (let number = 0; number <= 1000; number++) {
-  console.log('number: ', number);
-}
-```
+  **Example:**
+  ```js
+  for (let number = 0; number <= 1000; number++) {
+    console.log('number: ', number);
+  }
+  ```
 
 * [MDN for doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 
@@ -2175,26 +2175,26 @@ for (let number = 0; number <= 1000; number++) {
 ### Break
 * The **break** statement terminates the current loop or switch statement and transfers program control to the statement following the terminated statement
 
-**Example:**
-```js
-for (let i = 0; i < 1000; i++){
-  break;
-}
-```
+  **Example:**
+  ```js
+  for (let i = 0; i < 1000; i++){
+    break;
+  }
+  ```
 
 * In this example we will iterate until index is 10 and then cut the iteration execution
 * So we only show numbers from 0 to 9
 
-**Example:**
-```js
-for (let index = 0; index < 1000; index++){
-  if (index < 10) {
-    console.log(index);
-  } else {
-    break;
+  **Example:**
+  ```js
+  for (let index = 0; index < 1000; index++){
+    if (index < 10) {
+      console.log(index);
+    } else {
+      break;
+    }
   }
-}
-```
+  ```
 
 * [MDN break doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
 
@@ -2211,15 +2211,15 @@ for (let index = 0; index < 1000; index++){
 * We need to define the function before executing it
 * Use the function name and () to call the given function
 
-**Example:**
-```js
-function greeting() {
-  console.log('Hello');
-}
+  **Example:**
+  ```js
+  function greeting() {
+    console.log('Hello');
+  }
 
-greeting(); // Shows Hello as output
-greeting(); // Shows Hello as output
-```
+  greeting(); // Shows Hello as output
+  greeting(); // Shows Hello as output
+  ```
 
 * In this example we define a greeting function
 * Then we call the greeting function using ()
@@ -2238,16 +2238,16 @@ greeting(); // Shows Hello as output
 * When we assign a function to a variable we don't need to name our function as we have the variable for
 * Functions without a name are considered anonymous
 
-**Example:**
-```js
-// Look how we don't name our function, we just assign it
-const greeting = function() {
-  console.log('Hello');
-}
+  **Example:**
+  ```js
+  // Look how we don't name our function, we just assign it
+  const greeting = function() {
+    console.log('Hello');
+  }
 
-greeting(); // Shows Hello as output
-greeting(); // Shows Hello as output
-```
+  greeting(); // Shows Hello as output
+  greeting(); // Shows Hello as output
+  ```
 
 * In this example we define a **greeting** and then assign a **function** value
 * Assigning the variable works the same way that any other data type (string, number, boolean)
@@ -2264,79 +2264,79 @@ greeting(); // Shows Hello as output
 * When a function doesn't explicit return a value it will return a **undefined** value
 * To explicit return a value from a function we use the **return** reserved keyword
 
-**Example:**
-```js
-function getGreetingMessage() {
-  return 'Hello';
-}
+  **Example:**
+  ```js
+  function getGreetingMessage() {
+    return 'Hello';
+  }
 
-getGreetingMessage();
-```
+  getGreetingMessage();
+  ```
 
 * The first time we call the getGreetingMessage() the function gets executed, returns a string value with the word Hello
 * We are not doing anything with the returned value
 
-**Example:**
-```js
-function getGreetingMessage() {
-  return 'Hello';
-}
+  **Example:**
+  ```js
+  function getGreetingMessage() {
+    return 'Hello';
+  }
 
-console.log(getGreetingMessage());
-```
+  console.log(getGreetingMessage());
+  ```
 
 * In this example we call the function getGreetingMessage() we get a string back
 * Then we get that returned string value and print it using console.log()
 * We can use the returned value for anything for example we can assign it to a variable
 
-**Example:**
-```js
-function getGreetingMessage() {
-  return 'Hello';
-}
+  **Example:**
+  ```js
+  function getGreetingMessage() {
+    return 'Hello';
+  }
 
-const greeting = getGreetingMessage(); 
-console.log(greeting);
-```
+  const greeting = getGreetingMessage(); 
+  console.log(greeting);
+  ```
 
 * This example shows how to call the getGreetingMessage() function, get the string back and then assign it to a variable
 * Once we have the value in a variable we can do anything like console.log(greeting)
 * A function can also return any data type
 
-**Example:**
-```js
-function getUserAge() {
-  return 30;
-}
+  **Example:**
+  ```js
+  function getUserAge() {
+    return 30;
+  }
 
-function isUserLoggedIn() {
-  return true;
-}
-```
+  function isUserLoggedIn() {
+    return true;
+  }
+  ```
 
 * In this example both functions return a different data type
 * The getUserAge function returns a number
 * The isUserLoggedIn function returns a boolean
 * We can also use the returned value as conditionals
 
-**Example:**
-```js
-function getUserAge() {
-  return 30;
-}
+  **Example:**
+  ```js
+  function getUserAge() {
+    return 30;
+  }
 
-function isUserLoggedIn() {
-  return true;
-}
+  function isUserLoggedIn() {
+    return true;
+  }
 
-if (getUserAge() >= 18) {
-  console.log('The user is older than 18');
-}
+  if (getUserAge() >= 18) {
+    console.log('The user is older than 18');
+  }
 
-if (isUserLoggedIn()) {
-  console.log('welcome to the site');
-}
-```
+  if (isUserLoggedIn()) {
+    console.log('welcome to the site');
+  }
+  ```
 
 * In the first if statement we call the getUserAge function and get a number back (30)
 * Then we compare that to know if the returned valur is bigger or equal to 18
@@ -2356,25 +2356,25 @@ if (isUserLoggedIn()) {
 * Also we can name each parameter so it has more context inside the function
 * We can use the functions parameters inside the function block content
 
-**Example:**
-```js
-function(firstParameter, secondParameter, thirdParameter) {
-  console.log(firstParameter, secondParameter, thirdParameter);
-}
-```
+  **Example:**
+  ```js
+  function(firstParameter, secondParameter, thirdParameter) {
+    console.log(firstParameter, secondParameter, thirdParameter);
+  }
+  ```
 
 * We can use parameter the following way:
 
-**Example:**
-```js
-function greeting(username) {
-  console.log('Hi ' + username + '!!!');
-}
+  **Example:**
+  ```js
+  function greeting(username) {
+    console.log('Hi ' + username + '!!!');
+  }
 
-greeting('Marta'); // Hi Marta!!!
-greeting('Xime'); // Hi Xime!!!
-greeting('Raul'); // Hi Raul!!!
-```
+  greeting('Marta'); // Hi Marta!!!
+  greeting('Xime'); // Hi Xime!!!
+  greeting('Raul'); // Hi Raul!!!
+  ```
 
 * There's a lot going on in this example:
   * Define the **greeting** named function
@@ -2384,30 +2384,30 @@ greeting('Raul'); // Hi Raul!!!
   * The first time we call the greeting function we pass 'Marta' as parameter and it will become the username in the greeting block content
   * We can pass a function different parameters values (example: Marta, Xime, Raul)
 
-**Example:**
-```js
-const greeting = function(username) {
-  console.log('Hi ' + username + '!!!');
-}
+  **Example:**
+  ```js
+  const greeting = function(username) {
+    console.log('Hi ' + username + '!!!');
+  }
 
-greeting('Marta'); // Hi Marta!!!
-greeting('Xime'); // Hi Xime!!!
-greeting('Raul'); // Hi Raul!!!
-```
+  greeting('Marta'); // Hi Marta!!!
+  greeting('Xime'); // Hi Xime!!!
+  greeting('Raul'); // Hi Raul!!!
+  ```
 
 * We can also use parameters using anonymous functions and using them as variables values
 * Refactor the code so the function returns a value instead of showing it as output
 
-**Example:**
-```js
-const getGreetingMessage = function(username) {
-  return 'Hi ' + username + '!!!';
-}
+  **Example:**
+  ```js
+  const getGreetingMessage = function(username) {
+    return 'Hi ' + username + '!!!';
+  }
 
-console.log( getGreetingMessage('Marta') ); // Hi Marta!!!
-console.log( getGreetingMessage('Xime') ); // Hi Xime!!!
-console.log( getGreetingMessage('Raúl') ); // Hi Raul!!!
-```
+  console.log( getGreetingMessage('Marta') ); // Hi Marta!!!
+  console.log( getGreetingMessage('Xime') ); // Hi Xime!!!
+  console.log( getGreetingMessage('Raúl') ); // Hi Raul!!!
+  ```
 
 * In this case we define a **getGreetingMessage** variable and assing a function as value
 * The assigned function accepts a **username** parameter 
@@ -2419,15 +2419,15 @@ console.log( getGreetingMessage('Raúl') ); // Hi Raul!!!
 * Also, a function can accept more parameters
 * It's important to pass the parameters in the same order when we define and call the function
 
-**Example:**
-```js
-const greeting = function(username, age) {
-  console.log('The user: ' + username + ' has ' + age + ' years!!!';
-}
+  **Example:**
+  ```js
+  const greeting = function(username, age) {
+    console.log('The user: ' + username + ' has ' + age + ' years!!!';
+  }
 
-greeting('Nico', 39); // The user: Nico has 39 years!!!
-greeting(18, 'Marta'); // The user: 18 has Marta years!!!
-```
+  greeting('Nico', 39); // The user: Nico has 39 years!!!
+  greeting(18, 'Marta'); // The user: 18 has Marta years!!!
+  ```
 
 * The first call has the right parameters order, so we get the expected result
 * In the second call we get we pass the parameters order in the wrong way so we get an unexpected result back
@@ -2461,114 +2461,114 @@ greeting(18, 'Marta'); // The user: 18 has Marta years!!!
 * This type of value allows us to store more than one value into a variable
 * We create an array literal in the following way:
 
-**Example:**
-```js
-['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
-```
+  **Example:**
+  ```js
+  ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
+  ```
 
 * In this example we have an array literal of names
 * We have an array of string values
 * The values look like people names
 * This array has 7 items
 
-**Example:**
-```js
-const people = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
+  **Example:**
+  ```js
+  const people = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
 
-// We can also write it in his way:
-const people = [
-  'nico', 
-  'pedro', 
-  'juan', 
-  'marta', 
-  'belen', 
-  'emilia', 
-  'xime'
-];
-```
+  // We can also write it in his way:
+  const people = [
+    'nico', 
+    'pedro', 
+    'juan', 
+    'marta', 
+    'belen', 
+    'emilia', 
+    'xime'
+  ];
+  ```
 
 * To assign an empty array we just assign the **[]** to a variable like this:
 
-**Example:**
-```js
-const people = [];
-```
+  **Example:**
+  ```js
+  const people = [];
+  ```
 
 * In JavaScript arrays can have mixed types of values
 
-**Example:**
-```js
-const data = [
-  'hello', 
-  42, 
-  false, 
-  null, 
-  function() { console.log('hi') }
-];
-```
+  **Example:**
+  ```js
+  const data = [
+    'hello', 
+    42, 
+    false, 
+    null, 
+    function() { console.log('hi') }
+  ];
+  ```
 
 * We can retrieve any array item using the item index
 * In JavaScript array index starts in 0
 * So the first array item index is 0
 
-**Example:**
-```js
-const people = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
+  **Example:**
+  ```js
+  const people = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
 
-people[0]; // this will return the value 'nico'
+  people[0]; // this will return the value 'nico'
 
-console.log(people[0]); // This will output nico that's the value we get from the array
+  console.log(people[0]); // This will output nico that's the value we get from the array
 
-const name = people[0];
+  const name = people[0];
 
-console.log(name);
-```
+  console.log(name);
+  ```
 
 * Also, we can get any array item increasing the index value
 
-**Example:**
-```js
-const data = [
-  'hi', 
-  42, 
-  false, 
-  null, 
-  function() { console.log('hi') }
-];
+  **Example:**
+  ```js
+  const data = [
+    'hi', 
+    42, 
+    false, 
+    null, 
+    function() { console.log('hi') }
+  ];
 
-const message     = data[0];
-const lifeMeaning = data[1];
-const single      = data[2];
-const nullValue   = data[3];
-const greeting    = data[4];
+  const message     = data[0];
+  const lifeMeaning = data[1];
+  const single      = data[2];
+  const nullValue   = data[3];
+  const greeting    = data[4];
 
-console.log(message);
-console.log(lifeMeaning);
-console.log('single?:', single);
-console.log(greeting);
+  console.log(message);
+  console.log(lifeMeaning);
+  console.log('single?:', single);
+  console.log(greeting);
 
-// Ready to have your mind blown?
-greeting(); // This will show hi on the console
-```
+  // Ready to have your mind blown?
+  greeting(); // This will show hi on the console
+  ```
 
 * In this example we see how to get different array items using different item index
 * We can store many different items in an array
 * The last example is kind of difficult so we'll see it again:
 
-**Example:**
-```js
-// The data array has only one item and it's an anonymus function
-const data = [ function() { console.log('hi') } ];
+  **Example:**
+  ```js
+  // The data array has only one item and it's an anonymus function
+  const data = [ function() { console.log('hi') } ];
 
-// We ge the first element from the data index
-const greeting = data[0]; 
+  // We ge the first element from the data index
+  const greeting = data[0]; 
 
-// this would be the same, is it easier to see it this way?
-const greeting = function() { console.log('hi') };
+  // this would be the same, is it easier to see it this way?
+  const greeting = function() { console.log('hi') };
 
-// In both cases we can call the greeting function
-greeting(); // hi
-```
+  // In both cases we can call the greeting function
+  greeting(); // hi
+  ```
 
 #### Practice
 [Exercise 117](./exercises/js/ex_117.md)
@@ -2579,63 +2579,63 @@ greeting(); // hi
 
 * Using index we can also assign new values to the array
 
-**Example:**
-```js
-const students = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
+  **Example:**
+  ```js
+  const students = ['nico', 'pedro', 'juan', 'marta', 'belen', 'emilia', 'xime'];
 
-students[0] = 'Pana'; // We replace nico by Pana
+  students[0] = 'Pana'; // We replace nico by Pana
 
-students[3] = 'Jorge'; // We replace marta by Jorge
+  students[3] = 'Jorge'; // We replace marta by Jorge
 
-console.log(students);
-// ['Pana', 'pedro', 'juan', 'Jorge', 'belen', 'emilia', 'xime']
-```
+  console.log(students);
+  // ['Pana', 'pedro', 'juan', 'Jorge', 'belen', 'emilia', 'xime']
+  ```
 
 * We have to be careful using indexes
 * If the array doesn't have assigned values in the given index it will create empty items
 
-**Example:**
-```js
-const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+  **Example:**
+  ```js
+  const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
 
-// We assign Paola as value in the 9th place (remember arrays start in 0 index)
-students[8] = 'Paola';
+  // We assign Paola as value in the 9th place (remember arrays start in 0 index)
+  students[8] = 'Paola';
 
-// As the original array only has 5 items it will create empty array items
-console.log(students);
-// [ 'nico', 'pedro', 'marta', 'belen', 'emilia', , , , 'Paola' ]
-```
+  // As the original array only has 5 items it will create empty array items
+  console.log(students);
+  // [ 'nico', 'pedro', 'marta', 'belen', 'emilia', , , , 'Paola' ]
+  ```
 
 * JavaScript has dynamic memory so it's already reserving the spaces
 
-**Example:**
-```js
-const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+  **Example:**
+  ```js
+  const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
 
-// We assing a value to an index that it doesn't exists
-students[8] = 'Paola';
+  // We assing a value to an index that it doesn't exists
+  students[8] = 'Paola';
 
-// We add more values to the empty items
-students[5] = 'Lucas';
-students[6] = 'Lucy';
-students[7] = 'Andy';
+  // We add more values to the empty items
+  students[5] = 'Lucas';
+  students[6] = 'Lucy';
+  students[7] = 'Andy';
 
-// We see that all items have a student name
-console.log(students);
-/*
-[ 
-  'nico',
-  'pedro',
-  'marta',
-  'belen',
-  'emilia',
-      'Lucas',
-      'Lucy',
-      'Andy',
-  'Paola' 
-]
-*/
-```
+  // We see that all items have a student name
+  console.log(students);
+  /*
+  [ 
+    'nico',
+    'pedro',
+    'marta',
+    'belen',
+    'emilia',
+        'Lucas',
+        'Lucy',
+        'Andy',
+    'Paola' 
+  ]
+  */
+  ```
 * In this example we don't leave any empty array items
 
 #### Practice
@@ -2652,35 +2652,35 @@ console.log(students);
 * The **length** property of an object which `is an instance of type Array` sets or returns the number of elements in that array
 * This property works in the same way as the string length property
 
-**Example:**
-```js
-const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+  **Example:**
+  ```js
+  const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
 
-console.log(students.length); // 5
-```
+  console.log(students.length); // 5
+  ```
 
 * We can use this property to get the last item from an array
 * Array index in JavaScript starts in 0
 * The length property will return the number of elements
 * To get the last element index we can subtract one from the array lenght
 
-**Example:**
-```js
-const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
-const studentCount = students.length;
-const studentsLastIndex = studentCount - 1;
+  **Example:**
+  ```js
+  const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+  const studentCount = students.length;
+  const studentsLastIndex = studentCount - 1;
 
-console.log(students[studentsLastIndex]); // emilia
-```
+  console.log(students[studentsLastIndex]); // emilia
+  ```
 
 * We can do in a different way:
 
-**Example:**
-```js
-const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+  **Example:**
+  ```js
+  const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
 
-console.log(students[ students.length - 1 ]); // emilia
-```
+  console.log(students[ students.length - 1 ]); // emilia
+  ```
 
 * In this example we use the students array to get the length
 * Then we subtract one from the students array length
@@ -2700,23 +2700,23 @@ console.log(students[ students.length - 1 ]); // emilia
 * This method returns the new length of the array
 * [MDN array push doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 
-**Example:**
-```js
-const animals = ['dog', 'duck', 'cow'];
-let animalCount = animals.push('cat');
+  **Example:**
+  ```js
+  const animals = ['dog', 'duck', 'cow'];
+  let animalCount = animals.push('cat');
 
-console.log(animals);
-// [ 'dog', 'duck', 'cow', 'cat' ]
+  console.log(animals);
+  // [ 'dog', 'duck', 'cow', 'cat' ]
 
-console.log(animalCount); // 4
+  console.log(animalCount); // 4
 
-animalCount = animals.push('elephant', 'dolphin');
+  animalCount = animals.push('elephant', 'dolphin');
 
-console.log(animals);
-// [ 'dog', 'duck', 'cow', 'cat', 'elephant', 'dolphin' ];
+  console.log(animals);
+  // [ 'dog', 'duck', 'cow', 'cat', 'elephant', 'dolphin' ];
 
-console.log(animalCount); // 6
-```
+  console.log(animalCount); // 6
+  ```
 
 * In this example we see how the **push** insert element at the array
 * Also, we get the length number as return value
@@ -2730,59 +2730,59 @@ console.log(animalCount); // 6
 * This method returns the new length of the array
 * [MDN array unshift](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
 
-**Example:**
-```js
-const animals = ['dog', 'duck', 'cow'];
-let animalCount = animals.unshift('cat');
+  **Example:**
+  ```js
+  const animals = ['dog', 'duck', 'cow'];
+  let animalCount = animals.unshift('cat');
 
-console.log(animals); 
-// [ 'cat', 'dog', 'duck', 'cow' ]
+  console.log(animals); 
+  // [ 'cat', 'dog', 'duck', 'cow' ]
 
-console.log(animalCount); // 4
+  console.log(animalCount); // 4
 
-animalCount = animals.unshift('elephant', 'dolphin');
+  animalCount = animals.unshift('elephant', 'dolphin');
 
-console.log(animals);
-// [ 'elephant', 'dolphin', 'dog', 'duck', 'cow', 'cat' ];
+  console.log(animals);
+  // [ 'elephant', 'dolphin', 'dog', 'duck', 'cow', 'cat' ];
 
-console.log(animalCount); // 6
-```
+  console.log(animalCount); // 6
+  ```
 
 #### Shift
 * The **shift** method `removes the first element` from an array and `returns that removed element`
 * This method **changes the length** of the array
 * [MDN array shift doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
 
-**Example:**
-```js
-const animals = ['dog', 'duck', 'cow'];
-const dog = animals.shift();
+  **Example:**
+  ```js
+  const animals = ['dog', 'duck', 'cow'];
+  const dog = animals.shift();
 
-console.log(animals);
-// ['duck', 'cow']
+  console.log(animals);
+  // ['duck', 'cow']
 
-console.log(animals.length); // 2
+  console.log(animals.length); // 2
 
-const duck = animals.shift();
+  const duck = animals.shift();
 
-console.log(animals);
-// ['cow']
+  console.log(animals);
+  // ['cow']
 
-console.log(animals.length);
-// 1
+  console.log(animals.length);
+  // 1
 
-const cow = animals.shift();
+  const cow = animals.shift();
 
-console.log(animals);
-// []
+  console.log(animals);
+  // []
 
-console.log(animals.length);
-// 0
+  console.log(animals.length);
+  // 0
 
-console.log(dog); // dog
-console.log(duck); // duck
-console.log(cow); // cow
-```
+  console.log(dog); // dog
+  console.log(duck); // duck
+  console.log(cow); // cow
+  ```
 
 * Using the **shift** we can remove the first array element and get it as returned value
 * The length array property changes as it has less elements
@@ -2792,37 +2792,37 @@ console.log(cow); // cow
 * This method changes the length of the array
 * [MDN array pop doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
 
-**Example:**
-```js
-const animals = ['dog', 'duck', 'cow'];
-const cow = animals.pop();
+  **Example:**
+  ```js
+  const animals = ['dog', 'duck', 'cow'];
+  const cow = animals.pop();
 
-console.log(animals);
-// ['dog', 'duck']
+  console.log(animals);
+  // ['dog', 'duck']
 
-console.log(animals.length);
-// 2
+  console.log(animals.length);
+  // 2
 
-const duck = animals.pop();
+  const duck = animals.pop();
 
-console.log(animals);
-// ['dog']
+  console.log(animals);
+  // ['dog']
 
-console.log(animals.length);
-// 1
+  console.log(animals.length);
+  // 1
 
-const dog = animals.pop();
+  const dog = animals.pop();
 
-console.log(animals);
-// []
+  console.log(animals);
+  // []
 
-console.log(animals.length);
-// 0
+  console.log(animals.length);
+  // 0
 
-console.log(cow); // cow
-console.log(duck); // duck
-console.log(dog); // dog
-```
+  console.log(cow); // cow
+  console.log(duck); // duck
+  console.log(dog); // dog
+  ```
 
 * We can see that some of the array methods works in the same way
 * They might change the length property
@@ -2838,14 +2838,14 @@ console.log(dog); // dog
 * The time and space complexity of the sort cannot be guaranteed as it is implementation dependent
 * [MDN array sort doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
-**Example:**
-```js
-const numbers = [1, 4, 2, 5, 3, 8, 9];
-const sortedNumbers = numbers.sort();
+  **Example:**
+  ```js
+  const numbers = [1, 4, 2, 5, 3, 8, 9];
+  const sortedNumbers = numbers.sort();
 
-console.log(sortedNumbers);
-// [ 1, 2, 3, 4, 5, 8, 9 ]
-```
+  console.log(sortedNumbers);
+  // [ 1, 2, 3, 4, 5, 8, 9 ]
+  ```
 
 * This method accepts a function as parameter to be executed to change the way it will sort the elements
 
@@ -2854,14 +2854,14 @@ console.log(sortedNumbers);
 * The first array element becomes the last, and the last array element becomes the first
 * [MDN array reverse doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 
-**Example:**
-```js
-let numbers = [1, 4, 2, 5, 3, 8, 9];
-const reversedNumbers = numbers.reverse();
+  **Example:**
+  ```js
+  let numbers = [1, 4, 2, 5, 3, 8, 9];
+  const reversedNumbers = numbers.reverse();
 
-console.log(reversedNumbers);
-// [ 9, 8, 3, 5, 2, 4, 1 ]
-```
+  console.log(reversedNumbers);
+  // [ 9, 8, 3, 5, 2, 4, 1 ]
+  ```
 
 ### Concat & join
 
@@ -2870,20 +2870,20 @@ console.log(reversedNumbers);
 * This method accepts a string value to join by
 * [MDN array join doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 
-**Example:**
-```js
-const numbers = [1, 4, 2, 5, 3, 8, 9];
+  **Example:**
+  ```js
+  const numbers = [1, 4, 2, 5, 3, 8, 9];
 
-const joinedNumbersByDash = numbers.join(' - ');
+  const joinedNumbersByDash = numbers.join(' - ');
 
-console.log(joinedNumbersByDash);
-// 1 - 4 - 2 - 5 - 3 - 8 - 9
+  console.log(joinedNumbersByDash);
+  // 1 - 4 - 2 - 5 - 3 - 8 - 9
 
-const joinedNumbersByComma = numbers.join(', ');
+  const joinedNumbersByComma = numbers.join(', ');
 
-console.log(joinedNumbersByComma);
-// 1, 4, 2, 5, 3, 8, 9
-```
+  console.log(joinedNumbersByComma);
+  // 1, 4, 2, 5, 3, 8, 9
+  ```
 
 * We can choose any string to join array items
 
@@ -2892,49 +2892,49 @@ console.log(joinedNumbersByComma);
 * This method does not change the existing arrays, but instead returns a new array
 * [MDN array concat doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
 
-**Example:**
-```js
-const animals = ['dog', 'cow', 'cat'];
-const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
-const animalsAndMutants = animals.concat(mutantes);
+  **Example:**
+  ```js
+  const animals = ['dog', 'cow', 'cat'];
+  const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
+  const animalsAndMutants = animals.concat(mutantes);
 
-console.log(animalsAndMutants);
-/*
-[ 
-  'dog',
-  'cow',
-  'cat',
-  'Professor X',
-  'Cyclops',
-  'Beast',
-  'Jean Grey'
-]
-*/
-```
+  console.log(animalsAndMutants);
+  /*
+  [ 
+    'dog',
+    'cow',
+    'cat',
+    'Professor X',
+    'Cyclops',
+    'Beast',
+    'Jean Grey'
+  ]
+  */
+  ```
 
 ### IndexOf
 * The **indexOf** method `returns the first index at which a given element can be found` in the array
 * This method returns -1 if the element is not present
 * [MDN array indexOf doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 
-**Example:**
-```js
-const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
+  **Example:**
+  ```js
+  const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
 
-mutants.indexOf('Beast'); // 2
+  mutants.indexOf('Beast'); // 2
 
-if (mutants.indexOf('Beast') > -1) {
-  console.log('Beast is X-Men team member');
-}
+  if (mutants.indexOf('Beast') > -1) {
+    console.log('Beast is X-Men team member');
+  }
 
-mutants.indexOf('Logan'); // -1
+  mutants.indexOf('Logan'); // -1
 
-if (mutants.indexOf('Logan') > -1) {
-  console.log('Logan is X-Men team member');
-} else {
-  console.log('Logan is on his own');
-}
-```
+  if (mutants.indexOf('Logan') > -1) {
+    console.log('Logan is X-Men team member');
+  } else {
+    console.log('Logan is on his own');
+  }
+  ```
 
 * In the first example we get 2 as return value when asking to know if the value Beast is in the mutants array
 * Then the if condition is true and we show the message
@@ -2945,13 +2945,13 @@ if (mutants.indexOf('Logan') > -1) {
 * The **toString** method returns a string representing the specified array and its elements
 * [MDN array toString doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString)
 
-**Example:**
-```js
-const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
+  **Example:**
+  ```js
+  const mutants = ['Professor X', 'Cyclops', 'Beast', 'Jean Grey'];
 
-console.log(mutants.toString());
-// 'Professor X', 'Cyclops', 'Beast', 'Jean Grey'
-```
+  console.log(mutants.toString());
+  // 'Professor X', 'Cyclops', 'Beast', 'Jean Grey'
+  ```
 * It's like calling `mutants.join(',');`
 
 #### Practice
@@ -2978,14 +2978,14 @@ console.log(mutants.toString());
 ### ForEach
 * The **forEach** method executes a provided function once for each array element
 
-**Example:**
-```js
-const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
+  **Example:**
+  ```js
+  const students = ['nico', 'pedro',  'marta', 'belen', 'emilia'];
 
-students.forEach(function(student) {
-  console.log(student);
-});
-```
+  students.forEach(function(student) {
+    console.log(student);
+  });
+  ```
 
 * In this example we use the forEach array method to iterate over each element of the students array
 * We pass a function as parameter
@@ -2993,38 +2993,38 @@ students.forEach(function(student) {
 * We can use any parameter name
 * Only remember that this parameter is each array item
 
-**Example:**
-```js
-const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+  **Example:**
+  ```js
+  const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
 
-pets.forEach(function(petName) {
-  console.log(petName);
-});
-```
+  pets.forEach(function(petName) {
+    console.log(petName);
+  });
+  ```
 
 * In this example we iterate each pets item
 * The function parameter name is petName as we can name it the way we want
 * We can add a second parameter to the function to know the item index
 
-**Example:**
-```js
-const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+  **Example:**
+  ```js
+  const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
 
-pets.forEach(function(pet, index) {
-  console.log('index', index); 
-  console.log(pet);
-});
-/*
-  index 0
-  Amelia
-  index 1
-  Ciro
-  index 2
-  Ulises
-  index 3
-  Carlos
-*/
-```
+  pets.forEach(function(pet, index) {
+    console.log('index', index); 
+    console.log(pet);
+  });
+  /*
+    index 0
+    Amelia
+    index 1
+    Ciro
+    index 2
+    Ulises
+    index 3
+    Carlos
+  */
+  ```
 
 * In this example we can see how the index parameter changes value on each iteration 
 * [MDN array forEach doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
@@ -3037,17 +3037,17 @@ pets.forEach(function(pet, index) {
 ### Map
 * The **map** method `creates a new array with the results of calling a provided function on every element` in the calling array
 
-**Example:**
-```js
-const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
+  **Example:**
+  ```js
+  const pets = ['Amelia', 'Ciro', 'Ulises', 'Carlos'];
 
-const petsNameInUpperCase = pets.map(function(pet) {
-  return pet.toUpperCase();
-});
+  const petsNameInUpperCase = pets.map(function(pet) {
+    return pet.toUpperCase();
+  });
 
-console.log(petsNameInUpperCase) // [ 'AMELIA', 'CIRO', 'ULISES', 'CARLOS' ] new array with all upper cases value
-console.log(pets) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] the pets array hastn't been modified 
-```
+  console.log(petsNameInUpperCase) // [ 'AMELIA', 'CIRO', 'ULISES', 'CARLOS' ] new array with all upper cases value
+  console.log(pets) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] the pets array hastn't been modified 
+  ```
 
 * In this example we see how to iterate over each pets item
 * On each iteration the function is going to be executed and we can return a value
@@ -3067,17 +3067,17 @@ console.log(pets) // ['Amelia', 'Ciro', 'Ulises', 'Carlos'] the pets array hastn
 * The iterated item will be part of the returned array only if the functions return a true value
 * If the function returns false then the item doesn't get added to the return array
 
-**Example:**
-```js
-const greades = [1, 2, 3, 4, 10, 5];
+  **Example:**
+  ```js
+  const greades = [1, 2, 3, 4, 10, 5];
 
-const goodGreades = grades.filter(function(grade) {
-  return grade === 10;
-});
+  const goodGreades = grades.filter(function(grade) {
+    return grade === 10;
+  });
 
-console.log(goodGreades); // [10] array with only one item
-console.log(greades); // [1, 2, 3, 4, 10, 5] origina array 
-```
+  console.log(goodGreades); // [10] array with only one item
+  console.log(greades); // [1, 2, 3, 4, 10, 5] origina array 
+  ```
 
 #### Practice
 [Exercise 139](./exercises/js/ex_139.md)
@@ -3090,15 +3090,15 @@ console.log(greades); // [1, 2, 3, 4, 10, 5] origina array
   * The first param is the **accumulator**
   * The second value is the **currentValue**
 
-**Example:**
-```js
-const numbers = [1, 2, 3, 4, 10, 5];
-const result = numbers.reduce(function(accumulator, currentValue) {
-  return accumulator + currentValue;
-});
+  **Example:**
+  ```js
+  const numbers = [1, 2, 3, 4, 10, 5];
+  const result = numbers.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
 
-console.log(result); // 25 We get only one value as final result
-```
+  console.log(result); // 25 We get only one value as final result
+  ```
 
 * [MDN array reduce doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 
@@ -3114,11 +3114,11 @@ console.log(result); // 25 We get only one value as final result
 * To define an object we use curly braces **{}**
 * Objects allows us to define more complex values in a easier way
 
-**Example:**
-```js
-{} // literal object 
-const myObject = {}; // object assigned to a variable
-```
+  **Example:**
+  ```js
+  {} // literal object 
+  const myObject = {}; // object assigned to a variable
+  ```
 
 #### Practice
 [Exercise 143](./exercises/js/ex_143.md)
@@ -3130,28 +3130,28 @@ const myObject = {}; // object assigned to a variable
 * Properties are separated using comas
 * Properties can be of any type of value
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-};
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  };
 
-console.log(person);
-```
+  console.log(person);
+  ```
 
 * We can access an object property using the object name, dot and the property name
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-};
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  };
 
-console.log(person.name);
-console.log(person.age);
-```
+  console.log(person.name);
+  console.log(person.age);
+  ```
 
 #### Practice
 [Exercise 144](./exercises/js/ex_144.md)
@@ -3161,54 +3161,54 @@ console.log(person.age);
 
 * We can access a property that doesn't exist on the object and get undefined as value
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-};
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  };
 
-console.log(person.married); // undefined
-```
+  console.log(person.married); // undefined
+  ```
 
 * Changing a property value can be done the same way that you would do it for a variable
 * To access the property that will receive the value you need to still use the object name, dot and the property name
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-};
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  };
 
-person.name = 'Martin';
-person.age = 20;
+  person.name = 'Martin';
+  person.age = 20;
 
-console.log(person);
-// { name: 'Martín', age: 20 }
-```
+  console.log(person);
+  // { name: 'Martín', age: 20 }
+  ```
 
 * The object properties are variables too so we can assign or get their value
 * Object properties in JavaScript are dynamic
 * This means that if we assign a value to an object property that hasn't been defined it will create it
 * We need to make sure we get the variable name wright
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-};
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  };
 
-console.log(person.married); // undefined
+  console.log(person.married); // undefined
 
-person.married = true;
+  person.married = true;
 
-console.log(person);
-// { name: 'Nico', age: 38, married: true }
+  console.log(person);
+  // { name: 'Nico', age: 38, married: true }
 
-console.log(person.married); // true
-```
+  console.log(person.married); // true
+  ```
 
 #### Practice
 [Exercise 148](./exercises/js/ex_148.md)
@@ -3219,43 +3219,43 @@ console.log(person.married); // true
 * JavaScript objects have methods
 * In this language an object method is a property with a function as value
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  greet: function() {
-    console.log('Hi, how are you?');
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    greet: function() {
+      console.log('Hi, how are you?');
+    }
   }
-}
-```
+  ```
 
 * In this example we define the person object and we assign two properties
   * name: it's just a string value
   * greet: has a function assigned as value
 * To call a function without the object we do it the following way:
 
-**Example:**
-```js
-const greet = function() {
-  console.log('Hi, how are you?');
-}
+  **Example:**
+  ```js
+  const greet = function() {
+    console.log('Hi, how are you?');
+  }
 
-greet(); // Hi, how are you?
-```
+  greet(); // Hi, how are you?
+  ```
 
 * To call a object method we do it in a pretty similar way:
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  greet: function() {
-    console.log('Hi, how are you?');
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    greet: function() {
+      console.log('Hi, how are you?');
+    }
   }
-}
 
-person.greet(); // Hi, how are you?
-```
+  person.greet(); // Hi, how are you?
+  ```
 
 * `person.greet` without the parenthesis will return the function definition
 * `person.greet()` will execute the greet method (it will execute the function code)
@@ -3271,33 +3271,33 @@ person.greet(); // Hi, how are you?
 * Now we can create our own
 * A method can also accept parameters:
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  greet: function(name) {
-    console.log(`Hi ${name}, how are you?`);
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    greet: function(name) {
+      console.log(`Hi ${name}, how are you?`);
+    }
   }
-}
 
-person.greet('Marta'); // Hi Marta, how are you?
-```
+  person.greet('Marta'); // Hi Marta, how are you?
+  ```
 
 * In this example we see that calling a method is similar to calling just a function
 * And this is because we are actually calling a function that's an object property
 * In the methods body we can access the current object properties using the **this** reserved word
 * For now we can think about **this** being the object
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  greet: function(name) {
-    console.log(`Hi my name is: ${this.name}`);
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    greet: function(name) {
+      console.log(`Hi my name is: ${this.name}`);
+    }
   }
-}
-person.greet(); // Hi my name is: Nico
-```
+  person.greet(); // Hi my name is: Nico
+  ```
 
 #### Practice
 [Exercise 146](./exercises/js/ex_146.md)
@@ -3320,66 +3320,66 @@ person.greet(); // Hi my name is: Nico
 
 * Inside an object method we can update an object property value
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38,
-  greet: function(name) {
-    console.log(`Hi my name is: ${this.name}`);
-  },
-  birthday: function() {
-    this.age++;
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38,
+    greet: function(name) {
+      console.log(`Hi my name is: ${this.name}`);
+    },
+    birthday: function() {
+      this.age++;
+    }
   }
-}
 
-console.log(person.age) // 38
-person.birthday(); 
-console.log(person.age) // 39
-```
+  console.log(person.age) // 38
+  person.birthday(); 
+  console.log(person.age) // 39
+  ```
 
 ### Object dynamic properties
 * In some cases we need to access an object property using a string value
 * Using **[]** and a string value with the property name we can access the object property value
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38,
-  greet: function(name) {
-    console.log(`Hi my name is: ${this.name}`);
-  },
-  birthday: function() {
-    this.age++;
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38,
+    greet: function(name) {
+      console.log(`Hi my name is: ${this.name}`);
+    },
+    birthday: function() {
+      this.age++;
+    }
   }
-}
 
-console.log(person['name']);  // Nico
-console.log(person['age']);  // 38
-```
+  console.log(person['name']);  // Nico
+  console.log(person['age']);  // 38
+  ```
 
 * We can also use variables to do the same
 
-**Example:**
-```js
-const name = 'name';
-const age = 'age';
+  **Example:**
+  ```js
+  const name = 'name';
+  const age = 'age';
 
-const person = {
-  name: 'Nico',
-  age: 38,
-  greet: function(name) {
-    console.log(`Hi my name is: ${this.name}`);
-  },
-  birthday: function() {
-    this.age++;
+  const person = {
+    name: 'Nico',
+    age: 38,
+    greet: function(name) {
+      console.log(`Hi my name is: ${this.name}`);
+    },
+    birthday: function() {
+      this.age++;
+    }
   }
-}
 
-console.log(person[name]);  // Nico
-console.log(person[age]);  // 38
-```
+  console.log(person[name]);  // Nico
+  console.log(person[age]);  // 38
+  ```
 
 #### Practice
 [Exercise 159](./exercises/js/ex_159.md)
@@ -3391,54 +3391,54 @@ console.log(person[age]);  // 38
 * To call this method we need to use the `Object` value
 * This method accepts an object as parameter
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-}
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  }
 
-const properties = Object.keys(person);
+  const properties = Object.keys(person);
 
-console.log(properties); // [ 'name', 'age' ]
-```
+  console.log(properties); // [ 'name', 'age' ]
+  ```
 
 * In this previous example we see that calling the Object keys method and passing the person object we get an array back with the properties names on it
 * We can combine this using dynamic properties
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-}
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  }
 
-const properties = Object.keys(person);
+  const properties = Object.keys(person);
 
-console.log(properties); // [ 'name', 'age' ]
+  console.log(properties); // [ 'name', 'age' ]
 
-const name = properties[0];
+  const name = properties[0];
 
-console.log(person[name]);
-```
+  console.log(person[name]);
+  ```
 
 * In this example we get the first item from the properties array (name)
 * Then we use the name variable with the name value on it to access the object person name property
 * This is getting gooooood, now we can use all the things that we learned together
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-}
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  }
 
-const properties = Object.keys(person);
+  const properties = Object.keys(person);
 
-properties.forEach(function(property) {
-  console.log(person[property]);
-});
-```
+  properties.forEach(function(property) {
+    console.log(person[property]);
+  });
+  ```
 
 * We get the properties from the person object using Object keys method
 * As we get an array back we can use forEach to iterate over the properties names
@@ -3446,29 +3446,29 @@ properties.forEach(function(property) {
 * We use the property variable (with the property value on it) to access dynamically to the person object properties
 * If we add more properties to the object we can still access them using dynamic properties and iterating over the properties array
 
-**Example:**
-```js
-const person = {
-  name: 'Nico',
-  age: 38
-}
+  **Example:**
+  ```js
+  const person = {
+    name: 'Nico',
+    age: 38
+  }
 
-person.phone = 202123231;
-person.street = '234 My Street';
+  person.phone = 202123231;
+  person.street = '234 My Street';
 
-const properties = Object.keys(person);
+  const properties = Object.keys(person);
 
-properties.forEach(function(property) {
-  console.log(person[property]);
-});
+  properties.forEach(function(property) {
+    console.log(person[property]);
+  });
 
-/*
-  Nico
-  38
-  202123231
-  234 My Street
-*/
-```
+  /*
+    Nico
+    38
+    202123231
+    234 My Street
+  */
+  ```
 
 * [MDN Object key doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
@@ -3484,38 +3484,38 @@ properties.forEach(function(property) {
 * We can't be sure that the previous statement has executed
 * Using callbacks we can handle our async calls
 
-**Example:**
-```js
-function doSomething(functionAsAParameter) {
-  console.log('do something');
-  functionAsAParameter();
-}
+  **Example:**
+  ```js
+  function doSomething(functionAsAParameter) {
+    console.log('do something');
+    functionAsAParameter();
+  }
 
-const done = function() {
-  console.log('done');
-}
+  const done = function() {
+    console.log('done');
+  }
 
-doSomething(done);
-```
+  doSomething(done);
+  ```
 
 * In this example we defined a doSomething function that accepts a function as parameter
 * The doSomething function shows a message as output and then executes the function that got as parameter
 * As the functionAsAParameter is the done function it will get executed 
 * An easier way to see this functionality can be in the following way:
 
-**Example:**
-```js
-const done = function() {
-  console.log('done');
-}
+  **Example:**
+  ```js
+  const done = function() {
+    console.log('done');
+  }
 
-function doSomething() {
-  console.log('do something');
-  done();
-}
+  function doSomething() {
+    console.log('do something');
+    done();
+  }
 
-doSomething();
-```
+  doSomething();
+  ```
 
 * We get a similar functionality doing it this way but in the first example we use a function as parameter
 * In this example we just use a global function to do something similar to what we can do with a callback
@@ -3523,82 +3523,82 @@ doSomething();
   * A callback is just a function passed as parameter to other function
   * The function that received the function as parameter will call it
 
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-function add(n, callback) {
-  n++;
-  callback(n);
-}
+  function add(n, callback) {
+    n++;
+    callback(n);
+  }
 
-add(number, function(result) {
-  console.log(result); // 1
-});
+  add(number, function(result) {
+    console.log(result); // 1
+  });
 
-console.log(number); // 0
-```
+  console.log(number); // 0
+  ```
 
 * A callback function can get one or many parameters
 * In this example we call the add function passing a number and a function as parameter
 * After incrementing the number in one will call the callback function
 * Other way to understand this code:
 
-**Example:**
-```js
-let number = 0;
+  **Example:**
+  ```js
+  let number = 0;
 
-let finalResult = function(result) {
-  console.log(result);
-}
+  let finalResult = function(result) {
+    console.log(result);
+  }
 
-function add(n, callback) {
-  n++;
-  callback(n);
-}
+  function add(n, callback) {
+    n++;
+    callback(n);
+  }
 
-add(number, finalResult);
+  add(number, finalResult);
 
-console.log(number); // 0
-```
+  console.log(number); // 0
+  ```
 
 * We have been using this concept without knowing it to iterate over arrays:
 
-**Example:**
-```js
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  **Example:**
+  ```js
+  let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// Callback
-numbers.forEach(function(number) {
-  console.log(number);
-})
+  // Callback
+  numbers.forEach(function(number) {
+    console.log(number);
+  })
 
-// Callback
-let evenNumbers = numbers.filter(function(number) {
-  return number % 2 === 0;
-});
+  // Callback
+  let evenNumbers = numbers.filter(function(number) {
+    return number % 2 === 0;
+  });
 
-// Callback
-let result = numbers.reduce(function(result, number) {
-  return result + number;
-});
+  // Callback
+  let result = numbers.reduce(function(result, number) {
+    return result + number;
+  });
 
-// Callback
-let mappedNumbers = numbers.map(function(number) {
-  return number + 10;
-});
-```
+  // Callback
+  let mappedNumbers = numbers.map(function(number) {
+    return number + 10;
+  });
+  ```
 
 * We can see that the filter, reduce and map functions receive a function as parameter
 * This functions will get called internally
 * If you know jQuery you will find this code familiar
 
-**Example:**
-```js
-$( function() { 
-  console.log( "ready!" ); 
-} );
-```
+  **Example:**
+  ```js
+  $( function() { 
+    console.log( "ready!" ); 
+  } );
+  ```
 
 * In this case jQuery uses $() as a function and we can pass a function that will get executed once the DOM is loaded
 * We pass the $() a function, so we're passing a callback
@@ -3613,37 +3613,37 @@ $( function() {
 ## Hoisting
 * JavaScript (ES5) is an extremely flexible language and will happily `allow you to declare a variable almost anywhere`
 
-```js
-console.log(name);
-var name = "nico";
-```
+  ```js
+  console.log(name);
+  var name = "nico";
+  ```
 
-![Hoisting](resources/images/js/hoisting.png)
+  ![Hoisting](resources/images/js/hoisting.png)
 
 * Also, we can do this with functions
 
-**Example:**
-```js
-greet(); // Hi i'm showing a message without being defined
+  **Example:**
+  ```js
+  greet(); // Hi i'm showing a message without being defined
 
-function greet() {
-  console.log('Hi i\'m showing a message without being defined :)');
-}
-```
+  function greet() {
+    console.log('Hi i\'m showing a message without being defined :)');
+  }
+  ```
 * This practice it's called **Hoisting**
 * Remember that JavaScript was created to be an easy language to use and learn
 * When running the code JavaScript will go through the code 2 times
 * First time it will check the variables and functions definition and move them to the higher part of the code
 * Second time will execute the rest of the code
 
-**Example:**
-```js
-function greet() {
-  console.log('Hi i\'m showing a message without being defined :)');
-}
+  **Example:**
+  ```js
+  function greet() {
+    console.log('Hi i\'m showing a message without being defined :)');
+  }
 
-greet(); // Hi i'm showing a message without being defined
-```
+  greet(); // Hi i'm showing a message without being defined
+  ```
 
 * This is a better way to write our code
 * First we declare the function and then we use it
@@ -3652,13 +3652,13 @@ greet(); // Hi i'm showing a message without being defined
 * You can prevent this problem setting your code to the [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * Use `use strict` in the following way
 
-**Example:**
-```js
-'use strict';
+  **Example:**
+  ```js
+  'use strict';
 
-console.log(name);
-var name = "nico";
-```
+  console.log(name);
+  var name = "nico";
+  ```
 
 * [MDN Hoisting doc](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 * [Back to basics JavaScript hoisting](https://www.sitepoint.com/back-to-basics-javascript-hoisting)
@@ -3672,17 +3672,17 @@ var name = "nico";
 * In a simple way it's which variables I can access from different sections of the code
 * JavaScript has global variables that can be accessed from everywhere
 
-**Example:**
-```js
-var name = 'Pedro';
+  **Example:**
+  ```js
+  var name = 'Pedro';
 
-function showName() {
-  console.log(name);
-}
+  function showName() {
+    console.log(name);
+  }
 
-showName(); // Pedro
-console.log(name); // Pedro
-```
+  showName(); // Pedro
+  console.log(name); // Pedro
+  ```
 
 * In this example we defined the **name** variable as global
 * Since it's a global variable we can access it from any place
@@ -3692,57 +3692,57 @@ console.log(name); // Pedro
 * In this case it's much better to pass the variable as a parameter
 * Another bad example: as it's a global variable we can also change it's value too
 
-**Example:**
-```js
-var name = 'Pedro';
+  **Example:**
+  ```js
+  var name = 'Pedro';
 
-function showName() {
-  name = 'Marta';
-  console.log(name);
-}
+  function showName() {
+    name = 'Marta';
+    console.log(name);
+  }
 
-console.log(name); // Pedro
+  console.log(name); // Pedro
 
-showName();
-console.log(name); // Marta
-```
+  showName();
+  console.log(name); // Marta
+  ```
 
 * In this example we see how we can change the name value
 * This can affect or change our code workflow so it's better if we pass the value as a parameter and then return a new value if we need it
 * Local variables are the ones that we only can access from the same place they were defined
 
-**Example:**
-```js
-function showName() {
-  const name = 'Marta';
-  console.log(name);
-}
+  **Example:**
+  ```js
+  function showName() {
+    const name = 'Marta';
+    console.log(name);
+  }
 
-showName();
-console.log(name); // name is not defined
-```
+  showName();
+  console.log(name); // name is not defined
+  ```
 
 * In this example the **name** variable is defined as a local variable as it only can be accessed within the function showName
 * We can say that scope in JavaScript works from inner to outer bounds (it will make sense, I promise)
 * let and const have block element scope
 * var does not have block scope
 
-**Example:**
-```js
-{
-  var name = 'Marta';
+  **Example:**
+  ```js
+  {
+    var name = 'Marta';
+    console.log(name); // Marta
+  }
+
   console.log(name); // Marta
-}
 
-console.log(name); // Marta
+  {
+    let otherName = 'Pepe';
+    console.log(otherName); // Pepe
+  }
 
-{
-  let otherName = 'Pepe';
-  console.log(otherName); // Pepe
-}
-
-console.log(otherName); // otherName is not defined
-```
+  console.log(otherName); // otherName is not defined
+  ```
 
 * Using var won't give us block element scope, that's why we can access the **otherName** variable outside the { }
 * Using **let** or **const** changes this as they have block level scope
@@ -3751,110 +3751,110 @@ console.log(otherName); // otherName is not defined
 ### Functions inside functions
 * Functions can have other functions inside of them
 
-**Example:**
-```js
-function welcome() {
-  
-  function greeting() {
-    console.log('Hi Coco!!!');
+  **Example:**
+  ```js
+  function welcome() {
+    
+    function greeting() {
+      console.log('Hi Coco!!!');
+    }
+    
+    greeting();
   }
-  
-  greeting();
-}
 
-welcome(); // Hi Coco!!!
-greeting(); // greeting is not defined
-```
+  welcome(); // Hi Coco!!!
+  greeting(); // greeting is not defined
+  ```
 * Functions inside (children) another function are not accessible from outside the parent function
 * In this example we see that we can call the **welcome** function but not the **greeting** one as it is an inner function
 * The **greeting** is a local function and it can only be called from inside the **welcome** function
 
-**Example:**
-```js
-let name = 'Coco';
+  **Example:**
+  ```js
+  let name = 'Coco';
 
-function welcome() {
-  console.log(name);
-
-  function greet() {
+  function welcome() {
     console.log(name);
+
+    function greet() {
+      console.log(name);
+    }
+
+    greet();
   }
 
-  greet();
-}
+  welcome(); // Shows Coco twice
 
-welcome(); // Shows Coco twice
-
-console.log(name) // Coco
-```
+  console.log(name) // Coco
+  ```
 
 * As the **name** variable is global we can access it from anywhere even the **greet** function
 
-**Example:**
-```js
-let name = 'Coco';
+  **Example:**
+  ```js
+  let name = 'Coco';
 
-function welcome() {
-  let message = 'Hi ';
-  console.log(message);
-
-  function greet() {
+  function welcome() {
+    let message = 'Hi ';
     console.log(message);
+
+    function greet() {
+      console.log(message);
+    }
+
+    greet();
   }
 
-  greet();
-}
-
-welcome(); // Shows Hi twice
-console.log(name) // Coco
-console.log(message) // message is not defined
-```
+  welcome(); // Shows Hi twice
+  console.log(name) // Coco
+  console.log(message) // message is not defined
+  ```
 
 * The **message** variable is defined as local inside the **welcome** function
 * Following the pattern from inside out we can access the **message** variable from the **greet** function and from the **welcome** function body
 * Since **message** is a local variable we can't access it from outside the **welcome** function
 * We can think about child functions being able to access the parent scope
 
-**Example:**
-```js
-let name = 'Coco';
+  **Example:**
+  ```js
+  let name = 'Coco';
 
-function welcome() {
-  let greeting = 'Hi ';
+  function welcome() {
+    let greeting = 'Hi ';
 
-  function greet() {
-    let message = greeting + name;
-    console.log(message);
+    function greet() {
+      let message = greeting + name;
+      console.log(message);
+    }
+
+    greet();
+    console.log(message); // message is not defined
   }
 
-  greet();
+  welcome(); // shows hi 2 times
+  console.log(name) // Coco
+  console.log(greeting) // greeting is not defined
   console.log(message); // message is not defined
-}
-
-welcome(); // shows hi 2 times
-console.log(name) // Coco
-console.log(greeting) // greeting is not defined
-console.log(message); // message is not defined
-```
+  ```
 
 * Inside the greet function we can access the greeting and name variables
 * We can't access message outside the greet function
 * This is why we can't access message from the welcome or global scope
 
-**Example:**
-```js
-function welcome(name) {
-  let message = 'welcome ';
-  
-  function greet(value) {
-    return message + ' ' + value;
+  **Example:**
+  ```js
+  function welcome(name) {
+    let message = 'welcome ';
+    
+    function greet(value) {
+      return message + ' ' + value;
+    }
+
+    return greet(name);
   }
 
-  return greet(name);
-}
-
-console.log(welcome('Coco')); // welcome Coco
-```
+  console.log(welcome('Coco')); // welcome Coco
+  ```
 
 * Child functions can even access their parent's parameters
 * This concept is known as **closures**
@@ -3871,29 +3871,29 @@ console.log(welcome('Coco')); // welcome Coco
 * This value will contain all the parameter values that have been passed to the function
 * arguments has a **length** property that returns a number with the amount of parameters that were passed to the function
 
-**Example:**
-```js
-function greet() {
-  console.log(arguments); // { '0': 'Jarry', '1': 'Coco', '2': 'Nico' }
-  console.log(arguments.length); // 3
-  console.log(arguments[0]); // 'Jarry'
-}
+  **Example:**
+  ```js
+  function greet() {
+    console.log(arguments); // { '0': 'Jarry', '1': 'Coco', '2': 'Nico' }
+    console.log(arguments.length); // 3
+    console.log(arguments[0]); // 'Jarry'
+  }
 
-greet('Jarry', 'Coco', 'Nico');
-```
+  greet('Jarry', 'Coco', 'Nico');
+  ```
 
 * As it's an Array-like object we can access the first item using index 0
 
-**Example:**
-```js
-function greet() {
-  console.log(arguments[0]); // Jarry
-  console.log(arguments[1]); // Coco
-  console.log(arguments[2]); // Nico
-}
+  **Example:**
+  ```js
+  function greet() {
+    console.log(arguments[0]); // Jarry
+    console.log(arguments[1]); // Coco
+    console.log(arguments[2]); // Nico
+  }
 
-greet('Jarry', 'Coco', 'Nico');
-```
+  greet('Jarry', 'Coco', 'Nico');
+  ```
 
 * [MDN arguments doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 
@@ -3906,20 +3906,20 @@ greet('Jarry', 'Coco', 'Nico');
 * In JavaScript we can call a function inside that same function
 * It's really important when using recursion to add a way to break to avoid recursion for ever
 
-**Example:**
-```js
-function showNumber(number) {
-  
-  if (number <= 10) {
-    console.log(number)
-    number++;
-    showNumber(number);
+  **Example:**
+  ```js
+  function showNumber(number) {
+    
+    if (number <= 10) {
+      console.log(number)
+      number++;
+      showNumber(number);
+    }
+
   }
 
-}
-
-showNumber(0);
-```
+  showNumber(0);
+  ```
 
 * **showNumber** is a recursive function
 * If number is bigger than 10 the **showNumber** function stops calling itself
@@ -3932,42 +3932,42 @@ showNumber(0);
 * In JavaScript functions are a type of value
 * So... a function can return a function
 
-**Example:**
-```js
-function greet() {
-  
-  let otherFunction = function() {
-    console.log('I don\'t know you but this drives me crazzy!!!');
+  **Example:**
+  ```js
+  function greet() {
+    
+    let otherFunction = function() {
+      console.log('I don\'t know you but this drives me crazzy!!!');
+    }
+    
+    return otherFunction;
   }
-  
-  return otherFunction;
-}
 
-let myFunction = greet(); // Calling the greet function we get other function back
+  let myFunction = greet(); // Calling the greet function we get other function back
 
-console.log(typeof myFunction); // function
+  console.log(typeof myFunction); // function
 
-myFunction(); // Call the returned function and get "I don't know you but this drives me crazzy!!!" as output
-```
+  myFunction(); // Call the returned function and get "I don't know you but this drives me crazzy!!!" as output
+  ```
 
 * Using JavaScript scope we can do things like:
 
-**Example:**
-```js
-function add(number) {
-  
-  let addBothNumbers = function(otherNumber) {
-    return number + otherNumber;
+  **Example:**
+  ```js
+  function add(number) {
+    
+    let addBothNumbers = function(otherNumber) {
+      return number + otherNumber;
+    }
+    
+    return addBothNumbers;
   }
-  
-  return addBothNumbers;
-}
 
-const adding = add(10);
-const result = adding(20);
+  const adding = add(10);
+  const result = adding(20);
 
-console.log(result); // 30
-```
+  console.log(result); // 30
+  ```
 
 * In example we call the **add** function and pass 10 as parameter
 * The add function returns a function that's **addBothNumbers**
@@ -3995,10 +3995,13 @@ console.log(result); // 30
 * [ES6 in depth](https://hacks.mozilla.org/category/es6-in-depth)
 * [JS Books](https://jsbooks.revolunet.com/)
 
-# WELCOME TO JAVASCRIPT!!!
+## WELCOME TO JAVASCRIPT!!!
 
 ![joke](resources/images/js/joke1.jpg)
 
 ![joke](resources/images/js/joke2.jpg)
 
 ![joke](resources/images/js/joke3.jpg)
+
+## Let's Checkout Browser API
+* [<- CSS](css.md) - [Browser API ->](browserapi.md)
