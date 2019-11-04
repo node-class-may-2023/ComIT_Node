@@ -3211,6 +3211,10 @@ constantVariable = otherValue;
   ```
 
 #### Practice
+[Exercise 146](./exercises/js/ex_146.md)
+
+[Exercise 147](./exercises/js/ex_147.md)
+
 [Exercise 148](./exercises/js/ex_148.md)
 
 [Exercise 149](./exercises/js/ex_149.md)
@@ -3300,9 +3304,6 @@ constantVariable = otherValue;
   ```
 
 #### Practice
-[Exercise 146](./exercises/js/ex_146.md)
-
-[Exercise 147](./exercises/js/ex_147.md)
 
 [Exercise 152](./exercises/js/ex_152.md)
 

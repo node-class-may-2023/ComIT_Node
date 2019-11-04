@@ -8,41 +8,41 @@
 * We're going to install http-server locally
 * If you have Node.js installed execute the following command from your terminal
 
-```bash
-npm install http-server -g
-```
+  ```bash
+  npm install http-server -g
+  ```
 
 * We create an HTML file like always
 
-![image](resources/images/browser/1.png)
+  ![image](resources/images/browser/1.png)
 
 * Usually you just double click the file
 
-![image](resources/images/browser/2.png)
+  ![image](resources/images/browser/2.png)
 
 * And open it on a browser
 
-![image](resources/images/browser/3.png)
+  ![image](resources/images/browser/3.png)
 
 * Now we are going to use the Visual Studio Code terminal
 * Go to the main bar and select View > Open View
 
-![image](resources/images/browser/4.png)
+  ![image](resources/images/browser/4.png)
 
 * You will see a couple of options
 
-![image](resources/images/browser/5.png)
+  ![image](resources/images/browser/5.png)
 
 * Select the Terminal
 
-![image](resources/images/browser/6.png)
+  ![image](resources/images/browser/6.png)
 
 * You will see the terminal view inside VSC
 * If you opened the folder VSC already knows that we're using this path
 * Type:
-```bash
-http-server
-```
+  ```bash
+  http-server
+  ```
 * A new web server will start
 * This server will serve the folder files
 * So our site root is going to be our folder that we are using
@@ -50,21 +50,21 @@ http-server
 * By default this server will run on port `8080`
 * The port might change if you already have that port listening with other app
 
-![image](resources/images/browser/7.png)
+  ![image](resources/images/browser/7.png)
 
 * Now open the browser again
 * Navigate to `http://localhost:8080`
 * At this moment you must see your index.html document
 
-![image](resources/images/browser/8.png)
+  ![image](resources/images/browser/8.png)
 
 * Using http-server we have a local server running and we are able to simulate a real site
 * From now on use http-server or similar to create your sites
 * If you need to stop the server just press `CTRL + C`
 * You can open the terminal using the following shortcut
-```
-Ctrl+` 
-```
+  ```
+  Ctrl+` 
+  ```
 
 * [http-server site](https://www.npmjs.com/package/http-server)
 * [VSC keyboard shortcuts Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
@@ -85,30 +85,30 @@ Ctrl+`
 * The script tag and the way we load/execute our JavaScript can have some browser effects
 * For now just know that you can place it in both elements (head & body)
 
-**Example:**
-```html
-<head>
-  <script>
-    // You can add your JavaScript code here!
-    console.log('Welcome to the Browser again!!');
-  </script>
-</head>
-```
+  **Example:**
+  ```html
+  <head>
+    <script>
+      // You can add your JavaScript code here!
+      console.log('Welcome to the Browser again!!');
+    </script>
+  </head>
+  ```
 
-* Or
+  or
 
-**Example:**
-```html
-<body>
-  <h1>Hi</h1>
-  <p>Add the script tag</p>
-  
-  <script>
-    // You can add your JavaScript code here!
-    console.log('Welcome to the Browser again!!');
-  </script>
-</body>
-```
+  **Example:**
+  ```html
+  <body>
+    <h1>Hi</h1>
+    <p>Add the script tag</p>
+    
+    <script>
+      // You can add your JavaScript code here!
+      console.log('Welcome to the Browser again!!');
+    </script>
+  </body>
+  ```
 
 #### Practice
 [Exercise 1](./exercises/browser/ex_1.md)
@@ -121,17 +121,17 @@ Ctrl+`
 **Example:**
 * HTML code:
 
-```html
-<head>
-  <script src="script.js"></script>
-</head>
-```
+  ```html
+  <head>
+    <script src="script.js"></script>
+  </head>
+  ```
 
 * Code inside the `script.js` file
-```js
-// archivo script.js
-console.log('Welcome to the browser');
-```
+  ```js
+  // archivo script.js
+  console.log('Welcome to the browser');
+  ```
 
 * When the browser finds a **script** tag will request the js file, download it and then execute it
 * While this happens the browser is blocked from being able to keep on rendering the document
@@ -139,20 +139,20 @@ console.log('Welcome to the browser');
 * By doing this we show the HTML content and then execute the script
 * Now the browsers supports `async` & `defer` attributes that allows us to tell the browser how it has to handle our script files
 
-**Example:**
-```html
-<head>
-  <script src="script.js" async></script>
-</head>
-```
-* Or
+  **Example:**
+  ```html
+  <head>
+    <script src="script.js" async></script>
+  </head>
+  ```
+  or
 
-**Example:**
-```html
-<head>
-  <script src="script.js" defer></script>
-</head>
-```
+  **Example:**
+  ```html
+  <head>
+    <script src="script.js" defer></script>
+  </head>
+  ```
 
 * These attributes tell the browser it's safe to continue parsing while the scripts are being downloaded
 * Scripts with the `async` attribute are executed asynchronously
@@ -175,28 +175,28 @@ console.log('Welcome to the browser');
 * The browsers have already configured a reference so we can call this methods without the window object
 * All this methods block the browser flow until they are resolved
 
-**Example:**
-```js
-// Methods call using windows object:
-window.alert();
-window.prompt();
-window.confirm();
+  **Example:**
+  ```js
+  // Methods call using windows object:
+  window.alert();
+  window.prompt();
+  window.confirm();
 
-// Using them as functions:
-alert();
-prompt();
-confirm();
-```
+  // Using them as functions:
+  alert();
+  prompt();
+  confirm();
+  ```
 
 ### Alert
 * The **Window.alert()** method displays an alert dialog with the optional specified content and an OK button
 * This method accepts a message parameter that will show to the user
 
-**Example:**
-```js
-window.alert('Hi I\'m using the browser');
-alert('How cool is that!!');
-```
+  **Example:**
+  ```js
+  window.alert('Hi I\'m using the browser');
+  alert('How cool is that!!');
+  ```
 
 * [MDN alert doc](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
 
@@ -210,11 +210,11 @@ alert('How cool is that!!');
 * Second parameter is optional and is the input default value
 * This method returns a `string` value
 
-**Example:**
-```js
-let name = window.prompt('Please input your name');
-let superHero = prompt('Please input your favourite superheroe name');
-```
+  **Example:**
+  ```js
+  let name = window.prompt('Please input your name');
+  let superHero = prompt('Please input your favourite superheroe name');
+  ```
 
 * [MDN prompt doc](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
 
@@ -230,11 +230,11 @@ let superHero = prompt('Please input your favourite superheroe name');
 * If the user press Ok we get `true` back
 * Else we get `false` back
 
-**Example:**
-```js
-let isAdult = window.confirm('Are you older than 17 years?');
-confirm('Are you older than 17 years?');
-```
+  **Example:**
+  ```js
+  let isAdult = window.confirm('Are you older than 17 years?');
+  confirm('Are you older than 17 years?');
+  ```
 
 * [MDN confirm doc](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 
@@ -252,19 +252,19 @@ confirm('Are you older than 17 years?');
 * Document and Window interface have a location
 * We can access it using `document.location` and `window.location`
 
-**Example:**
-```js
-// We can use it as a window or document property
-window.location
-document.location
+  **Example:**
+  ```js
+  // We can use it as a window or document property
+  window.location
+  document.location
 
-// Just using location
-location
-```
+  // Just using location
+  location
+  ```
 
 * Take a look at a URL structure
 
-![URL](./resources/images/browser/url.jpg)
+  ![URL](./resources/images/browser/url.jpg)
 
 * The location interface has properties that represent the different parts of a URL
   * **href**
@@ -276,35 +276,35 @@ location
   * **search**
   * **hash**
 
-**Example:**
-```js
-location.href;
-location.protocol;
-location.host;
-location.hostname;
-location.port;
-location.pathname;
-location.search;
-location.hash;
-```
+  **Example:**
+  ```js
+  location.href;
+  location.protocol;
+  location.host;
+  location.hostname;
+  location.port;
+  location.pathname;
+  location.search;
+  location.hash;
+  ```
 
 * You can try it too, go to a site page like facebook or a news site and log each property using console.log and see the result
 * For example consider the following URL:
-```
-https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
-```
+  ```
+  https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
+  ```
 
-**Example:**
-```js
-console.log(location.href);     // https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
-console.log(location.protocol); // https:
-console.log(location.host);     // leaderpost.com
-console.log(location.hostname); // leaderpost.com
-console.log(location.port);     // empty string as it doesn't have a port number
-console.log(location.pathname); // /sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game
-console.log(location.search);   // empty string as we don't have a query string params (you can try this submiting a form using GET)
-console.log(location.hash);     // #go-riders
-```
+  **Example:**
+  ```js
+  console.log(location.href);     // https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
+  console.log(location.protocol); // https:
+  console.log(location.host);     // leaderpost.com
+  console.log(location.hostname); // leaderpost.com
+  console.log(location.port);     // empty string as it doesn't have a port number
+  console.log(location.pathname); // /sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game
+  console.log(location.search);   // empty string as we don't have a query string params (you can try this submiting a form using GET)
+  console.log(location.hash);     // #go-riders
+  ```
 
 * Host and Hostname look the same as this url is using the default port number
 * Host retrieves the full host value (with port)
@@ -313,14 +313,14 @@ console.log(location.hash);     // #go-riders
 * Also, we can set a location value using the href property
 * As we change the document/window location the browser will navigate to the new location
 
-**Example:**
-```js
-location.href = 'http://google.com';
+  **Example:**
+  ```js
+  location.href = 'http://google.com';
 
-// or
+  // or
 
-location = 'http://google.com';
-```
+  location = 'http://google.com';
+  ```
 
 * [MDN Location doc](https://developer.mozilla.org/en-US/docs/Web/API/Location)
 
@@ -335,39 +335,39 @@ location = 'http://google.com';
 * This method accepts a function as first parameter that will be executed based on the delay that we configure `(callback)`
 * The second parameter is a number that represents the delay in milliseconds and by default is 0
 
-**Example:**
-```js
-const greet = function() {
-  console.log('Hi!!');
-}
+  **Example:**
+  ```js
+  const greet = function() {
+    console.log('Hi!!');
+  }
 
-setTimeout(greet, 5000);
-```
+  setTimeout(greet, 5000);
+  ```
 
 * In this example we set a new timeout that will execute the greet function after 5000 milliseconds
 * So the greet function will get executed once after 5 seconds
 * We can use an anonymous function too
 
-**Example:**
-```js
-setTimeout(function() {
-  console.log('Hi!!');
-}, 5000);
-```
+  **Example:**
+  ```js
+  setTimeout(function() {
+    console.log('Hi!!');
+  }, 5000);
+  ```
 
 * The setTimeout returns a numeric value that represents the timeout ID
 * Using the **clearTimeout** and the timeout ID we can stop the function from being executed
 * The **clearTimeout** accepts a numeric parameter that represents the timeout ID
 
-**Example:**
-```js
-var idTimeOut = setTimeout(function() {
-  console.log('Hi!!');
-}, 5000);
+  **Example:**
+  ```js
+  var idTimeOut = setTimeout(function() {
+    console.log('Hi!!');
+  }, 5000);
 
-// halt the timer execution before the delay happens
-clearTimeout(idTimeOut)
-```
+  // halt the timer execution before the delay happens
+  clearTimeout(idTimeOut)
+  ```
 
 * In this example we configure the setTimeout function to execute the function that will greet in 5 seconds
 * We get an ID back that we store in the **idTimeOut** variable
@@ -376,14 +376,14 @@ clearTimeout(idTimeOut)
 * We can pass all the parameters that we want to the setTimeout function after we configure the callback and delay ones
 * Then in the setTimeout function we get the params in the same order that we send them
 
-**Example:**
-```js
-const greet = function(name, nickname) {
-  console.log(`Hi ${name} ${nickname}`);
-}
+  **Example:**
+  ```js
+  const greet = function(name, nickname) {
+    console.log(`Hi ${name} ${nickname}`);
+  }
 
-setTimeout(greet, 5000, 'Marta', 'Martita');
-```
+  setTimeout(greet, 5000, 'Marta', 'Martita');
+  ```
 
 * In this example we configure the greet function as callback and a 5 second delay
 * Then we pass 2 other values as params (marta and martita)
@@ -405,40 +405,40 @@ setTimeout(greet, 5000, 'Marta', 'Martita');
 * This methods accepts the function to be called as first parameter
 * The second parameter is a number that represents time in milliseconds (1 second -> 1000 milliseconds)
 
-**Example:**
-```js
-const greet = function() {
-  console.log('hi');
-}
+  **Example:**
+  ```js
+  const greet = function() {
+    console.log('hi');
+  }
 
-const id = setInterval(greet, 1000);
-```
+  const id = setInterval(greet, 1000);
+  ```
 
 * In this example the greet function is going to be called every 1 second
 * This interval is going to be executed until we stop it
 * Use the **clearInterval** function to stop the interval execution
 
-**Example:**
-```js
-const greet = function() {
-  console.log('hi');
-}
+  **Example:**
+  ```js
+  const greet = function() {
+    console.log('hi');
+  }
 
-const id = setInterval(greet, 1000);
+  const id = setInterval(greet, 1000);
 
-clearInterval(id);
-```
+  clearInterval(id);
+  ```
 
 * We can also pass params to this function in the same we did with `setTimeout`
 
-**Example:**
-```js
-const greet = function(name, nickname) {
-  console.log(`hi ${name} ${nickname}`);
-}
+  **Example:**
+  ```js
+  const greet = function(name, nickname) {
+    console.log(`hi ${name} ${nickname}`);
+  }
 
-setInterval(saludar, 1000, 'Marta', 'Martita');
-```
+  setInterval(saludar, 1000, 'Marta', 'Martita');
+  ```
 
 * [MDN setInterval doc](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
 
@@ -452,7 +452,7 @@ setInterval(saludar, 1000, 'Marta', 'Martita');
 ### HTML element structure
 * This is a good time to remember the HTML element tag structure
 
-![element](./resources/images/browser/anatomy-of-an-html-element.png)
+  ![element](./resources/images/browser/anatomy-of-an-html-element.png)
 
 * Element structure:
   * **Opening tag:** We define the beginning of a new element
@@ -475,7 +475,7 @@ setInterval(saludar, 1000, 'Marta', 'Martita');
   * **attribute:** represents a node/element attributes
   * **nodeList:** It's a node array and we can access the items using indexes
 
-![DOM](./resources/images/browser/dom.png)
+  ![DOM](./resources/images/browser/dom.png)
 
 * [MDN Document Object Model doc](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 * [MDN DOM Introduction guide](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
@@ -486,13 +486,13 @@ setInterval(saludar, 1000, 'Marta', 'Martita');
 * This event is fired when the resource has loaded
 * Subscribing to this event we can make sure that the document or elements are loaded before we reference them from our JavaScript code
 
-**example:**
-```js
-window.onload = function() { 
-	// This code gets executed after loading the document
-  console.log('Document loaded');
-}
-```
+  **example:**
+  ```js
+  window.onload = function() { 
+    // This code gets executed after loading the document
+    console.log('Document loaded');
+  }
+  ```
 
 #### Practice
 [Exercise 14](./exercises/browser/ex_14.md)
@@ -511,15 +511,15 @@ window.onload = function() {
 
 **Example:**
 * HTML
-```html
-<div id="main">Hi I'm an HTML element</div>
-```
+  ```html
+  <div id="main">Hi I'm an HTML element</div>
+  ```
 * JS
-```js
-const mainElement = document.getElementById('main');
+  ```js
+  const mainElement = document.getElementById('main');
 
-console.log(mainElement); // we can see the DOM representation of this element
-```
+  console.log(mainElement); // we can see the DOM representation of this element
+  ```
 
 * In this example we see how to use the method getElementById
 * The HTML has the attribute id with the value main
@@ -538,60 +538,60 @@ console.log(mainElement); // we can see the DOM representation of this element
 
 **Example:**
 * HTML
-```html
-<div>Hi I'm div number 1</div>
-<div>Hi I'm div number 2</div>
-<span>Hi I'm span number 1</span>
-<span>Hi I'm span number 2</span>
-```
+  ```html
+  <div>Hi I'm div number 1</div>
+  <div>Hi I'm div number 2</div>
+  <span>Hi I'm span number 1</span>
+  <span>Hi I'm span number 2</span>
+  ```
 * JS
-```js
-const div = document.querySelector('div');
-const span = document.querySelector('span');
+  ```js
+  const div = document.querySelector('div');
+  const span = document.querySelector('span');
 
-console.log(div); // <div>Hi I'm div number 1</div>
-console.log(span); // <span>Hi I'm span number 1</span>
-```
+  console.log(div); // <div>Hi I'm div number 1</div>
+  console.log(span); // <span>Hi I'm span number 1</span>
+  ```
 
 * In this example we use querySelector to get one element using the CSS element name selector (div & span)
 * The same way we can select elements using other CSS selectors
 
 **Example:**
 * HTML
-```html
-<div class="red">Hi I'm div number 1</div>
-<div>Hi I'm div number 2</div>
-<span>Hi I'm span number 1</span>
-<span class="red">Hi I'm span number 2</span>
-```
+  ```html
+  <div class="red">Hi I'm div number 1</div>
+  <div>Hi I'm div number 2</div>
+  <span>Hi I'm span number 1</span>
+  <span class="red">Hi I'm span number 2</span>
+  ```
 * JS
-```js
-const div = document.querySelector('div.red');
-const span = document.querySelector('span.red');
+  ```js
+  const div = document.querySelector('div.red');
+  const span = document.querySelector('span.red');
 
-console.log(div); // <div class="red">Hi I'm div number 1</div>
-console.log(span); // <span class="red">Hi I'm span number 2</span>
-```
+  console.log(div); // <div class="red">Hi I'm div number 1</div>
+  console.log(span); // <span class="red">Hi I'm span number 2</span>
+  ```
 
 * [MDN querySelector doc](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 
 * querySelectorAll
 **Example:**
 * HTML
-```html
-<div>Hi I'm div number 1</div>
-<div>Hi I'm div number 2</div>
-<span>Hi I'm span number 1</span>
-<span>Hi I'm span number 2</span>
-```
+  ```html
+  <div>Hi I'm div number 1</div>
+  <div>Hi I'm div number 2</div>
+  <span>Hi I'm span number 1</span>
+  <span>Hi I'm span number 2</span>
+  ```
 * JS
-```js
-const divs = document.querySelectorAll('div');
-const spans = document.querySelectorAll('span');
+  ```js
+  const divs = document.querySelectorAll('div');
+  const spans = document.querySelectorAll('span');
 
-console.log(divs); // NodeList(2) [div, div]
-console.log(spans); // NodeList(2) [span, span]
-```
+  console.log(divs); // NodeList(2) [div, div]
+  console.log(spans); // NodeList(2) [span, span]
+  ```
 * In this example use querySelectorAll to get all div elements and the all span ones
 * This method returns a NodeList with 2 elements in each case as we have 2 of each elements type
 * Also, we can use other CSS selectors
@@ -599,17 +599,17 @@ console.log(spans); // NodeList(2) [span, span]
 * querySelectorAll
 **Example:**
 * HTML
-```html
-<div class="red">Hi I'm div number 1</div>
-<div>Hi I'm div number 2</div>
-<span>Hi I'm span number 1</span>
-<span class="red">Hi I'm span number 2</span>
-```
+  ```html
+  <div class="red">Hi I'm div number 1</div>
+  <div>Hi I'm div number 2</div>
+  <span>Hi I'm span number 1</span>
+  <span class="red">Hi I'm span number 2</span>
+  ```
 * JS
-```js
-const redElements = document.querySelectorAll('.red');
-console.log(redElements); // NodeList(2) [div.red, span.red]
-```
+  ```js
+  const redElements = document.querySelectorAll('.red');
+  console.log(redElements); // NodeList(2) [div.red, span.red]
+  ```
 
 * In this case we use the class selector (.red) to get all elements that have the class="red" attribute
 * Using this method we get a node collection back with 2 elements but in this case we have a div and span as both of them have the class="red" attribute and value
@@ -629,22 +629,22 @@ console.log(redElements); // NodeList(2) [div.red, span.red]
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red">Text in red</p>
-```
+  ```html
+  <p id="main" class="red">Text in red</p>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p')
+  ```js
+  const element = document.querySelector('p')
 
-console.log(element.attributes); // NamedNodeMap {0: id, 1: class, id: id, class: class, length: 2}
+  console.log(element.attributes); // NamedNodeMap {0: id, 1: class, id: id, class: class, length: 2}
 
-console.log(element.attributes[0].name);  // id
-console.log(element.attributes[0].value); // main
+  console.log(element.attributes[0].name);  // id
+  console.log(element.attributes[0].value); // main
 
-console.log(element.attributes[1].name);  // class
-console.log(element.attributes[1].value); // red
-```
+  console.log(element.attributes[1].name);  // class
+  console.log(element.attributes[1].value); // red
+  ```
 
 * An easier way to get an element attribute value is using `getAttribute`
 * This method accepts a string parameter with the element attribute name
@@ -653,35 +653,35 @@ console.log(element.attributes[1].value); // red
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red">Text in red</p>
-```
+  ```html
+  <p id="main" class="red">Text in red</p>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p');
-const id = element.getAttribute('id');
-const classValue = element.getAttribute('class');
+  ```js
+  const element = document.querySelector('p');
+  const id = element.getAttribute('id');
+  const classValue = element.getAttribute('class');
 
-console.log(id);          // main
-console.log(classValue);  // red
-```
+  console.log(id);          // main
+  console.log(classValue);  // red
+  ```
 
 * Also, we can use the attribute name as element property to access the attribute value
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red">Text in red</p>
-```
+  ```html
+  <p id="main" class="red">Text in red</p>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p');
-const id = element.id; // id is an element property as the html element has the attribute
+  ```js
+  const element = document.querySelector('p');
+  const id = element.id; // id is an element property as the html element has the attribute
 
-console.log(id); // main
-```
+  console.log(id); // main
+  ```
 
 * In the previous example we don't access the class attribute as is a especial property
 * As `class` is a JavaScript reserved word we can't use it
@@ -690,18 +690,18 @@ console.log(id); // main
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red">Text in red</p>
-```
+  ```html
+  <p id="main" class="red">Text in red</p>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p');
-const className = element.className;
+  ```js
+  const element = document.querySelector('p');
+  const className = element.className;
 
-console.log(className); // red
-console.log(element.getAttribute('class')); // red
-```
+  console.log(className); // red
+  console.log(element.getAttribute('class')); // red
+  ```
 
 #### Practice
 [Exercise 16](./exercises/browser/ex_16.md)
@@ -712,19 +712,19 @@ console.log(element.getAttribute('class')); // red
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red bold">Bold text in red</p>
-```
+  ```html
+  <p id="main" class="red bold">Bold text in red</p>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p');
+  ```js
+  const element = document.querySelector('p');
 
-console.log(element.classList);     // DOMTokenList(2) ["red", "bold", value: "red bold"]
+  console.log(element.classList);     // DOMTokenList(2) ["red", "bold", value: "red bold"]
 
-console.log(element.classList[0]);  // red
-console.log(element.classList[1]);  // bold
-```
+  console.log(element.classList[0]);  // red
+  console.log(element.classList[1]);  // bold
+  ```
 
 * classList has the following methods so we can interact with it
     * **add:** add specified class values. If these classes already exist in attribute of the element, then they are ignored
@@ -736,25 +736,25 @@ console.log(element.classList[1]);  // bold
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red bold">Bold text in red</p>
-```
+  ```html
+  <p id="main" class="red bold">Bold text in red</p>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p');
-element.classList.add('hide'); // we add the hide class to the p element
+  ```js
+  const element = document.querySelector('p');
+  element.classList.add('hide'); // we add the hide class to the p element
 
-element.classList.toggle('hide'); // as the element has the hide class it will remove it, otherwise it will add it
+  element.classList.toggle('hide'); // as the element has the hide class it will remove it, otherwise it will add it
 
-element.classList.remove('bold'); // we remove the bold class
+  element.classList.remove('bold'); // we remove the bold class
 
-element.classList.item(0); // using 0 based index we can get any class using the class index position
+  element.classList.item(0); // using 0 based index we can get any class using the class index position
 
-element.classList.contains('red'); // in this case it will return true as the element has the red class
+  element.classList.contains('red'); // in this case it will return true as the element has the red class
 
-element.classList.replace('red', 'green'); // we change red for green class
-```
+  element.classList.replace('red', 'green'); // we change red for green class
+  ```
 
 * classList is great to interact with an element's classes
 * [MDN classList doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
@@ -769,15 +769,15 @@ element.classList.replace('red', 'green'); // we change red for green class
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red">Text in red</p>
-```
+  ```html
+  <p id="main" class="red">Text in red</p>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p');
-console.log(element.hasAttribute('class')); // true
-```
+  ```js
+  const element = document.querySelector('p');
+  console.log(element.hasAttribute('class')); // true
+  ```
 
 * In this example we test if the element has the class attribute
 * We get a true value as the element has the class attribute
@@ -792,20 +792,20 @@ console.log(element.hasAttribute('class')); // true
 
 **Example:**
 * HTML
-```html
-<p id="main" class="red">Element with attributes</p>
-<h2>Element without attributes</h2>
-```
+  ```html
+  <p id="main" class="red">Element with attributes</p>
+  <h2>Element without attributes</h2>
+  ```
 
 * JS
-```js
-const element = document.querySelector('p');
-const title = document.querySelector('h2');
+  ```js
+  const element = document.querySelector('p');
+  const title = document.querySelector('h2');
 
-console.log(element.hasAttributes():); // true
+  console.log(element.hasAttributes():); // true
 
-console.log(title.hasAttributes():); // false
-```
+  console.log(title.hasAttributes():); // false
+  ```
 
 * [MDN hasAttributes doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributes)
 
@@ -816,22 +816,22 @@ console.log(title.hasAttributes():); // false
 
 **Example:**
 * HTML
-```html
-<h2>Element without attributes</h2>
-```
+  ```html
+  <h2>Element without attributes</h2>
+  ```
 
 * JS
-```js
-const title = document.querySelector('h2');
+  ```js
+  const title = document.querySelector('h2');
 
-console.log(title.hasAttributes()); // false
+  console.log(title.hasAttributes()); // false
 
-title.setAttribute('id', 'main');
+  title.setAttribute('id', 'main');
 
-console.log(title.hasAttributes()); // true
+  console.log(title.hasAttributes()); // true
 
-console.log(title.getAttribute('id')); // main
-```
+  console.log(title.getAttribute('id')); // main
+  ```
 
 * In this example we have an h2 element without attributes
 * Then we set an id attribute with the main value (id="main") using `setAttribute` method
@@ -846,20 +846,20 @@ console.log(title.getAttribute('id')); // main
 
 **Example:**
 * HTML
-```html
-<h2 id="main">Element with id attribute</h2>
-```
+  ```html
+  <h2 id="main">Element with id attribute</h2>
+  ```
 
 * JS
-```js
-const title = document.querySelector('h2');
+  ```js
+  const title = document.querySelector('h2');
 
-console.log(title.hasAttributes()); // true
+  console.log(title.hasAttributes()); // true
 
-title.removeAttribute('id');
+  title.removeAttribute('id');
 
-console.log(title.hasAttributes()); // false
-```
+  console.log(title.hasAttributes()); // false
+  ```
 
 * In this example we get an element that has the id attribute and remove it using `removeAttribute('id')`
 
@@ -874,19 +874,19 @@ console.log(title.hasAttributes()); // false
 
 **Example:**
 * HTML
-```html
-<div>
-  <p>Child element</p>
-</div>
-```
+  ```html
+  <div>
+    <p>Child element</p>
+  </div>
+  ```
 
 * JS
-```js
-const parragraph = document.querySelector('p');
-const parent = parragraph.parentElement;
+  ```js
+  const parragraph = document.querySelector('p');
+  const parent = parragraph.parentElement;
 
-console.log(parent); // <div></div>
-```
+  console.log(parent); // <div></div>
+  ```
 
 * Also, we can retrieve the element's child elements using the `children` property
 * An element that inside other element is consider a child element
@@ -894,45 +894,45 @@ console.log(parent); // <div></div>
 
 **Example:**
 * HTML
-```html
-<div>
-  <p>Child Element</p>
-  <p>Child Element</p>
-  <p>Child Element</p>
-  <p>Child Element</p>
-</div>
-```
+  ```html
+  <div>
+    <p>Child Element</p>
+    <p>Child Element</p>
+    <p>Child Element</p>
+    <p>Child Element</p>
+  </div>
+  ```
 
 * JS
-```js
-const div = document.querySelector('div');
-const children = div.children;
+  ```js
+  const div = document.querySelector('div');
+  const children = div.children;
 
-console.log(children); // HTMLCollection(4) [p, p, p, p]
-```
+  console.log(children); // HTMLCollection(4) [p, p, p, p]
+  ```
 
 * As we get a collection back we can use indexes to access the children in different positions
 
 **Example:**
 * HTML
-```html
-<div>
-  <p>Child Element</p>
-  <p>Child Element</p>
-  <p>Child Element</p>
-  <p>Child Element</p>
-</div>
-```
+  ```html
+  <div>
+    <p>Child Element</p>
+    <p>Child Element</p>
+    <p>Child Element</p>
+    <p>Child Element</p>
+  </div>
+  ```
 
 * JS
-```js
-const div = document.querySelector('div');
-const children = div.children;
-const firstChildElement = children[0];
+  ```js
+  const div = document.querySelector('div');
+  const children = div.children;
+  const firstChildElement = children[0];
 
-console.log(firstChildElement); // <p>Child Element</p>
-console.log(children.item(0));
-```
+  console.log(firstChildElement); // <p>Child Element</p>
+  console.log(children.item(0));
+  ```
 
 * In this example we use index 0 to get the first element
 * Also, HTMLCollection has an `item` method that retrieves an element in a specific position
@@ -951,11 +951,11 @@ console.log(children.item(0));
 
 **Example:**
 * HTML
-```html
-  <p>Paragraph element</p>
-  <p>Paragraph element</p>
-  <p>Paragraph element</p>
-```
+  ```html
+    <p>Paragraph element</p>
+    <p>Paragraph element</p>
+    <p>Paragraph element</p>
+  ```
 
 * In this example we can see that all 3 elements are at the same level so they are siblings
 * We can access the previous element using **previousElementSibling** property
@@ -963,20 +963,20 @@ console.log(children.item(0));
 
 **Example:**
 * HTML
-```html
-<p>Paragraph element 1</p>
-<p>Paragraph element 2</p>
-<p>Paragraph element 3</p>
-```
+  ```html
+  <p>Paragraph element 1</p>
+  <p>Paragraph element 2</p>
+  <p>Paragraph element 3</p>
+  ```
 
 * JS
-```js
-const paragraphs = document.querySelectorAll('p');
-const middleElement = paragraphs[1];
+  ```js
+  const paragraphs = document.querySelectorAll('p');
+  const middleElement = paragraphs[1];
 
-console.log(middleElement.previousElementSibling);  // <p>Paragraph element 1</p>
-console.log(middleElement.nextElementSibling);      // <p>Paragraph element 3</p>
-```
+  console.log(middleElement.previousElementSibling);  // <p>Paragraph element 1</p>
+  console.log(middleElement.nextElementSibling);      // <p>Paragraph element 3</p>
+  ```
 
 * [MDN previousElementSibling doc](https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling)
 * [MDN nextElementSibling doc](https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling)
@@ -991,20 +991,20 @@ console.log(middleElement.nextElementSibling);      // <p>Paragraph element 3</p
 
 **Example:**
 * HTML
-```html
-<p>This is a great text to get using JavaScript</p>
-```
+  ```html
+  <p>This is a great text to get using JavaScript</p>
+  ```
 
 * JS
-```js
-const paragraph = document.querySelector('p');
+  ```js
+  const paragraph = document.querySelector('p');
 
-console.log(paragraph.innerText); // This is a great text to get using JavaScript
+  console.log(paragraph.innerText); // This is a great text to get using JavaScript
 
-paragraph.innerText = 'JavaScript in browsers is amazing'; 
+  paragraph.innerText = 'JavaScript in browsers is amazing'; 
 
-console.log(paragraph.innerText); // JavaScript in browsers is amazing
-```
+  console.log(paragraph.innerText); // JavaScript in browsers is amazing
+  ```
 
 * In this example we get the content text from the paragraph using `paragraph.innerText`
 * Also, use the property to set a new value `paragraph.innerText = 'JavaScript in browsers is amazing';`
@@ -1013,20 +1013,20 @@ console.log(paragraph.innerText); // JavaScript in browsers is amazing
 
 **Example:**
 * HTML
-```html
-<p>This is a great text to get using JavaScript</p>
-```
+  ```html
+  <p>This is a great text to get using JavaScript</p>
+  ```
 
 * JS
-```js
-const paragraph = document.querySelector('p');
+  ```js
+  const paragraph = document.querySelector('p');
 
-console.log(paragraph.textContent); // This is a great text to get using JavaScript
+  console.log(paragraph.textContent); // This is a great text to get using JavaScript
 
-paragraph.textContent = 'JavaScript in browsers is amazing'; 
+  paragraph.textContent = 'JavaScript in browsers is amazing'; 
 
-console.log(paragraph.textContent); // JavaScript in browsers is amazing
-```
+  console.log(paragraph.textContent); // JavaScript in browsers is amazing
+  ```
 
 * Both `innerText` & `textContent` allows us to get and set an element content
 * They have some differences between them in some special cases and you can read about them on the [MDN textContent doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
@@ -1040,20 +1040,20 @@ console.log(paragraph.textContent); // JavaScript in browsers is amazing
 
 **Example:**
 * HTML
-```html
-<p>This is just a paragraph text</p>
-```
+  ```html
+  <p>This is just a paragraph text</p>
+  ```
 
 * JS
-```js
-const paragraph = document.querySelector('p');
+  ```js
+  const paragraph = document.querySelector('p');
 
-console.log(paragraph.innerHTML); // This is just a paragraph text
+  console.log(paragraph.innerHTML); // This is just a paragraph text
 
-paragraph.innerHTML = '<span>Ohhhhhhhhhhhhhhhh what are we doing??</span>';
+  paragraph.innerHTML = '<span>Ohhhhhhhhhhhhhhhh what are we doing??</span>';
 
-console.log(paragraph.innerHTML); // <span>Ohhhhhhhhhhhhhhhh what are we doing??</span>
-```
+  console.log(paragraph.innerHTML); // <span>Ohhhhhhhhhhhhhhhh what are we doing??</span>
+  ```
 
 * Using innerHTML we can retrieve the element content whether it's text or other HTML content
 * We can set the innerHTML property using a string
@@ -1062,10 +1062,10 @@ console.log(paragraph.innerHTML); // <span>Ohhhhhhhhhhhhhhhh what are we doing??
 
 **Example:**
 * JS
-```js
-const paragraph = document.querySelector('p');
-paragraph.innerHTML = '';
-```
+  ```js
+  const paragraph = document.querySelector('p');
+  paragraph.innerHTML = '';
+  ```
 
 * This is an easy way to remove all the element content
 * As this property might have some security issues we can use it on some cases
@@ -1085,20 +1085,20 @@ paragraph.innerHTML = '';
 
 **Example:**
 * HTML
-```html
-  <p>This element doesn't have any styles</p>
-```
+  ```html
+    <p>This element doesn't have any styles</p>
+  ```
 
 * JS
-```js
-let element = document.querySelector('p');
+  ```js
+  let element = document.querySelector('p');
 
-element.style; // we get an empty object ({}) back
+  element.style; // we get an empty object ({}) back
 
-element.style.color = 'red'; // As style is an object we can set properties, in this case we set the color to red
+  element.style.color = 'red'; // As style is an object we can set properties, in this case we set the color to red
 
-element.style.fontWeight = 'bold'; // using font-weight we can set the font to bold, as it's JavaScript the property name is fontWeight
-```
+  element.style.fontWeight = 'bold'; // using font-weight we can set the font to bold, as it's JavaScript the property name is fontWeight
+  ```
 
 * Using the style property and CSS property names written in JavaScript form we can style our components using JS
 
@@ -1119,9 +1119,9 @@ element.style.fontWeight = 'bold'; // using font-weight we can set the font to b
 * `createElement` accepts a string as parameter with the HTML element name (a, div, span, li, ul, etc)
 
 **Example:**
-```js
-var paragraph = document.createElement('p');
-```
+  ```js
+  var paragraph = document.createElement('p');
+  ```
 
 * In this example we call the createElement method and pass 'p' as parameter (tagName)
 * Then we assign the element reference to the paragraph variable
@@ -1136,16 +1136,16 @@ var paragraph = document.createElement('p');
 
 **Example:**
 * JS
-```js
-const paragraph = document.createElement('p');
-const div = document.createElement('div');
+  ```js
+  const paragraph = document.createElement('p');
+  const div = document.createElement('div');
 
-paragraph.innerText = 'Adding some text as content';
+  paragraph.innerText = 'Adding some text as content';
 
-div.appendChild(paragraph);
+  div.appendChild(paragraph);
 
-document.body.appendChild(div);
-```
+  document.body.appendChild(div);
+  ```
 
 * In this example we define 2 variables (paragraph & div) and assign one new element to each one (p & div)
 * Then we change the paragraph content and assign the text: Adding some text as content
@@ -1153,33 +1153,33 @@ document.body.appendChild(div);
 * At the end we append the div into the document body
 * At the end our DOM looks like this:
 
-```html
-<div>
-  <p>Adding some text as content</p>
-</div>
-```
+  ```html
+  <div>
+    <p>Adding some text as content</p>
+  </div>
+  ```
 
 * [MDN appendChild doc](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
 * For example we can add some attributes and styles!
 
 **Example:**
 * JS
-```js
-const paragraph = document.createElement('p');
-const div = document.createElement('div');
+  ```js
+  const paragraph = document.createElement('p');
+  const div = document.createElement('div');
 
-paragraph.innerText = 'Adding some text as content';
-paragraph.setAttribute('id', 'my-paragraph');
+  paragraph.innerText = 'Adding some text as content';
+  paragraph.setAttribute('id', 'my-paragraph');
 
-paragraph.style.fontWeight = 'bold';
-paragraph.style.color = 'green';
+  paragraph.style.fontWeight = 'bold';
+  paragraph.style.color = 'green';
 
-div.border = '1px solid gray';
+  div.border = '1px solid gray';
 
-div.appendChild(paragraph);
+  div.appendChild(paragraph);
 
-document.body.appendChild(div);
-```
+  document.body.appendChild(div);
+  ```
 
 * [MDN appendChild doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
 
@@ -1199,21 +1199,21 @@ document.body.appendChild(div);
 
 **Example:**
 * HTML
-```html
-<div>
-  <p>First paragraph</p>
-  <p>Second paragraph</p>
-  <p>Third paragraph</p>
-</div>
-```
+  ```html
+  <div>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+  </div>
+  ```
 
 * JS
-```js
-var div = document.querySelector('div');
-var firstParagraph = div.children.item(0); 
+  ```js
+  var div = document.querySelector('div');
+  var firstParagraph = div.children.item(0); 
 
-div.removeChild(firstParagraph);
-```
+  div.removeChild(firstParagraph);
+  ```
 
 * In this example we select the div element
 * Then we get the first children
@@ -1222,20 +1222,20 @@ div.removeChild(firstParagraph);
 
 **Example:**
 * HTML
-```html
-<div>
-  <p>First paragraph</p>
-  <p>Second paragraph</p>
-  <p>Third paragraph</p>
-</div>
-```
+  ```html
+  <div>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+  </div>
+  ```
 
 * JS
-```js
-var div = document.querySelector('div');
+  ```js
+  var div = document.querySelector('div');
 
-div.innerHTML = '';
-```
+  div.innerHTML = '';
+  ```
 
 * [MDN removeChild doc](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
 
@@ -1263,32 +1263,32 @@ div.innerHTML = '';
 
 **Example:**
 * HTML
-```html
-<button>Click Me!!!</button>
-```
+  ```html
+  <button>Click Me!!!</button>
+  ```
 
 * JS
-```js
-const button = document.querySelector('button');
+  ```js
+  const button = document.querySelector('button');
 
-button.onclick = function() {
-  // Code that will be executed once button gets clicked
-  console.log('Oh, I been clicked');
-}
-```
+  button.onclick = function() {
+    // Code that will be executed once button gets clicked
+    console.log('Oh, I been clicked');
+  }
+  ```
 
 * Also we could do something like:
 
 **Example:**
 * JS
-```js
-const button = document.querySelector('button');
-const handleClickEvent = function() {
-  console.log('Oh, I been clicked');
-}
+  ```js
+  const button = document.querySelector('button');
+  const handleClickEvent = function() {
+    console.log('Oh, I been clicked');
+  }
 
-button.onclick = handleClickEvent;
-```
+  button.onclick = handleClickEvent;
+  ```
 
 * [MDN Events doc](https://developer.mozilla.org/en-US/docs/Web/Events)
 * [MDN onclick doc](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick)
@@ -1305,40 +1305,40 @@ button.onclick = handleClickEvent;
 
 **Example:**
 * HTML
-```html
-<button>Click Me!!!</button>
-```
+  ```html
+  <button>Click Me!!!</button>
+  ```
 
 * JS
-```js
-const button = document.querySelector('button');
+  ```js
+  const button = document.querySelector('button');
 
-button.addEventListener('click', function() {
-  // code that will be executed once the button is clicked
-  console.log('Oh, I been clicked');
-});
-```
+  button.addEventListener('click', function() {
+    // code that will be executed once the button is clicked
+    console.log('Oh, I been clicked');
+  });
+  ```
 
 * In the event listener function we can use the reserved word **this** to reference the element that emited the event
 * In the previous example `this` will reference the button 
 
-**Example:**
-```js
-function clickHandler() {
-	console.log(this)		// this is the button that we clicked
-  this.style.backgroundColor = 'green';
-}
+  **Example:**
+  ```js
+  function clickHandler() {
+    console.log(this)		// this is the button that we clicked
+    this.style.backgroundColor = 'green';
+  }
 
-function dblclickHandler() {
-	this.style.backgroundColor = 'red';
-}
+  function dblclickHandler() {
+    this.style.backgroundColor = 'red';
+  }
 
-const button = document.querySelector('button');
+  const button = document.querySelector('button');
 
-button.addEventListener('click', clickHandler);
+  button.addEventListener('click', clickHandler);
 
-button.addEventListener('dblclick', dblclickHandler);
-```
+  button.addEventListener('dblclick', dblclickHandler);
+  ```
 
 * In this example we can see how to add a double click event listener using the `dblclick` name
 * You can check more events on the [MDN addEventListener doc](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
@@ -1353,18 +1353,18 @@ button.addEventListener('dblclick', dblclickHandler);
   * **event type:** it's a string with the event name ('click')
   * **event handler:** it's a function that will work as callback
 
-**Example:**
-```js
-function clickHandler() {
-	console.log(this);
-}
+  **Example:**
+  ```js
+  function clickHandler() {
+    console.log(this);
+  }
 
-let button = document.querySelector('button');
+  let button = document.querySelector('button');
 
-button.addEventListener('click', clickHandler);     // We add the click event listener 
+  button.addEventListener('click', clickHandler);     // We add the click event listener 
 
-button.removeEventListener('click', clickHandler);  // We remove the same event listener that we previously added
-```
+  button.removeEventListener('click', clickHandler);  // We remove the same event listener that we previously added
+  ```
 
 * Remember to always remove the event listener before removing your DOM elements
 * Otherwise you might have unexpected results and memory issues (if many elements)
@@ -1386,31 +1386,31 @@ button.removeEventListener('click', clickHandler);  // We remove the same event 
 
 **Example:**
 * HTML
-```html
-<a href="contact.html">Go to contact page</a>
-```
+  ```html
+  <a href="contact.html">Go to contact page</a>
+  ```
 
 * JS
-```js
-let link = document.querySelector('a');
-link.addEventListener('click', function(event) {
-  event.preventDefault();  // by calling preventDefault the event is not going to trigger the default behaivour
-  console.log('look someone clicked me');
-});
-```
+  ```js
+  let link = document.querySelector('a');
+  link.addEventListener('click', function(event) {
+    event.preventDefault();  // by calling preventDefault the event is not going to trigger the default behaivour
+    console.log('look someone clicked me');
+  });
+  ```
 
 * Using JavaScript we can handle mouse events like `click, dblclick, mouseover, mouseout & mousemove`
 * The event object has properties that help us know the mouse position like `clientX & clientY`
 
-**Example:**
-```js
-let body = document.querySelector('body');
+  **Example:**
+  ```js
+  let body = document.querySelector('body');
 
-body.addEventListener('click', function(event) {
-  console.log(event.clientX);
-  console.log(event.clientY);
-});
-```
+  body.addEventListener('click', function(event) {
+    console.log(event.clientX);
+    console.log(event.clientY);
+  });
+  ```
 
 #### Practice
 [Exercise 35](./exercises/browser/ex_35.md)
@@ -1422,17 +1422,17 @@ body.addEventListener('click', function(event) {
 * Strings has a static method called fromCharCode (`String.fromCharCode`) that will accept a number value as parameter and returns the key value
 * Combining `charCode` and `String.fromCharCode` we can know the key that the user pressed
 
-**Example:**
-```js
-  const body = document.querySelector('body');
+  **Example:**
+  ```js
+    const body = document.querySelector('body');
 
-  body.addEventListener('keypress', function(event) {
-    const keyCode = event.charCode;
-    const key = String.fromCharCode(keyCode);
-    
-    console.log(key);
-  });
-```
+    body.addEventListener('keypress', function(event) {
+      const keyCode = event.charCode;
+      const key = String.fromCharCode(keyCode);
+      
+      console.log(key);
+    });
+  ```
 
 #### Practice
 [Exercise 37](./exercises/browser/ex_37.md)
@@ -1467,31 +1467,31 @@ body.addEventListener('click', function(event) {
 * Also, we can check the values that the user inputs
 * We need to select the form to be able to interact with
 
-**Example:**
-```js
-const form = document.querySelector('form');
-```
+  **Example:**
+  ```js
+  const form = document.querySelector('form');
+  ```
 
 * The `document` object has a `forms` property that returns all the document form elements
 
-**Example:**
-```js
-  const firstForm = document.forms[0];
-  const documentForms = document.forms;
-```
+  **Example:**
+  ```js
+    const firstForm = document.forms[0];
+    const documentForms = document.forms;
+  ```
 
 * The `form ` element have a `elements` property that returns the selected form elements collection
 
-**Example:**
-```js
-const form = document.querySelector('form');
-const formElements = form.elements;
+  **Example:**
+  ```js
+  const form = document.querySelector('form');
+  const formElements = form.elements;
 
-console.log(formElements)
+  console.log(formElements)
 
-// As it's a collection we can get the first element using 0 as index
-const firstElement = form.elements[0];
-```
+  // As it's a collection we can get the first element using 0 as index
+  const firstElement = form.elements[0];
+  ```
 
 * The form object has the following properties: `action`, `target`, `encoding` & `method`
 * As we know this are all HTML form attributes
@@ -1500,19 +1500,19 @@ const firstElement = form.elements[0];
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login"></form>
-```
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login"></form>
+  ```
 
 * JS
-```js
-const form = document.querySelector('form');
+  ```js
+  const form = document.querySelector('form');
 
-console.log(form.action); // save_user.html
-console.log(form.encoding); // get
-console.log(form.method); // application/x-www-form-urlencoded
-console.log(form.name); // login
-```
+  console.log(form.action); // save_user.html
+  console.log(form.encoding); // get
+  console.log(form.method); // application/x-www-form-urlencoded
+  console.log(form.name); // login
+  ```
 
 #### Practice
 [Exercise 43](./exercises/browser/ex_43.md)
@@ -1526,22 +1526,22 @@ console.log(form.name); // login
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="text" id="username" name="username" />
-  <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Send" />
-</form>
-```
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <input type="text" id="username" name="username" />
+    <input type="password" id="pass" name="pass" />
+    <input type="submit" name="submit" value="Send" />
+  </form>
+  ```
 
 * JS
-```js
-const form = document.querySelector('form');
-const username = form.elements[0].value;
+  ```js
+  const form = document.querySelector('form');
+  const username = form.elements[0].value;
 
-username.value; // we get an empty string as it doesn't have a value
-username.value = 'Pepe'; // We can also set an input value
-```
+  username.value; // we get an empty string as it doesn't have a value
+  username.value = 'Pepe'; // We can also set an input value
+  ```
 
 #### Practice
 [Exercise 44](./exercises/browser/ex_44.md)
@@ -1554,36 +1554,37 @@ username.value = 'Pepe'; // We can also set an input value
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="text" id="username" name="username" />
-  <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Send" />
-</form>
-```
-```js
-const form = document.querySelector('form');
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <input type="text" id="username" name="username" />
+    <input type="password" id="pass" name="pass" />
+    <input type="submit" name="submit" value="Send" />
+  </form>
+  ```
+* JS
+  ```js
+  const form = document.querySelector('form');
 
-form.onsubmit = function() {
-	// This code will get executed when the form is submited
-  // Returning false we don't execute the form submition
-  return false;
-}
+  form.onsubmit = function() {
+    // This code will get executed when the form is submited
+    // Returning false we don't execute the form submition
+    return false;
+  }
 
-// also
+  // also
 
-const form = document.querySelector('form');
+  const form = document.querySelector('form');
 
-form.onsubmit = function(event) {
-  event.preventDefault();
-}
+  form.onsubmit = function(event) {
+    event.preventDefault();
+  }
 
-// or
+  // or
 
-form.addEventHandler('submit', function(event) {
-  event.preventDefault();
-});
-```
+  form.addEventHandler('submit', function(event) {
+    event.preventDefault();
+  });
+  ```
 
 #### Practice
 [Exercise 45](./exercises/browser/ex_45.md)
@@ -1595,28 +1596,28 @@ form.addEventHandler('submit', function(event) {
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <select name="countries" id="countries">
-    <option value="ar">Argentina</option>
-    <option value="br">Brazil</option>
-    <option value="ca">Canada</option>
-    <option value="cl">Chile</option>
-  </select>
-</form>
-```
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <select name="countries" id="countries">
+      <option value="ar">Argentina</option>
+      <option value="br">Brazil</option>
+      <option value="ca">Canada</option>
+      <option value="cl">Chile</option>
+    </select>
+  </form>
+  ```
 
 * JS
-```js
-const select = document.querySelector('select');
-const index = select.selectedIndex;
+  ```js
+  const select = document.querySelector('select');
+  const index = select.selectedIndex;
 
-console.log(index);  // returns the option index
-console.log(select.options);  // returns the option collection
+  console.log(index);  // returns the option index
+  console.log(select.options);  // returns the option collection
 
-Select.options[index]; // 
-console.log(select.options[index].value); // returns the selected option value
-```
+  Select.options[index]; // 
+  console.log(select.options[index].value); // returns the selected option value
+  ```
 
 #### Practice
 [Exercise 46](./exercises/browser/ex_46.md)
@@ -1627,45 +1628,46 @@ console.log(select.options[index].value); // returns the selected option value
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="checkbox" name="sex" value="f" checked> Female
-  <input type="checkbox" name="sex" value="m"> Male
-</form>
-```
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <input type="checkbox" name="sex" value="f" checked> Female
+    <input type="checkbox" name="sex" value="m"> Male
+  </form>
+  ```
 
 * JS
-```js
-const checkboxes = document.querySelector('checkbox');
-const female = checkboxes[0];
-const male = checkboxes[1];
+  ```js
+  const checkboxes = document.querySelector('checkbox');
+  const female = checkboxes[0];
+  const male = checkboxes[1];
 
-console.log(female.checked);  // returns true as the element has the checked attribute
-female.checked = false; // Set's the checkbox checked property to false
-console.log(female.value); // returns f as it's the element value
+  console.log(female.checked);  // returns true as the element has the checked attribute
+  female.checked = false; // Set's the checkbox checked property to false
+  console.log(female.value); // returns f as it's the element value
 
-male.checked;  // returns false as the element is not checked
-male.checked = true; // Set checked to true
-console.log(male.value); // returns m as it's the element value
-```
+  male.checked;  // returns false as the element is not checked
+  male.checked = true; // Set checked to true
+  console.log(male.value); // returns m as it's the element value
+  ```
 
 * To get the checked elements we can combine JavaScript and CSS selector using `:checked`
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="checkbox" name="sex" value="f" checked> Female
-  <input type="checkbox" name="sex" value="m"> Male
-</form>
-```
-```js
-const selectedGenderElement = document.querySelector('input:checked');
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <input type="checkbox" name="sex" value="f" checked> Female
+    <input type="checkbox" name="sex" value="m"> Male
+  </form>
+  ```
+* JS
+  ```js
+  const selectedGenderElement = document.querySelector('input:checked');
 
-console.log(selectedGenderElement.checked);  // Returns true as it's the checked element
-selectedGenderElement.checked = false; // We uncheck this element
-console.log(selectedGenderElement.value); // returns f as it's the element value
-```
+  console.log(selectedGenderElement.checked);  // Returns true as it's the checked element
+  selectedGenderElement.checked = false; // We uncheck this element
+  console.log(selectedGenderElement.value); // returns f as it's the element value
+  ```
 
 #### Practice
 [Exercise 47](./exercises/browser/ex_47.md)
@@ -1679,62 +1681,62 @@ console.log(selectedGenderElement.value); // returns f as it's the element value
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="text" id="username" name="username" />
-  <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Submit" />
-</form>
-```
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <input type="text" id="username" name="username" />
+    <input type="password" id="pass" name="pass" />
+    <input type="submit" name="submit" value="Submit" />
+  </form>
+  ```
 
 * JS
-```js
-const form = document.querySelector('form');
-const username = form.elements[0];
+  ```js
+  const form = document.querySelector('form');
+  const username = form.elements[0];
 
-username.onfocus = function() {
-  // this code will get executed when we set focus on the username input
-  console.log('Username element focus');
-}
+  username.onfocus = function() {
+    // this code will get executed when we set focus on the username input
+    console.log('Username element focus');
+  }
 
-username.onblur = function() {
-  // this code will get executed when we remove username focus
-  console.log('Username element lost focus');
-}
+  username.onblur = function() {
+    // this code will get executed when we remove username focus
+    console.log('Username element lost focus');
+  }
 
-username.oninput = function() {
-  // this code will get executed when we input some value in the input
-  console.log('The user is typing!');
-}
-```
+  username.oninput = function() {
+    // this code will get executed when we input some value in the input
+    console.log('The user is typing!');
+  }
+  ```
 
 * Handling the `change` event we can handle a select element change
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <select name="countries" id="countries">
-    <option value="ar">Argentina</option>
-    <option value="br">Brazil</option>
-    <option value="cl">Chile</option>
-  </select>
-</form>
-```
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <select name="countries" id="countries">
+      <option value="ar">Argentina</option>
+      <option value="br">Brazil</option>
+      <option value="cl">Chile</option>
+    </select>
+  </form>
+  ```
 
 * JS
-```js
-const select = document.querySelector('select');
+  ```js
+  const select = document.querySelector('select');
 
-select.onchange = function() { 
-  // This code gets executed when the user changes the select selected item
-  const index = select.selectedIndex;
-  const value = select.options[index].value;
+  select.onchange = function() { 
+    // This code gets executed when the user changes the select selected item
+    const index = select.selectedIndex;
+    const value = select.options[index].value;
 
-  console.log(index);
-  console.log(value);
-}
-```
+    console.log(index);
+    console.log(value);
+  }
+  ```
 
 #### Practice
 [Exercise 48](./exercises/browser/ex_48.md)
@@ -1743,33 +1745,33 @@ select.onchange = function() {
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="text" id="username" name="username" />
-  <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Send" />
-</form>
-```
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <input type="text" id="username" name="username" />
+    <input type="password" id="pass" name="pass" />
+    <input type="submit" name="submit" value="Send" />
+  </form>
+  ```
 
 * JS
-```js
-const form = document.querySelector('form');
+  ```js
+  const form = document.querySelector('form');
 
-form.onsubmit = function(evento) {
-  evento.preventDefault();
-  const username = form.elements[0];
+  form.onsubmit = function(evento) {
+    evento.preventDefault();
+    const username = form.elements[0];
 
-  // with the value property we get the input value
-  // Then we use the length property to check if the input is empty or not
-  // We could add trim before to remove empty spaces too
-  if (username.value.length === 0) {
-    console.log('Wrong username');
-    return false;
+    // with the value property we get the input value
+    // Then we use the length property to check if the input is empty or not
+    // We could add trim before to remove empty spaces too
+    if (username.value.length === 0) {
+      console.log('Wrong username');
+      return false;
+    }
+
+    return true;
   }
-
-  return true;
-}
-```
+  ```
 
 #### Practice
 [Exercise 49](./exercises/browser/ex_49.md)
@@ -1783,53 +1785,54 @@ form.onsubmit = function(evento) {
 
 **Example:**
 * HTML
-```html
-<form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
-  <input type="text" id="username" name="username" />
-  <input type="text" id="mail" name="mail" />
-  <input type="password" id="pass" name="pass" />
-  <input type="submit" name="submit" value="Send" />
-</form>
-```
-```js
-const form = document.querySelector('form');
+  ```html
+  <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+    <input type="text" id="username" name="username" />
+    <input type="text" id="mail" name="mail" />
+    <input type="password" id="pass" name="pass" />
+    <input type="submit" name="submit" value="Send" />
+  </form>
+  ```
+* JS
+  ```js
+  const form = document.querySelector('form');
 
-const validateUser = function(username) {
-  // we check if the username value (string) has alphabumeric characters only
-  const regex = /^[a-z0-9]+$/i;
-  
-  return regex.test(username);
-}
-
-const validateEmail = function(email) {
-  // this is a simple email validation regex
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  
-  // this text method will return a true/false value depending if the string matches the regex or not
-  return emailRegex.test(email);
-}
-
-form.onsubmit = function(event) {
-  event.preventDefault();
-  
-  const username = form.elements[0];
-  const email = form.elements[1];
-
-  if (!validateUser(username.value)) {
-    console.log('Incorrect username');
-    return false;
+  const validateUser = function(username) {
+    // we check if the username value (string) has alphabumeric characters only
+    const regex = /^[a-z0-9]+$/i;
+    
+    return regex.test(username);
   }
 
-  if (!validateEmail(mail.value)) {
-    console.log('Incorrect Email');
-    return false;
+  const validateEmail = function(email) {
+    // this is a simple email validation regex
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    
+    // this text method will return a true/false value depending if the string matches the regex or not
+    return emailRegex.test(email);
   }
 
-  // At this point we can say that the form is valid as the username and email both match the expected regex
+  form.onsubmit = function(event) {
+    event.preventDefault();
+    
+    const username = form.elements[0];
+    const email = form.elements[1];
 
-  return true;
-}
-```
+    if (!validateUser(username.value)) {
+      console.log('Incorrect username');
+      return false;
+    }
+
+    if (!validateEmail(mail.value)) {
+      console.log('Incorrect Email');
+      return false;
+    }
+
+    // At this point we can say that the form is valid as the username and email both match the expected regex
+
+    return true;
+  }
+  ```
 
 * You can learn more about regex and how they work in the following [link (regexone)](https://regexone.com)
 * Also, you can look for common regex on the following [site(regexlib)](http://www.regexlib.com)
@@ -1844,63 +1847,63 @@ form.onsubmit = function(event) {
 * The JSON object properties name use double quotes
 * Check out the [json.org doc](https://www.json.org) to learn more about JSON
 
-**Example:**
-```js
-const JSONexample = { 
-  "attribute": "valor", 
-  "attribute1": 1, 
-  "attribute2": [], 
-  "attribute3": null, 
-  "attribute4": false
-};
-```
+  **Example:**
+  ```js
+  const JSONexample = { 
+    "attribute": "valor", 
+    "attribute1": 1, 
+    "attribute2": [], 
+    "attribute3": null, 
+    "attribute4": false
+  };
+  ```
 
 * JavaScript has a JSON object that has two important methods `stringify()` & `parse()` that will help us interact with JSON
   * **stringify:** this method converts a JavaScript value to a JSON string
   * **parse:** this method parses a JSON string
 * Using this two methods we can convert from JSON to JavaScript and the other way around
 
-**Example:**
-```js
-// Stringify example with a JavaScript object to a JSON one
+  **Example:**
+  ```js
+  // Stringify example with a JavaScript object to a JSON one
 
-const user = {
-  username: 'pepe',
-  password: '12345',
-  email: 'pepe@gmail.com',
-  married: true,
-  childrens: ['maria', 'juan']
-}
-
-const JSONuser = JSON.stringify(user); // returns a JSON object with the user representation
-
-console.log(JSONuser);
-/*
-  {
-    "username":"pepe",
-    "password":"12345",
-    "email":"pepe@gmail.com",
-    "married":true,
-    "childrens":["maria","juan"]
+  const user = {
+    username: 'pepe',
+    password: '12345',
+    email: 'pepe@gmail.com',
+    married: true,
+    childrens: ['maria', 'juan']
   }
-*/
 
-// Parse example
+  const JSONuser = JSON.stringify(user); // returns a JSON object with the user representation
 
-const JSONuser = JSON.parse(JSONuser); // Returns a JavaScript objectretorna un objeto de ECMAScript
+  console.log(JSONuser);
+  /*
+    {
+      "username":"pepe",
+      "password":"12345",
+      "email":"pepe@gmail.com",
+      "married":true,
+      "childrens":["maria","juan"]
+    }
+  */
 
-console.log(JSONuser);
+  // Parse example
 
-/*
-  {
-    username: "pepe", 
-    password: "12345", 
-    email: "pepe@gmail.com", 
-    married: true, 
-    childrens: ["maria", "juan"]
-  }
-*/
-```
+  const JSONuser = JSON.parse(JSONuser); // Returns a JavaScript objectretorna un objeto de ECMAScript
+
+  console.log(JSONuser);
+
+  /*
+    {
+      username: "pepe", 
+      password: "12345", 
+      email: "pepe@gmail.com", 
+      married: true, 
+      childrens: ["maria", "juan"]
+    }
+  */
+  ```
 
 * In this example we see how easy it's to transform from JSON and JavaScript objects
 * We'll use JSON objects to communicate with the server and also when using other API's (twitter, etc)
@@ -1931,7 +1934,7 @@ console.log(JSONuser);
 * Open the following link and take a look at the JSON object that we get back from the API
 * [https://api.tvmaze.com/search/shows?q=batman](https://api.tvmaze.com/search/shows?q=batman)
 
-![JSON](./resources/images/browser/json.png)
+  ![JSON](./resources/images/browser/json.png)
 
 * As you can see we can get JSON back from a server but it might be difficult to read this way
 * Open the following url: [https://codebeautify.org/jsonviewer](https://codebeautify.org/jsonviewer)
@@ -1940,7 +1943,7 @@ console.log(JSONuser);
 * This site will help us see the response that we get from the server on the left side
 * We can see the JSON object representation in a way that is more readable
 
-![JSON](./resources/images/browser/json2.png)
+  ![JSON](./resources/images/browser/json2.png)
 
 * Now that we know what we want to retrieve from the API call we can learn how to get it using JavaScript
 * The **Fetch** API provides an interface for fetching resources (including across the network)
@@ -1948,141 +1951,141 @@ console.log(JSONuser);
 * Fetch provides a generic definition of Request and Response objects
 * The **fetch** method takes one mandatory argument, the path to the resource you want to fetch
 
-**Example:**
-```js
-const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+  **Example:**
+  ```js
+  const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
-fetch(apiURL);
-```
+  fetch(apiURL);
+  ```
 
 * In this example we are using TV Maze public api to retrieve some batman tv data
 * The `fetch` method returns a `Promise` that resolves to the Response to that request, whether it is successful or not
 * As the response it's a promise we can use the `then` method
 * The `then` method accepts a callback function as parameter
 
-**Example:**
-```js
-const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+  **Example:**
+  ```js
+  const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
-fetch(apiURL)
-  .then(function(response) {
-    console.log(response); // we get a Response object back with the TV data
-  });
-```
+  fetch(apiURL)
+    .then(function(response) {
+      console.log(response); // we get a Response object back with the TV data
+    });
+  ```
 
 * The Response object looks like this
-![API Response](./resources/images/js-browser/api_response.png)
+  ![API Response](./resources/images/js-browser/api_response.png)
 
 * The Response object has a `json` method that returns a promise that resolves with the result of parsing the body text as JSON
 
-**Example:**
-```js
-const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+  **Example:**
+  ```js
+  const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
-fetch(apiURL)
-  .then(function(response) {
-    return response.json();
-  });
-```
+  fetch(apiURL)
+    .then(function(response) {
+      return response.json();
+    });
+  ```
 
 * Promises can be chained using the `then` method as we return values
 
-**Example:**
-```js
-const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+  **Example:**
+  ```js
+  const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
-fetch(apiURL)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);
-  });
-```
+  fetch(apiURL)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+    });
+  ```
 
-![data](./resources/images/browser/response.png)
+  ![data](./resources/images/browser/response.png)
 
 * Each episode JSON has the following structure:
 
-```json
-{
-  "score": 23.0327,
-  "show": {
-    "id": 975,
-    "url": "http://www.tvmaze.com/shows/975/batman",
-    "name": "Batman",
-    "type": "Scripted",
-    "language": "English",
-    "genres": [
-      "Comedy",
-      "Action",
-      "Science-Fiction"
-    ],
-    "status": "Ended",
-    "runtime": 30,
-    "premiered": "1966-01-12",
-    "officialSite": null,
-    "schedule": {
-      "time": "19:30",
-      "days": [
-        "Thursday"
-      ]
-    },
-    "rating": {
-      "average": 8.2
-    },
-    "weight": 86,
-    "network": {
-      "id": 3,
-      "name": "ABC",
-      "country": {
-        "name": "United States",
-        "code": "US",
-        "timezone": "America/New_York"
-      }
-    },
-    "webChannel": null,
-    "externals": {
-      "tvrage": 2719,
-      "thetvdb": 77871,
-      "imdb": "tt0059968"
-    },
-    "image": {
-      "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg",
-      "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg"
-    },
-    "summary": "<p>Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.</p>",
-    "updated": 1523760926,
-    "_links": {
-      "self": {
-        "href": "http://api.tvmaze.com/shows/975"
+  ```json
+  {
+    "score": 23.0327,
+    "show": {
+      "id": 975,
+      "url": "http://www.tvmaze.com/shows/975/batman",
+      "name": "Batman",
+      "type": "Scripted",
+      "language": "English",
+      "genres": [
+        "Comedy",
+        "Action",
+        "Science-Fiction"
+      ],
+      "status": "Ended",
+      "runtime": 30,
+      "premiered": "1966-01-12",
+      "officialSite": null,
+      "schedule": {
+        "time": "19:30",
+        "days": [
+          "Thursday"
+        ]
       },
-      "previousepisode": {
-        "href": "http://api.tvmaze.com/episodes/95649"
+      "rating": {
+        "average": 8.2
+      },
+      "weight": 86,
+      "network": {
+        "id": 3,
+        "name": "ABC",
+        "country": {
+          "name": "United States",
+          "code": "US",
+          "timezone": "America/New_York"
+        }
+      },
+      "webChannel": null,
+      "externals": {
+        "tvrage": 2719,
+        "thetvdb": 77871,
+        "imdb": "tt0059968"
+      },
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/6/16463.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg"
+      },
+      "summary": "<p>Wealthy entrepreneur Bruce Wayne and his ward Dick Grayson lead a double life: they are actually crime fighting duo Batman and Robin. A secret Batpole in the Wayne mansion leads to the Batcave, where Police Commissioner Gordon often calls with the latest emergency threatening Gotham City. Racing to the scene of the crime in the Batmobile, Batman and Robin must (with the help of their trusty Bat-utility-belt) thwart the efforts of a variety of master criminals, including Catwoman, Egghead, The Joker, King Tut, The Penguin, and The Riddler.</p>",
+      "updated": 1523760926,
+      "_links": {
+        "self": {
+          "href": "http://api.tvmaze.com/shows/975"
+        },
+        "previousepisode": {
+          "href": "http://api.tvmaze.com/episodes/95649"
+        }
       }
     }
   }
-}
-```
+  ```
 
 * Now that we have the data and know the JSON structure we can use it:
 
-**Example:**
-```js
-const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
+  **Example:**
+  ```js
+  const apiURL = 'https://api.tvmaze.com/search/shows?q=batman';
 
-fetch(apiURL)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    const show = data[0];
+  fetch(apiURL)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      const show = data[0];
 
-    console.log(show.show.name); // Batman
-    console.log(show.show.premiered); // 1966-01-12
-    console.log(show.show.image.original); // http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg
-  });
-```
+      console.log(show.show.name); // Batman
+      console.log(show.show.premiered); // 1966-01-12
+      console.log(show.show.image.original); // http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg
+    });
+  ```
 
 * Now we can use everything that we learned on [this fetch example](https://github.com/nisnardi/fetch-demo)
 
@@ -2092,17 +2095,20 @@ fetch(apiURL)
 ## Congrats!!!
 * Browser will fight to parse and interpret you JavaScript code
 
-![Browsers](./resources/images/browser/browserfight.jpg)
+  ![Browsers](./resources/images/browser/browserfight.jpg)
 
 * You Rock! 🤘🏻
 
-![Congrats](https://media.giphy.com/media/RPwrO4b46mOdy/giphy.gif)
+  ![Congrats](https://media.giphy.com/media/RPwrO4b46mOdy/giphy.gif)
 
 * Now you know JavaScript Browser side, we no longer need a droid! Thanks C-3PO 🤖
 
-![Java](./resources/images/browser/java.webp)
+  ![Java](./resources/images/browser/java.webp)
 
 ## Assets / Resources
 * [Wes Bos - 30 Day Vanilla JS Coding Challenge (Great practice)](https://javascript30.com)
 * [Frontendmasters - front-end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
 * [Superhero.js](http://superherojs.com)
+
+## Let's Checkout Node.js
+* [<- JavaScript](javascript.md) - [Node.js ->](nodejs.md)
