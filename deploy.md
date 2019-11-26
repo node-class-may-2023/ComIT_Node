@@ -4,7 +4,7 @@
 
 ## Deploying to Heroku
 
-* To deploy your Node.js app you can use [Heroku]() as hosting
+* To deploy your Node.js app you can use [Heroku](https://heroku.com) as hosting
 * From the site: `Heroku is a fully managed container-based cloud platform, with integrated data services and a powerful ecosystem, for deploying and running modern apps`
 * Let's get started with installing the Heroku Command Line Interface (CLI)
   * Windows
