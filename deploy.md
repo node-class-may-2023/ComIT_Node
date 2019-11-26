@@ -83,7 +83,7 @@
 * Build and run your application locally
   ```bash
   npm install
-  heroku local start
+  heroku local
   ```
 * After you commit your changes to git, you can deploy your app to Heroku.
   ```bash
