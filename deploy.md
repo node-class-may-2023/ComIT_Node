@@ -107,6 +107,13 @@
   ```
 * To open the app in your browser, type `heroku open`.
 
+## Setting up the MongoDB database
+
+* For our course and development, we will leverage [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) free cloud-hosted sandbox database. This database tier is not considered suitable for production websites because it has no redundancy, but it is great for development and prototyping.
+* You will first need to [create an account](https://www.mongodb.com/cloud/atlas/register) with MongoDB Atlas (this is free, and just requires that you enter basic contact details and acknowledge their terms of service)
+* After logging in, you'll be taken to the [home](https://cloud.mongodb.com/v2) screen:
+
+
 * Click **Build a Cluster** button in the Clusters Overview section.
   ![Create a cluster on MongoDB Atlas.](resources/images/deploy/MongoDB_Atlas_-_CreateCluster.jpg)
 * This will open the *Create New Cluster* screen.
@@ -152,14 +159,6 @@
   * Replace test with `public`.
 * You have now created the database, and have an URL (with username and password) that can be used to access it. This will look something like: `mongodb+srv://your_user_name:your_password@cluster0-mbdj7.mongodb.net/public?retryWrites=true`
   * **DO NOT COMMIT THE VALUE TO GIT**. Since this contains a secret (the user and password in the connection string), it is best practice to leverage enviroment variables.
-
-
-## Setting up the MongoDB database
-
-* For our course and development, we will leverage [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) free cloud-hosted sandbox database. This database tier is not considered suitable for production websites because it has no redundancy, but it is great for development and prototyping.
-* You will first need to [create an account](https://www.mongodb.com/cloud/atlas/register) with MongoDB Atlas (this is free, and just requires that you enter basic contact details and acknowledge their terms of service)
-* After logging in, you'll be taken to the [home](https://cloud.mongodb.com/v2) screen:
-
 
 ## Resources
 * [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
