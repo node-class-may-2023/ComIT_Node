@@ -167,4 +167,4 @@
 * [MDN Deploying to production](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment)
 
 ## Let's Checkout Deploying
-* [<- MongoDB & Mongoose](mongodb.md) - [Deploying a Node.js Application ->](mongodb.md)
+* [<- MongoDB & Mongoose](mongodb.md) - [Production Best Practices ->](practices.md)

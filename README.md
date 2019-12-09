@@ -28,3 +28,5 @@
   * `This franchise has NoSQL`
 * [Deploy](deploy.md)
   * `Sharing to world wide wide`
+* [Production Best Practices](practices.md)
+  * `Let's produce the best apps`
