@@ -28,5 +28,7 @@
   * `This franchise has NoSQL`
 * [Deploy](deploy.md)
   * `Sharing to world wide wide`
+* [Debugging & Troubleshooting](debug.md)
+  * `throw everything.out()`
 * [Production Best Practices](practices.md)
   * `Let's produce the best apps`

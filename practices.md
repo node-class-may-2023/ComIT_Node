@@ -1,6 +1,6 @@
 # Production Best Practices
 
-[<- Go Back](deploy.md)
+[<- Go Back](debug.md)
 
 ## Performance and Reliability
 
@@ -86,5 +86,5 @@
 * [Website Security](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security) (Mozilla docs)
 * [OWASP Top 10 2017](https://www.cloudflare.com/learning/security/threats/owasp-top-10/) (Cloudflare docs)
 
-## Let's Checkout Deploying
-* [<- Deploying a Node.js Application](deploy.md)
+## Let's Checkout Debugging
+* [<- Debugging & Troubleshooting](debug.md)
