@@ -67,4 +67,4 @@
   ```sh
   Open at http://localhost:3000
   ```
-* The page should load with the JSON Object from one line jokes
+* The page should load with the joke in uppercase from one line jokes
