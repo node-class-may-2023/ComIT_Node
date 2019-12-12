@@ -38,7 +38,8 @@
       "author": "",
       "license": "ISC",
       "dependencies": {
-        "nodemon": "^2.0.2"
+      "express": "^4.17.1",
+      "nodemon": "^2.0.2"
       }
     }
     ```
