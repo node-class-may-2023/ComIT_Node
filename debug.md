@@ -10,8 +10,8 @@
 
 #### Exercises
 
-* [Exercise 1](debug/ex_1.md)
-* [Exercise 2](debug/ex_2.md)
+* [Exercise 1](./exercises/debug/ex_1.md)
+* [Exercise 2](./exercises/debug/ex_2.md)
 
 ## Debugging
 
@@ -46,7 +46,7 @@
 
 #### Exercises
 
-* [Exercise 3](debug/ex_3.md)
+* [Exercise 3](./exercises/debug/ex_3.md)
 
 ### Using Breakpoints In Chrome DevTools
 
@@ -59,8 +59,8 @@
 
 #### Exercises
 
-* [Exercise 4](debug/ex_4.md)
-* [Exercise 5](debug/ex_5.md)
+* [Exercise 4](./exercises/debug/ex_4.md)
+* [Exercise 5](./exercises/debug/ex_5.md)
 
 ## Resources
 * [Node.js debugging in VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
