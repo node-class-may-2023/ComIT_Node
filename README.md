@@ -1,4 +1,4 @@
-# Node.js Regina
+# Node.js
 
 ## Content
 
